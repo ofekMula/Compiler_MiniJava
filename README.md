@@ -3,7 +3,7 @@
 
 
 ## How to connect to this repository from git?:
-Connect to git from intellij: VCS -> get from version control -> eneter your account and search for the name rickben/CompilerMiniJava,
+Connect to git from intellij: VCS -> get from version control -> enter your account and search for the name rickben/CompilerMiniJava,
 it should appear, I set you as a contributer.
 
 Currently this is a private repo, once we submmit the project we can make it public, so now people won't still our code...
