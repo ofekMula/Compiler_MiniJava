@@ -2,13 +2,13 @@
 אנחנו רוצים לעבוד במקביל על הקוד ולדחוף שינויים חדשים לתוך הקוד הראשי שנמצא במאסטר. הדרך הכי נוחה לעשות את זה היא ככה
 
 
-##How to connect to this repository from git?:##
+## How to connect to this repository from git?:
 Connect to git from intellij: VCS -> get from version control -> eneter your account and search for the name rickben/CompilerMiniJava,
 it should appear, I set you as a contributer.
 
 Currently this is a private repo, once we submmit the project we can make it public, so now people won't still our code...
 
-##How to work in the project with git?##
+## How to work in the project with git?
 Once you connected to git via Intellij you can see the code there.
 Whenever you want to start working or changing the code (minor or big change), click on git in the buttom of the ide at the rigth, and 
 by hitting the + icon you can add a new branch.
