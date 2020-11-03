@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="program" type="program"/>
+
+  <xs:complexType name="program">
+    <xs:complexContent>
+      <xs:extension base="astNode">
+        <xs:sequence>
+          <xs:element name="mainclass" type="mainClass"/>
+          <xs:element name="classdecls">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="classdecl" type="classDecl" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="astNode" abstract="true">
+    <xs:sequence>
+      <xs:element name="lineNumber" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mainClass">
+    <xs:complexContent>
+      <xs:extension base="astNode">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="argsName" type="xs:string"/>
+          <xs:element name="mainStatement" type="statementWrapper"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="statementWrapper">
+    <xs:choice>
+      <xs:element name="block" type="blockStatement"/>
+      <xs:element name="if" type="ifStatement"/>
+      <xs:element name="while" type="whileStatement"/>
+      <xs:element name="sysout" type="sysoutStatement"/>
+      <xs:element name="assign" type="assignStatement"/>
+      <xs:element name="assign-array" type="assignArrayStatement"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="blockStatement">
+    <xs:complexContent>
+      <xs:extension base="statement">
+        <xs:sequence>
+          <xs:element name="statements">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                  <xs:element name="block" type="blockStatement"/>
+                  <xs:element name="if" type="ifStatement"/>
+                  <xs:element name="while" type="whileStatement"/>
+                  <xs:element name="sysout" type="sysoutStatement"/>
+                  <xs:element name="assign" type="assignStatement"/>
+                  <xs:element name="assign-array" type="assignArrayStatement"/>
+                </xs:choice>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="statement" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="astNode">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ifStatement">
+    <xs:complexContent>
+      <xs:extension base="statement">
+        <xs:sequence>
+          <xs:element name="cond" type="exprWrapper"/>
+          <xs:element name="thencase" type="statementWrapper"/>
+          <xs:element name="elsecase" type="statementWrapper"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="exprWrapper">
+    <xs:choice>
+      <xs:element name="and" type="andExpr"/>
+      <xs:element name="lt" type="ltExpr"/>
+      <xs:element name="add" type="addExpr"/>
+      <xs:element name="subtract" type="subtractExpr"/>
+      <xs:element name="mult" type="multExpr"/>
+      <xs:element name="array-access" type="arrayAccessExpr"/>
+      <xs:element name="array-length" type="arrayLengthExpr"/>
+      <xs:element name="call" type="methodCallExpr"/>
+      <xs:element name="int-literal" type="integerLiteralExpr"/>
+      <xs:element name="true" type="trueExpr"/>
+      <xs:element name="false" type="falseExpr"/>
+      <xs:element name="ref-id" type="identifierExpr"/>
+      <xs:element name="this" type="thisExpr"/>
+      <xs:element name="new-int-array" type="newIntArrayExpr"/>
+      <xs:element name="new-object" type="newObjectExpr"/>
+      <xs:element name="not" type="notExpr"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="andExpr">
+    <xs:complexContent>
+      <xs:extension base="binaryExpr">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="binaryExpr" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="expr">
+        <xs:sequence>
+          <xs:element name="e1" type="exprWrapper"/>
+          <xs:element name="e2" type="exprWrapper"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="expr" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="astNode">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ltExpr">
+    <xs:complexContent>
+      <xs:extension base="binaryExpr">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="addExpr">
+    <xs:complexContent>
+      <xs:extension base="binaryExpr">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="subtractExpr">
+    <xs:complexContent>
+      <xs:extension base="binaryExpr">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="multExpr">
+    <xs:complexContent>
+      <xs:extension base="binaryExpr">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="arrayAccessExpr">
+    <xs:complexContent>
+      <xs:extension base="expr">
+        <xs:sequence>
+          <xs:element name="arrayExpr" type="exprWrapper"/>
+          <xs:element name="indexExpr" type="exprWrapper"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="arrayLengthExpr">
+    <xs:complexContent>
+      <xs:extension base="expr">
+        <xs:sequence>
+          <xs:element name="arrayExpr" type="exprWrapper"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="methodCallExpr">
+    <xs:complexContent>
+      <xs:extension base="expr">
+        <xs:sequence>
+          <xs:element name="ownerExpr" type="exprWrapper"/>
+          <xs:element name="methodId" type="xs:string"/>
+          <xs:element name="actuals">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="actual" type="exprWrapper" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="integerLiteralExpr">
+    <xs:complexContent>
+      <xs:extension base="expr">
+        <xs:sequence>
+          <xs:element name="num" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="trueExpr">
+    <xs:complexContent>
+      <xs:extension base="expr">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="falseExpr">
+    <xs:complexContent>
+      <xs:extension base="expr">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="identifierExpr">
+    <xs:complexContent>
+      <xs:extension base="expr">
+        <xs:sequence>
+          <xs:element name="id" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="thisExpr">
+    <xs:complexContent>
+      <xs:extension base="expr">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="newIntArrayExpr">
+    <xs:complexContent>
+      <xs:extension base="expr">
+        <xs:sequence>
+          <xs:element name="lengthExpr" type="exprWrapper"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="newObjectExpr">
+    <xs:complexContent>
+      <xs:extension base="expr">
+        <xs:sequence>
+          <xs:element name="classId" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="notExpr">
+    <xs:complexContent>
+      <xs:extension base="expr">
+        <xs:sequence>
+          <xs:element name="e" type="exprWrapper"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="whileStatement">
+    <xs:complexContent>
+      <xs:extension base="statement">
+        <xs:sequence>
+          <xs:element name="cond" type="exprWrapper"/>
+          <xs:element name="body" type="statementWrapper"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="sysoutStatement">
+    <xs:complexContent>
+      <xs:extension base="statement">
+        <xs:sequence>
+          <xs:element name="arg" type="exprWrapper"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="assignStatement">
+    <xs:complexContent>
+      <xs:extension base="statement">
+        <xs:sequence>
+          <xs:element name="lv" type="xs:string"/>
+          <xs:element name="rv" type="exprWrapper"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="assignArrayStatement">
+    <xs:complexContent>
+      <xs:extension base="statement">
+        <xs:sequence>
+          <xs:element name="lv" type="xs:string"/>
+          <xs:element name="index" type="exprWrapper"/>
+          <xs:element name="rv" type="exprWrapper"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="classDecl">
+    <xs:complexContent>
+      <xs:extension base="astNode">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="superName" type="xs:string" minOccurs="0"/>
+          <xs:element name="fields">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="field" type="varDecl" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="methoddecls">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="methoddecl" type="methodDecl" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="varDecl">
+    <xs:complexContent>
+      <xs:extension base="variableIntroduction">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="variableIntroduction" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="astNode">
+        <xs:sequence>
+          <xs:element name="type" type="astTypeWrapper"/>
+          <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="astTypeWrapper">
+    <xs:choice>
+      <xs:element name="int" type="intAstType"/>
+      <xs:element name="bool" type="boolAstType"/>
+      <xs:element name="int-array" type="intArrayAstType"/>
+      <xs:element name="ref" type="refType"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="intAstType">
+    <xs:complexContent>
+      <xs:extension base="astType">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="astType" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="astNode">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="boolAstType">
+    <xs:complexContent>
+      <xs:extension base="astType">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="intArrayAstType">
+    <xs:complexContent>
+      <xs:extension base="astType">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="refType">
+    <xs:complexContent>
+      <xs:extension base="astType">
+        <xs:sequence>
+          <xs:element name="id" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="formalArg">
+    <xs:complexContent>
+      <xs:extension base="variableIntroduction">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="methodDecl">
+    <xs:complexContent>
+      <xs:extension base="astNode">
+        <xs:sequence>
+          <xs:element name="returnType" type="astTypeWrapper"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="formals">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="formal" type="formalArg" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="vardecls">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="vardecl" type="varDecl" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="body">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                  <xs:element name="block" type="blockStatement"/>
+                  <xs:element name="if" type="ifStatement"/>
+                  <xs:element name="while" type="whileStatement"/>
+                  <xs:element name="sysout" type="sysoutStatement"/>
+                  <xs:element name="assign" type="assignStatement"/>
+                  <xs:element name="assign-array" type="assignArrayStatement"/>
+                </xs:choice>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ret" type="exprWrapper"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
+

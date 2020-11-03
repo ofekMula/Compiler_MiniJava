@@ -1,0 +1,79 @@
+/*************/
+/* IMPORTS */
+/*************/
+
+import java_cup.runtime.*;
+import ast.*;
+import java.util.List;
+import java.util.LinkedList;
+
+parser code
+{:
+	public Lexer lexer;
+
+	public Parser(Lexer lexer)
+	{
+		super(lexer);
+		this.lexer = lexer;
+	}
+	public void report_error(String message, Object info)
+	{
+    System.out.print("Syntax error at line " + lexer.getLine() + " of input\n");
+		// System.out.print("ERROR >> ");
+		// System.out.print("[");
+		// System.out.print(lexer.getLine());
+		// System.out.print(":");
+		// System.out.print(lexer.getCharPos());
+		// System.out.print("] ");
+		System.exit(1);
+	}
+:}
+
+/************************/
+/* CUSTOMIZE CUP PARSER */
+/************************/
+scan with
+{:
+	Symbol s;
+	s = lexer.next_token();
+	// System.out.print(s.sym);
+	// System.out.print("[");
+	// System.out.print(lexer.getLine());
+	// System.out.print(":");
+	// System.out.print(lexer.getCharPos());
+	// System.out.print("] ");
+	// System.out.print(sym.terminalNames[s.sym]);
+	// if (s.value != null)
+	// {
+	//	System.out.print("( ");
+	//	System.out.print(s.value);
+	//	System.out.print(" )");
+	// }
+	// System.out.print("\n");
+	return s;
+:};
+
+/*************/
+/* TERMINALS */
+/*************/
+terminal PUBLIC;
+
+/*****************/
+/* NON TERMINALS */
+/*****************/
+non terminal prog;
+
+/***********************/
+/* OPERATOR PRECEDENCE */
+/***********************/
+
+/************************/
+/* INITIAL NON TERMINAL */
+/************************/
+start with prog;
+
+/********************/
+/* PRODUCTION RULES */
+/********************/
+
+prog            ::=     ;

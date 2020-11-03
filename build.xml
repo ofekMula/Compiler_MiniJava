@@ -1,0 +1,51 @@
+<project name="MiniJava" default="dist" basedir=".">
+    <!-- set global properties for this build -->
+    <property name="src"      location="${basedir}/src"/>
+    <property name="cup"      location="${src}/cup"/>
+    <property name="jflex"    location="${src}/jflex"/>
+    <property name="build"    location="${basedir}/build"/>
+    <property name="tools"    location="${basedir}/tools"/>
+
+    <taskdef  name="jflex" classname="jflex.anttask.JFlexTask"   classpath="${tools}/JFlex.jar"   />
+    <taskdef  name="cup"   classname="java_cup.anttask.CUPTask"  classpath="${tools}/java-cup-11b.jar"  />
+    
+    <target name="init">
+        <!-- Create the time stamp -->
+        <tstamp/>
+        <!-- Create the build directory structure used by compile -->
+        <mkdir dir="${build}"/>
+    </target>
+
+    <target name="generate">
+        <jflex file="${jflex}/Scanner.jflex" destdir="${src}" />
+        <cup srcfile="${cup}/Parser.cup"     destdir="${src}"
+             parser="Parser"                 interface="true" locations="false" />
+    </target>
+
+    <target name="compile" depends="init,generate"
+            description="compile the source">
+        <!-- Compile the Java code from ${src} into ${build} -->
+        <javac srcdir="${src}" destdir="${build}" debug="true">
+            <classpath>
+                <fileset dir="${tools}" includes="*.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="dist" depends="compile"
+            description="generate the distribution">
+        <jar jarfile="mjavac.jar" basedir="${build}">
+            <manifest>
+                <attribute name="Main-Class" value="Main"/>
+                <attribute name="Class-Path" value="${tools}/java-cup-11b-runtime.jar ${tools}/java-cup-11b.jar ${tools}/jakarta.xml.bind-api-2.3.3.jar ${tools}/jaxb-impl-2.3.3.jar ${tools}/jakarta.activation-api-1.2.2.jar ${tools}/jaxb-jxc-2.3.3.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="clean"
+            description="clean up">
+        <delete dir="${build}"/>
+        <delete file="${src}/Lexer.java"/>
+        <delete file="${src}/Parser.java"/>
+    </target>
+</project>
