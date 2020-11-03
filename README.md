@@ -21,3 +21,13 @@ Now if you will go to this address here: https://github.com/rickben/CompilerMini
 Click to pull request and write what you did if you want.
 Now we will need to go over the pull requests everyone submitted for their different branches and decide what is good and what will need to change.
 We will talk more if problems come up!
+
+## Compiling this code:
+After connecting to the code, you will need to click on ant: +, and click on build.xml in this project.
+Moreover, you need to add the tools as a library: Intellij -> File -> Project structure -> Modules -> Dependencies -> click + -> library -> 
+add new library -> click on tools -> come back to dependencies and click on v on tools.
+Now click compil in ant - it compiles. dist - creates the jar (we don't need that now, only for the final submmition I beleive).
+
+The project arguments for the main class in src are: unmarshal print src/field.java.xml field_print.txt
+
+To check you succeded: click on main + arguments - and check if after couple of seconds the file field_print.xml is generated.
