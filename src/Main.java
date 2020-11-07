@@ -1,6 +1,7 @@
 import ast.AstPrintVisitor;
 import ast.AstXMLSerializer;
 import ast.Program;
+import ex1.VisitorCreateTable;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -32,9 +33,11 @@ public class Main {
                     AstXMLSerializer xmlSerializer = new AstXMLSerializer();
                     xmlSerializer.serialize(prog, outfilename);
                 } else if (action.equals("print")) {
-                    AstPrintVisitor astPrinter = new AstPrintVisitor();
-                    astPrinter.visit(prog);
-                    outFile.write(astPrinter.getString());
+                    VisitorCreateTable visitor = new VisitorCreateTable();
+                    visitor.visit(prog);
+//                    AstPrintVisitor astPrinter = new AstPrintVisitor();
+//                    astPrinter.visit(prog);
+//                    outFile.write(astPrinter.getString());
 
                 } else if (action.equals("semantic")) {
                     throw new UnsupportedOperationException("TODO - Ex. 3");
