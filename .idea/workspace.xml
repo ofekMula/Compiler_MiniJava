@@ -140,65 +140,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="remove print for check repo">
-      <change afterPath="$PROJECT_DIR$/ricky-check" afterDir="false" />
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="First try of AstVarVisitor - works for field.java.xml">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ex1/Scopes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ex1/Symbol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ex1/SymbolDeclKinds.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ex1/SymbolTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Lexer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Parser$CUP$Parser$actions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Parser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/AddExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/AndExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/ArrayAccessExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/ArrayLengthExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/AssignArrayStatement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/AssignStatement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/AstNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/AstPrintVisitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/AstType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/AstTypeWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/AstXMLSerializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/BinaryExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/BlockStatement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/BoolAstType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/ClassDecl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/Expr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/ExprWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/FalseExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/FormalArg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/IdentifierExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/IfStatement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/IntArrayAstType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/IntAstType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/IntegerLiteralExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/LtExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/MainClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/MethodCallExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/MethodDecl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/MultExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/NewIntArrayExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/NewObjectExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/NotExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/Program.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/RefType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/Statement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/StatementWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/SubtractExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/SysoutStatement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/ThisExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/TrueExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/VarDecl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/VariableIntroduction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/Visitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ast/WhileStatement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/sym.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/AstNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/AstNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -224,6 +188,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/build.xml" />
@@ -245,20 +210,18 @@
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal print src/field.java.xml field_print.txt" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal print src/field.java.xml field_renamed.java.xml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -274,6 +237,15 @@
       <updated>1604401467095</updated>
       <workItem from="1604401468172" duration="599000" />
       <workItem from="1604412933426" duration="1171000" />
+      <workItem from="1604421483185" duration="21000" />
+      <workItem from="1604511583447" duration="2187000" />
+      <workItem from="1604520690467" duration="2490000" />
+      <workItem from="1604556707789" duration="7994000" />
+      <workItem from="1604567685482" duration="318000" />
+      <workItem from="1604568012179" duration="382000" />
+      <workItem from="1604568403184" duration="525000" />
+      <workItem from="1604568937897" duration="759000" />
+      <workItem from="1604757726018" duration="14537000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -282,7 +254,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604402470370</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="removed check">
+      <created>1604415175924</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604415175924</updated>
+    </task>
+    <task id="LOCAL-00003" summary="First try of AstVarVisitor - works for field.java.xml">
+      <created>1604569452705</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604569452705</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +288,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove print for check repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove print for check repo" />
+    <MESSAGE value="removed check" />
+    <MESSAGE value="First try of AstVarVisitor - works for field.java.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="First try of AstVarVisitor - works for field.java.xml" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1604401568548">
@@ -329,26 +317,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604401957728" />
-    <state width="1877" height="150" key="GridCell.Tab.0.bottom" timestamp="1604413918569">
+    <state width="1877" height="671" key="GridCell.Tab.0.bottom" timestamp="1604772273789">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="150" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604413918569" />
+    <state width="1877" height="671" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273789" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
-    <state width="1877" height="150" key="GridCell.Tab.0.center" timestamp="1604413918569">
+    <state width="1877" height="671" key="GridCell.Tab.0.center" timestamp="1604772273789">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="150" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604413918569" />
+    <state width="1877" height="671" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273789" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
-    <state width="1877" height="150" key="GridCell.Tab.0.left" timestamp="1604413918569">
+    <state width="1877" height="671" key="GridCell.Tab.0.left" timestamp="1604772273789">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="150" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604413918569" />
+    <state width="1877" height="671" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273789" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
-    <state width="1877" height="150" key="GridCell.Tab.0.right" timestamp="1604413918569">
+    <state width="1877" height="671" key="GridCell.Tab.0.right" timestamp="1604772273789">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="150" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604413918569" />
+    <state width="1877" height="671" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273789" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
+    <state width="1877" height="671" key="GridCell.Tab.1.bottom" timestamp="1604772273790">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="671" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273790" />
+    <state width="1877" height="671" key="GridCell.Tab.1.center" timestamp="1604772273790">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="671" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273790" />
+    <state width="1877" height="671" key="GridCell.Tab.1.left" timestamp="1604772273790">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="671" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273790" />
+    <state width="1877" height="671" key="GridCell.Tab.1.right" timestamp="1604772273790">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="671" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273790" />
     <state x="789" y="222" key="RollbackChangesDialog" timestamp="1604402445531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -357,14 +361,45 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604401954046" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1604402473210">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1604569454276">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604569454276" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604402473210" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604414046248">
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1604567524001">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604414046248" />
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604567524001" />
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604564631353" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1604759608741">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604759608741" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604569404396">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604569404396" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604402464856" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex1/VisitorCreateTable.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

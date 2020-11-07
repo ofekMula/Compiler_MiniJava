@@ -1,5 +1,7 @@
 package ast;
 
+import ex1.SymbolTable;
+
 import javax.xml.bind.annotation.XmlElement;
 
 public abstract class AstNode {
@@ -8,6 +10,17 @@ public abstract class AstNode {
 
     public AstNode() {
         lineNumber = null;
+    }
+
+    /** reference to symbol table of enclosing scope **/
+    private SymbolTable table;
+
+    public void setTable(SymbolTable table){
+        this.table = table;
+    }
+    /** returns symbol table of enclosing scope **/
+    public SymbolTable table() {
+        return table;
     }
 
     public AstNode(int lineNumber) {
