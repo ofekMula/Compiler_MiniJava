@@ -140,16 +140,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="First try of AstVarVisitor - works for field.java.xml">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex1/Scopes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex1/Symbol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex1/SymbolDeclKinds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex1/SymbolTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" afterDir="false" />
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="remove print for check repo">
+      <change afterPath="$PROJECT_DIR$/src/ex1/InheritanceUpdate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/AstNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/AstNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/SymbolTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,8 +155,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -215,13 +211,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -246,6 +244,7 @@
       <workItem from="1604568403184" duration="525000" />
       <workItem from="1604568937897" duration="759000" />
       <workItem from="1604757726018" duration="14537000" />
+      <workItem from="1604860513491" duration="4911000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -301,14 +300,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="714" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604414099708" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1604860615395">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604860615395" />
     <state x="790" y="213" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1604401948099">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="790" y="213" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604401948099" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604414017166">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604861383804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604414017166" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604861383804" />
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1604401950286">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -317,42 +320,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604401957728" />
-    <state width="1877" height="671" key="GridCell.Tab.0.bottom" timestamp="1604772273789">
+    <state width="1877" height="445" key="GridCell.Tab.0.bottom" timestamp="1604864596966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="671" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273789" />
+    <state width="1877" height="445" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596966" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
-    <state width="1877" height="671" key="GridCell.Tab.0.center" timestamp="1604772273789">
+    <state width="1877" height="445" key="GridCell.Tab.0.center" timestamp="1604864596965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="671" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273789" />
+    <state width="1877" height="445" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596965" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
-    <state width="1877" height="671" key="GridCell.Tab.0.left" timestamp="1604772273789">
+    <state width="1877" height="445" key="GridCell.Tab.0.left" timestamp="1604864596965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="671" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273789" />
+    <state width="1877" height="445" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596965" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
-    <state width="1877" height="671" key="GridCell.Tab.0.right" timestamp="1604772273789">
+    <state width="1877" height="445" key="GridCell.Tab.0.right" timestamp="1604864596965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="671" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273789" />
+    <state width="1877" height="445" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596965" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
-    <state width="1877" height="671" key="GridCell.Tab.1.bottom" timestamp="1604772273790">
+    <state width="1877" height="445" key="GridCell.Tab.1.bottom" timestamp="1604864596966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="671" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273790" />
-    <state width="1877" height="671" key="GridCell.Tab.1.center" timestamp="1604772273790">
+    <state width="1877" height="445" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596966" />
+    <state width="1877" height="445" key="GridCell.Tab.1.center" timestamp="1604864596966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="671" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273790" />
-    <state width="1877" height="671" key="GridCell.Tab.1.left" timestamp="1604772273790">
+    <state width="1877" height="445" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596966" />
+    <state width="1877" height="445" key="GridCell.Tab.1.left" timestamp="1604864596966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="671" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273790" />
-    <state width="1877" height="671" key="GridCell.Tab.1.right" timestamp="1604772273790">
+    <state width="1877" height="445" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596966" />
+    <state width="1877" height="445" key="GridCell.Tab.1.right" timestamp="1604864596966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="671" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273790" />
+    <state width="1877" height="445" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596966" />
     <state x="789" y="222" key="RollbackChangesDialog" timestamp="1604402445531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -382,20 +385,6 @@
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604402464856" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorCreateTable.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />

@@ -1,6 +1,6 @@
-import ast.AstPrintVisitor;
 import ast.AstXMLSerializer;
 import ast.Program;
+import ex1.InheritanceUpdate;
 import ex1.VisitorCreateTable;
 
 import java.io.File;
@@ -33,8 +33,10 @@ public class Main {
                     AstXMLSerializer xmlSerializer = new AstXMLSerializer();
                     xmlSerializer.serialize(prog, outfilename);
                 } else if (action.equals("print")) {
-                    VisitorCreateTable visitor = new VisitorCreateTable();
-                    visitor.visit(prog);
+                    VisitorCreateTable builderVisitor = new VisitorCreateTable();
+                    builderVisitor.visit(prog);
+                    InheritanceUpdate inheritanceUpdater = new InheritanceUpdate(builderVisitor.classesToTables, prog);
+                    inheritanceUpdater.updateChildren();
 //                    AstPrintVisitor astPrinter = new AstPrintVisitor();
 //                    astPrinter.visit(prog);
 //                    outFile.write(astPrinter.getString());

@@ -6,11 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class VisitorCreateTable implements Visitor {
-    private Map<String, SymbolTable> classesToTables = new HashMap<>();
+    public Map<String, SymbolTable> classesToTables = new HashMap<>();
     private SymbolTable lastVisited;
     private SymbolTable root;
     private Symbol currSymbol;
-
 
     private void visitBinaryExpr(BinaryExpr e, String infixSymbol) {
         e.e1().setTable(new SymbolTable());
