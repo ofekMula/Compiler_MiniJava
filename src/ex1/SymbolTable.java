@@ -26,6 +26,18 @@ public class SymbolTable {
         currSymbol.setThisTableMethod(currTable);
     }
 
+    public Symbol getById(String id){
+        return entries.get(id);
+    }
+
+    public Map<String,Symbol> getEntries(){
+        return entries;
+    }
+
+    public boolean isContainsId(String id){
+        return entries.containsKey(id);
+    }
+
     public void setScopeName(String scopeName) {
         this.scopeName = scopeName;
     }

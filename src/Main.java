@@ -1,7 +1,9 @@
 import ast.AstPrintVisitor;
 import ast.AstXMLSerializer;
 import ast.Program;
+import ex1.InheritanceUpdate;
 import ex1.VisitorCreateTable;
+import ex1.VisitorRenameVar;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -33,11 +35,9 @@ public class Main {
                     AstXMLSerializer xmlSerializer = new AstXMLSerializer();
                     xmlSerializer.serialize(prog, outfilename);
                 } else if (action.equals("print")) {
-                    VisitorCreateTable visitor = new VisitorCreateTable();
-                    visitor.visit(prog);
-//                    AstPrintVisitor astPrinter = new AstPrintVisitor();
-//                    astPrinter.visit(prog);
-//                    outFile.write(astPrinter.getString());
+                    AstPrintVisitor astPrinter = new AstPrintVisitor();
+                    astPrinter.visit(prog);
+                    outFile.write(astPrinter.getString());
 
                 } else if (action.equals("semantic")) {
                     throw new UnsupportedOperationException("TODO - Ex. 3");
@@ -51,12 +51,20 @@ public class Main {
                     var originalLine = args[4];
                     var newName = args[5];
 
-                    boolean isMethod;
+                    boolean isMethod = false;
                     if (type.equals("var")) {
                         isMethod = false;
                     } else if (type.equals("method")) {
                         isMethod = true;
                     } else {
+                        VisitorCreateTable builderVisitor = new VisitorCreateTable();
+                        builderVisitor.visit(prog);
+                        InheritanceUpdate inheritanceUpdater = new InheritanceUpdate(builderVisitor.classesToTables, prog);
+                        inheritanceUpdater.updateChildren();
+                        if (!isMethod){
+                            VisitorRenameVar visitorRenameVar = new VisitorRenameVar(originalName, newName, Integer.parseInt(originalLine));
+                            visitorRenameVar.visit(prog);
+                        }
                         throw new IllegalArgumentException("unknown rename type " + type);
                     }
 
