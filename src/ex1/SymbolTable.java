@@ -26,6 +26,10 @@ public class SymbolTable {
         currSymbol.setThisTableMethod(currTable);
     }
 
+    public Symbol getById(String id){
+        return entries.get(id);
+    }
+
     public Map<String,Symbol> getEntries(){
         return entries;
     }

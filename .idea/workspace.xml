@@ -140,12 +140,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="remove print for check repo">
-      <change afterPath="$PROJECT_DIR$/src/ex1/InheritanceUpdate.java" afterDir="false" />
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="added table">
+      <change afterPath="$PROJECT_DIR$/src/ex1/VisitorRenameVar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/InheritanceUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/InheritanceUpdate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex1/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/SymbolTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +244,7 @@
       <workItem from="1604568403184" duration="525000" />
       <workItem from="1604568937897" duration="759000" />
       <workItem from="1604757726018" duration="14537000" />
-      <workItem from="1604860513491" duration="4911000" />
+      <workItem from="1604860513491" duration="10194000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -267,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604569452705</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added table">
+      <created>1604865550080</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604865550080</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +296,8 @@
     <MESSAGE value="remove print for check repo" />
     <MESSAGE value="removed check" />
     <MESSAGE value="First try of AstVarVisitor - works for field.java.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="First try of AstVarVisitor - works for field.java.xml" />
+    <MESSAGE value="added table" />
+    <option name="LAST_COMMIT_MESSAGE" value="added table" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1604401568548">
@@ -378,10 +386,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604759608741" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604569404396">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604870684314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604569404396" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604870684314" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604402464856" />
   </component>
   <component name="XDebuggerManager">

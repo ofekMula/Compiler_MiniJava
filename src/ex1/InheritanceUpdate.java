@@ -13,6 +13,7 @@ public class InheritanceUpdate {
         this.classesToTables = classesToTables;
         this.root = prog;
     }
+
     public void updateChildren(){
         String id;
         Symbol symbol;
@@ -30,4 +31,5 @@ public class InheritanceUpdate {
             }
         }
     }
+
 }
