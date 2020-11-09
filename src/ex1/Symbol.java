@@ -6,17 +6,17 @@ public class Symbol {
     String id;
     SymbolDeclKinds kind;
     AstNode decl;
-    SymbolTable table;
-    SymbolTable refTable;
+    SymbolTable insideTable;
+    SymbolTable thisScopeTable;
 
-    public Symbol(String id, SymbolDeclKinds kind, AstNode decl, SymbolTable table){
+    public Symbol(String id, SymbolDeclKinds kind, AstNode decl, SymbolTable insideTable){
         this.id = id;
         this.kind = kind;
         this.decl = decl;
-        this.table = table;
+        this.insideTable = insideTable;
     }
 
     public void setThisTableMethod(SymbolTable table){
-        this.refTable = table;
+        this.thisScopeTable = table;
     }
 }

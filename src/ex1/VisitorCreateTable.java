@@ -43,7 +43,6 @@ public class VisitorCreateTable implements Visitor {
 
             classdecl.accept(this);
         }
-        System.out.println("Done!");
     }
 
     @Override

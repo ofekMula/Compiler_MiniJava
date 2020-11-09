@@ -140,12 +140,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="added table">
-      <change afterPath="$PROJECT_DIR$/src/ex1/VisitorRenameVar.java" afterDir="false" />
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="First try of AstVarVisitor - works for field.java.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AstNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/AstNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex1/InheritanceUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/InheritanceUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex1/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/SymbolTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/Symbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorRenameVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorRenameVar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +165,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="ricky-try1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -206,20 +208,18 @@
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal print src/field.java.xml field_renamed.java.xml" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal rename var x 10 y src/field.java.xml field_renamed.java.xml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -245,6 +245,8 @@
       <workItem from="1604568937897" duration="759000" />
       <workItem from="1604757726018" duration="14537000" />
       <workItem from="1604860513491" duration="10194000" />
+      <workItem from="1604920932451" duration="123000" />
+      <workItem from="1604922428703" duration="1820000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -316,6 +318,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="790" y="213" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604401948099" />
+    <state x="456" y="89" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604920119492">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="456" y="89" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604920119492" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604861383804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -328,42 +334,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604401957728" />
-    <state width="1877" height="445" key="GridCell.Tab.0.bottom" timestamp="1604864596966">
+    <state width="1877" height="435" key="GridCell.Tab.0.bottom" timestamp="1604924133865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="445" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596966" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
-    <state width="1877" height="445" key="GridCell.Tab.0.center" timestamp="1604864596965">
+    <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604924133865" />
+    <state width="1877" height="444" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
+    <state width="1877" height="435" key="GridCell.Tab.0.center" timestamp="1604924133865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="445" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596965" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
-    <state width="1877" height="445" key="GridCell.Tab.0.left" timestamp="1604864596965">
+    <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604924133865" />
+    <state width="1877" height="444" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
+    <state width="1877" height="435" key="GridCell.Tab.0.left" timestamp="1604924133864">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="445" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596965" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
-    <state width="1877" height="445" key="GridCell.Tab.0.right" timestamp="1604864596965">
+    <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604924133864" />
+    <state width="1877" height="444" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
+    <state width="1877" height="435" key="GridCell.Tab.0.right" timestamp="1604924133865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="445" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596965" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
-    <state width="1877" height="445" key="GridCell.Tab.1.bottom" timestamp="1604864596966">
+    <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604924133865" />
+    <state width="1877" height="444" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
+    <state width="1877" height="2" key="GridCell.Tab.1.bottom" timestamp="1604923516808">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="445" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596966" />
-    <state width="1877" height="445" key="GridCell.Tab.1.center" timestamp="1604864596966">
+    <state width="1877" height="2" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604923516808" />
+    <state width="1877" height="444" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
+    <state width="1877" height="2" key="GridCell.Tab.1.center" timestamp="1604923516808">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="445" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596966" />
-    <state width="1877" height="445" key="GridCell.Tab.1.left" timestamp="1604864596966">
+    <state width="1877" height="2" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604923516808" />
+    <state width="1877" height="444" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
+    <state width="1877" height="2" key="GridCell.Tab.1.left" timestamp="1604923516807">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="445" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596966" />
-    <state width="1877" height="445" key="GridCell.Tab.1.right" timestamp="1604864596966">
+    <state width="1877" height="2" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604923516807" />
+    <state width="1877" height="444" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
+    <state width="1877" height="2" key="GridCell.Tab.1.right" timestamp="1604923516808">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="445" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604864596966" />
+    <state width="1877" height="2" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604923516808" />
+    <state width="1877" height="444" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
     <state x="789" y="222" key="RollbackChangesDialog" timestamp="1604402445531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -393,8 +403,26 @@
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604402464856" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
+          <line>19</line>
+          <properties class="ex1.VisitorRenameVar" method="isNeedToRename">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
         <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
       </pinned-members>
     </pin-to-top-manager>

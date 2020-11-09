@@ -4,9 +4,12 @@ import ast.*;
 
 public class VisitorRenameVar implements Visitor {
     Symbol symbolOfVarToRename;
+    VarDecl varDeclToRename;
+    FormalArg formalArgToRename; // we need access to formalArg or varDecl inorder to change the name, not the ast node
     String prevNameOfVar;
     String newNameOfVar;
     int lineNumber;
+    boolean isFound = false;
 
     public VisitorRenameVar(String prevNameOfVar, String newNameOfVar, int lineNumber){
         this.prevNameOfVar = prevNameOfVar;
@@ -14,17 +17,47 @@ public class VisitorRenameVar implements Visitor {
         this.lineNumber = lineNumber;
     }
 
-    private void visitBinaryExpr(BinaryExpr e, String infixSymbol) {
-        e.e1().accept(this);
-        e.e2().accept(this);
+    public boolean isNeedToRename(String name, SymbolTable table) {
+        if (name.equals(prevNameOfVar)) {
+            table = table.getParentSymbolTable();
+            if (table.isContainsId(prevNameOfVar)) {
+                if (table.getById(prevNameOfVar).decl.lineNumber == lineNumber) {
+                    return true;
+                } else {
+                    return false; // this x shadows all higher x's
+                }
+            } else {
+                if (table.getScopeType() == Scopes.MethodScope) { // is parent a method
+                    table = table.getParentSymbolTable(); // go to grand parent - a class
+                    if (table.isContainsId(prevNameOfVar)) {
+                        if (table.getById(prevNameOfVar).decl.lineNumber == lineNumber) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    } else {
+                        System.out.println("BUGGGG!!! ");
+                    }
+                }
+            }
+        }
+        return false;
     }
-
 
     @Override
     public void visit(Program program) {
         program.mainClass().accept(this);
         for (ClassDecl classdecl : program.classDecls()) {
             classdecl.accept(this);
+        }
+        if (isFound){
+            if (varDeclToRename != null){
+                varDeclToRename.setName(newNameOfVar);
+            } else if (formalArgToRename != null) {
+                formalArgToRename.setName(newNameOfVar);
+            } else {
+                System.out.println("BUGGGG!!!!");
+            }
         }
     }
 
@@ -33,6 +66,8 @@ public class VisitorRenameVar implements Visitor {
         for (var fieldDecl : classDecl.fields()) {
             if (fieldDecl.name().equals(prevNameOfVar) && fieldDecl.lineNumber.equals(lineNumber)){
                 symbolOfVarToRename = fieldDecl.table().getById(fieldDecl.name());
+                isFound = true;
+                varDeclToRename = fieldDecl;
             }
             fieldDecl.accept(this);
         }
@@ -67,6 +102,8 @@ public class VisitorRenameVar implements Visitor {
     public void visit(FormalArg formalArg) {
         if (formalArg.name().equals(prevNameOfVar) && formalArg.lineNumber.equals(lineNumber)){
             symbolOfVarToRename = formalArg.table().getById(formalArg.name());
+            isFound = true;
+            formalArgToRename = formalArg;
         }
         formalArg.type().accept(this);
     }
@@ -75,6 +112,8 @@ public class VisitorRenameVar implements Visitor {
     public void visit(VarDecl varDecl) {
         if (varDecl.name().equals(prevNameOfVar) && varDecl.lineNumber.equals(lineNumber)){
             symbolOfVarToRename = varDecl.table().getById(varDecl.name());
+            isFound = true;
+            varDeclToRename = varDecl;
         }
         varDecl.type().accept(this);
     }
@@ -105,7 +144,7 @@ public class VisitorRenameVar implements Visitor {
     }
 
     @Override
-    public void visit(AssignStatement assignStatement) { // x = 6; x
+    public void visit(AssignStatement assignStatement) {
         SymbolTable table = assignStatement.table();
         if (assignStatement.lv().equals(prevNameOfVar)) {
             if (isNeedToRename(assignStatement.lv(), table))
@@ -114,62 +153,45 @@ public class VisitorRenameVar implements Visitor {
         assignStatement.rv().accept(this);
     }
 
-    public boolean isNeedToRename(String name, SymbolTable table){
-        if (name.equals(prevNameOfVar)) {
-            if (isVarDeclByTable(name, table.getParentSymbolTable())) {
-                return true;
-            }
-            else if (table.getScopeType() == Scopes.MethodScope) {
-                table = table.getParentSymbolTable();
-                return isVarDeclByTable(name, table.getParentSymbolTable());
-            }
-            else {
-                System.out.println("BUG!!!!!!!!!! - isNeedToRename " + name); //TODO: delete this
-            }
-        }
-        return false;
-    }
-
-    public boolean isVarDeclByTable(String nameOfVar, SymbolTable table){
-        if (nameOfVar.equals(prevNameOfVar)){
-            if (table.isContainsId(prevNameOfVar)){
-                if (table.getById(prevNameOfVar).decl.lineNumber == lineNumber)
-                    return true;
-            }
-        }
-        return false;
-    }
-
     @Override
     public void visit(AssignArrayStatement assignArrayStatement) {
-        // assignArrayStatement.lv()
+        SymbolTable table = assignArrayStatement.table();
+        if (assignArrayStatement.lv().equals(prevNameOfVar)) {
+            if (isNeedToRename(assignArrayStatement.lv(), table))
+                assignArrayStatement.setLv(newNameOfVar);
+        }
         assignArrayStatement.index().accept(this);
         assignArrayStatement.rv().accept(this);
     }
 
+    private void visitBinaryExpr(BinaryExpr e) {
+        e.e1().accept(this);
+        e.e2().accept(this);
+    }
+
     @Override
     public void visit(AndExpr e) {
-        visitBinaryExpr(e, "&&");
+        visitBinaryExpr(e);
     }
 
     @Override
     public void visit(LtExpr e) {
-        visitBinaryExpr(e, "<");;
+        visitBinaryExpr(e);
     }
 
     @Override
     public void visit(AddExpr e) {
-        visitBinaryExpr(e, "+");;
+        visitBinaryExpr(e);
     }
 
     @Override
     public void visit(SubtractExpr e) {
-        visitBinaryExpr(e, "-");
+        visitBinaryExpr(e);
     }
 
     @Override
     public void visit(MultExpr e) {
-        visitBinaryExpr(e, "*");
+        visitBinaryExpr(e);
     }
 
     @Override
@@ -206,6 +228,10 @@ public class VisitorRenameVar implements Visitor {
 
     @Override
     public void visit(IdentifierExpr e) {
+        SymbolTable table = e.table();
+        if (e.id().equals(prevNameOfVar))
+            if (isNeedToRename(e.id(), table))
+                e.setId(newNameOfVar);
     }
 
     public void visit(ThisExpr e) {
@@ -239,5 +265,9 @@ public class VisitorRenameVar implements Visitor {
 
     @Override
     public void visit(RefType t) {
+        SymbolTable table = t.table();
+        if (t.id().equals(prevNameOfVar))
+            if (isNeedToRename(t.id(), table))
+                t.setId(newNameOfVar);
     }
 }

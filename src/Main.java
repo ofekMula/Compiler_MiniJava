@@ -57,19 +57,22 @@ public class Main {
                     } else if (type.equals("method")) {
                         isMethod = true;
                     } else {
-                        VisitorCreateTable builderVisitor = new VisitorCreateTable();
-                        builderVisitor.visit(prog);
-                        InheritanceUpdate inheritanceUpdater = new InheritanceUpdate(builderVisitor.classesToTables, prog);
-                        inheritanceUpdater.updateChildren();
-                        if (!isMethod){
-                            VisitorRenameVar visitorRenameVar = new VisitorRenameVar(originalName, newName, Integer.parseInt(originalLine));
-                            visitorRenameVar.visit(prog);
-                        }
                         throw new IllegalArgumentException("unknown rename type " + type);
                     }
-
-                    throw new UnsupportedOperationException("TODO - Ex. 1");
-
+                    VisitorCreateTable builderVisitor = new VisitorCreateTable();
+                    builderVisitor.visit(prog);
+                    InheritanceUpdate inheritanceUpdater = new InheritanceUpdate(builderVisitor.classesToTables, prog);
+                    inheritanceUpdater.updateChildren();
+                    if (!isMethod){
+                        VisitorRenameVar visitorRenameVar = new VisitorRenameVar(originalName, newName, Integer.parseInt(originalLine));
+                        visitorRenameVar.visit(prog);
+                    } else {
+                        // method visitor
+                        throw new UnsupportedOperationException("TODO - Ex. 1");
+                    }
+                    // convert ast to xml
+                    AstXMLSerializer xmlSerializer = new AstXMLSerializer();
+                    xmlSerializer.serialize(prog, outfilename);
                 } else {
                     throw new IllegalArgumentException("unknown command line action " + action);
                 }
