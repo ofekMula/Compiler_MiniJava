@@ -67,10 +67,10 @@ public class Main {
                         VisitorRenameVar visitorRenameVar = new VisitorRenameVar(originalName, newName, Integer.parseInt(originalLine));
                         visitorRenameVar.visit(prog);
                     } else {
-                        // method visitor
+                         //method visitor
                         throw new UnsupportedOperationException("TODO - Ex. 1");
                     }
-                    // convert ast to xml
+                     //convert ast to xml
                     AstXMLSerializer xmlSerializer = new AstXMLSerializer();
                     xmlSerializer.serialize(prog, outfilename);
                 } else {
