@@ -15,138 +15,63 @@
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:DudaRoot" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:DudaRoot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:client" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:DudaRoot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:client" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:build" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:DudaRoot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:client" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:legacy-apps" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:DudaRoot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:client" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:legacy-apps" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:blog" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:DudaRoot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:client" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:legacy-apps" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dashboard" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:DudaRoot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:client" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:legacy-apps" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:duda-templates-admin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:DudaRoot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:client" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:legacy-apps" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:push-notifs-dashboard" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:DudaRoot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:client" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:src" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:build" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:build" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:compile-sass" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="files to git">
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/resolve_fields.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/resolve_fields.java.xml" afterDir="false" />
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/tests_ex1/array_field.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests_ex1/array_field.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests_ex1/bool_field_statement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests_ex1/bool_field_statement.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/field_renamed.java.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local_var.java.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/Lexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/Lexer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Compiler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/param.java.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/Parser$CUP$Parser$actions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/Parser$CUP$Parser$actions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AddExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/AddExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AndExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/AndExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/ArrayAccessExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/ArrayAccessExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/ArrayLengthExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/ArrayLengthExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AssignArrayStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/AssignArrayStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AssignStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/AssignStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AstNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/AstNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AstType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/AstType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/BinaryExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/BinaryExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/BlockStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/BlockStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/BoolAstType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/BoolAstType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/ClassDecl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/ClassDecl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/Expr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/Expr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/FalseExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/FalseExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/FormalArg.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/FormalArg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/IdentifierExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/IdentifierExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/IfStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/IfStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/IntArrayAstType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/IntArrayAstType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/IntAstType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/IntAstType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/IntegerLiteralExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/IntegerLiteralExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/LtExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/LtExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/MainClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/MethodCallExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/MethodCallExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/MethodDecl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/MethodDecl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/MultExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/MultExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/NewIntArrayExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/NewIntArrayExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/NewObjectExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/NewObjectExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/NotExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/NotExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/RefType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/RefType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/Statement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/Statement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/SubtractExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/SubtractExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/SysoutStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/SysoutStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/ThisExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/ThisExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/TrueExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/TrueExpr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/VarDecl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/VarDecl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/VariableIntroduction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/VariableIntroduction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/WhileStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/ast/WhileStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/sym.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler/sym.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,20 +81,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
-        <option value="Tag Library Descriptor" />
         <option value="Class" />
+        <option value="Enum" />
+        <option value="module-info" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ricky-try1" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -189,33 +115,28 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/tests_ex1" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\src\duda\Compiler\src\tests_ex1" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\src\tests_ex1" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\src\duda\Compiler\src" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\src\tests_ex1" />
       <recent name="C:\src\duda\Compiler" />
+      <recent name="C:\src\duda\Compiler\src" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal rename var x 5 y src/resolve_fields.java.xml resolve_fields.java.xml" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -223,6 +144,14 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Compiler" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal print src/tests_ex1/array_field.xml res.java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -247,15 +176,6 @@
       <workItem from="1604568403184" duration="525000" />
       <workItem from="1604568937897" duration="759000" />
       <workItem from="1604757726018" duration="14537000" />
-      <workItem from="1604860513491" duration="10194000" />
-      <workItem from="1604920932451" duration="123000" />
-      <workItem from="1604922428703" duration="1858000" />
-      <workItem from="1604942323376" duration="158000" />
-      <workItem from="1604942494481" duration="298000" />
-      <workItem from="1604942810496" duration="391000" />
-      <workItem from="1604943216666" duration="3187000" />
-      <workItem from="1604947620353" duration="108000" />
-      <workItem from="1604947740523" duration="653000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -278,35 +198,7 @@
       <option name="project" value="LOCAL" />
       <updated>1604569452705</updated>
     </task>
-    <task id="LOCAL-00004" summary="added table">
-      <created>1604865550080</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1604865550080</updated>
-    </task>
-    <task id="LOCAL-00005" summary="fixed bug">
-      <created>1604924274806</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1604924274806</updated>
-    </task>
-    <task id="LOCAL-00006" summary="outputs from run">
-      <created>1604943395986</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1604943395986</updated>
-    </task>
-    <task id="LOCAL-00007" summary="files to git">
-      <created>1604943452408</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1604943452408</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,85 +220,94 @@
     <MESSAGE value="remove print for check repo" />
     <MESSAGE value="removed check" />
     <MESSAGE value="First try of AstVarVisitor - works for field.java.xml" />
-    <MESSAGE value="added table" />
-    <MESSAGE value="fixed bug" />
-    <MESSAGE value="outputs from run" />
-    <MESSAGE value="files to git" />
-    <option name="LAST_COMMIT_MESSAGE" value="files to git" />
+    <option name="LAST_COMMIT_MESSAGE" value="First try of AstVarVisitor - works for field.java.xml" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1604401568548">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1604401568548" />
-    <state x="714" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604945579397">
+    <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605220805680">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1605207657430" />
+    <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1605220805680" />
+    <state x="714" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604414099708">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="714" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604945579397" />
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1604860615395">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="714" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604414099708" />
+    <state x="421" y="45" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1605207722827">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604860615395" />
+    <state x="421" y="45" key="#com.intellij.ide.macro.MacrosDialog/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1605207722827" />
     <state x="790" y="213" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1604401948099">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="790" y="213" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604401948099" />
-    <state x="456" y="89" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604920119492">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604414017166">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="456" y="89" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604920119492" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604861383804">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604861383804" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604414017166" />
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1604401950286">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604401950286" />
+    <state x="389" y="196" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605220620525">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="389" y="196" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1605220620525" />
     <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1604401957728">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604401957728" />
-    <state width="1877" height="435" key="GridCell.Tab.0.bottom" timestamp="1604948184912">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="614" height="131" key="GridCell.Tab.0.bottom" timestamp="1605220808559">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604948184912" />
-    <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482022" />
-    <state width="1877" height="435" key="GridCell.Tab.0.center" timestamp="1604948184912">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="614" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1605207662410" />
+    <state width="614" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605220808559" />
+    <state width="1877" height="671" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273789" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
+    <state width="614" height="131" key="GridCell.Tab.0.center" timestamp="1605220808559">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604948184912" />
-    <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482021" />
-    <state width="1877" height="435" key="GridCell.Tab.0.left" timestamp="1604948184912">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="614" height="131" key="GridCell.Tab.0.center/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1605207662409" />
+    <state width="614" height="131" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605220808559" />
+    <state width="1877" height="671" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273789" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
+    <state width="614" height="131" key="GridCell.Tab.0.left" timestamp="1605220808559">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604948184912" />
-    <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482021" />
-    <state width="1877" height="435" key="GridCell.Tab.0.right" timestamp="1604948184912">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="614" height="131" key="GridCell.Tab.0.left/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1605207662408" />
+    <state width="614" height="131" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605220808559" />
+    <state width="1877" height="671" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273789" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
+    <state width="614" height="131" key="GridCell.Tab.0.right" timestamp="1605220808559">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604948184912" />
-    <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482021" />
-    <state width="1877" height="379" key="GridCell.Tab.1.bottom" timestamp="1604947981975">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="614" height="131" key="GridCell.Tab.0.right/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1605207662409" />
+    <state width="614" height="131" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605220808559" />
+    <state width="1877" height="671" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273789" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604405206633" />
+    <state width="618" height="204" key="GridCell.Tab.1.bottom" timestamp="1605216512157">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1877" height="379" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604947981975" />
-    <state width="1877" height="444" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
-    <state width="1877" height="379" key="GridCell.Tab.1.center" timestamp="1604947981975">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="618" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605216512157" />
+    <state width="1877" height="671" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273790" />
+    <state width="618" height="204" key="GridCell.Tab.1.center" timestamp="1605216512157">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1877" height="379" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604947981975" />
-    <state width="1877" height="444" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
-    <state width="1877" height="379" key="GridCell.Tab.1.left" timestamp="1604947981975">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="618" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1605216512157" />
+    <state width="1877" height="671" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273790" />
+    <state width="618" height="204" key="GridCell.Tab.1.left" timestamp="1605216512157">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1877" height="379" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604947981975" />
-    <state width="1877" height="444" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
-    <state width="1877" height="379" key="GridCell.Tab.1.right" timestamp="1604947981975">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="618" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1605216512157" />
+    <state width="1877" height="671" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273790" />
+    <state width="618" height="204" key="GridCell.Tab.1.right" timestamp="1605216512157">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1877" height="379" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604947981975" />
-    <state width="1877" height="444" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
+    <state width="618" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1605216512157" />
+    <state width="1877" height="671" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604772273790" />
     <state x="789" y="222" key="RollbackChangesDialog" timestamp="1604402445531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -415,15 +316,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604401954046" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1604943454106">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1604569454276">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604943454106" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604569454276" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604402473210" />
-    <state x="485" y="256" width="950" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604947174543">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="485" y="256" width="950" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604947174543" />
     <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1604567524001">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -433,50 +330,39 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604759608741" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604943440504">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604569404396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604943440504" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604569404396" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604402464856" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>19</line>
-          <properties class="ex1.VisitorRenameVar" method="isNeedToRename">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="26" />
+          <line>36</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="27" />
+          <url>file://$PROJECT_DIR$/src/ex1/VisitorCreateTable.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ast/AssignArrayStatement.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
-        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
         <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1604418335088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
