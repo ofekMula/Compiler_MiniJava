@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<program>
+    <mainclass>
+        <lineNumber>1</lineNumber>
+        <name>Main</name>
+        <argsName>args</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <true/>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>A</name>
+            <fields/>
+            <methoddecls>
+                <methoddecl>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>bar</name>
+                    <formals>
+                        <formal>
+                            <lineNumber>8</lineNumber>
+                            <type>
+<int/>
+                            </type>
+                            <name>new_x</name>
+                        </formal>
+                    </formals>
+                    <vardecls/>
+                    <body>
+                        <assign>
+                            <lv>new_x</lv>
+                            <rv>
+<int-literal>
+    <num>5</num>
+</int-literal>
+                            </rv>
+                        </assign>
+                    </body>
+                    <ret>
+                        <ref-id>
+                            <id>new_x</id>
+                        </ref-id>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<program>
+    <mainclass>
+        <lineNumber>1</lineNumber>
+        <name>Main</name>
+        <argsName>args</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <true/>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>class1</name>
+            <fields>
+                <field>
+                    <lineNumber>5</lineNumber>
+                    <type>
+                        <int/>
+                    </type>
+                    <name>x</name>
+                </field>
+            </fields>
+            <methoddecls/>
+        </classdecl>
+        <classdecl>
+            <name>class2</name>
+            <superName>class1</superName>
+            <fields>
+                <field>
+                    <lineNumber>7</lineNumber>
+                    <type>
+                        <int/>
+                    </type>
+                    <name>y</name>
+                </field>
+            </fields>
+            <methoddecls/>
+        </classdecl>
+        <classdecl>
+            <name>class3</name>
+            <superName>class2</superName>
+            <fields/>
+            <methoddecls>
+                <methoddecl>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>bar1</name>
+                    <formals/>
+                    <vardecls>
+                        <vardecl>
+                            <lineNumber>10</lineNumber>
+                            <type>
+<int/>
+                            </type>
+                            <name>x</name>
+                        </vardecl>
+                        <vardecl>
+                            <lineNumber>11</lineNumber>
+                            <type>
+<int/>
+                            </type>
+                            <name>new_y</name>
+                        </vardecl>
+                    </vardecls>
+                    <body>
+                        <assign>
+                            <lv>x</lv>
+                            <rv>
+<int-literal>
+    <num>5</num>
+</int-literal>
+                            </rv>
+                        </assign>
+                    </body>
+                    <ret>
+                        <ref-id>
+                            <id>new_y</id>
+                        </ref-id>
+                    </ret>
+                </methoddecl>
+                <methoddecl>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>bar2</name>
+                    <formals/>
+                    <vardecls/>
+                    <body>
+                        <assign>
+                            <lv>x</lv>
+                            <rv>
+<int-literal>
+    <num>1</num>
+</int-literal>
+                            </rv>
+                        </assign>
+                        <assign>
+                            <lv>y</lv>
+                            <rv>
+<int-literal>
+    <num>2</num>
+</int-literal>
+                            </rv>
+                        </assign>
+                    </body>
+                    <ret>
+                        <add>
+                            <e1>
+<ref-id>
+    <id>x</id>
+</ref-id>
+                            </e1>
+                            <e2>
+<ref-id>
+    <id>y</id>
+</ref-id>
+                            </e2>
+                        </add>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>
