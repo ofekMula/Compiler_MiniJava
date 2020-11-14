@@ -19,7 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="added test">
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="added rename">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +86,18 @@
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal rename var x 5 y src/resolve_fields.java.xml resolve_fields.java.xml" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal rename var x 5 y src/param.java.xml resolve_fields.java.xml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -230,25 +242,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604401957728" />
-    <state width="1877" height="435" key="GridCell.Tab.0.bottom" timestamp="1604948184912">
+    <state width="1877" height="435" key="GridCell.Tab.0.bottom" timestamp="1605374496977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604948184912" />
+    <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605374496977" />
     <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482022" />
-    <state width="1877" height="435" key="GridCell.Tab.0.center" timestamp="1604948184912">
+    <state width="1877" height="435" key="GridCell.Tab.0.center" timestamp="1605374496977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604948184912" />
+    <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605374496977" />
     <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482021" />
-    <state width="1877" height="435" key="GridCell.Tab.0.left" timestamp="1604948184912">
+    <state width="1877" height="435" key="GridCell.Tab.0.left" timestamp="1605374496977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604948184912" />
+    <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605374496977" />
     <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482021" />
-    <state width="1877" height="435" key="GridCell.Tab.0.right" timestamp="1604948184912">
+    <state width="1877" height="435" key="GridCell.Tab.0.right" timestamp="1605374496977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604948184912" />
+    <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605374496977" />
     <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482021" />
     <state width="1877" height="379" key="GridCell.Tab.1.bottom" timestamp="1604947981975">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -283,6 +295,10 @@
     </state>
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605371993841" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604402473210" />
+    <state x="832" y="364" key="cloudConfig.SelfSettingsDialog" timestamp="1605374480410">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="832" y="364" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605374480410" />
     <state x="485" y="256" width="950" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604947174543">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
