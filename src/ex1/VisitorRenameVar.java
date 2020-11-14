@@ -20,8 +20,8 @@ public class VisitorRenameVar implements Visitor {
     public boolean isNeedToRename(String name, SymbolTable table) {
         if (name.equals(prevNameOfVar)) {
             table = table.getParentSymbolTable();
-            if (table.isContainsId(prevNameOfVar)) {
-                if (table.getById(prevNameOfVar).decl.lineNumber == lineNumber) {
+            if (table.isContainsId(prevNameOfVar, SymbolType.VAR)) {
+                if (table.getById(prevNameOfVar, SymbolType.VAR).decl.lineNumber == lineNumber) {
                     return true;
                 } else {
                     return false; // this x shadows all higher x's
@@ -29,8 +29,8 @@ public class VisitorRenameVar implements Visitor {
             } else {
                 if (table.getScopeType() == Scopes.MethodScope) { // is parent a method
                     table = table.getParentSymbolTable(); // go to grand parent - a class
-                    if (table.isContainsId(prevNameOfVar)) {
-                        if (table.getById(prevNameOfVar).decl.lineNumber == lineNumber) {
+                    if (table.isContainsId(prevNameOfVar, SymbolType.VAR)) {
+                        if (table.getById(prevNameOfVar, SymbolType.VAR).decl.lineNumber == lineNumber) {
                             return true;
                         } else {
                             return false;
@@ -65,7 +65,7 @@ public class VisitorRenameVar implements Visitor {
     public void visit(ClassDecl classDecl) {
         for (var fieldDecl : classDecl.fields()) {
             if (fieldDecl.name().equals(prevNameOfVar) && fieldDecl.lineNumber.equals(lineNumber)){
-                symbolOfVarToRename = fieldDecl.table().getById(fieldDecl.name());
+                symbolOfVarToRename = fieldDecl.table().getById(fieldDecl.name(), SymbolType.VAR);
                 isFound = true;
                 varDeclToRename = fieldDecl;
             }
@@ -101,7 +101,7 @@ public class VisitorRenameVar implements Visitor {
     @Override
     public void visit(FormalArg formalArg) {
         if (formalArg.name().equals(prevNameOfVar) && formalArg.lineNumber.equals(lineNumber)){
-            symbolOfVarToRename = formalArg.table().getById(formalArg.name());
+            symbolOfVarToRename = formalArg.table().getById(formalArg.name(), SymbolType.VAR);
             isFound = true;
             formalArgToRename = formalArg;
         }
@@ -111,7 +111,7 @@ public class VisitorRenameVar implements Visitor {
     @Override
     public void visit(VarDecl varDecl) {
         if (varDecl.name().equals(prevNameOfVar) && varDecl.lineNumber.equals(lineNumber)){
-            symbolOfVarToRename = varDecl.table().getById(varDecl.name());
+            symbolOfVarToRename = varDecl.table().getById(varDecl.name(), SymbolType.VAR);
             isFound = true;
             varDeclToRename = varDecl;
         }

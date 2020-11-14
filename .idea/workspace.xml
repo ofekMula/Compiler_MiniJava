@@ -20,7 +20,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="added test">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ex1/SymbolKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ex1/SymbolType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/Lexer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/Parser$CUP$Parser$actions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/Parser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AddExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AndExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/ArrayAccessExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/ArrayLengthExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AssignArrayStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AssignStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AstNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AstPrintVisitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AstType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AstTypeWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/AstXMLSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/BinaryExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/BlockStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/BoolAstType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/ClassDecl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/Expr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/ExprWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/FalseExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/FormalArg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/IdentifierExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/IfStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/IntArrayAstType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/IntAstType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/IntegerLiteralExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/LtExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/MainClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/MethodCallExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/MethodDecl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/MultExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/NewIntArrayExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/NewObjectExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/NotExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/Program.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/RefType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/Statement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/StatementWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/SubtractExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/SysoutStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/ThisExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/TrueExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/VarDecl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/VariableIntroduction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/Visitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/ast/WhileStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler/sym.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/InheritanceUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/InheritanceUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/SymbolTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorRenameVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorRenameVar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +88,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Tag Library Descriptor" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -39,7 +97,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ricky-try1" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,9 +123,10 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -85,7 +144,18 @@
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal rename var x 5 y src/resolve_fields.java.xml resolve_fields.java.xml" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal rename var x 10 y src/field.java.xml field_renamed.java.xml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -119,6 +189,8 @@
       <workItem from="1604943216666" duration="3187000" />
       <workItem from="1604947620353" duration="108000" />
       <workItem from="1604947740523" duration="653000" />
+      <workItem from="1605372125176" duration="74000" />
+      <workItem from="1605372212290" duration="2203000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -169,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604943452408</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added test">
+      <created>1605372155512</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1605372155512</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +274,8 @@
     <MESSAGE value="fixed bug" />
     <MESSAGE value="outputs from run" />
     <MESSAGE value="files to git" />
-    <option name="LAST_COMMIT_MESSAGE" value="files to git" />
+    <MESSAGE value="added test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1604401568548">
@@ -270,58 +350,50 @@
     </state>
     <state width="1877" height="379" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604947981975" />
     <state width="1877" height="444" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
+    <state x="540" y="263" key="IDE.errors.dialog" timestamp="1605372166486">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="263" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605372166486" />
     <state x="789" y="222" key="RollbackChangesDialog" timestamp="1604402445531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="789" y="222" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604402445531" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1604401954046">
+    <state x="440" y="94" key="SettingsEditor" timestamp="1605374416398">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605374416398" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604401954046" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1605371993841">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1605372157427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605371993841" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605372157427" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604402473210" />
     <state x="485" y="256" width="950" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604947174543">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="485" y="256" width="950" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604947174543" />
-    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1604567524001">
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1605373995414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604567524001" />
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605373995414" />
     <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604564631353" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1604759608741">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604759608741" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605372100356">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605372589853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605372100356" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605372589853" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604402464856" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>19</line>
-          <properties class="ex1.VisitorRenameVar" method="isNeedToRename">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
           <line>66</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>

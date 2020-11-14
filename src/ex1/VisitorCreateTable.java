@@ -31,15 +31,15 @@ public class VisitorCreateTable implements Visitor {
         root = currTable; // only time
         lastVisited = currTable;
 
-        currSymbol = new Symbol(program.mainClass().name(), SymbolDeclKinds.Class, program.mainClass(), currTable); // ???
-        currTable.insert(program.mainClass().name(), currSymbol);
+        currSymbol = new Symbol(program.mainClass().name(), SymbolDeclKinds.Class, program.mainClass(), currTable);
+        currTable.insert(program.mainClass().name(), SymbolType.CLASS, currSymbol);
 
         program.mainClass().accept(this);
 
         for (ClassDecl classdecl : program.classDecls()) {
             lastVisited = currTable;
-            currSymbol = new Symbol(classdecl.name(), SymbolDeclKinds.Class, classdecl, currTable); // ???
-            currTable.insert(classdecl.name(), currSymbol);
+            currSymbol = new Symbol(classdecl.name(), SymbolDeclKinds.Class, classdecl, currTable);
+            currTable.insert(classdecl.name(), SymbolType.CLASS, currSymbol);
 
             classdecl.accept(this);
         }
@@ -52,7 +52,7 @@ public class VisitorCreateTable implements Visitor {
         currTable.setScopeType(Scopes.ClassScope);
         currTable.setScopeName(classDecl.name());
         currTable.setParentSymbolTable(lastVisited);
-        lastVisited.setById(classDecl.name(), currTable);
+        lastVisited.setById(classDecl.name(), SymbolType.CLASS, currTable);
         lastVisited = currTable;
         classesToTables.put(classDecl.name(), currTable);
 
@@ -67,7 +67,7 @@ public class VisitorCreateTable implements Visitor {
         for (var fieldDecl : classDecl.fields()) {
             name = fieldDecl.name();
             currSymbol = new Symbol(name, SymbolDeclKinds.FieldVar, fieldDecl, currTable);
-            currTable.insert(name, currSymbol);
+            currTable.insert(name, SymbolType.VAR, currSymbol);
 
             fieldDecl.accept(this);
         }
@@ -77,7 +77,7 @@ public class VisitorCreateTable implements Visitor {
             System.out.println("name in class: " + name);
             System.out.println("insert in: " + currTable.getScopeName());
             currSymbol = new Symbol(name, SymbolDeclKinds.Method, methodDecl, currTable);
-            currTable.insert(name, currSymbol);
+            currTable.insert(name, SymbolType.METHOD, currSymbol);
 
             methodDecl.accept(this);
         }
@@ -104,7 +104,7 @@ public class VisitorCreateTable implements Visitor {
         currTable.setParentSymbolTable(lastVisited);
         System.out.println("name in method: " + methodDecl.name());
         System.out.println("looked in: " + lastVisited.getScopeName());
-        lastVisited.setById(methodDecl.name(), currTable);
+        lastVisited.setById(methodDecl.name(), SymbolType.METHOD, currTable);
         lastVisited = currTable;
 
         methodDecl.returnType().accept(this);
@@ -113,7 +113,7 @@ public class VisitorCreateTable implements Visitor {
         for (var formal : methodDecl.formals()) {
             name = formal.name();
             currSymbol = new Symbol(name, SymbolDeclKinds.FormalArgsVar, formal, currTable);
-            currTable.insert(name, currSymbol);
+            currTable.insert(name, SymbolType.VAR ,currSymbol);
 
             formal.accept(this);
         }
@@ -121,7 +121,7 @@ public class VisitorCreateTable implements Visitor {
         for (var varDecl : methodDecl.vardecls()) {
             name = varDecl.name();
             currSymbol = new Symbol(name, SymbolDeclKinds.LocalVar, varDecl, currTable);
-            currTable.insert(name, currSymbol);
+            currTable.insert(name, SymbolType.VAR, currSymbol);
 
             varDecl.accept(this);
         }

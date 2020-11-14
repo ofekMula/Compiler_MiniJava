@@ -17,15 +17,17 @@ public class InheritanceUpdate {
     public void updateChildren(){
         String id;
         Symbol symbol;
+        SymbolType type;
         for (ClassDecl classdecl : root.classDecls()){
             SymbolTable curr = classesToTables.get(classdecl.name());
             if (curr.getSuperClassTable() != null){
                 SymbolTable superClassTable = curr.getSuperClassTable();
-                for (Map.Entry<String, Symbol> entry: superClassTable.getEntries().entrySet()){
-                    id = entry.getKey();
+                for (Map.Entry<SymbolKey, Symbol> entry: superClassTable.getEntries().entrySet()){
+                    id = entry.getKey().getName();
+                    type = entry.getKey().getType();
                     symbol = entry.getValue();
-                    if (!curr.isContainsId(id)) {
-                        curr.insert(id, symbol);
+                    if (!curr.isContainsId(id, type)) {
+                        curr.insert(id, type, symbol);
                     }
                 }
             }
