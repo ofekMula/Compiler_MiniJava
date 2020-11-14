@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SymbolTable {
-    private Map<String,Symbol> entries;
+    private Map<SymbolKey,Symbol> entries;
     private SymbolTable parentSymbolTable;
     private String scopeName;
     private Scopes scopeType;
@@ -17,25 +17,25 @@ public class SymbolTable {
         subClassTable = new ArrayList<>();
     }
 
-    public void insert(String name, Symbol symbol){
-        entries.put(name, symbol);
+    public void insert(String name, SymbolType type, Symbol symbol){
+        entries.put(new SymbolKey(name, type), symbol);
     }
 
-    public void setById(String id, SymbolTable currTable){
-        Symbol currSymbol = entries.get(id);
+    public void setById(String id, SymbolType type, SymbolTable currTable){
+        Symbol currSymbol = entries.get(new SymbolKey(id, type));
         currSymbol.setThisTableMethod(currTable);
     }
 
-    public Symbol getById(String id){
-        return entries.get(id);
+    public Symbol getById(String id, SymbolType type){
+        return entries.get(new SymbolKey(id, type));
     }
 
-    public Map<String,Symbol> getEntries(){
+    public Map<SymbolKey,Symbol> getEntries(){
         return entries;
     }
 
-    public boolean isContainsId(String id){
-        return entries.containsKey(id);
+    public boolean isContainsId(String id, SymbolType type){
+        return entries.containsKey(new SymbolKey(id, type));
     }
 
     public void setScopeName(String scopeName) {
@@ -78,11 +78,4 @@ public class SymbolTable {
         return superClassTable;
     }
 
-//    public Symbol varLookUp(String nameVar){
-//        // TODO: is id enough? - or can be method & var & class with the same name
-//    }
-//
-//    public Symbol methodLookUp(String nameMethod){
-//        // TODO: is id enough? - or can be method & var & class with the same name
-//    }
 }
