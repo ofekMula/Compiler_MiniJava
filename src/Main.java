@@ -3,6 +3,7 @@ import ast.AstXMLSerializer;
 import ast.Program;
 import ex1.InheritanceUpdate;
 import ex1.VisitorCreateTable;
+import ex1.VisitorRenameMethod;
 import ex1.VisitorRenameVar;
 
 import java.io.File;
@@ -67,8 +68,8 @@ public class Main {
                         VisitorRenameVar visitorRenameVar = new VisitorRenameVar(originalName, newName, Integer.parseInt(originalLine));
                         visitorRenameVar.visit(prog);
                     } else {
-                         //method visitor
-                        throw new UnsupportedOperationException("TODO - Ex. 1");
+                        VisitorRenameMethod visitorRenameMethod = new VisitorRenameMethod(builderVisitor.classesToTables, originalName, newName, Integer.parseInt(originalLine));
+                        visitorRenameMethod.visit(prog);
                     }
                      //convert ast to xml
                     AstXMLSerializer xmlSerializer = new AstXMLSerializer();

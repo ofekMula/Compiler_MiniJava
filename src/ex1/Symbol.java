@@ -4,15 +4,17 @@ import ast.AstNode;
 
 public class Symbol {
     String id;
-    SymbolDeclKinds kind;
+    SymbolType kind;
+    String symbolRefType;
     AstNode decl;
     SymbolTable insideTable;
     SymbolTable thisScopeTable;
 
-    public Symbol(String id, SymbolDeclKinds kind, AstNode decl, SymbolTable insideTable){
+    public Symbol(String id, SymbolType kind, AstNode decl, String symbolRefType, SymbolTable insideTable){
         this.id = id;
         this.kind = kind;
         this.decl = decl;
+        this.symbolRefType = symbolRefType;
         this.insideTable = insideTable;
     }
 

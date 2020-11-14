@@ -10,6 +10,7 @@ public class VisitorCreateTable implements Visitor {
     private SymbolTable lastVisited;
     private SymbolTable root;
     private Symbol currSymbol;
+    private String classRefName;
 
     private void visitBinaryExpr(BinaryExpr e, String infixSymbol) {
         e.e1().setTable(new SymbolTable());
@@ -31,14 +32,14 @@ public class VisitorCreateTable implements Visitor {
         root = currTable; // only time
         lastVisited = currTable;
 
-        currSymbol = new Symbol(program.mainClass().name(), SymbolDeclKinds.Class, program.mainClass(), currTable);
+        currSymbol = new Symbol(program.mainClass().name(), SymbolType.CLASS, program.mainClass(), "class", currTable);
         currTable.insert(program.mainClass().name(), SymbolType.CLASS, currSymbol);
 
         program.mainClass().accept(this);
 
         for (ClassDecl classdecl : program.classDecls()) {
             lastVisited = currTable;
-            currSymbol = new Symbol(classdecl.name(), SymbolDeclKinds.Class, classdecl, currTable);
+            currSymbol = new Symbol(classdecl.name(), SymbolType.CLASS, classdecl, "class", currTable);
             currTable.insert(classdecl.name(), SymbolType.CLASS, currSymbol);
 
             classdecl.accept(this);
@@ -65,21 +66,22 @@ public class VisitorCreateTable implements Visitor {
 
         String name;
         for (var fieldDecl : classDecl.fields()) {
-            name = fieldDecl.name();
-            currSymbol = new Symbol(name, SymbolDeclKinds.FieldVar, fieldDecl, currTable);
-            currTable.insert(name, SymbolType.VAR, currSymbol);
-
             fieldDecl.accept(this);
+
+            name = fieldDecl.name();
+            currSymbol = new Symbol(name, SymbolType.VAR, fieldDecl, classRefName, currTable);
+            currTable.insert(name, SymbolType.VAR, currSymbol);
         }
         for (var methodDecl : classDecl.methoddecls()) {
             lastVisited = currTable;
+            methodDecl.accept(this);
             name = methodDecl.name();
             System.out.println("name in class: " + name);
             System.out.println("insert in: " + currTable.getScopeName());
-            currSymbol = new Symbol(name, SymbolDeclKinds.Method, methodDecl, currTable);
+            currSymbol = new Symbol(name, SymbolType.VAR, methodDecl, "method", currTable);
             currTable.insert(name, SymbolType.METHOD, currSymbol);
 
-            methodDecl.accept(this);
+
         }
     }
 
@@ -111,19 +113,19 @@ public class VisitorCreateTable implements Visitor {
 
         String name;
         for (var formal : methodDecl.formals()) {
-            name = formal.name();
-            currSymbol = new Symbol(name, SymbolDeclKinds.FormalArgsVar, formal, currTable);
-            currTable.insert(name, SymbolType.VAR ,currSymbol);
-
             formal.accept(this);
+
+            name = formal.name();
+            currSymbol = new Symbol(name, SymbolType.VAR, formal, classRefName, currTable);
+            currTable.insert(name, SymbolType.VAR ,currSymbol);
         }
 
         for (var varDecl : methodDecl.vardecls()) {
-            name = varDecl.name();
-            currSymbol = new Symbol(name, SymbolDeclKinds.LocalVar, varDecl, currTable);
-            currTable.insert(name, SymbolType.VAR, currSymbol);
-
             varDecl.accept(this);
+
+            name = varDecl.name();
+            currSymbol = new Symbol(name, SymbolType.VAR, varDecl, classRefName, currTable);
+            currTable.insert(name, SymbolType.VAR, currSymbol);
         }
 
         for (var stmt : methodDecl.body()) {
@@ -297,25 +299,30 @@ public class VisitorCreateTable implements Visitor {
 
     @Override
     public void visit(IntAstType t) {
+        classRefName = "int";
         t.setTable(new SymbolTable());
         t.table().setParentSymbolTable(lastVisited);
     }
 
     @Override
     public void visit(BoolAstType t) {
+        classRefName = "boolean";
         t.setTable(new SymbolTable());
         t.table().setParentSymbolTable(lastVisited);
     }
 
     @Override
     public void visit(IntArrayAstType t) {
+        classRefName = "int-array";
         t.setTable(new SymbolTable());
         t.table().setParentSymbolTable(lastVisited);
     }
 
     @Override
     public void visit(RefType t) {
+        classRefName = t.id();
         t.setTable(new SymbolTable());
         t.table().setParentSymbolTable(lastVisited);
+
     }
 }

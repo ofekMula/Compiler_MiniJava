@@ -2,42 +2,36 @@ package ex1;
 
 import ast.*;
 
-public class VisitorRenameVar implements Visitor {
-    Symbol symbolOfVarToRename;
-    VariableIntroduction variableIntroductionToRename;
-    String prevNameOfVar;
-    String newNameOfVar;
+import java.util.Map;
+
+public class VisitorRenameMethod implements Visitor {
+    Symbol symbolOfMethodToRename;
+    String refIdName;
+    MethodDecl methodDeclToRename;
+    String prevNameOfMethod;
+    String newNameOfMethod;
+    Map<String, SymbolTable> classesToTables;
     int lineNumber;
     boolean isFound = false;
 
-    public VisitorRenameVar(String prevNameOfVar, String newNameOfVar, int lineNumber){
-        this.prevNameOfVar = prevNameOfVar;
-        this.newNameOfVar = newNameOfVar;
+    public VisitorRenameMethod(Map<String, SymbolTable> classesToTables, String prevNameOfMethod, String newNameOfMethod, int lineNumber){
+        this.prevNameOfMethod = prevNameOfMethod;
+        this.newNameOfMethod = newNameOfMethod;
         this.lineNumber = lineNumber;
+        this.classesToTables = classesToTables;
     }
 
     public boolean isNeedToRename(String name, SymbolTable table) {
-        if (name.equals(prevNameOfVar)) {
+        if (name.equals(prevNameOfMethod)) {
             table = table.getParentSymbolTable();
-            if (table.isContainsId(prevNameOfVar, SymbolType.VAR)) {
-                if (table.getById(prevNameOfVar, SymbolType.VAR).decl.lineNumber == lineNumber) {
+            if (table.isContainsId(prevNameOfMethod, SymbolType.METHOD)) { //table.getScopeType() == Scopes.ClassScope
+                if (table.getById(prevNameOfMethod, SymbolType.METHOD).decl.lineNumber == lineNumber) {
                     return true;
                 } else {
-                    return false; // this x shadows all higher x's
+                    return false; // this method shadows all higher method's
                 }
             } else {
-                if (table.getScopeType() == Scopes.MethodScope) { // is parent a method
-                    table = table.getParentSymbolTable(); // go to grand parent - a class
-                    if (table.isContainsId(prevNameOfVar, SymbolType.VAR)) {
-                        if (table.getById(prevNameOfVar, SymbolType.VAR).decl.lineNumber == lineNumber) {
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    } else {
-                        System.out.println("BUGGGG!!! ");
-                    }
-                }
+                System.out.println("BUGGGG!!! ");
             }
         }
         return false;
@@ -50,9 +44,9 @@ public class VisitorRenameVar implements Visitor {
             classdecl.accept(this);
         }
         if (isFound){
-            if (variableIntroductionToRename != null){
-                variableIntroductionToRename.setName(newNameOfVar);
-            } else {
+            if (methodDeclToRename != null){
+                methodDeclToRename.setName(newNameOfMethod);
+            } else{
                 System.out.println("BUGGGG!!!!");
             }
         }
@@ -61,14 +55,14 @@ public class VisitorRenameVar implements Visitor {
     @Override
     public void visit(ClassDecl classDecl) {
         for (var fieldDecl : classDecl.fields()) {
-            if (fieldDecl.name().equals(prevNameOfVar) && fieldDecl.lineNumber.equals(lineNumber)){
-                symbolOfVarToRename = fieldDecl.table().getById(fieldDecl.name(), SymbolType.VAR);
-                isFound = true;
-                variableIntroductionToRename = fieldDecl;
-            }
             fieldDecl.accept(this);
         }
         for (var methodDecl : classDecl.methoddecls()) {
+            if (methodDecl.name().equals(prevNameOfMethod) && methodDecl.lineNumber.equals(lineNumber)){
+                symbolOfMethodToRename = methodDecl.table().getById(methodDecl.name(), SymbolType.VAR);
+                isFound = true;
+                methodDeclToRename = methodDecl;
+            }
             methodDecl.accept(this);
         }
     }
@@ -97,21 +91,11 @@ public class VisitorRenameVar implements Visitor {
 
     @Override
     public void visit(FormalArg formalArg) {
-        if (formalArg.name().equals(prevNameOfVar) && formalArg.lineNumber.equals(lineNumber)){
-            symbolOfVarToRename = formalArg.table().getById(formalArg.name(), SymbolType.VAR);
-            isFound = true;
-            variableIntroductionToRename = formalArg;
-        }
         formalArg.type().accept(this);
     }
 
     @Override
     public void visit(VarDecl varDecl) {
-        if (varDecl.name().equals(prevNameOfVar) && varDecl.lineNumber.equals(lineNumber)){
-            symbolOfVarToRename = varDecl.table().getById(varDecl.name(), SymbolType.VAR);
-            isFound = true;
-            variableIntroductionToRename = varDecl;
-        }
         varDecl.type().accept(this);
     }
 
@@ -142,21 +126,11 @@ public class VisitorRenameVar implements Visitor {
 
     @Override
     public void visit(AssignStatement assignStatement) {
-        SymbolTable table = assignStatement.table();
-        if (assignStatement.lv().equals(prevNameOfVar)) {
-            if (isNeedToRename(assignStatement.lv(), table))
-                assignStatement.setLv(newNameOfVar);
-        }
         assignStatement.rv().accept(this);
     }
 
     @Override
     public void visit(AssignArrayStatement assignArrayStatement) {
-        SymbolTable table = assignArrayStatement.table();
-        if (assignArrayStatement.lv().equals(prevNameOfVar)) {
-            if (isNeedToRename(assignArrayStatement.lv(), table))
-                assignArrayStatement.setLv(newNameOfVar);
-        }
         assignArrayStatement.index().accept(this);
         assignArrayStatement.rv().accept(this);
     }
@@ -202,10 +176,29 @@ public class VisitorRenameVar implements Visitor {
         e.arrayExpr().accept(this);
     }
 
-    @Override
-    public void visit(MethodCallExpr e) {
-        e.ownerExpr().accept(this);
+    // A x;
+    // x.foo(); -> foo
+    //
 
+    @Override
+    public void visit(MethodCallExpr e) { //bool: A x; x.foo(); -> owner table is the table of A
+        e.ownerExpr().accept(this);
+        if (e.methodId().equals(prevNameOfMethod)) {
+            SymbolTable table;
+            if (refIdName.equals("this")){
+                table = e.table();
+                if (isNeedToRename(e.methodId(), table))
+                    e.setMethodId(newNameOfMethod);
+            } else { // or new or by var
+                table = e.table();
+                Symbol varClassDecl = table.getById(refIdName, SymbolType.VAR);
+                String className = varClassDecl.symbolRefType; // A
+                System.out.println("class ref name: " + className);
+                SymbolTable classRefTable = classesToTables.get(className);
+                if (isNeedToRename(e.methodId(), classRefTable))
+                    e.setMethodId(newNameOfMethod);
+            }
+        }
         for (Expr arg : e.actuals()) {
             arg.accept(this);
         }
@@ -225,13 +218,11 @@ public class VisitorRenameVar implements Visitor {
 
     @Override
     public void visit(IdentifierExpr e) {
-        SymbolTable table = e.table();
-        if (e.id().equals(prevNameOfVar))
-            if (isNeedToRename(e.id(), table))
-                e.setId(newNameOfVar);
+        refIdName = e.id();
     }
 
     public void visit(ThisExpr e) {
+        refIdName ="this";
     }
 
     @Override
@@ -241,6 +232,7 @@ public class VisitorRenameVar implements Visitor {
 
     @Override
     public void visit(NewObjectExpr e) {
+        refIdName = e.classId();
     }
 
     @Override
@@ -262,5 +254,10 @@ public class VisitorRenameVar implements Visitor {
 
     @Override
     public void visit(RefType t) {
+        SymbolTable table = t.table();
+        if (t.id().equals(prevNameOfMethod))
+            if (isNeedToRename(t.id(), table))
+                t.setId(newNameOfMethod);
     }
 }
+
