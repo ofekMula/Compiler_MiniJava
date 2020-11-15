@@ -7,6 +7,7 @@ import java.util.Map;
 public class VisitorRenameMethod implements Visitor {
     Symbol symbolOfMethodToRename;
     String refIdName;
+    String refIdType;
     MethodDecl methodDeclToRename;
     String prevNameOfMethod;
     String newNameOfMethod;
@@ -183,13 +184,20 @@ public class VisitorRenameMethod implements Visitor {
     @Override
     public void visit(MethodCallExpr e) { //bool: A x; x.foo(); -> owner table is the table of A
         e.ownerExpr().accept(this);
+        System.out.println(refIdName + refIdName);
         if (e.methodId().equals(prevNameOfMethod)) {
             SymbolTable table;
             if (refIdName.equals("this")){
                 table = e.table();
                 if (isNeedToRename(e.methodId(), table))
                     e.setMethodId(newNameOfMethod);
-            } else { // or new or by var
+            }
+            else if(refIdType.equals("new")){ // by new
+                table = classesToTables.get(refIdName);
+                if (isNeedToRename(e.methodId(), table))
+                    e.setMethodId(newNameOfMethod);
+            }
+            else { // by var
                 table = e.table();
                 Symbol varClassDecl = table.getById(refIdName, SymbolType.VAR);
                 String className = varClassDecl.symbolRefType; // A
@@ -219,10 +227,12 @@ public class VisitorRenameMethod implements Visitor {
     @Override
     public void visit(IdentifierExpr e) {
         refIdName = e.id();
+        refIdType = "id";
     }
 
     public void visit(ThisExpr e) {
         refIdName ="this";
+        refIdType ="this";
     }
 
     @Override
@@ -233,6 +243,7 @@ public class VisitorRenameMethod implements Visitor {
     @Override
     public void visit(NewObjectExpr e) {
         refIdName = e.classId();
+        refIdType = "new";
     }
 
     @Override

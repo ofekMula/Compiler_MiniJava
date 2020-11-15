@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="added rename">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +87,7 @@
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal rename var x 5 y src/param.java.xml resolve_fields.java.xml" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal rename method override_method 19 run src/tests_ex1/override_method.xml override_renamed.java.xml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,6 +121,7 @@
       <workItem from="1604943216666" duration="3187000" />
       <workItem from="1604947620353" duration="108000" />
       <workItem from="1604947740523" duration="653000" />
+      <workItem from="1605437974704" duration="63000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -231,25 +233,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604401957728" />
-    <state width="1877" height="435" key="GridCell.Tab.0.bottom" timestamp="1605374496977">
+    <state width="1877" height="618" key="GridCell.Tab.0.bottom" timestamp="1605437312550">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605374496977" />
+    <state width="1877" height="618" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605437312550" />
     <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482022" />
-    <state width="1877" height="435" key="GridCell.Tab.0.center" timestamp="1605374496977">
+    <state width="1877" height="618" key="GridCell.Tab.0.center" timestamp="1605437312550">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605374496977" />
+    <state width="1877" height="618" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605437312550" />
     <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482021" />
-    <state width="1877" height="435" key="GridCell.Tab.0.left" timestamp="1605374496977">
+    <state width="1877" height="618" key="GridCell.Tab.0.left" timestamp="1605437312550">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605374496977" />
+    <state width="1877" height="618" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605437312550" />
     <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482021" />
-    <state width="1877" height="435" key="GridCell.Tab.0.right" timestamp="1605374496977">
+    <state width="1877" height="618" key="GridCell.Tab.0.right" timestamp="1605437312550">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605374496977" />
+    <state width="1877" height="618" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605437312550" />
     <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482021" />
     <state width="1877" height="379" key="GridCell.Tab.1.bottom" timestamp="1604947981975">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -313,7 +315,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
           <line>19</line>
-          <properties class="ex1.VisitorRenameVar" method="isNeedToRename">
+          <properties class="ex1.VisitorRenameVar">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="10" />
@@ -346,5 +348,8 @@
         <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
