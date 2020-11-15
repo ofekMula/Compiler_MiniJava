@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="added rename">
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="added branch for method rename.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +86,7 @@
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal rename method override_method 19 run src/tests_ex1/override_method.xml override_renamed.java.xml" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal print src/override_renamed.java.xml res.java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -198,13 +197,18 @@
     <MESSAGE value="fixed bug" />
     <MESSAGE value="outputs from run" />
     <MESSAGE value="files to git" />
-    <option name="LAST_COMMIT_MESSAGE" value="files to git" />
+    <MESSAGE value="added branch for method rename." />
+    <option name="LAST_COMMIT_MESSAGE" value="added branch for method rename." />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1604401568548">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1604401568548" />
+    <state x="429" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605445570535">
+      <screen x="15" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="429" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605445570535" />
     <state x="714" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604945579397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -233,44 +237,52 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604401957728" />
-    <state width="1877" height="618" key="GridCell.Tab.0.bottom" timestamp="1605437312550">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="937" height="345" key="GridCell.Tab.0.bottom" timestamp="1605445403711">
+      <screen x="15" y="-1080" width="1920" height="1040" />
     </state>
+    <state width="937" height="345" key="GridCell.Tab.0.bottom/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605445403711" />
     <state width="1877" height="618" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605437312550" />
     <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482022" />
-    <state width="1877" height="618" key="GridCell.Tab.0.center" timestamp="1605437312550">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="937" height="345" key="GridCell.Tab.0.center" timestamp="1605445403711">
+      <screen x="15" y="-1080" width="1920" height="1040" />
     </state>
+    <state width="937" height="345" key="GridCell.Tab.0.center/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605445403711" />
     <state width="1877" height="618" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605437312550" />
     <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482021" />
-    <state width="1877" height="618" key="GridCell.Tab.0.left" timestamp="1605437312550">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="937" height="345" key="GridCell.Tab.0.left" timestamp="1605445403711">
+      <screen x="15" y="-1080" width="1920" height="1040" />
     </state>
+    <state width="937" height="345" key="GridCell.Tab.0.left/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605445403711" />
     <state width="1877" height="618" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605437312550" />
     <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482021" />
-    <state width="1877" height="618" key="GridCell.Tab.0.right" timestamp="1605437312550">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="937" height="345" key="GridCell.Tab.0.right" timestamp="1605445403711">
+      <screen x="15" y="-1080" width="1920" height="1040" />
     </state>
+    <state width="937" height="345" key="GridCell.Tab.0.right/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605445403711" />
     <state width="1877" height="618" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605437312550" />
     <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604942482021" />
-    <state width="1877" height="379" key="GridCell.Tab.1.bottom" timestamp="1604947981975">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="937" height="345" key="GridCell.Tab.1.bottom" timestamp="1605445403712">
+      <screen x="15" y="-1080" width="1920" height="1040" />
     </state>
+    <state width="937" height="345" key="GridCell.Tab.1.bottom/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605445403712" />
     <state width="1877" height="379" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604947981975" />
     <state width="1877" height="444" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
-    <state width="1877" height="379" key="GridCell.Tab.1.center" timestamp="1604947981975">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="937" height="345" key="GridCell.Tab.1.center" timestamp="1605445403712">
+      <screen x="15" y="-1080" width="1920" height="1040" />
     </state>
+    <state width="937" height="345" key="GridCell.Tab.1.center/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605445403712" />
     <state width="1877" height="379" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604947981975" />
     <state width="1877" height="444" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
-    <state width="1877" height="379" key="GridCell.Tab.1.left" timestamp="1604947981975">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="937" height="345" key="GridCell.Tab.1.left" timestamp="1605445403711">
+      <screen x="15" y="-1080" width="1920" height="1040" />
     </state>
+    <state width="937" height="345" key="GridCell.Tab.1.left/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605445403711" />
     <state width="1877" height="379" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604947981975" />
     <state width="1877" height="444" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
-    <state width="1877" height="379" key="GridCell.Tab.1.right" timestamp="1604947981975">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="937" height="345" key="GridCell.Tab.1.right" timestamp="1605445403712">
+      <screen x="15" y="-1080" width="1920" height="1040" />
     </state>
+    <state width="937" height="345" key="GridCell.Tab.1.right/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605445403712" />
     <state width="1877" height="379" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604947981975" />
     <state width="1877" height="444" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604909151689" />
     <state x="789" y="222" key="RollbackChangesDialog" timestamp="1604402445531">
@@ -340,6 +352,16 @@
           <line>64</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java</url>
+          <line>216</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java</url>
+          <line>209</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -350,6 +372,7 @@
     </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
