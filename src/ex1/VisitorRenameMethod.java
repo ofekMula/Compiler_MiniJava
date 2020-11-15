@@ -37,7 +37,7 @@ public class VisitorRenameMethod implements Visitor {
         }
         return false;
     }
-    public boolean isNeedToRenameNew(String name, SymbolTable table) {
+    public boolean isNeedToRenameMethod(String name, SymbolTable table) {
         if (name.equals(prevNameOfMethod)) {
             //table = table.getParentSymbolTable();
             if (table.isContainsId(prevNameOfMethod, SymbolType.METHOD)) { //table.getScopeType() == Scopes.ClassScope
@@ -209,7 +209,7 @@ public class VisitorRenameMethod implements Visitor {
             }
             else if(refIdType.equals("new")){ // by new
                 table = classesToTables.get(refIdName);
-                if (isNeedToRenameNew(e.methodId(), table))
+                if (isNeedToRenameMethod(e.methodId(), table))
                     e.setMethodId(newNameOfMethod);
             }
             else { // by var
@@ -218,7 +218,7 @@ public class VisitorRenameMethod implements Visitor {
                 String className = varClassDecl.symbolRefType; // A
                 System.out.println("class ref name: " + className);
                 SymbolTable classRefTable = classesToTables.get(className);
-                if (isNeedToRename(e.methodId(), classRefTable))
+                if (isNeedToRenameMethod(e.methodId(), classRefTable))
                     e.setMethodId(newNameOfMethod);
             }
         }
