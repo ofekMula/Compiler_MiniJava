@@ -62,13 +62,14 @@ public class SymbolTable {
         return parentSymbolTable;
     }
 
-    public ArrayList<SymbolTable> getSubClassTable() {
+    public ArrayList<SymbolTable> getSubClassTables() {
         return subClassTable;
     }
 
     public void setSubClassTable(SymbolTable subClassTable) {
         this.subClassTable.add(subClassTable);
     }
+
 
     public void setSuperClassTable(SymbolTable superClassTable) {
         this.superClassTable = superClassTable;
