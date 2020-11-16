@@ -30,22 +30,7 @@
                         <int/>
                     </returnType>
                     <name>bar</name>
-                    <formals>
-                        <formal>
-                            <lineNumber>14</lineNumber>
-                            <type>
-<int/>
-                            </type>
-                            <name>x</name>
-                        </formal>
-						<formal>
-                            <lineNumber>15</lineNumber>
-                            <type>
-<int/>
-                            </type>
-                            <name>y</name>
-                        </formal>
-                    </formals>
+                    <formals/>
                     <vardecls>
                         <vardecl>
                             <lineNumber>15</lineNumber>
@@ -124,7 +109,7 @@
                     <returnType>
                         <int/>
                     </returnType>
-                    <name>foo</name>
+                    <name>bar</name>
                     <formals/>
                     <vardecls>
                         <vardecl>
@@ -146,18 +131,7 @@
         </ref-id>
     </ownerExpr>
     <methodId>bar</methodId>
-    <actuals>
-        <actual>
-            <int-literal>
-    <num>1</num>
-</int-literal>
-        </actual>
-		<actual>
-            <int-literal>
-    <num>2</num>
-</int-literal>
-        </actual>
-    </actuals>
+    <actuals/>
 </call>
                     </ret>
                 </methoddecl>

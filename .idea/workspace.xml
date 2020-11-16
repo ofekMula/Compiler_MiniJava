@@ -19,10 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="added else if for new">
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/method_two_inheritance_tracks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/var_method_same_name.xml" afterDir="false" />
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="example with calling a method from this">
+      <change afterPath="$PROJECT_DIR$/src/ex1/VisitorMethodFinderByDecl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests_ex1/call_method_from_this2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/InheritanceBuildMapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/InheritanceBuildMapMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/Recitation2_15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/Recitation2_15.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/Recitation2_16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/Recitation2_16.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/Recitation2_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/Recitation2_16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/call_method_from_this.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/method_two_inheritance_tracks.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/override_method_in_2_subclasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/override_method_in_2_subclasses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/resolve_fields_3_levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/resolve_fields_3_levels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/var_method_same_name.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/var_method_same_name.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +84,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -84,17 +98,32 @@
       <recent name="C:\src\duda\Compiler" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal print src/tests_ex1/var_method_same_name.xml res.java" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal print &quot;C:\Users\Shirly\IdeaProjects\CompilerMiniJava\src\tests_ex1\resolve_fields_3_levels_renamexx.xml&quot; &quot;C:\Users\Shirly\IdeaProjects\CompilerMiniJava\src\tests_ex1\resolve_fields_3_levels_renamexx.java&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="" />
@@ -193,12 +222,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove print for check repo" />
@@ -355,18 +385,27 @@
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="55" />
+          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java</url>
+          <line>210</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java</url>
+          <line>199</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java</url>
+          <line>214</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex1/VisitorMethodFinderByDecl.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
-        <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
-      </pinned-members>
-    </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

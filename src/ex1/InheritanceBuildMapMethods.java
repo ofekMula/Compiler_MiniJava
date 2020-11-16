@@ -44,7 +44,7 @@ public class InheritanceBuildMapMethods {
     }
 
 
-    public void buildMethodsHierarchyMap() {
+    public Map<MethodHierarchyKey, ArrayList<Symbol>> buildMethodsHierarchyMap() {
         methodHierarchyToTables = new HashMap<>();
 
         for (ClassDecl classdecl : root.classDecls()) {
@@ -53,6 +53,7 @@ public class InheritanceBuildMapMethods {
                 traverseChildrenMethodsToList(curr, curr.getScopeName());
             }
         }
+        return methodHierarchyToTables;
     }
 
 }

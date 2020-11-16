@@ -6,6 +6,8 @@ import ex1.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -66,9 +68,10 @@ public class Main {
                         visitorRenameVar.visit(prog);
                     } else {
                         InheritanceBuildMapMethods inheritanceBuildMapMethods = new InheritanceBuildMapMethods(builderVisitor.classesToTables, prog);
-                        inheritanceBuildMapMethods.buildMethodsHierarchyMap();
-                        VisitorRenameMethod visitorRenameMethod = new VisitorRenameMethod(builderVisitor.classesToTables, originalName, newName, Integer.parseInt(originalLine));
-                        visitorRenameMethod.visit(prog);
+                        Map<MethodHierarchyKey, ArrayList<Symbol>> methodHierarchyToTables;
+                        methodHierarchyToTables = inheritanceBuildMapMethods.buildMethodsHierarchyMap();
+                        VisitorMethodFinderByDecl visitorMethodFinderByDecl = new VisitorMethodFinderByDecl(builderVisitor.classesToTables, originalName, newName, Integer.parseInt(originalLine), methodHierarchyToTables);
+                        visitorMethodFinderByDecl.visit(prog);
                     }
                      //convert ast to xml
                     AstXMLSerializer xmlSerializer = new AstXMLSerializer();

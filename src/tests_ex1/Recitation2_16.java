@@ -5,7 +5,7 @@
 //}
 //
 //class A {
-//	int bar(int x, int y) {
+//	int bar() {
 //		A e;
 //		e = new A();
 //		return (e).bar();
@@ -24,9 +24,9 @@
 //}
 //
 //class otherClass {
-//	int foo() {
+//	int bar() {
 //		B x;
-//		return (x).bar(1, 2);
+//		return (x).bar();
 //	}
 //
 //}

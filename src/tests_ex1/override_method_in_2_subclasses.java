@@ -5,24 +5,24 @@
 //}
 //
 //class class1 {
-//	int override_method() {
+//	int override_method() {   <=====
 //		class1 e;
 //		e = new class1();
-//		return (e).override_method();
+//		return (e).override_method();  <=====
 //	}
 //
 //}
 //
 //class class2 extends class1 {
-//	int override_method() {
-//		return (new class2()).override_method();
+//	int override_method() {  <=====
+//		return (new class2()).override_method();  <=====
 //	}
 //
 //}
 //
 //class class3 extends class1 {
-//	int override_method() {
-//		return (new class2()).override_method();
+//	int override_method() {  <=====
+//		return (new class2()).override_method();  <=====
 //	}
 //
 //}
