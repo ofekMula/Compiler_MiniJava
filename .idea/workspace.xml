@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="added MethodHierarchyKey">
+      <change afterPath="$PROJECT_DIR$/src/tests_ex1/ricky-test-16-11" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,6 +88,17 @@
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
       <option name="PROGRAM_PARAMETERS" value="unmarshal rename method override_method 19 run src/tests_ex1/override_method.xml override_renamed.java.xml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -217,9 +229,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1604401568548" />
-    <state x="714" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604945579397">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="571" y="255" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605560013952">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="571" y="255" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1605560013952" />
     <state x="714" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1604945579397" />
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1604860615395">
       <screen x="0" y="0" width="1920" height="1040" />
