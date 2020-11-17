@@ -1,0 +1,1 @@
+package tests_ex1.test_cases.variable_renaming;
