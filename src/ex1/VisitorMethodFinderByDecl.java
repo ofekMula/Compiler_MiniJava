@@ -50,20 +50,43 @@ public class VisitorMethodFinderByDecl implements Visitor {
         mainClass.mainStatement().accept(this);
     }
 
-    private String getRoot(SymbolTable currClassTable){
-        SymbolTable superTable = currClassTable.getSuperClassTable();
-        if (superTable != null){
-            // not root yet
-            return getRoot(superTable);
+    private ArrayList<Symbol> getOccurArrOfMethod(String methodId, SymbolTable currClassTable){
+        ArrayList<Symbol> occurArrOfMethod = null;
+        MethodHierarchyKey methodKey;
+
+        // check if the current class is the method's root (= first class to be declared)
+        methodKey = new MethodHierarchyKey(currClassTable.getScopeName(), methodId);
+        if (methodHierarchyToTables.containsKey(methodKey)) {
+            // the current class is the root of the method
+            // return the array of occurrences
+            occurArrOfMethod = methodHierarchyToTables.get(methodKey);
+            return occurArrOfMethod;
         }
-        return currClassTable.getScopeName();
+
+        // travel up the tree until you find the method's root
+        SymbolTable superClassTable = currClassTable.getSuperClassTable();
+        while (superClassTable != null) { // there is a super class
+            // check if its the root of the method
+            methodKey = new MethodHierarchyKey(superClassTable.getScopeName(), methodId);
+            if (methodHierarchyToTables.containsKey(methodKey)) {
+                // the super is the root of the method
+                // return the array of occurrences
+                occurArrOfMethod = methodHierarchyToTables.get(methodKey);
+                return occurArrOfMethod;
+            }
+            // travel up
+            currClassTable = superClassTable;
+            superClassTable = currClassTable.getSuperClassTable();
+        }
+
+        System.out.println("BUG: method not in the methods map");
+        return occurArrOfMethod; //TODO: delete? not suppose to get here
     }
 
-    private void renameOccurOfMethod(String rootName, String methodName){
-        MethodHierarchyKey methodKey = new MethodHierarchyKey(rootName,methodName);
-        ArrayList<Symbol> methodOccurArr = methodHierarchyToTables.get(methodKey);
+
+    private void renameOccurOfMethod(ArrayList<Symbol> occurArr){
         VisitorRenameMethod visitorRenameMethod = new VisitorRenameMethod(classesToTables,prog);
-        for ( Symbol methodSymbol: methodOccurArr){
+        for ( Symbol methodSymbol: occurArr){
             // call rename visitor on current method symbol
             int currLineNumber = methodSymbol.decl.lineNumber;
             visitorRenameMethod.run(prevNameOfMethod,newNameOfMethod,currLineNumber);
@@ -74,11 +97,11 @@ public class VisitorMethodFinderByDecl implements Visitor {
     public void visit(MethodDecl methodDecl) {
         methodDecl.returnType().accept(this);
         if (methodDecl.name().equals(prevNameOfMethod) && methodDecl.lineNumber.equals(lineNumber)){
-            // found method decl to rename
-            String methodName = methodDecl.name();
+            // found the method decl to rename
+            String methodId = methodDecl.name();
             SymbolTable currClassTable = methodDecl.table().getParentSymbolTable();
-            String rootName = getRoot(currClassTable);
-            renameOccurOfMethod(rootName,methodName);
+            ArrayList<Symbol> occurArr = getOccurArrOfMethod(methodId,currClassTable);
+            renameOccurOfMethod(occurArr);
         }
 
         methodDecl.ret().accept(this);

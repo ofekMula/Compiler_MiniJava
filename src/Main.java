@@ -62,7 +62,7 @@ public class Main {
                     VisitorCreateTable builderVisitor = new VisitorCreateTable();
                     builderVisitor.visit(prog);
                     InheritanceUpdate inheritanceUpdater = new InheritanceUpdate(builderVisitor.classesToTables, prog);
-                    inheritanceUpdater.updateChildren();
+                    inheritanceUpdater.run();
                     if (!isMethod){
                         VisitorRenameVar visitorRenameVar = new VisitorRenameVar(originalName, newName, Integer.parseInt(originalLine));
                         visitorRenameVar.visit(prog);
