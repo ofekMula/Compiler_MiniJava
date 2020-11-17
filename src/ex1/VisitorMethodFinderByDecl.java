@@ -86,7 +86,7 @@ public class VisitorMethodFinderByDecl implements Visitor {
 
     private void renameOccurOfMethod(ArrayList<Symbol> occurArr){
         VisitorRenameMethod visitorRenameMethod = new VisitorRenameMethod(classesToTables,prog);
-        for ( Symbol methodSymbol: occurArr){
+        for (Symbol methodSymbol: occurArr){
             // call rename visitor on current method symbol
             int currLineNumber = methodSymbol.decl.lineNumber;
             visitorRenameMethod.run(prevNameOfMethod,newNameOfMethod,currLineNumber);
