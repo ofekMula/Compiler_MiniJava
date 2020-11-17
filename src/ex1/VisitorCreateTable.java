@@ -78,7 +78,7 @@ public class VisitorCreateTable implements Visitor {
             name = methodDecl.name();
             System.out.println("name in class: " + name);
             System.out.println("insert in: " + currTable.getScopeName());
-            currSymbol = new Symbol(name, SymbolType.VAR, methodDecl, "method", currTable);
+            currSymbol = new Symbol(name, SymbolType.METHOD, methodDecl, "method", currTable);
             currTable.insert(name, SymbolType.METHOD, currSymbol);
             methodDecl.accept(this);
         }
