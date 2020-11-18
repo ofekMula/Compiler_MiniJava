@@ -76,8 +76,6 @@ public class VisitorCreateTable implements Visitor {
             lastVisited = currTable;
 
             name = methodDecl.name();
-            System.out.println("name in class: " + name);
-            System.out.println("insert in: " + currTable.getScopeName());
             currSymbol = new Symbol(name, SymbolType.METHOD, methodDecl, "method", currTable);
             currTable.insert(name, SymbolType.METHOD, currSymbol);
             methodDecl.accept(this);
@@ -103,8 +101,6 @@ public class VisitorCreateTable implements Visitor {
         currTable.setScopeType(Scopes.MethodScope);
         currTable.setScopeName(methodDecl.name());
         currTable.setParentSymbolTable(lastVisited);
-        System.out.println("name in method: " + methodDecl.name());
-        System.out.println("looked in: " + lastVisited.getScopeName());
         lastVisited.setById(methodDecl.name(), SymbolType.METHOD, currTable);
         lastVisited = currTable;
 

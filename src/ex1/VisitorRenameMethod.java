@@ -31,14 +31,12 @@ public class VisitorRenameMethod implements Visitor {
 
     public boolean isNeedToRenameMethod(String name, SymbolTable table) {
         if (name.equals(prevNameOfMethod)) {
-            if (table.isContainsId(prevNameOfMethod, SymbolType.METHOD)) { //table.getScopeType() == Scopes.ClassScope
+            if (table.isContainsId(prevNameOfMethod, SymbolType.METHOD)) { //table's scope is CLASS scope
                 if (table.getById(prevNameOfMethod, SymbolType.METHOD).decl.lineNumber == lineNumber) {
                     return true;
                 } else {
                     return false; // this method shadows all higher method's
                 }
-            } else {
-                System.out.println("BUGGGG!!! ");
             }
         }
         return false;
@@ -53,8 +51,6 @@ public class VisitorRenameMethod implements Visitor {
         if (isFound){
             if (methodDeclToRename != null){
                 methodDeclToRename.setName(newNameOfMethod);
-            } else{
-                System.out.println("BUGGGG!!!!");
             }
         }
     }
@@ -184,19 +180,13 @@ public class VisitorRenameMethod implements Visitor {
         e.arrayExpr().accept(this);
     }
 
-    // A x;
-    // x.foo(); -> foo
-    //
-
     @Override
-    public void visit(MethodCallExpr e) { //bool: A x; x.foo(); -> owner table is the table of A
+    public void visit(MethodCallExpr e) {
         e.ownerExpr().accept(this);
-        System.out.println(refIdName + refIdName);
         if (e.methodId().equals(prevNameOfMethod)) {
             SymbolTable table;
-            if (refIdName.equals("this")){ //TODO
+            if (refIdName.equals("this")){
                 table = e.table();
-                // renameAllOverrideMethods();
                 SymbolTable methodTable = table.getParentSymbolTable();
                 SymbolTable classTable = methodTable.getParentSymbolTable();
                 if (isNeedToRenameMethod(e.methodId(),classTable))
@@ -204,18 +194,15 @@ public class VisitorRenameMethod implements Visitor {
             }
             else if(refIdType.equals("new")){ // by new
                 table = classesToTables.get(refIdName);
-                // renameAllOverrideMethods();
                 if (isNeedToRenameMethod(e.methodId(), table))
                     e.setMethodId(newNameOfMethod);
             }
-            else { // by var  A x; x.foo()  //todo check its b
+            else { // by var
                 table = e.table();
-                Symbol varClassDecl = table.getParentSymbolTable().getById(refIdName, SymbolType.VAR); // search x //todo: verify correctness
-                String className = varClassDecl.symbolRefType; // A
-                System.out.println("class ref name: " + className);
-                SymbolTable classRefTable = classesToTables.get(className); // table of A
-                // renameAllOverrideMethods();
-                if (isNeedToRenameMethod(e.methodId(), classRefTable)) // foo, A
+                Symbol varClassDecl = table.getParentSymbolTable().getById(refIdName, SymbolType.VAR);
+                String className = varClassDecl.symbolRefType;
+                SymbolTable classRefTable = classesToTables.get(className);
+                if (isNeedToRenameMethod(e.methodId(), classRefTable))
                     e.setMethodId(newNameOfMethod);
             }
         }

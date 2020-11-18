@@ -6,17 +6,13 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class VisitorMethodFinderByDecl implements Visitor {
-    Symbol symbolOfMethodToRename;
-    String refIdName;
-    String refIdType;
-    MethodDecl methodDeclToRename;
     String prevNameOfMethod;
     String newNameOfMethod;
     Map<MethodHierarchyKey, ArrayList<Symbol>> methodHierarchyToTables;
     Map<String, SymbolTable> classesToTables;
     Program prog;
     int lineNumber;
-    boolean isFound = false;
+
 
     public VisitorMethodFinderByDecl(Map<String, SymbolTable> classesToTables, String prevNameOfMethod, String newNameOfMethod, int lineNumber, Map<MethodHierarchyKey, ArrayList<Symbol>> methodHierarchyToTables){
         this.prevNameOfMethod = prevNameOfMethod;
@@ -78,9 +74,7 @@ public class VisitorMethodFinderByDecl implements Visitor {
             currClassTable = superClassTable;
             superClassTable = currClassTable.getSuperClassTable();
         }
-
-        System.out.println("BUG: method not in the methods map");
-        return occurArrOfMethod; //TODO: delete? not suppose to get here
+        return occurArrOfMethod;
     }
 
 

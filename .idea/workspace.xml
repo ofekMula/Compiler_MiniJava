@@ -19,109 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="push ofek &amp; ricky's latest changes">
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_and_variable_with_the_same_name.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_and_variable_with_the_same_name.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_and_variable_with_the_same_name_renamed1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_and_variable_with_the_same_name_renamed1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_related_sibling_class.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_related_sibling_class.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_related_sibling_class_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_related_sibling_class_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_unrelated_sibling_class.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_unrelated_sibling_class.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_unrelated_sibling_class_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_unrelated_sibling_class_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_if_and_assign_array_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_if_and_assign_array_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_if_and_assign_array_statements_renamed1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_if_and_assign_array_statements_renamed1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_if_and_assign_array_statements_renamed2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_if_and_assign_array_statements_renamed2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_new_object.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_new_object.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_new_object_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_new_object_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id_renamed1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id_renamed1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id_renamed2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id_renamed2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_sysout_statement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_sysout_statement.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_sysout_statement_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_sysout_statement_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_this.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_this.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_this_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_this_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_while_and_assign_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_while_and_assign_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_while_and_assign_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_while_and_assign_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_related_sibling_class.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_related_sibling_class.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_related_sibling_class_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_related_sibling_class_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_unrelated_sibling_class.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_unrelated_sibling_class.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_unrelated_sibling_class_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_unrelated_sibling_class_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_formal_param_shadowing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_formal_param_shadowing.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_formal_param_shadowing_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_formal_param_shadowing_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_if_and_assign_array_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_if_and_assign_array_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_if_and_assign_array_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_if_and_assign_array_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_local_var_shadowing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_local_var_shadowing.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_local_var_shadowing_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_local_var_shadowing_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_sysout_and_array_length_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_sysout_and_array_length_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_sysout_and_array_length_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_sysout_and_array_length_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_while_and_assign_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_while_and_assign_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_while_and_assign_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_while_and_assign_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_if_and_assign_array_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_if_and_assign_array_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_if_and_assign_array_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_if_and_assign_array_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_sysout_and_array_length_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_sysout_and_array_length_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_sysout_and_array_length_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_sysout_and_array_length_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_while_and_assign_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_while_and_assign_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_while_and_assign_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_while_and_assign_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_if_and_assign_array_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_if_and_assign_array_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_if_and_assign_array_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_if_and_assign_array_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_sysout_and_array_length_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_sysout_and_array_length_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_sysout_and_array_length_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_sysout_and_array_length_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_while_and_assign_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_while_and_assign_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_while_and_assign_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_while_and_assign_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name_renamed1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name_renamed1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name_renamed2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name_renamed2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name_renamed3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name_renamed3.xml" afterDir="false" />
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="added new tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests_ex1/ricky-test-16-11" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/ricky-test-16-11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorCreateTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorMethodFinderByDecl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorMethodFinderByDecl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorRenameVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex1/VisitorRenameVar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id_renamed2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id_renamed2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_this.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_this.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +50,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -189,18 +93,7 @@
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal print src/tests_ex1/ricky-test-16-11.xml src/tests_ex1/ricky-test-16-11_renamed.java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal print src/tests_ex1/test_cases/method_renaming/method_with_this_rename-1.xml src/tests_ex1/test_cases/method_renaming/method_with_this_rename-1.java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -241,7 +134,33 @@
       <workItem from="1605438229072" duration="33000" />
       <workItem from="1605452816412" duration="76000" />
       <workItem from="1605608072949" duration="706000" />
-      <workItem from="1605610660835" duration="313000" />
+      <workItem from="1605610660835" duration="984000" />
+      <workItem from="1605611660606" duration="91000" />
+      <workItem from="1605611763484" duration="79000" />
+      <workItem from="1605611855004" duration="372000" />
+      <workItem from="1605612239701" duration="56000" />
+      <workItem from="1605612307318" duration="294000" />
+      <workItem from="1605613862130" duration="93000" />
+      <workItem from="1605613967118" duration="225000" />
+      <workItem from="1605614207772" duration="82000" />
+      <workItem from="1605614300737" duration="287000" />
+      <workItem from="1605614598895" duration="151000" />
+      <workItem from="1605614763770" duration="174000" />
+      <workItem from="1605614947919" duration="65000" />
+      <workItem from="1605615023253" duration="155000" />
+      <workItem from="1605615188228" duration="127000" />
+      <workItem from="1605615325268" duration="439000" />
+      <workItem from="1605615989059" duration="136000" />
+      <workItem from="1605616136315" duration="57000" />
+      <workItem from="1605616203067" duration="534000" />
+      <workItem from="1605616748536" duration="106000" />
+      <workItem from="1605616864481" duration="248000" />
+      <workItem from="1605617125961" duration="695000" />
+      <workItem from="1605617837403" duration="611000" />
+      <workItem from="1605618469139" duration="102000" />
+      <workItem from="1605618582482" duration="45000" />
+      <workItem from="1605681998852" duration="10000" />
+      <workItem from="1605722017596" duration="574000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -306,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605547587389</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added new tests">
+      <created>1605610997898</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605610997898</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,16 +260,24 @@
     <MESSAGE value="files to git" />
     <MESSAGE value="added else if for new" />
     <MESSAGE value="MethodRename final" />
-    <option name="LAST_COMMIT_MESSAGE" value="MethodRename final" />
+    <MESSAGE value="added new tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new tests" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1605607850898" />
     <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850898" />
-    <state x="429" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605607850898" />
+    <state x="429" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605616121148">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
     <state x="429" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850898" />
+    <state x="429" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605616121148" />
     <state x="729" y="-758" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605607850898" />
     <state x="729" y="-758" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850898" />
     <state x="714" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850898" />
+    <state x="686" y="152" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1605616705648">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="686" y="152" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605616705648" />
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1605607850898" />
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850898" />
     <state x="790" y="213" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1605607850898" />
@@ -356,30 +290,34 @@
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850898" />
     <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1605607850898" />
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850898" />
-    <state width="1865" height="488" key="GridCell.Tab.0.bottom" timestamp="1605610693027">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1481" height="625" key="GridCell.Tab.0.bottom" timestamp="1605722040930">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="931" height="383" key="GridCell.Tab.0.bottom/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850898" />
-    <state width="1865" height="488" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610693027" />
-    <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
-    <state width="1865" height="488" key="GridCell.Tab.0.center" timestamp="1605610693027">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1481" height="625" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605722040930" />
+    <state width="1865" height="250" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605615764018" />
+    <state width="1865" height="840" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605618570781" />
+    <state width="1481" height="625" key="GridCell.Tab.0.center" timestamp="1605722040930">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="931" height="383" key="GridCell.Tab.0.center/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850899" />
-    <state width="1865" height="488" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610693027" />
-    <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
-    <state width="1865" height="488" key="GridCell.Tab.0.left" timestamp="1605610693027">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1481" height="625" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605722040930" />
+    <state width="1865" height="250" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605615764018" />
+    <state width="1865" height="840" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605618570781" />
+    <state width="1481" height="625" key="GridCell.Tab.0.left" timestamp="1605722040929">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="931" height="383" key="GridCell.Tab.0.left/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850899" />
-    <state width="1865" height="488" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610693027" />
-    <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
-    <state width="1865" height="488" key="GridCell.Tab.0.right" timestamp="1605610693027">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1481" height="625" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605722040929" />
+    <state width="1865" height="250" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605615764018" />
+    <state width="1865" height="840" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605618570781" />
+    <state width="1481" height="625" key="GridCell.Tab.0.right" timestamp="1605722040930">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="931" height="383" key="GridCell.Tab.0.right/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850899" />
-    <state width="1865" height="488" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610693027" />
-    <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
+    <state width="1481" height="625" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605722040930" />
+    <state width="1865" height="250" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605615764018" />
+    <state width="1865" height="840" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605618570781" />
     <state width="1865" height="690" key="GridCell.Tab.1.bottom" timestamp="1605610646573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -404,15 +342,21 @@
     <state width="937" height="434" key="GridCell.Tab.1.right/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850899" />
     <state width="1865" height="690" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610646572" />
     <state width="1877" height="444" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
-    <state x="789" y="222" key="RollbackChangesDialog" timestamp="1605607850899" />
-    <state x="789" y="222" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
-    <state x="440" y="0" key="SettingsEditor" timestamp="1605610783618">
+    <state x="508" y="220" key="MultipleFileMergeDialog" timestamp="1605611011765">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610783618" />
+    <state x="508" y="220" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605611011765" />
+    <state x="789" y="222" key="RollbackChangesDialog" timestamp="1605607850899" />
+    <state x="789" y="222" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
+    <state x="440" y="0" key="SettingsEditor" timestamp="1605615571950">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605615571950" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1605607850899" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850899" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1605611025926">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605611025926" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
     <state x="832" y="364" key="cloudConfig.SelfSettingsDialog" timestamp="1605607850899" />
     <state x="832" y="364" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850899" />
@@ -423,33 +367,16 @@
     <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1605607850899" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850899" />
-    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup" timestamp="1605610802648">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="498" y="178" width="840" height="538" key="search.everywhere.popup" timestamp="1605722596887">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610802648" />
+    <state x="498" y="178" width="840" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605722596887" />
+    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610977642" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>19</line>
-          <properties class="ex1.VisitorRenameVar">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
           <line>65</line>

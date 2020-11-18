@@ -34,8 +34,6 @@ public class VisitorRenameVar implements Visitor {
                         } else {
                             return false;
                         }
-                    } else {
-                        System.out.println("BUGGGG!!! ");
                     }
                 }
             }
@@ -52,8 +50,6 @@ public class VisitorRenameVar implements Visitor {
         if (isFound){
             if (variableIntroductionToRename != null){
                 variableIntroductionToRename.setName(newNameOfVar);
-            } else {
-                System.out.println("BUGGGG!!!!");
             }
         }
     }
