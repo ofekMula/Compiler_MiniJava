@@ -1,4 +1,4 @@
-package ex1;
+package ex2.ex1;
 
 public class MethodHierarchyKey {
     private final String classHierarchyRoot;
