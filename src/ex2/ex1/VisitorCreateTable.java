@@ -1,6 +1,6 @@
-package ex1;
+package ex2.ex1;
 
-import ast.*;
+import ex2.ast.*;
 
 import java.util.HashMap;
 import java.util.Map;

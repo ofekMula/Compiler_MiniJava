@@ -1,11 +1,11 @@
-package ex1;
+package ex2.ex1;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class SymbolTable {
-    private Map<SymbolKey,Symbol> entries;
+    private Map<SymbolKey, Symbol> entries;
     private SymbolTable parentSymbolTable;
     private String scopeName;
     private Scopes scopeType;
@@ -30,7 +30,7 @@ public class SymbolTable {
         return entries.get(new SymbolKey(id, type));
     }
 
-    public Map<SymbolKey,Symbol> getEntries(){
+    public Map<SymbolKey, Symbol> getEntries(){
         return entries;
     }
 

@@ -1,7 +1,7 @@
-package ex1;
+package ex2.ex1;
 
-import ast.ClassDecl;
-import ast.Program;
+import ex2.ast.ClassDecl;
+import ex2.ast.Program;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package ex1;
+package ex1_final;
 
 public enum SymbolType {
     VAR(),
