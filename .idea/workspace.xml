@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="push ofek &amp; ricky's latest changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Lexer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Parser.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,6 +147,7 @@
       <workItem from="1605721958633" duration="25000" />
       <workItem from="1605722055758" duration="594000" />
       <workItem from="1606229070759" duration="303000" />
+      <workItem from="1606229417538" duration="249000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -210,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605547587389</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="push ofek &amp; ricky's latest changes">
+      <created>1606229634637</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606229634637</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +248,8 @@
     <MESSAGE value="files to git" />
     <MESSAGE value="added else if for new" />
     <MESSAGE value="MethodRename final" />
-    <option name="LAST_COMMIT_MESSAGE" value="MethodRename final" />
+    <MESSAGE value="push ofek &amp; ricky's latest changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="push ofek &amp; ricky's latest changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1605607850898" />
