@@ -20,109 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="push ofek &amp; ricky's latest changes">
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_and_variable_with_the_same_name.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_and_variable_with_the_same_name.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_and_variable_with_the_same_name_renamed1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_and_variable_with_the_same_name_renamed1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_related_sibling_class.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_related_sibling_class.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_related_sibling_class_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_related_sibling_class_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_unrelated_sibling_class.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_unrelated_sibling_class.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_unrelated_sibling_class_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_unrelated_sibling_class_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_if_and_assign_array_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_if_and_assign_array_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_if_and_assign_array_statements_renamed1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_if_and_assign_array_statements_renamed1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_if_and_assign_array_statements_renamed2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_if_and_assign_array_statements_renamed2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_new_object.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_new_object.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_new_object_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_new_object_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id_renamed1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id_renamed1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id_renamed2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_ref_id_renamed2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_sysout_statement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_sysout_statement.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_sysout_statement_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_sysout_statement_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_this.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_this.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_this_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_this_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_while_and_assign_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_while_and_assign_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_while_and_assign_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/method_renaming/method_with_while_and_assign_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_related_sibling_class.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_related_sibling_class.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_related_sibling_class_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_related_sibling_class_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_unrelated_sibling_class.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_unrelated_sibling_class.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_unrelated_sibling_class_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_unrelated_sibling_class_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_formal_param_shadowing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_formal_param_shadowing.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_formal_param_shadowing_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_formal_param_shadowing_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_if_and_assign_array_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_if_and_assign_array_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_if_and_assign_array_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_if_and_assign_array_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_local_var_shadowing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_local_var_shadowing.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_local_var_shadowing_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_local_var_shadowing_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_sysout_and_array_length_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_sysout_and_array_length_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_sysout_and_array_length_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_sysout_and_array_length_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_while_and_assign_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_while_and_assign_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_while_and_assign_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/field_with_while_and_assign_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_if_and_assign_array_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_if_and_assign_array_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_if_and_assign_array_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_if_and_assign_array_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_sysout_and_array_length_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_sysout_and_array_length_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_sysout_and_array_length_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_sysout_and_array_length_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_while_and_assign_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_while_and_assign_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_while_and_assign_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_while_and_assign_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_if_and_assign_array_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_if_and_assign_array_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_if_and_assign_array_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_if_and_assign_array_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_sysout_and_array_length_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_sysout_and_array_length_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_sysout_and_array_length_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_sysout_and_array_length_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_while_and_assign_statements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_while_and_assign_statements.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_while_and_assign_statements_renamed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_while_and_assign_statements_renamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name_renamed1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name_renamed1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name_renamed2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name_renamed2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name_renamed3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/variable_and_method_with_the_same_name_renamed3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests_ex1/ricky-test-16-11" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/ricky-test-16-11.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -185,6 +85,18 @@
       <recent name="C:\src\duda\Compiler\src\tests_ex1" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -194,19 +106,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -242,6 +143,9 @@
       <workItem from="1605452816412" duration="76000" />
       <workItem from="1605608072949" duration="706000" />
       <workItem from="1605610660835" duration="313000" />
+      <workItem from="1605721958633" duration="25000" />
+      <workItem from="1605722055758" duration="594000" />
+      <workItem from="1606229070759" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -310,19 +214,20 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove print for check repo" />
@@ -462,16 +367,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="ast.ClassDecl" memberName="table" />
-        <PinnedItemInfo parentTag="ast.Program" memberName="table" />
-        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
-      </pinned-members>
-    </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
