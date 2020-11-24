@@ -1,7 +1,7 @@
 import ast.AstPrintVisitor;
 import ast.AstXMLSerializer;
 import ast.Program;
-import ex1.*;
+import ex1_final.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
