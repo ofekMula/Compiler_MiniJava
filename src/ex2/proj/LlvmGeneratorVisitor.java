@@ -55,7 +55,7 @@ public class LlvmGeneratorVisitor implements Visitor {
 
     /* Example: br i1 %case, label %if, label %else */
     public String getBooleanBranchString(String caseReg, String ifReg, String elseReg){
-        return branch_boolean + " " + boolean_i1 + " " + caseReg + ", label " + ifReg + ", label " + elseReg;
+        return branch_boolean + " " + caseReg + ", label " + ifReg + ", label " + elseReg;
     }
 
     /* Example: %ptr = bitcast i32* %ptr2 to i8** */
