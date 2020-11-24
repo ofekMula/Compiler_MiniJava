@@ -20,13 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="reordered packages for ex2">
+      <change afterPath="$PROJECT_DIR$/src/ex2/proj/InstanceType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ex2/proj/InstructionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ex2/proj/LlvmGeneratorVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex1/InheritanceBuildMapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/ex1/InheritanceBuildMapMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex1/MethodHierarchyKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/ex1/MethodHierarchyKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex1/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/ex1/Symbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex1/SymbolKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/ex1/SymbolKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorRenameMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/ex1/VisitorRenameMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex1/VisitorRenameVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/ex1/VisitorRenameVar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Tag Library Descriptor" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -69,7 +66,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ex2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Minijava-Compiler-master" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -77,17 +74,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\src\duda\Compiler\src\tests_ex1" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\src\duda\Compiler\src\ex2" />
       <recent name="C:\src\duda\Compiler\src\tests_ex1" />
       <recent name="C:\src\duda\Compiler\src" />
       <recent name="C:\src\duda\Compiler" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ex2.proj" />
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\src\duda\Compiler\src\tests_ex1" />
     </key>
   </component>
   <component name="RunManager">
@@ -95,6 +93,17 @@
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
       <option name="PROGRAM_PARAMETERS" value="unmarshal print src/tests_ex1/test_cases/method_renaming/method_with_this_rename-1.xml src/tests_ex1/test_cases/method_renaming/method_with_this_rename-1.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,6 +173,8 @@
       <workItem from="1605722017596" duration="1266000" />
       <workItem from="1605768704272" duration="16000" />
       <workItem from="1606148527579" duration="987000" />
+      <workItem from="1606149564683" duration="1414000" />
+      <workItem from="1606204452571" duration="7716000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -256,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606149386429</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="reordered packages for ex2">
+      <created>1606149630028</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1606149630028</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +333,10 @@
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850898" />
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1605607850898" />
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850898" />
-    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1605607850898" />
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1606204610773">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606204610773" />
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850898" />
     <state width="1481" height="625" key="GridCell.Tab.0.bottom" timestamp="1605723295377">
       <screen x="0" y="0" width="1536" height="824" />
@@ -381,10 +402,10 @@
     <state x="293" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606148555630" />
     <state x="440" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605615571950" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605768716172" />
-    <state x="442" y="160" key="Vcs.Push.Dialog.v2" timestamp="1606149388522">
+    <state x="442" y="160" key="Vcs.Push.Dialog.v2" timestamp="1606149639033">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="442" y="160" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606149388522" />
+    <state x="442" y="160" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606149639033" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605611025926" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
     <state x="832" y="364" key="cloudConfig.SelfSettingsDialog" timestamp="1605607850899" />
@@ -396,10 +417,10 @@
     <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1605607850899" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850899" />
-    <state x="498" y="178" width="840" height="538" key="search.everywhere.popup" timestamp="1606149528614">
+    <state x="498" y="178" width="840" height="538" key="search.everywhere.popup" timestamp="1606149611372">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="498" y="178" width="840" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606149528614" />
+    <state x="498" y="178" width="840" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606149611372" />
     <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610977642" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
   </component>
