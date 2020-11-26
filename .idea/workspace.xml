@@ -19,11 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Lexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Parser.java" afterDir="false" />
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="fix minor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,9 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Tag Library Descriptor" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -46,7 +44,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -66,7 +63,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/tests_ex1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Minijava-Compiler-master" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -75,40 +72,30 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\src\duda\Compiler\src\ex2" />
       <recent name="C:\src\duda\Compiler\src\tests_ex1" />
       <recent name="C:\src\duda\Compiler\src" />
       <recent name="C:\src\duda\Compiler" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ex2.proj" />
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\src\duda\Compiler\src\tests_ex1" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal print src/tests_ex1/ricky-test-16-11.xml src/tests_ex1/ricky-test-16-11_renamed.java" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal print src/tests_ex1/test_cases/method_renaming/method_with_this_rename-1.xml src/tests_ex1/test_cases/method_renaming/method_with_this_rename-1.java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -143,11 +130,38 @@
       <workItem from="1605438229072" duration="33000" />
       <workItem from="1605452816412" duration="76000" />
       <workItem from="1605608072949" duration="706000" />
-      <workItem from="1605610660835" duration="313000" />
-      <workItem from="1605721958633" duration="25000" />
-      <workItem from="1605722055758" duration="594000" />
-      <workItem from="1606229070759" duration="303000" />
-      <workItem from="1606229417538" duration="249000" />
+      <workItem from="1605610660835" duration="984000" />
+      <workItem from="1605611660606" duration="91000" />
+      <workItem from="1605611763484" duration="79000" />
+      <workItem from="1605611855004" duration="372000" />
+      <workItem from="1605612239701" duration="56000" />
+      <workItem from="1605612307318" duration="294000" />
+      <workItem from="1605613862130" duration="93000" />
+      <workItem from="1605613967118" duration="225000" />
+      <workItem from="1605614207772" duration="82000" />
+      <workItem from="1605614300737" duration="287000" />
+      <workItem from="1605614598895" duration="151000" />
+      <workItem from="1605614763770" duration="174000" />
+      <workItem from="1605614947919" duration="65000" />
+      <workItem from="1605615023253" duration="155000" />
+      <workItem from="1605615188228" duration="127000" />
+      <workItem from="1605615325268" duration="439000" />
+      <workItem from="1605615989059" duration="136000" />
+      <workItem from="1605616136315" duration="57000" />
+      <workItem from="1605616203067" duration="534000" />
+      <workItem from="1605616748536" duration="106000" />
+      <workItem from="1605616864481" duration="248000" />
+      <workItem from="1605617125961" duration="695000" />
+      <workItem from="1605617837403" duration="611000" />
+      <workItem from="1605618469139" duration="102000" />
+      <workItem from="1605618582482" duration="45000" />
+      <workItem from="1605681998852" duration="10000" />
+      <workItem from="1605722017596" duration="1266000" />
+      <workItem from="1605768704272" duration="16000" />
+      <workItem from="1606148527579" duration="987000" />
+      <workItem from="1606149564683" duration="1414000" />
+      <workItem from="1606204452571" duration="8125000" />
+      <workItem from="1606227657568" duration="4867000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -212,31 +226,72 @@
       <option name="project" value="LOCAL" />
       <updated>1605547587389</updated>
     </task>
-    <task id="LOCAL-00010" summary="push ofek &amp; ricky's latest changes">
-      <created>1606229634637</created>
+    <task id="LOCAL-00010" summary="added new tests">
+      <created>1605610997898</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1606229634637</updated>
+      <updated>1605610997898</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="removed prints from ex1">
+      <created>1605722615343</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605722615343</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added jar">
+      <created>1606148585745</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1606148585745</updated>
+    </task>
+    <task id="LOCAL-00013" summary="reordered packages for ex2">
+      <created>1606149386429</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1606149386429</updated>
+    </task>
+    <task id="LOCAL-00014" summary="reordered packages for ex2">
+      <created>1606149630028</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1606149630028</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added basic llvm helpers">
+      <created>1606212218743</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1606212218743</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix minor">
+      <created>1606212524002</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1606212524002</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove print for check repo" />
@@ -248,17 +303,29 @@
     <MESSAGE value="files to git" />
     <MESSAGE value="added else if for new" />
     <MESSAGE value="MethodRename final" />
-    <MESSAGE value="push ofek &amp; ricky's latest changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="push ofek &amp; ricky's latest changes" />
+    <MESSAGE value="added new tests" />
+    <MESSAGE value="removed prints from ex1" />
+    <MESSAGE value="added jar" />
+    <MESSAGE value="reordered packages for ex2" />
+    <MESSAGE value="added basic llvm helpers" />
+    <MESSAGE value="fix minor" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix minor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1605607850898" />
     <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850898" />
-    <state x="429" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605607850898" />
+    <state x="429" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605616121148">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
     <state x="429" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850898" />
+    <state x="429" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605616121148" />
     <state x="729" y="-758" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605607850898" />
     <state x="729" y="-758" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850898" />
     <state x="714" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850898" />
+    <state x="686" y="152" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1605616705648">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="686" y="152" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605616705648" />
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1605607850898" />
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850898" />
     <state x="790" y="213" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1605607850898" />
@@ -269,32 +336,39 @@
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850898" />
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1605607850898" />
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850898" />
-    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1605607850898" />
-    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850898" />
-    <state width="1865" height="488" key="GridCell.Tab.0.bottom" timestamp="1605610693027">
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1606204610773">
       <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606204610773" />
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850898" />
+    <state width="1481" height="625" key="GridCell.Tab.0.bottom" timestamp="1605723295377">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="931" height="383" key="GridCell.Tab.0.bottom/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850898" />
-    <state width="1865" height="488" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610693027" />
-    <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
-    <state width="1865" height="488" key="GridCell.Tab.0.center" timestamp="1605610693027">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1481" height="625" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605723295377" />
+    <state width="1865" height="250" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605615764018" />
+    <state width="1865" height="840" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605618570781" />
+    <state width="1481" height="625" key="GridCell.Tab.0.center" timestamp="1605723295376">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="931" height="383" key="GridCell.Tab.0.center/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850899" />
-    <state width="1865" height="488" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610693027" />
-    <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
-    <state width="1865" height="488" key="GridCell.Tab.0.left" timestamp="1605610693027">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1481" height="625" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605723295376" />
+    <state width="1865" height="250" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605615764018" />
+    <state width="1865" height="840" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605618570781" />
+    <state width="1481" height="625" key="GridCell.Tab.0.left" timestamp="1605723295375">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="931" height="383" key="GridCell.Tab.0.left/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850899" />
-    <state width="1865" height="488" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610693027" />
-    <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
-    <state width="1865" height="488" key="GridCell.Tab.0.right" timestamp="1605610693027">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1481" height="625" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605723295375" />
+    <state width="1865" height="250" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605615764018" />
+    <state width="1865" height="840" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605618570781" />
+    <state width="1481" height="625" key="GridCell.Tab.0.right" timestamp="1605723295376">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="931" height="383" key="GridCell.Tab.0.right/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850899" />
-    <state width="1865" height="488" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610693027" />
-    <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
+    <state width="1481" height="625" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605723295376" />
+    <state width="1865" height="250" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605615764018" />
+    <state width="1865" height="840" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605618570781" />
     <state width="1865" height="690" key="GridCell.Tab.1.bottom" timestamp="1605610646573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -319,15 +393,23 @@
     <state width="937" height="434" key="GridCell.Tab.1.right/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850899" />
     <state width="1865" height="690" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610646572" />
     <state width="1877" height="444" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
-    <state x="789" y="222" key="RollbackChangesDialog" timestamp="1605607850899" />
-    <state x="789" y="222" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
-    <state x="440" y="0" key="SettingsEditor" timestamp="1605610783618">
+    <state x="508" y="220" key="MultipleFileMergeDialog" timestamp="1605611011765">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610783618" />
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1605607850899" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850899" />
+    <state x="508" y="220" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605611011765" />
+    <state x="789" y="222" key="RollbackChangesDialog" timestamp="1605607850899" />
+    <state x="789" y="222" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
+    <state x="293" y="0" key="SettingsEditor" timestamp="1606148555630">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="293" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606148555630" />
+    <state x="440" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605615571950" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605768716172" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1606212525504">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="442" y="160" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606149639033" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606212525504" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
     <state x="832" y="364" key="cloudConfig.SelfSettingsDialog" timestamp="1605607850899" />
     <state x="832" y="364" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850899" />
@@ -338,48 +420,33 @@
     <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1605607850899" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850899" />
-    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup" timestamp="1605610802648">
+    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup" timestamp="1606212513112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605610802648" />
+    <state x="498" y="178" width="840" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606149611372" />
+    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606212513112" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850899" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>19</line>
-          <properties class="ex1.VisitorRenameVar">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
           <line>65</line>
           <option name="timeStamp" value="85" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="ast.ClassDecl" memberName="table" />
+        <PinnedItemInfo parentTag="ast.Program" memberName="table" />
+        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
