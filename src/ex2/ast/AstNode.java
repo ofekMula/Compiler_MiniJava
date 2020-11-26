@@ -10,17 +10,6 @@ public abstract class AstNode {
         lineNumber = null;
     }
 
-    /** reference to symbol table of enclosing scope **/
-    private SymbolTable table;
-
-    public void setTable(SymbolTable table){
-        this.table = table;
-    }
-    /** returns symbol table of enclosing scope **/
-    public SymbolTable table() {
-        return table;
-    }
-
     public AstNode(int lineNumber) {
         this.lineNumber = lineNumber;
     }
