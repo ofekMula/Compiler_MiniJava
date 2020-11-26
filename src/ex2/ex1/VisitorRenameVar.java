@@ -1,6 +1,7 @@
 package ex2.ex1;
 
 import ex2.ast.*;
+import ex2.proj.SymbolTable;
 
 public class VisitorRenameVar implements Visitor {
     Symbol symbolOfVarToRename;

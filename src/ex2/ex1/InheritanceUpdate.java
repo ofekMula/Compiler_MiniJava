@@ -2,6 +2,7 @@ package ex2.ex1;
 
 import ex2.ast.ClassDecl;
 import ex2.ast.Program;
+import ex2.proj.SymbolTable;
 
 import java.util.Map;
 

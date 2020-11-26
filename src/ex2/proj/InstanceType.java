@@ -1,11 +1,11 @@
 package ex2.proj;
 
 public enum InstanceType {
-    boolean_i1("i1"),
-    i8("i8"),
-    i8_ptr("i8*"),
-    int_i32("i32"),
-    int_arr("i32*")
+    Boolean("i1"),
+    Char("i8"),
+    CharPtr("i8*"),
+    Int("i32"),
+    IntArr("i32*")
     ;
 
     InstanceType(String str){

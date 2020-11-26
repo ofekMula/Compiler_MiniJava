@@ -1,6 +1,7 @@
 package ex2.ex1;
 
 import ex2.ast.AstNode;
+import ex2.proj.SymbolTable;
 
 public class Symbol {
     String id;

@@ -1,6 +1,6 @@
 package ex2.ast;
 
-import ex2.ex1.SymbolTable;
+import ex2.proj.SymbolTable;
 
 import javax.xml.bind.annotation.XmlElement;
 
