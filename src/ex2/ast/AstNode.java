@@ -1,7 +1,5 @@
 package ex2.ast;
 
-import ex2.proj.SymbolTable;
-
 import javax.xml.bind.annotation.XmlElement;
 
 public abstract class AstNode {
