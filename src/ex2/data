@@ -1,0 +1,26 @@
+
+
+ Table class A:
+    x 32i
+    bar 8*
+
+
+ Method bar:
+    register cnt for local vars
+
+
+
+Base - compile time table:
+    set: 0
+    get: 1
+
+v_table:
+   {Base.set() , Base.get()}
+
+Derive - compile time table:
+    set: 0
+
+v_table:
+    {Derive.set()}
+
+
