@@ -10,8 +10,6 @@ public class MethodData {
     private Map<String, String> fieldsVars; //fields that were not overridden
     String returnType;
     int offset;
-    int registerCnt;
-    int label;
 
     public MethodData(){
         super();

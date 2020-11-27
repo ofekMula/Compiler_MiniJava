@@ -1,8 +1,8 @@
 package ex2.proj;
 
 public class VarData {
-    String type;
-    int offset;
+    private String type;
+    private int offset;
 
     public int getOffset() {
         return offset;
