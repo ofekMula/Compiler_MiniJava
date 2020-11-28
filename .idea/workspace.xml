@@ -19,8 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="push ofek &amp; ricky's latest changes">
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="Added handling of while and if statements.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex2/proj/InstructionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/InstructionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex2/proj/LlvmGeneratorVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/LlvmGeneratorVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/formal_param_with_if_and_assign_array_statements.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_sysout_and_array_length_statements.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/test_cases/variable_renaming/local_var_with_sysout_and_array_length_statements.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +45,12 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="trying_to_correct_methodRename_of_unrelated_sibling" />
+        <entry key="$PROJECT_DIR$" value="ofek-llvm" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -59,6 +66,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -443,6 +451,10 @@
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606411271408" />
     <state x="832" y="364" key="cloudConfig.SelfSettingsDialog" timestamp="1605607850899" />
     <state x="832" y="364" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850899" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606578665481">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1606578665481" />
     <state x="485" y="256" width="950" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1605607850899" />
     <state x="485" y="256" width="950" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850899" />
     <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1605607850899" />
@@ -464,7 +476,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>65</line>
+          <line>69</line>
           <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
@@ -472,14 +484,16 @@
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="ex2.proj.ClassMethodDataVisitor" memberName="classDataAddToMethod" />
+        <PinnedItemInfo parentTag="ex1.Symbol" memberName="insideTable" />
         <PinnedItemInfo parentTag="ast.ClassDecl" memberName="table" />
-        <PinnedItemInfo parentTag="ast.Program" memberName="table" />
         <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+        <PinnedItemInfo parentTag="ast.Program" memberName="table" />
+        <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
       </pinned-members>
     </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

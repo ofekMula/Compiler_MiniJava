@@ -10,6 +10,10 @@ public class ExprVisitor implements Visitor {
     private void emit(String data) {
         //todo
     }
+    private String createLabel(String data) {
+        //todo
+        return data;
+    }
 
     private void appendWithIndent(String str) {
     }
@@ -159,20 +163,43 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(IfStatement ifStatement) {
+        String ifCondLabel = createLabel("condLabel");
+        String ifThenLabel = createLabel("startLabel");
+        String ifElseLabel = createLabel("EndLabel");
+        String line;
+        //todo: ifCondLabels=newLabelCreator(); - loading 3 labels for if: one for thencase,elseCase and returnBackToFunc.
 
-        ifStatement.cond().accept(this);
+        ifStatement.cond().accept(this);//loading the condition in registers
 
-        ifStatement.thencase().accept(this);
 
+        line=InstructionType.branch_boolean+" "+resReg+"," +InstructionType.branch_label + ifCondLabel + " "+
+                InstructionType.branch_label + ifThenLabel;// br i1 %1,label %if0, label %if1
+        emit(line);
+        emit(ifCondLabel+":");//if0:
+        ifStatement.thencase().accept(this);//add this content to the last queue line;
+        emit(InstructionType.branch_label+ifElseLabel);//br back to the current function.
+        emit(ifThenLabel+":");//if0:
         ifStatement.elsecase().accept(this);
+        emit(InstructionType.branch_label+ifElseLabel);//br back to the current function.
     }
 
     @Override
     public void visit(WhileStatement whileStatement) {
-
-        whileStatement.cond().accept(this);
-
+        String whileCondLabel = createLabel("condLabel");
+        String whileStartLabel = createLabel("startLabel");
+        String whileEndLabel = createLabel("EndLabel");
+        String line;
+        //todo: whileCondLabels=newLabelCreator(); - getting label for each label inside While statemnt
+        emit(InstructionType.branch_label + whileCondLabel+"\n");
+        emit(whileCondLabel + ":\n");
+        whileStatement.cond().accept(this);//update the result of the condtion in resreg
+        line=InstructionType.branch_boolean+" "+resReg+"," +InstructionType.branch_label + whileStartLabel + " "+
+                InstructionType.branch_label + whileEndLabel;// br i1 %1,label %start, label %end
+        emit(whileStartLabel+":"+"\n");
         whileStatement.body().accept(this);
+        emit(InstructionType.branch_label+whileCondLabel);//br back to the while cond
+        emit(InstructionType.branch_label+whileEndLabel);//br out of while
+
 
     }
 
