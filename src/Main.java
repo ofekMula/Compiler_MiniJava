@@ -2,6 +2,8 @@ import ast.AstPrintVisitor;
 import ast.AstXMLSerializer;
 import ast.Program;
 import ex1_final.*;
+import ex2.proj.ClassData;
+import ex2.proj.ClassMethodDataVisitor;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -43,9 +45,11 @@ public class Main {
                     throw new UnsupportedOperationException("TODO - Ex. 3");
 
                 } else if (action.equals("compile")) {
-                    throw new UnsupportedOperationException("TODO - Ex. 2");
-
-                } else if (action.equals("rename")) {
+                    ClassMethodDataVisitor firstVisitor = new ClassMethodDataVisitor();
+                    firstVisitor.visit(prog);
+                    Map<String, ClassData> classNameToData = firstVisitor.classNameToData;
+                }
+                else if (action.equals("rename")) {
                     var type = args[2];
                     var originalName = args[3];
                     var originalLine = args[4];
