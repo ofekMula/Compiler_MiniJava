@@ -19,4 +19,10 @@ public class MethodContext {
         registerCnt++;
         return "%_" + currCnt;
     }
+
+    public String getNewLable(String name) {
+        int currCnt = labelCnt;
+        labelCnt++;
+        return "Lable_" + name+ "_" + currCnt;
+    }
 }

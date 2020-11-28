@@ -2,17 +2,23 @@ package ex2.proj;
 
 import ast.*;
 
+import java.util.Map;
+
 public class ExprVisitor implements Visitor {
+
+    private Map<String, ClassData> classNameToData;
     private String varDeclType;
     private String resReg;
-    MethodContext methodContext; // to be initialized in every new method
+    private MethodContext methodContext; // to be initialized in every new method
+    private ClassData currClassData;
+
+    public ExprVisitor(Map<String, ClassData> classNameToData){
+        this.classNameToData = classNameToData;
+    }
 
     private void emit(String data) {
         //todo
-    }
-    private String createLabel(String data) {
-        //todo
-        return data;
+        //todo rename function name
     }
 
     private void appendWithIndent(String str) {
@@ -32,10 +38,12 @@ public class ExprVisitor implements Visitor {
         String e2Reg = resReg;
 
         String regTye = "";
+        String operandTye = methodContext.RegTypesMap.get(e1Reg);
+
         // case 1: && , + , - , *
         if (!infixSymbol.equals("<")) {
             // The result is the same type as the operands.
-             regTye = methodContext.RegTypesMap.get(e1Reg);
+             regTye = operandTye;
         }
         // case 2: <
         else {
@@ -54,7 +62,7 @@ public class ExprVisitor implements Visitor {
         String infixSymbolStr = Utils.getStrForInfixSymbol(infixSymbol);
 
         // write the expression
-        emit("\n\t" + reg + " = " + infixSymbolStr + " " + regTye + " " + e1Reg + ", " + e2Reg);
+        emit("\n\t" + reg + " = " + infixSymbolStr + " " + operandTye + " " + e1Reg + ", " + e2Reg);
 
         // update resReg
         resReg = reg;
@@ -72,6 +80,8 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(ClassDecl classDecl) {
+
+        currClassData = classNameToData.get(classDecl.name();
 
         if (classDecl.superName() != null) {
 
@@ -98,7 +108,7 @@ public class ExprVisitor implements Visitor {
     @Override
     public void visit(MethodDecl methodDecl) {
 
-        //todo: initialize methodContext
+        methodContext = new MethodContext();
 
         methodDecl.returnType().accept(this);
 
@@ -163,9 +173,9 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(IfStatement ifStatement) {
-        String ifCondLabel = createLabel("condLabel");
-        String ifThenLabel = createLabel("startLabel");
-        String ifElseLabel = createLabel("EndLabel");
+        String ifCondLabel = methodContext.getNewLable("condLabel");
+        String ifThenLabel = methodContext.getNewLable("startLabel");
+        String ifElseLabel = methodContext.getNewLable("EndLabel");
         String line;
         //todo: ifCondLabels=newLabelCreator(); - loading 3 labels for if: one for thencase,elseCase and returnBackToFunc.
 
@@ -185,9 +195,9 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(WhileStatement whileStatement) {
-        String whileCondLabel = createLabel("condLabel");
-        String whileStartLabel = createLabel("startLabel");
-        String whileEndLabel = createLabel("EndLabel");
+        String whileCondLabel = methodContext.getNewLable("condLabel");
+        String whileStartLabel = methodContext.getNewLable("startLabel");
+        String whileEndLabel = methodContext.getNewLable("EndLabel");
         String line;
         //todo: whileCondLabels=newLabelCreator(); - getting label for each label inside While statemnt
         emit(InstructionType.branch_label + whileCondLabel+"\n");
