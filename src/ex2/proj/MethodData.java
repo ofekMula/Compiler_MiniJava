@@ -4,20 +4,33 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MethodData {
+    private String name;
     private ClassData classData;
     private Map<String, String> localVars; // <name : type (String because of ****)>
     private Map<String, String> formalVars;
-    private Map<String, String> fieldsVars; //fields that were not overridden
-    String returnType;
-    int offset;
-    int registerCnt;
-    int label;
+    private Map<String, VarData> fieldsVars; // fields that weren't overridden
+    private String returnType;
+    private int offset;
+    private int registerCnt;
+    private int label;
 
     public MethodData(){
         super();
         localVars = new HashMap<>();
         formalVars = new HashMap<>();
         fieldsVars = new HashMap<>();
+    }
+
+    public MethodData(String name, ClassData classData,Map<String, String> localVars,Map<String, String> formalVars,Map<String, VarData>  fieldsVars,int offset,String returnType){
+        this.name = name;
+        this.classData = classData;
+        this.localVars = localVars;
+        this.fieldsVars = fieldsVars;
+        this.formalVars = formalVars;
+        this.returnType = returnType;
+        this.registerCnt = 0;
+        this.label = 0;
+        this.offset = offset;
     }
 
 
@@ -33,4 +46,19 @@ public class MethodData {
         this.classData = classData;
     }
 
+    public void setLabel(int label) {
+        this.label = label;
+    }
+
+    public void setRegisterCnt(int registerCnt) {
+        this.registerCnt = registerCnt;
+    }
+
+    public int getOffset() {
+        return offset;
+    }
+
+    public void setOffset(int offset) {
+        this.offset = offset;
+    }
 }
