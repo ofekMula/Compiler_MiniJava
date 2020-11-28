@@ -105,9 +105,7 @@ public class ClassMethodDataVisitor implements Visitor {
 
         classDataAddToMethod = new ClassData(classDecl.name(), null, methodData, fieldsVars); // superClass will be defined later (1)
 
-        //////////// bring superclass vars /////////////////
         bringSuperClassVars(classDecl.superName(), fieldsVars);
-        /////////////////////////////////////////////////////////
 
         initializeVarsOffsetByMax(fieldsVars);
         for (var fieldDecl : classDecl.fields()) {

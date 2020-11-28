@@ -84,8 +84,8 @@ public class Main {
                     throw new IllegalArgumentException("unknown command line action " + action);
                 }
             } finally {
-                outFile.flush();
-                outFile.close();
+//                outFile.flush();
+//                outFile.close();
             }
 
         } catch (FileNotFoundException e) {

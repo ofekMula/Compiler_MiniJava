@@ -22,7 +22,8 @@
 //    }
 //}
 //
-//class C extends A {
+//
+// class C extends A {
 //    public int foo() {
 //        return theVar;
 //    }
