@@ -194,6 +194,15 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(WhileStatement whileStatement) {
+        //the flow here:
+        //branch to condition expr
+        //then store the result in a register
+        //then branch accordingly to the if case or else case
+        //if case:start the loop and accept to the body and re-enter condtion.
+        //else case: branch to end loop branch
+        //reference: https://stackoverflow.com/questions/27540761/how-to-change-a-do-while-form-loop-into-a-while-form-loop-in-llvm-ir
+        //and also in kostats.
+
         String whileCondLabel = methodContext.getNewLable("condLabel");
         String whileStartLabel = methodContext.getNewLable("startLabel");
         String whileEndLabel = methodContext.getNewLable("EndLabel");
@@ -205,7 +214,7 @@ public class ExprVisitor implements Visitor {
                 ", "+InstructionType.branch_label + whileEndLabel);// br i1 %reg,label %start, label %end
         emit(whileStartLabel+":\n\t");
         whileStatement.body().accept(this);
-        emit("\t"+InstructionType.branch_goto+" "+InstructionType.branch_label+whileCondLabel+"\n");//br label %condLabel0
+        emit("\t"+InstructionType.branch_goto+" "+InstructionType.branch_label+whileCondLabel+"\n");//branch back to the condition.
         emit(whileEndLabel+":\n\t");//br out of while
 
 
