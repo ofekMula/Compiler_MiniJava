@@ -19,14 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="removed table from node so will compile">
-      <change afterPath="$PROJECT_DIR$/src/ex2/proj/ClassMethodDataVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex2/proj/ClassData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/ClassData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex2/proj/MethodData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/MethodData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex2/proj/VarData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/VarData.java" afterDir="false" />
-    </list>
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="new first visitor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -180,7 +173,7 @@
       <workItem from="1606227657568" duration="4867000" />
       <workItem from="1606411198425" duration="6829000" />
       <workItem from="1606420289210" duration="6757000" />
-      <workItem from="1606569475822" duration="8096000" />
+      <workItem from="1606569475822" duration="8318000" />
     </task>
     <task id="LOCAL-00001" summary="remove print for check repo">
       <created>1604402470370</created>
@@ -315,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606420425502</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="new first visitor">
+      <created>1606577688654</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1606577688654</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,7 +352,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="ordered" />
     <MESSAGE value="removed table from node so will compile" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed table from node so will compile" />
+    <MESSAGE value="new first visitor" />
+    <option name="LAST_COMMIT_MESSAGE" value="new first visitor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1605607850898" />
@@ -463,12 +464,12 @@
     <state x="244" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606420339871" />
     <state x="440" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606411589516" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606569485711" />
-    <state x="442" y="160" key="Vcs.Push.Dialog.v2" timestamp="1606420427302">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1606577690778">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="442" y="160" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606420427302" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606418076020" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606411271408" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606577690778" />
     <state x="832" y="364" key="cloudConfig.SelfSettingsDialog" timestamp="1605607850899" />
     <state x="832" y="364" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850899" />
     <state x="485" y="256" width="950" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1605607850899" />
@@ -480,12 +481,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606413539927" />
-    <state x="498" y="178" width="840" height="538" key="search.everywhere.popup" timestamp="1606420396732">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup" timestamp="1606577655824">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="498" y="178" width="840" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606420396732" />
     <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606418058067" />
-    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606411218068" />
+    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606577655824" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
