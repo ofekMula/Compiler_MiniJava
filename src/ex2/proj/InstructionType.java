@@ -17,7 +17,7 @@ public enum InstructionType {
     smaller_than("slt"),
     branch_goto("br"),
     branch_boolean("br i1"),
-    branch_label ("br label"),
+    branch_label ("label %"),
     bit_cast("bitcast"),
     get_element_ptr("getelementptr"),
     constant("constant"),

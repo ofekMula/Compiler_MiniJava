@@ -23,6 +23,6 @@ public class MethodContext {
     public String getNewLable(String name) {
         int currCnt = labelCnt;
         labelCnt++;
-        return "Lable_" + name+ "_" + currCnt;
+        return name+ "_" + currCnt;
     }
 }

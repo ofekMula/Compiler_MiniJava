@@ -81,7 +81,7 @@ public class ExprVisitor implements Visitor {
     @Override
     public void visit(ClassDecl classDecl) {
 
-        currClassData = classNameToData.get(classDecl.name();
+        currClassData = classNameToData.get(classDecl.name());
 
         if (classDecl.superName() != null) {
 
@@ -173,24 +173,23 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(IfStatement ifStatement) {
-        String ifCondLabel = methodContext.getNewLable("condLabel");
-        String ifThenLabel = methodContext.getNewLable("startLabel");
-        String ifElseLabel = methodContext.getNewLable("EndLabel");
-        String line;
-        //todo: ifCondLabels=newLabelCreator(); - loading 3 labels for if: one for thencase,elseCase and returnBackToFunc.
+        //each if statement breaks into 3 labels : if,else,endIf
+        String ifLabel = methodContext.getNewLable("if");
+        String elseLabel = methodContext.getNewLable("else");
+        String endIfLabel = methodContext.getNewLable("endIf");
 
         ifStatement.cond().accept(this);//loading the condition in registers
 
+        emit("\t"+InstructionType.branch_boolean+" "+resReg+"," +InstructionType.branch_label + ifLabel + " "+
+                InstructionType.branch_label + elseLabel);// br i1 %1,label %if0, label %else1
 
-        line=InstructionType.branch_boolean+" "+resReg+"," +InstructionType.branch_label + ifCondLabel + " "+
-                InstructionType.branch_label + ifThenLabel;// br i1 %1,label %if0, label %if1
-        emit(line);
-        emit(ifCondLabel+":");//if0:
+        emit(ifLabel+":\n\t");//if0:
         ifStatement.thencase().accept(this);//add this content to the last queue line;
-        emit(InstructionType.branch_label+ifElseLabel);//br back to the current function.
-        emit(ifThenLabel+":");//if0:
+        emit(InstructionType.branch_label+endIfLabel);//br back to the current function.
+        emit(elseLabel+":\n\t");//else1:
         ifStatement.elsecase().accept(this);
-        emit(InstructionType.branch_label+ifElseLabel);//br back to the current function.
+        emit(InstructionType.branch_label+endIfLabel);//br back to the current function.
+        emit(endIfLabel+":\n\t");
     }
 
     @Override
@@ -198,17 +197,16 @@ public class ExprVisitor implements Visitor {
         String whileCondLabel = methodContext.getNewLable("condLabel");
         String whileStartLabel = methodContext.getNewLable("startLabel");
         String whileEndLabel = methodContext.getNewLable("EndLabel");
-        String line;
-        //todo: whileCondLabels=newLabelCreator(); - getting label for each label inside While statemnt
-        emit(InstructionType.branch_label + whileCondLabel+"\n");
-        emit(whileCondLabel + ":\n");
+
+        emit("\t"+InstructionType.branch_goto+" "+InstructionType.branch_label+whileCondLabel+"\n");//br label %condLabel0
+        emit(whileCondLabel + ":\n\t");
         whileStatement.cond().accept(this);//update the result of the condtion in resreg
-        line=InstructionType.branch_boolean+" "+resReg+"," +InstructionType.branch_label + whileStartLabel + " "+
-                InstructionType.branch_label + whileEndLabel;// br i1 %1,label %start, label %end
-        emit(whileStartLabel+":"+"\n");
+        emit(InstructionType.branch_boolean+" "+resReg+"," +InstructionType.branch_label + whileStartLabel + " "+
+                ", "+InstructionType.branch_label + whileEndLabel);// br i1 %reg,label %start, label %end
+        emit(whileStartLabel+":\n\t");
         whileStatement.body().accept(this);
-        emit(InstructionType.branch_label+whileCondLabel);//br back to the while cond
-        emit(InstructionType.branch_label+whileEndLabel);//br out of while
+        emit("\t"+InstructionType.branch_goto+" "+InstructionType.branch_label+whileCondLabel+"\n");//br label %condLabel0
+        emit(whileEndLabel+":\n\t");//br out of while
 
 
     }

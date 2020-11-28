@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="Merge branch 'expr_shirly' of https://github.com/rickben/CompilerMiniJava into expr_shirly&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex2/proj/InstructionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/InstructionType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex2/proj/MethodContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/MethodContext.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,18 +35,6 @@
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -42,9 +49,24 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'expr_shirly' of https://github.com/rickben/CompilerMiniJava into expr_shirly&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'expr_shirly' of https://github.com/rickben/CompilerMiniJava into expr_shirly&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="ex2.proj.ClassMethodDataVisitor" memberName="classDataAddToMethod" />
+        <PinnedItemInfo parentTag="ex1.Symbol" memberName="insideTable" />
+        <PinnedItemInfo parentTag="ast.ClassDecl" memberName="table" />
+        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+        <PinnedItemInfo parentTag="ast.Program" memberName="table" />
+        <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
