@@ -11,8 +11,6 @@ public class MethodData {
     private Map<String, VarData> fieldsVars; // fields that weren't overridden
     private String returnType;
     private int offset;
-    private int registerCnt;
-    private int label;
 
     public MethodData(){
         super();
@@ -28,8 +26,6 @@ public class MethodData {
         this.fieldsVars = fieldsVars;
         this.formalVars = formalVars;
         this.returnType = returnType;
-        this.registerCnt = 0;
-        this.label = 0;
         this.offset = offset;
     }
 
@@ -44,14 +40,6 @@ public class MethodData {
 
     public void setClassData(ClassData classData) {
         this.classData = classData;
-    }
-
-    public void setLabel(int label) {
-        this.label = label;
-    }
-
-    public void setRegisterCnt(int registerCnt) {
-        this.registerCnt = registerCnt;
     }
 
     public int getOffset() {
