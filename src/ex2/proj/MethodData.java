@@ -1,5 +1,7 @@
 package ex2.proj;
 
+import ex2.ast.SysoutStatement;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +21,13 @@ public class MethodData {
         formalVars = new HashMap<>();
         fieldsVars = new HashMap<>();
     }
+    public MethodData(String methodName){
+        name=methodName;
+        localVars = new HashMap<>();
+        formalVars = new HashMap<>();
+        fieldsVars = new HashMap<>();
+    }
+
 
     public MethodData(String name, ClassData classData,Map<String, String> localVars,Map<String, String> formalVars,Map<String, VarData>  fieldsVars,int offset,String returnType){
         this.name = name;
@@ -30,7 +39,9 @@ public class MethodData {
         this.offset = offset;
     }
 
-
+    public String getMethodName(){
+        return name;
+    }
     public ClassData getClassData() {
         return classData;
     }
@@ -49,5 +60,25 @@ public class MethodData {
 
     public void setOffset(int offset) {
         this.offset = offset;
+    }
+
+    /**
+     * Searches through the mapping in order to find the the type of a given variable name
+     * @param varName
+     * @return the type of a given var name
+     */
+    public String getVarType(String varName){
+        if(formalVars.containsKey(varName)){
+            return formalVars.get(varName);
+        }
+        else if(localVars.containsKey(varName)){
+            return localVars.get(varName);
+        }
+        else if(fieldsVars.containsKey(varName)){//todo:get it from
+            VarData fieldVar=fieldsVars.get(varName);
+            return fieldVar.getType();
+        }
+        System.out.println("WARNING: could not find var: "+ varName+" in the mapping ");
+        return null;// variable wasn't found in our tables.
     }
 }

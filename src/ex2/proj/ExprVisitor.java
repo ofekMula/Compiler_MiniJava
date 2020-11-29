@@ -11,7 +11,7 @@ public class ExprVisitor implements Visitor {
     private String resReg;
     private MethodContext methodContext; // to be initialized in every new method
     private ClassData currClassData;
-
+    private MethodData currMethodData;// initialized in every method dec.
     public ExprVisitor(Map<String, ClassData> classNameToData){
         this.classNameToData = classNameToData;
     }
@@ -109,7 +109,7 @@ public class ExprVisitor implements Visitor {
     public void visit(MethodDecl methodDecl) {
 
         methodContext = new MethodContext();
-
+        currMethodData =new MethodData(methodDecl.name());
         methodDecl.returnType().accept(this);
 
         for (var formal : methodDecl.formals()) {
@@ -227,8 +227,16 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(AssignStatement assignStatement) {
-
+        //todo: lv: get ID,get type,get register name, rv: get type,
+        String lvId,lvType,lvReg,rvReg,rvType;
+        lvId=assignStatement.lv();
+        lvType=currMethodData.getVarType(lvId);
+        lvReg=Utils.FormatLocalVar(lvId);//todo: handle class field register
         assignStatement.rv().accept(this);
+        rvReg=resReg;//the result of rv will be in this register.
+        //todo: how to get register from field class?
+        emit("\tstore "+lvType+" "+rvReg+", "+lvType+"* "+lvReg+"\n");
+
     }
 
     @Override

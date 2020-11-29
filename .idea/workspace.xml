@@ -19,11 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="Merge branch 'expr_shirly' of https://github.com/rickben/CompilerMiniJava into expr_shirly&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="Fixed while statement+added logic flow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex2/proj/ClassData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/ClassData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex2/proj/ClassMethodDataVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/ClassMethodDataVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex2/proj/InstructionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/InstructionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex2/proj/MethodContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/MethodContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex2/proj/MethodData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/MethodData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,15 +47,52 @@
       <option name="project" value="LOCAL" />
       <updated>1606579331754</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL‎00002" summary="fix if statemnet and while statment.">
+      <created>1606592670791</created>
+      <option name="number" value="LOCAL‎00002" />
+      <option name="presentableId" value="LOCAL‎00002" />
+      <updated>1606592670791</updated>
+    </task>
+    <task id="LOCAL‎00003" summary="Fixed while statement+added logic flow">
+      <created>1606600822486</created>
+      <option name="number" value="LOCAL‎00003" />
+      <option name="presentableId" value="LOCAL‎00003" />
+      <updated>1606600822486</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'expr_shirly' of https://github.com/rickben/CompilerMiniJava into expr_shirly&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'expr_shirly' of https://github.com/rickben/CompilerMiniJava into expr_shirly&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="fix if statemnet and while statment." />
+    <MESSAGE value="Fixed while statement+added logic flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed while statement+added logic flow" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="90" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606655321753">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="90" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1606655321753" />
+    <state x="233" y="78" key="Vcs.Push.Dialog.v2" timestamp="1606600837910">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="78" key="Vcs.Push.Dialog.v2/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1606600837910" />
+    <state x="458" y="259" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606601213760">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="458" y="259" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1606601213760" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
