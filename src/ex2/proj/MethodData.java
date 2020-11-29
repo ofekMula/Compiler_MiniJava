@@ -74,7 +74,7 @@ public class MethodData {
         else if(localVars.containsKey(varName)){
             return localVars.get(varName);
         }
-        else if(fieldsVars.containsKey(varName)){//todo:get it from
+        else if(fieldsVars.containsKey(varName)){//todo: any different between localvar to field var?
             VarData fieldVar=fieldsVars.get(varName);
             return fieldVar.getType();
         }

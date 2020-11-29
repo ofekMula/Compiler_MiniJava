@@ -227,16 +227,21 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(AssignStatement assignStatement) {
-        //todo: lv: get ID,get type,get register name, rv: get type,
+    //Things to think about
         String lvId,lvType,lvReg,rvReg,rvType;
         lvId=assignStatement.lv();
         lvType=currMethodData.getVarType(lvId);
-        lvReg=Utils.FormatLocalVar(lvId);//todo: handle class field register
+        lvReg=Utils.FormatLocalVar(lvId);
         assignStatement.rv().accept(this);
         rvReg=resReg;//the result of rv will be in this register.
-        //todo: how to get register from field class?
-        emit("\tstore "+lvType+" "+rvReg+", "+lvType+"* "+lvReg+"\n");
+        rvType=methodContext.RegTypesMap.get(rvReg);
+        if(!lvType.equals(rvType)){
+            //todo: casting.
+        }
+        //todo: check if there is any adjusment between local and formal to calss fields.
 
+        // store the content calculated for the right side, at the address calculated for the left side
+        emit("\tstore "+lvType+" "+rvReg+", "+lvType+"* "+lvReg+"\n");// x=y ->store i32 %y %x
     }
 
     @Override
