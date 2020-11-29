@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="initated assignment statement">
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="- Assignment Statement continued.&#10;- Added function getVarType() for getting the type of local/formal/field var type.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex2/proj/MethodData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/MethodData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +62,13 @@
       <option name="presentableId" value="LOCAL‎00004" />
       <updated>1606666960861</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL‎00005" summary="- Assignment Statement continued.&#10;- Added function getVarType() for getting the type of local/formal/field var type.">
+      <created>1606678518406</created>
+      <option name="number" value="LOCAL‎00005" />
+      <option name="presentableId" value="LOCAL‎00005" />
+      <updated>1606678518406</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -83,7 +88,8 @@
     <MESSAGE value="fix if statemnet and while statment." />
     <MESSAGE value="Fixed while statement+added logic flow" />
     <MESSAGE value="initated assignment statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="initated assignment statement" />
+    <MESSAGE value="- Assignment Statement continued.&#10;- Added function getVarType() for getting the type of local/formal/field var type." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Assignment Statement continued.&#10;- Added function getVarType() for getting the type of local/formal/field var type." />
   </component>
   <component name="WindowStateProjectService">
     <state x="90" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606655321753">

@@ -227,21 +227,27 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(AssignStatement assignStatement) {
-    //Things to think about
-        String lvId,lvType,lvReg,rvReg,rvType;
+        String lvId,lvType,lvReg,rvReg,rvType,newLvReg;
+
         lvId=assignStatement.lv();
+        //todo: check if there is any adjusment between local and formal to calss fields.
         lvType=currMethodData.getVarType(lvId);
         lvReg=Utils.FormatLocalVar(lvId);
+
         assignStatement.rv().accept(this);
         rvReg=resReg;//the result of rv will be in this register.
         rvType=methodContext.RegTypesMap.get(rvReg);
-        if(!lvType.equals(rvType)){
-            //todo: casting.
+        if(!lvType.equals(rvType)){//need to do casting
+            newLvReg=methodContext.getNewReg();
+            emit(newLvReg+" = "+InstructionType.bit_cast+" "+lvType+" "+lvReg+ "to "+rvType+"\n");
+            lvType=rvType;
+            emit("\tstore "+lvType+" "+rvReg+", "+lvType+"* "+newLvReg+"\n");
         }
-        //todo: check if there is any adjusment between local and formal to calss fields.
+        else{
 
-        // store the content calculated for the right side, at the address calculated for the left side
-        emit("\tstore "+lvType+" "+rvReg+", "+lvType+"* "+lvReg+"\n");// x=y ->store i32 %y %x
+            // store the content calculated for the right side, at the address calculated for the left side
+            emit("\tstore "+lvType+" "+rvReg+", "+lvType+"* "+lvReg+"\n");// x=y ->store i32 %y %x
+        }
     }
 
     @Override
@@ -301,7 +307,7 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(IntegerLiteralExpr e) {
-
+        resReg=e.num()+"";
     }
 
     @Override
