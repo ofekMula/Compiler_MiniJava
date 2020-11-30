@@ -180,6 +180,7 @@ public class CompileVisitor implements Visitor {
             stmt.accept(this);
         }
 
+        // TODO:
         methodDecl.ret().accept(this);
     }
 
