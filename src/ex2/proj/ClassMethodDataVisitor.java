@@ -40,7 +40,7 @@ public class ClassMethodDataVisitor implements Visitor {
     }
 
     // so new methods that don't have offset yet will have a higher offset - after the inherited methods
-    public void initializeOffsetByMax(Map<String,MethodData> methodData){
+    public void initializeMethodsOffsetByMax(Map<String,MethodData> methodData){
         int maxOffset = -1;
         for (Map.Entry<String,MethodData> method : methodData.entrySet()){
             int newOffset = method.getValue().getOffset();
@@ -51,6 +51,38 @@ public class ClassMethodDataVisitor implements Visitor {
             offset = 0;
         else
             offset = maxOffset + 1;
+    }
+
+    // so new vars that don't have offset yet will have a higher offset - after the inherited vars
+    public void initializeVarsOffsetByMax(Map<String,VarData> varData){
+        int maxOffset = -1;
+        for (Map.Entry<String,VarData> var : varData.entrySet()){
+            int newOffset = var.getValue().getOffset();
+            if (newOffset > maxOffset)
+                maxOffset = newOffset;
+        }
+        if (maxOffset > 0)
+            offset = maxOffset;
+        else
+            offset = 0;
+    }
+
+    public void bringSuperClassMethods(String superClassName, Map<String, MethodData> methodData){
+        if (superClassName != null) { // bring to this class all the superClass methods
+            ClassData superClassData = classNameToData.get(superClassName); // get the super table
+            if (superClassData.getMethodData() != null) {
+                methodData.putAll(superClassData.getMethodData()); // put all methods from super class in this class
+            }
+        }
+    }
+
+    public void bringSuperClassVars(String superClassName, Map<String, VarData> fieldsVars){
+        if (superClassName != null) { // bring to this class all the superClass fields
+            ClassData superClassData = classNameToData.get(superClassName); // get the super table
+            if (superClassData.getFieldsVars() != null) {
+                fieldsVars.putAll(superClassData.getFieldsVars()); // put all fields from super class in this class
+            }
+        }
     }
 
     @Override
@@ -71,13 +103,12 @@ public class ClassMethodDataVisitor implements Visitor {
         Map<String,MethodData> methodData = new HashMap<>();
         Map<String, VarData> fieldsVars = new HashMap<>();
 
+        classDataAddToMethod = new ClassData(classDecl.name(), null, methodData, fieldsVars); // superClass will be defined later (1)
+
+        bringSuperClassVars(classDecl.superName(), fieldsVars);
+
+        initializeVarsOffsetByMax(fieldsVars);
         for (var fieldDecl : classDecl.fields()) {
-            //////////// bring superclass vars /////////////////
-            if (classDecl.superName() != null) { // bring to this class all the superClass fields
-                ClassData superClassData = classNameToData.get(classDecl.superName()); // get the super table
-                fieldsVars = superClassData.getFieldsVars(); // put all fields from super class in this class
-            }
-            /////////////////////////////////////////////////////////
 
             fieldDecl.accept(this); // first need to get the type
 
@@ -87,15 +118,9 @@ public class ClassMethodDataVisitor implements Visitor {
         }
         offset = 0; // initialize before calculating for methods, and after all vars been calculated in this class
 
-        //////////// bring superclass methods /////////////////
-        if (classDecl.superName() != null) { // bring to this class all the superClass methods
-            ClassData superClassData = classNameToData.get(classDecl.superName()); // get the super table
-            methodData = superClassData.getMethodDataMap(); // put all methods from super class in this class
-        }
-        // bring to this class all the superClass methods and then override them if needed - in a way that the offset remains the same as in super!!
-        initializeOffsetByMax(methodData); // initialize the offset to be the highest offset + 1
-        /////////////////////////////////////////////////////////
+        bringSuperClassMethods(classDecl.superName(), methodData);
 
+        initializeMethodsOffsetByMax(methodData); // initialize the offset to be the highest offset + 1
         int currOffset;
         for (var methodDecl : classDecl.methoddecls()) {
 
@@ -112,7 +137,9 @@ public class ClassMethodDataVisitor implements Visitor {
             methodData.put(methodDecl.name(), methodDataAddToClass);
         }
         if (classDataAddToMethod != null)
-            classDataAddToMethod.setMethodDataMap(methodData); // put all the methods
+            classDataAddToMethod.setMethodData(methodData); // put all the methods
+        else
+            classDataAddToMethod = new ClassData(classDecl.name(), null, methodData, fieldsVars);
 
         offset = 0; // initialize before calculating next, and after all methods been calculated in this class
 
@@ -140,7 +167,6 @@ public class ClassMethodDataVisitor implements Visitor {
     public void visit(MethodDecl methodDecl) {
         Map<String, String> localVars = new HashMap<>();
         Map<String, String> formalVars = new HashMap<>();
-        Map<String, VarData> fieldsVars = new HashMap<>();
         String returnType;
 
         methodDecl.returnType().accept(this); // in accept the type will be decided in refName
@@ -151,7 +177,7 @@ public class ClassMethodDataVisitor implements Visitor {
             formalVars.put(formal.name(), refName);
         }
 
-        fieldsVars = classDataAddToMethod.getFieldsVars();
+        Map<String, VarData> fieldsVars = new HashMap<>(classDataAddToMethod.getFieldsVars());
 
         for (var varDecl : methodDecl.vardecls()) {
             varDecl.accept(this);// in accept the type will be decided in refName
