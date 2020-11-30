@@ -1,18 +1,22 @@
 package ex2.proj;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MethodData {
-    private String name;
-    private ClassData classData;
+public class MethodData  {
+    public String name;
+    public ClassData classData;
     public Map<String, String> localVars; // <name : type (String because of ****)>
     public Map<String, String> formalVars;
+    public ArrayList<FormalVars> formalVarsList;
     public Map<String, VarData> fieldsVars; // fields that weren't overridden
-    private String returnType;
-    private int offset;
+    public String returnType;
+    public int offset;
 
-    public MethodData(String name, ClassData classData,Map<String, String> localVars,Map<String, String> formalVars,Map<String, VarData>  fieldsVars,int offset,String returnType){
+    public MethodData(String name, ArrayList<FormalVars> formalVarsList, ClassData classData,Map<String, String> localVars,Map<String, String> formalVars,Map<String, VarData>  fieldsVars,int offset,String returnType){
         this.name = name;
         this.classData = classData;
         this.localVars = localVars;
@@ -20,6 +24,7 @@ public class MethodData {
         this.formalVars = formalVars;
         this.returnType = returnType;
         this.offset = offset;
+        this.formalVarsList = formalVarsList;
     }
 
     public String getMethodName(){
@@ -72,4 +77,5 @@ public class MethodData {
     public void setOffset(int offset) {
         this.offset = offset;
     }
+
 }

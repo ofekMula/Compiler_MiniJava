@@ -4,7 +4,10 @@ import ast.*;
 import jflex.base.Pair;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 // todo: only registers that are passed in res reg need to be added to the reg type map - need to remove unnecessary inserts
 
@@ -23,7 +26,7 @@ public class CompileVisitor implements Visitor {
     private void emit(String data) {
         //todo
         //todo rename function name
-        System.out.println(data);
+        System.out.print(data);
     }
 
     private void appendWithIndent(String str) {
@@ -121,8 +124,85 @@ public class CompileVisitor implements Visitor {
         resReg = reg;
     }
 
+    public void addComma(int cntLines, int numOfMethods){
+        if (numOfMethods > 1 && cntLines < numOfMethods - 1) {
+            emit(",");
+        }
+    }
+
+    public void addEmptyNewLine(int numOfMethods){
+        if (numOfMethods > 1){
+            emit("\n");
+        }
+    }
+
+    public void insertNewLine(){
+        emit("\n");
+    }
+
+    public void insertIndent(int numOfMethods) {
+        if (numOfMethods > 1){
+            emit("\t");
+        }
+    }
+
+    static class methodDataOrderByOffset implements Comparator<MethodData> {
+        public int compare(MethodData m1, MethodData m2) {
+            return m1.offset - m2.offset;
+        }
+    }
+
+    public List<MethodData> getOrderedMethodsByOffset(Map<String, MethodData> methodDataMap){
+        return methodDataMap
+                    .values()
+                    .stream()
+                    .sorted(new methodDataOrderByOffset())
+                    .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public void createVTable(List<ClassDecl> classDeclList) {
+        int cntLines;
+        for (ClassDecl classDecl : classDeclList) {
+            String className = classDecl.name();
+            Map<String, MethodData> methodDataMap = classNameToData.get(className).methodDataMap;
+            List<MethodData> methodDataList = getOrderedMethodsByOffset(methodDataMap);
+            int numOfMethods = methodDataList.size();
+
+            emit("\n@." + className + "_vtable = global [" + numOfMethods + " x i8*] ");
+
+            emit("[");
+            addEmptyNewLine(numOfMethods);
+
+            cntLines = 0;
+            for (MethodData methodData : methodDataList) {
+                String methodName = methodData.name;
+                String retType = Utils.getTypeStrForAlloc(methodData.returnType);
+                ArrayList<FormalVars> formalVarsArrayList = methodData.formalVarsList;
+
+                insertIndent(numOfMethods);
+                emit("i8* bitcast (" + retType + " (i8*");
+                for (FormalVars formal : formalVarsArrayList) {
+
+                    String formalTypeFormat = Utils.getTypeStrForAlloc(formal.type);
+                    emit(", " + formalTypeFormat);
+                }
+
+                emit(")* @" + methodData.classData.name + "." + methodName + " to i8*)");
+
+                addComma(cntLines, numOfMethods);
+                addEmptyNewLine(numOfMethods);
+                cntLines ++;
+            }
+            emit("]");
+            insertNewLine();
+        }
+    }
+
+
     @Override
     public void visit(Program program) {
+        createVTable(program.classDecls());
+
         program.mainClass().accept(this);
 
         for (ClassDecl classdecl : program.classDecls()) {
