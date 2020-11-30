@@ -4,6 +4,7 @@ import ast.Program;
 import ex1_final.*;
 import ex2.proj.ClassData;
 import ex2.proj.ClassMethodDataVisitor;
+import ex2.proj.ExprVisitor;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -32,7 +33,6 @@ public class Main {
 
             var outFile = new PrintWriter(outfilename);
             try {
-
                 if (action.equals("marshal")) {
                     AstXMLSerializer xmlSerializer = new AstXMLSerializer();
                     xmlSerializer.serialize(prog, outfilename);
@@ -48,6 +48,8 @@ public class Main {
                     ClassMethodDataVisitor firstVisitor = new ClassMethodDataVisitor();
                     firstVisitor.visit(prog);
                     Map<String, ClassData> classNameToData = firstVisitor.classNameToData;
+                    ExprVisitor exprVisitor = new ExprVisitor(classNameToData);
+                    exprVisitor.visit(prog);
                 }
                 else if (action.equals("rename")) {
                     var type = args[2];
