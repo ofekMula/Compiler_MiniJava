@@ -8,7 +8,7 @@ import java.util.Map;
 
 // todo: only registers that are passed in res reg need to be added to the reg type map - need to remove unnecessary inserts
 
-public class ExprVisitor implements Visitor {
+public class CompileVisitor implements Visitor {
 
     private Map<String, ClassData> classNameToData;
     private String varDeclType;
@@ -16,7 +16,7 @@ public class ExprVisitor implements Visitor {
     private MethodContext methodContext; // to be initialized in every new method
     private ClassData currClassData;
     private MethodData currMethodData;// initialized in every method dec.
-    public ExprVisitor(Map<String, ClassData> classNameToData){
+    public CompileVisitor(Map<String, ClassData> classNameToData){
         this.classNameToData = classNameToData;
     }
 
@@ -38,38 +38,42 @@ public class ExprVisitor implements Visitor {
 
     }
     private void llvmRet(String retType,String reg){
-        emit("\t"+InstructionType.return_from_method+" "+retType+" "+reg);
-
+        emit("\tret " + retType + " " + reg);
     }
+
     private void llvmAlloca(String reg,String type){
-        emit("\t"+reg+" = "+InstructionType.alloc_a+" "+type);
+        emit("\t" + reg + " = alloca " + type);
     }
 
     private void llvmStore(String storedType,String storedValue,String regType,String regPtr){
         emit("\tstore "+storedType+" "+storedValue+", "+regType+"* "+regPtr+"\n");
     }
-    private void llvmLoad(String resultReg,String type,String regPtr){
-        emit("\t"+resultReg + " = "+InstructionType.load+" "+type+", "+type+"* "+regPtr);
-    }
-    private void llvmCall(){
 
+    private void llvmLoad(String resultReg,String type,String regPtr){
+        emit("\t" + resultReg + " = load " + type + ", " + type + "* " + regPtr);
     }
+
+    private void llvmCall(){
+    }
+
     private void llvmBinaryExpr(String resultReg,String op,String operandTye,String e1Reg,String e2Reg){
         emit("\n\t" + resultReg + " = " + op + " " + operandTye + " " + e1Reg + ", " + e2Reg);
     }
 
     private void llvmBrTwoLabels(String resultReg,String firstLabel,String secLabel){
-        emit("\t"+InstructionType.branch_boolean+" "+resultReg+"," +InstructionType.branch_label + firstLabel + " "+
-                InstructionType.branch_label + secLabel);// br i1 %1,label %if0, label %else1
+        emit("\tbr i1 " + resultReg + ", label %" + firstLabel + " label %" + secLabel);// br i1 %1,label %if0, label %else1
     }
+
     private void llvmBrOneLabel(String label){
-        emit("\t"+InstructionType.branch_goto+" "+InstructionType.branch_label+label+"\n");
+        emit("\tbr label %" + label + "\n");
     }
+
     private void llvmPrintLabel(String label){
         emit(label+":\n\t");
     }
+
     private void llvmBitcast(String newReg,String oldReg,String oldType,String newType){
-        emit(newReg+" = "+InstructionType.bit_cast+" "+oldType+" "+oldReg+ "to "+newType+"\n");
+        emit(newReg+" = bitcast"+" "+oldType+" "+oldReg+ "to "+newType+"\n");
 
     }
 

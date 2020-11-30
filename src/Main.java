@@ -4,7 +4,7 @@ import ast.Program;
 import ex1_final.*;
 import ex2.proj.ClassData;
 import ex2.proj.ClassMethodDataVisitor;
-import ex2.proj.ExprVisitor;
+import ex2.proj.CompileVisitor;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -48,8 +48,8 @@ public class Main {
                     ClassMethodDataVisitor firstVisitor = new ClassMethodDataVisitor();
                     firstVisitor.visit(prog);
                     Map<String, ClassData> classNameToData = firstVisitor.classNameToData;
-                    ExprVisitor exprVisitor = new ExprVisitor(classNameToData);
-                    exprVisitor.visit(prog);
+                    CompileVisitor llvmVisitor = new CompileVisitor(classNameToData);
+                    llvmVisitor.visit(prog);
                 }
                 else if (action.equals("rename")) {
                     var type = args[2];
