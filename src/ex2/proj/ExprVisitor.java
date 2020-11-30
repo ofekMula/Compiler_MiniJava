@@ -1,7 +1,9 @@
 package ex2.proj;
 
 import ast.*;
+import jflex.base.Pair;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class ExprVisitor implements Visitor {
@@ -22,6 +24,49 @@ public class ExprVisitor implements Visitor {
     }
 
     private void appendWithIndent(String str) {
+
+    }
+
+    //Methods for printing llvm instructions
+    private void llvmDeclare(){
+
+    }
+    private void llvmDefine(String methodType, String methodName, ArrayList<Pair<String,String>> parameters){
+
+    }
+    private void llvmRet(String retType,String reg){
+        emit("\t"+InstructionType.return_from_method+" "+retType+" "+reg);
+
+    }
+    private void llvmAlloca(String reg,String type){
+        emit("\t"+reg+" = "+InstructionType.alloc_a+" "+type);
+    }
+    private void llvmStore(String storedType,String storedValue,String regType,String regPtr){
+        emit("\tstore "+storedType+" "+storedValue+", "+regType+"* "+regPtr+"\n");
+    }
+    private void llvmLoad(String resultReg,String type,String regPtr){
+        emit("\t"+resultReg + " = "+InstructionType.load+" "+type+", "+type+"* "+regPtr);
+    }
+    private void llvmCall(){
+
+    }
+    private void llvmBinaryExpr(String resultReg,String op,String operandTye,String e1Reg,String e2Reg){
+        emit("\n\t" + resultReg + " = " + op + " " + operandTye + " " + e1Reg + ", " + e2Reg);
+    }
+
+    private void llvmBrTwoLabels(String resultReg,String ifLabel,String elseLabel,){
+        emit("\t"+InstructionType.branch_boolean+" "+resultReg+"," +InstructionType.branch_label + ifLabel + " "+
+                InstructionType.branch_label + elseLabel);// br i1 %1,label %if0, label %else1
+    }
+    private void llvmBrOneLabel(String label){
+        emit("\t"+InstructionType.branch_goto+" "+InstructionType.branch_label+label+"\n");
+    }
+    private void llvmPrintLabel(String label){
+        emit(label+":\n\t");
+    }
+    private void llvmBitcast(String newReg,String oldReg,String oldType,String newType){
+        emit(newReg+" = "+InstructionType.bit_cast+" "+oldType+" "+oldReg+ "to "+newType+"\n");
+
     }
 
     private void visitBinaryExpr(BinaryExpr e, String infixSymbol) {
@@ -179,17 +224,16 @@ public class ExprVisitor implements Visitor {
         String endIfLabel = methodContext.getNewLable("endIf");
 
         ifStatement.cond().accept(this);//loading the condition in registers
+        llvmBrTwoLabels(resReg,ifLabel,elseLabel);
 
-        emit("\t"+InstructionType.branch_boolean+" "+resReg+"," +InstructionType.branch_label + ifLabel + " "+
-                InstructionType.branch_label + elseLabel);// br i1 %1,label %if0, label %else1
-
-        emit(ifLabel+":\n\t");//if0:
+        llvmPrintLabel(ifLabel);//if0:
         ifStatement.thencase().accept(this);//add this content to the last queue line;
-        emit(InstructionType.branch_label+endIfLabel);//br back to the current function.
-        emit(elseLabel+":\n\t");//else1:
+        llvmBrOneLabel(endIfLabel);//br back to the current function
+
+        llvmPrintLabel(elseLabel);//else
         ifStatement.elsecase().accept(this);
-        emit(InstructionType.branch_label+endIfLabel);//br back to the current function.
-        emit(endIfLabel+":\n\t");
+        llvmBrOneLabel(endIfLabel);//br back to the current function.
+        llvmPrintLabel(endIfLabel);//label after the if statement
     }
 
     @Override
@@ -207,15 +251,16 @@ public class ExprVisitor implements Visitor {
         String whileStartLabel = methodContext.getNewLable("startLabel");
         String whileEndLabel = methodContext.getNewLable("EndLabel");
 
-        emit("\t"+InstructionType.branch_goto+" "+InstructionType.branch_label+whileCondLabel+"\n");//br label %condLabel0
-        emit(whileCondLabel + ":\n\t");
+        llvmBrOneLabel(whileCondLabel);
+        llvmPrintLabel(whileCondLabel);
         whileStatement.cond().accept(this);//update the result of the condtion in resreg
-        emit(InstructionType.branch_boolean+" "+resReg+"," +InstructionType.branch_label + whileStartLabel + " "+
-                ", "+InstructionType.branch_label + whileEndLabel);// br i1 %reg,label %start, label %end
-        emit(whileStartLabel+":\n\t");
+        llvmBrTwoLabels(resReg,whileStartLabel,whileEndLabel);// br i1 %reg,label %start, label %end
+
+        llvmPrintLabel(whileStartLabel);
         whileStatement.body().accept(this);
-        emit("\t"+InstructionType.branch_goto+" "+InstructionType.branch_label+whileCondLabel+"\n");//branch back to the condition.
-        emit(whileEndLabel+":\n\t");//br out of while
+        llvmBrOneLabel(whileCondLabel);//branch back to while condition
+
+        llvmPrintLabel(whileEndLabel);//branch out of while
 
 
     }
@@ -239,14 +284,13 @@ public class ExprVisitor implements Visitor {
         rvType=methodContext.RegTypesMap.get(rvReg);
         if(!lvType.equals(rvType)){//need to do casting
             newLvReg=methodContext.getNewReg();
-            emit(newLvReg+" = "+InstructionType.bit_cast+" "+lvType+" "+lvReg+ "to "+rvType+"\n");
+            llvmBitcast(newLvReg,lvType,lvReg,rvType);
             lvType=rvType;
-            emit("\tstore "+lvType+" "+rvReg+", "+lvType+"* "+newLvReg+"\n");
+            llvmStore(lvType,rvReg,lvType,newLvReg);
         }
         else{
-
             // store the content calculated for the right side, at the address calculated for the left side
-            emit("\tstore "+lvType+" "+rvReg+", "+lvType+"* "+lvReg+"\n");// x=y ->store i32 %y %x
+            llvmStore(lvType,rvReg,lvType,lvReg);
         }
     }
 

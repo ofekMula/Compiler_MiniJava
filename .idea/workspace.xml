@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="- Assignment Statement continued.&#10;- Added function getVarType() for getting the type of local/formal/field var type.">
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="-Assignment statement:&#10;added casting handling.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" afterDir="false" />
     </list>
@@ -68,7 +68,13 @@
       <option name="presentableId" value="LOCAL‎00005" />
       <updated>1606678518406</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL‎00006" summary="-Assignment statement:&#10;added casting handling.">
+      <created>1606685136185</created>
+      <option name="number" value="LOCAL‎00006" />
+      <option name="presentableId" value="LOCAL‎00006" />
+      <updated>1606685136185</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,7 +95,8 @@
     <MESSAGE value="Fixed while statement+added logic flow" />
     <MESSAGE value="initated assignment statement" />
     <MESSAGE value="- Assignment Statement continued.&#10;- Added function getVarType() for getting the type of local/formal/field var type." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Assignment Statement continued.&#10;- Added function getVarType() for getting the type of local/formal/field var type." />
+    <MESSAGE value="-Assignment statement:&#10;added casting handling." />
+    <option name="LAST_COMMIT_MESSAGE" value="-Assignment statement:&#10;added casting handling." />
   </component>
   <component name="WindowStateProjectService">
     <state x="90" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606655321753">
