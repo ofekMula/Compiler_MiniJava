@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="-Assignment statement:&#10;added casting handling.">
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="- Added helper functions for emitting(printing) llvm instructions.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" afterDir="false" />
     </list>
@@ -74,7 +74,13 @@
       <option name="presentableId" value="LOCAL‎00006" />
       <updated>1606685136185</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL‎00007" summary="- Added helper functions for emitting(printing) llvm instructions.">
+      <created>1606729784526</created>
+      <option name="number" value="LOCAL‎00007" />
+      <option name="presentableId" value="LOCAL‎00007" />
+      <updated>1606729784526</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,17 +102,19 @@
     <MESSAGE value="initated assignment statement" />
     <MESSAGE value="- Assignment Statement continued.&#10;- Added function getVarType() for getting the type of local/formal/field var type." />
     <MESSAGE value="-Assignment statement:&#10;added casting handling." />
-    <option name="LAST_COMMIT_MESSAGE" value="-Assignment statement:&#10;added casting handling." />
+    <MESSAGE value="- Added helper functions for emitting(printing) llvm instructions." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added helper functions for emitting(printing) llvm instructions." />
   </component>
   <component name="WindowStateProjectService">
     <state x="90" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606655321753">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="90" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1606655321753" />
-    <state x="233" y="78" key="Vcs.Push.Dialog.v2" timestamp="1606600837910">
+    <state x="233" y="78" key="Vcs.Push.Dialog.v2" timestamp="1606729799268">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="78" key="Vcs.Push.Dialog.v2/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1606600837910" />
+    <state x="233" y="78" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606729799268" />
     <state x="458" y="259" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606601213760">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

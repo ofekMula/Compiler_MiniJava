@@ -54,9 +54,9 @@ public class ExprVisitor implements Visitor {
         emit("\n\t" + resultReg + " = " + op + " " + operandTye + " " + e1Reg + ", " + e2Reg);
     }
 
-    private void llvmBrTwoLabels(String resultReg,String ifLabel,String elseLabel,){
-        emit("\t"+InstructionType.branch_boolean+" "+resultReg+"," +InstructionType.branch_label + ifLabel + " "+
-                InstructionType.branch_label + elseLabel);// br i1 %1,label %if0, label %else1
+    private void llvmBrTwoLabels(String resultReg,String firstLabel,String secLabel){
+        emit("\t"+InstructionType.branch_boolean+" "+resultReg+"," +InstructionType.branch_label + firstLabel + " "+
+                InstructionType.branch_label + secLabel);// br i1 %1,label %if0, label %else1
     }
     private void llvmBrOneLabel(String label){
         emit("\t"+InstructionType.branch_goto+" "+InstructionType.branch_label+label+"\n");
