@@ -38,8 +38,10 @@ class Utils {
     }
 
     static String getStrForInfixSymbol(String infixSymbol) {
-        if (infixSymbolStrings.containsKey(infixSymbol))
-            return typesStrings.get(infixSymbol);
+        if (infixSymbolStrings.containsKey(infixSymbol)){
+            return infixSymbolStrings.get(infixSymbol);
+        }
+
         else { //TODO delete after debug
             System.out.println("BUG: Binary op doesnt exists");
             return "?";

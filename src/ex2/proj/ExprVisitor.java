@@ -23,6 +23,7 @@ public class ExprVisitor implements Visitor {
     private void emit(String data) {
         //todo
         //todo rename function name
+        System.out.println(data);
     }
 
     private void visitBinaryExpr(BinaryExpr e, String infixSymbol) {
