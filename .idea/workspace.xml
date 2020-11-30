@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="latest changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex2/proj/ClassMethodDataVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/ClassMethodDataVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex2/proj/MethodData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/MethodData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -535,8 +536,10 @@
         <PinnedItemInfo parentTag="ex2.proj.ClassMethodDataVisitor" memberName="classDataAddToMethod" />
         <PinnedItemInfo parentTag="ex2.proj.MethodData" memberName="classData" />
         <PinnedItemInfo parentTag="ast.ClassDecl" memberName="table" />
+        <PinnedItemInfo parentTag="ex1.Symbol" memberName="insideTable" />
         <PinnedItemInfo parentTag="ast.Program" memberName="table" />
         <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+        <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
         <PinnedItemInfo parentTag="ex2.proj.MethodData" memberName="name" />
       </pinned-members>
     </pin-to-top-manager>

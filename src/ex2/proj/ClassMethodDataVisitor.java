@@ -70,8 +70,8 @@ public class ClassMethodDataVisitor implements Visitor {
     public void bringSuperClassMethods(String superClassName, Map<String, MethodData> methodData){
         if (superClassName != null) { // bring to this class all the superClass methods
             ClassData superClassData = classNameToData.get(superClassName); // get the super table
-            if (superClassData.getMethodData() != null) {
-                methodData.putAll(superClassData.getMethodData()); // put all methods from super class in this class
+            if (superClassData.getMethodDataMap() != null) {
+                methodData.putAll(superClassData.getMethodDataMap()); // put all methods from super class in this class
             }
         }
     }
@@ -137,7 +137,7 @@ public class ClassMethodDataVisitor implements Visitor {
             methodData.put(methodDecl.name(), methodDataAddToClass);
         }
         if (classDataAddToMethod != null)
-            classDataAddToMethod.setMethodData(methodData); // put all the methods
+            classDataAddToMethod.setMethodDataMap(methodData); // put all the methods
         else
             classDataAddToMethod = new ClassData(classDecl.name(), null, methodData, fieldsVars);
 

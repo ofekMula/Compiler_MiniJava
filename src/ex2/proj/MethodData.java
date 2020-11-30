@@ -6,9 +6,9 @@ import java.util.Map;
 public class MethodData {
     private String name;
     private ClassData classData;
-    private Map<String, String> localVars; // <name : type (String because of ****)>
-    private Map<String, String> formalVars;
-    private Map<String, VarData> fieldsVars; // fields that weren't overridden
+    public Map<String, String> localVars; // <name : type (String because of ****)>
+    public Map<String, String> formalVars;
+    public Map<String, VarData> fieldsVars; // fields that weren't overridden
     private String returnType;
     private int offset;
 
