@@ -245,9 +245,9 @@ public class ExprVisitor implements Visitor {
     @Override
     public void visit(IfStatement ifStatement) {
         //each if statement breaks into 3 labels : if,else,endIf
-        String ifLabel = methodContext.getNewLable("if");
-        String elseLabel = methodContext.getNewLable("else");
-        String endIfLabel = methodContext.getNewLable("endIf");
+        String ifLabel = methodContext.getNewLabel("if");
+        String elseLabel = methodContext.getNewLabel("else");
+        String endIfLabel = methodContext.getNewLabel("endIf");
 
         ifStatement.cond().accept(this);//loading the condition in registers
         llvmBrTwoLabels(resReg,ifLabel,elseLabel);
@@ -273,9 +273,9 @@ public class ExprVisitor implements Visitor {
         //reference: https://stackoverflow.com/questions/27540761/how-to-change-a-do-while-form-loop-into-a-while-form-loop-in-llvm-ir
         //and also in kostats.
 
-        String whileCondLabel = methodContext.getNewLable("condLabel");
-        String whileStartLabel = methodContext.getNewLable("startLabel");
-        String whileEndLabel = methodContext.getNewLable("EndLabel");
+        String whileCondLabel = methodContext.getNewLabel("condLabel");
+        String whileStartLabel = methodContext.getNewLabel("startLabel");
+        String whileEndLabel = methodContext.getNewLabel("EndLabel");
 
         llvmBrOneLabel(whileCondLabel);
         llvmPrintLabel(whileCondLabel);
@@ -307,7 +307,7 @@ public class ExprVisitor implements Visitor {
         //rv
         assignStatement.rv().accept(this);
         rvReg=resReg;//the result of rv will be in this register.
-        rvType=methodContext.RegTypesMap.get(rvReg);
+        rvType=methodContext.regTypesMap.get(rvReg);
         //casting if needed(?)
         if(!lvType.equals(rvType)){//need to do casting
             newLvReg=methodContext.getNewReg();

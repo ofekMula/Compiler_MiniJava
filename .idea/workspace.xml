@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="- fixed llvmBrTwoLabels">
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="comments in assignment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" afterDir="false" />
     </list>
@@ -86,7 +86,13 @@
       <option name="presentableId" value="LOCAL‎00008" />
       <updated>1606730577181</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL‎00009" summary="comments in assignment">
+      <created>1606730975639</created>
+      <option name="number" value="LOCAL‎00009" />
+      <option name="presentableId" value="LOCAL‎00009" />
+      <updated>1606730975639</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,18 +116,27 @@
     <MESSAGE value="-Assignment statement:&#10;added casting handling." />
     <MESSAGE value="- Added helper functions for emitting(printing) llvm instructions." />
     <MESSAGE value="- fixed llvmBrTwoLabels" />
-    <option name="LAST_COMMIT_MESSAGE" value="- fixed llvmBrTwoLabels" />
+    <MESSAGE value="comments in assignment" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments in assignment" />
   </component>
   <component name="WindowStateProjectService">
     <state x="90" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606655321753">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="90" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1606655321753" />
-    <state x="233" y="78" key="Vcs.Push.Dialog.v2" timestamp="1606729799268">
+    <state x="121" y="51" key="MergeDialog" timestamp="1606751378299">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="121" y="51" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606751378299" />
+    <state x="280" y="102" key="MultipleFileMergeDialog" timestamp="1606751378317">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="280" y="102" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606751378317" />
+    <state x="233" y="78" key="Vcs.Push.Dialog.v2" timestamp="1606749513435">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="78" key="Vcs.Push.Dialog.v2/0.0.1280.680/15.-1080.1920.1040@0.0.1280.680" timestamp="1606600837910" />
-    <state x="233" y="78" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606729799268" />
+    <state x="233" y="78" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606749513435" />
     <state x="458" y="259" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606601213760">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
