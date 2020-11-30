@@ -134,11 +134,15 @@ public class ExprVisitor implements Visitor {
         // format the var name
         String localFormalVarNameFormatted = Utils.FormatLocalVar(formalArg.name());
 
-        // save the type string into varDeclType
-        formalArg.type().accept(this);
+        // todo delete this if the replacement after it works
+        // get the allocation string for this type
+        // formalArg.type().accept(this);
+        // String typeAllocStr = Utils.getTypeStrForAlloc(varDeclType);
 
         // get the allocation string for this type
-        String typeAllocStr = Utils.getTypeStrForAlloc(varDeclType);
+        String type = currMethodData.formalVars.get(formalArg.name());
+        String typeAllocStr = Utils.getTypeStrForAlloc(type);
+
 
         // comment for debug
         emit("\n\t; formal arg: name: " + formalArg.name() + ", type: " + varDeclType + "%");
@@ -158,11 +162,14 @@ public class ExprVisitor implements Visitor {
         // format the var name
         String localVarNameFormatted = Utils.FormatLocalVar(varDecl.name());
 
-        // save the type string into varDeclType
-        varDecl.type().accept(this);
+        // todo delete this if the replacement after it works
+        // get the allocation string for this type
+        // varDecl.type().accept(this);
+        //String typeAllocStr = Utils.getTypeStrForAlloc(varDeclType);
 
         // get the allocation string for this type
-        String typeAllocStr = Utils.getTypeStrForAlloc(varDeclType);
+        String type = currMethodData.localVars.get(varDecl.name());
+        String typeAllocStr = Utils.getTypeStrForAlloc(type);
 
         // comment for debug
         emit("\n\t; local variable: name: " + varDecl.name() + ", type: " + varDeclType + "%");
@@ -240,20 +247,39 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(AssignStatement assignStatement) {
+        // lv
+        String lvName = assignStatement.lv();
+        String lvFormatName = currMethodData.getVarFormatName(lvName);
+        String lvType = currMethodData.getVarType(lvName);
+        String lvTypeAllocStr = Utils.getTypeStrForAlloc(lvType);
 
+        // rv
         assignStatement.rv().accept(this);
+        String rvReg = resReg;
+        String rvTypeStr = methodContext.regTypesMap.get(rvReg);
+
+
+        emit("\n\tstore "+rvTypeStr +" "+rvReg+", "+lvTypeAllocStr+"* "+lvFormatName);
+        // todo verify the *
     }
 
-    private String getArrElement(String localArrName, String index){
+    private String getArrElement(String localArrName, String index, boolean isAssign){
+        String arrAddrReg;
+
         // get labels
         String negativeIndexLabel = methodContext.getNewLabel("negativeIndex");
         String positiveIndexLabel = methodContext.getNewLabel("positiveIndex");
         String outBoundsLabel = methodContext.getNewLabel("outBounds");
         String inBoundsLabel = methodContext.getNewLabel("inBounds");
 
-        emit("\n\t; Load the address of the array");
-        String arrAddrReg = methodContext.getNewReg();
-        emit("\n\t"+arrAddrReg+" = load i32*, i32** "+localArrName);
+        if (isAssign) {
+            emit("\n\t; Load the address of the array");
+            arrAddrReg = methodContext.getNewReg();
+            emit("\n\t" + arrAddrReg + " = load i32*, i32** " + localArrName);
+        }
+        else {
+            arrAddrReg = localArrName;
+        }
 
         emit("\n\t; Check that the index is greater than zero");
         String isNegativeReg = methodContext.getNewReg();
@@ -302,7 +328,7 @@ public class ExprVisitor implements Visitor {
         assignArrayStatement.index().accept(this);
         String index = resReg;
 
-        String elementPtrReg = getArrElement(localArrName,index);
+        String elementPtrReg = getArrElement(localArrName,index,true);
 
         emit("\n\t; store rv");
         assignArrayStatement.rv().accept(this);
@@ -381,7 +407,7 @@ public class ExprVisitor implements Visitor {
         e.indexExpr().accept(this);
         String index = resReg;
 
-        String elementPtrReg = getArrElement(arr,index);
+        String elementPtrReg = getArrElement(arr,index,false);
 
         emit("\n\t; load element");
         String loadedElementReg = methodContext.getNewReg();
@@ -438,6 +464,49 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(IdentifierExpr e) {
+        //todo verify load os always from same_type* to same_type
+        // should point to an allocated var on the stack/heap
+        String varName = e.id();
+        if (currMethodData.localVars.containsKey(varName)){
+            // load from the stack into a new reg
+            String localFormalVarNameFormatted = Utils.FormatLocalVar(varName);
+
+            // get the allocation string for this type
+            String type = currMethodData.localVars.get(varName);
+            String typeAllocStr = Utils.getTypeStrForAlloc(type);
+
+            // save the result in a new temp reg
+            String reg = methodContext.getNewReg();
+            methodContext.regTypesMap.put(reg, typeAllocStr);
+
+            emit("\n\t"+reg+" = load "+typeAllocStr+", "+typeAllocStr+"* "+localFormalVarNameFormatted);
+
+            resReg = reg;
+            return;
+        }
+
+        if (currMethodData.formalVars.containsKey(varName)){
+            // load from the stack into a new reg
+            String localFormalVarNameFormatted = Utils.FormatLocalVar(varName);
+
+            // get the allocation string for this type
+            String type = currMethodData.formalVars.get(varName);
+            String typeAllocStr = Utils.getTypeStrForAlloc(type);
+
+            // save the result in a new temp reg
+            String reg = methodContext.getNewReg();
+            methodContext.regTypesMap.put(reg, typeAllocStr);
+
+            emit("\n\t"+reg+" = load "+typeAllocStr+", "+typeAllocStr+"* "+localFormalVarNameFormatted);
+
+            resReg = reg;
+            return;
+        }
+
+
+//        if (currMethodData.fieldsVars.containsKey(varName)){
+//            // todo get from the heap
+//        }
 
     }
 
@@ -506,7 +575,6 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(NewObjectExpr e) {
-
     }
 
     @Override
@@ -542,7 +610,7 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(IntArrayAstType t) {
-        varDeclType = "array";
+        varDeclType = "int-array";
     }
 
     @Override
