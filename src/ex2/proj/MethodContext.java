@@ -6,21 +6,21 @@ import java.util.Map;
 public class MethodContext {
     private int registerCnt;
     private int labelCnt;
-    Map<String, String> RegTypesMap; // < %_0 : i32 >
+    Map<String, String> regTypesMap; // < %_0 : i32 >
 
     MethodContext(){
         registerCnt = 0;
         labelCnt = 0;
-        RegTypesMap = new HashMap<>();
+        regTypesMap = new HashMap<>();
     }
 
-    public String getNewReg() {
+    String getNewReg() {
         int currCnt = registerCnt;
         registerCnt++;
         return "%_" + currCnt;
     }
 
-    public String getNewLable(String name) {
+    String getNewLabel(String name) {
         int currCnt = labelCnt;
         labelCnt++;
         return name+ "_" + currCnt;

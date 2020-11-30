@@ -1,16 +1,14 @@
 package ex2.proj;
 
-import ex2.ast.SysoutStatement;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class MethodData {
     private String name;
     private ClassData classData;
-    private Map<String, String> localVars; // <name : type (String because of ****)>
-    private Map<String, String> formalVars;
-    private Map<String, VarData> fieldsVars; // fields that weren't overridden
+    public Map<String, String> localVars; // <name : type (String because of ****)>
+    public Map<String, String> formalVars;
+    public Map<String, VarData> fieldsVars; // fields that weren't overridden
     private String returnType;
     private int offset;
 
@@ -21,13 +19,6 @@ public class MethodData {
         formalVars = new HashMap<>();
         fieldsVars = new HashMap<>();
     }
-    public MethodData(String methodName){
-        name=methodName;
-        localVars = new HashMap<>();
-        formalVars = new HashMap<>();
-        fieldsVars = new HashMap<>();
-    }
-
 
     public MethodData(String name, ClassData classData,Map<String, String> localVars,Map<String, String> formalVars,Map<String, VarData>  fieldsVars,int offset,String returnType){
         this.name = name;
@@ -42,6 +33,34 @@ public class MethodData {
     public String getMethodName(){
         return name;
     }
+    String getVarType(String varName){
+        if (localVars.containsKey(varName)){
+            return localVars.get(varName);
+        }
+        if (formalVars.containsKey(varName)){
+            return formalVars.get(varName);
+        }
+        if (fieldsVars.containsKey(varName)){
+            return fieldsVars.get(varName).getType();
+        }
+        System.out.println("BUG in getVarType for "+ varName); //todo delte after debug
+        return "?";
+    }
+
+    String getVarFormatName(String varName){
+        if (localVars.containsKey(varName)){
+            return Utils.FormatLocalVar(varName);
+        }
+        if (formalVars.containsKey(varName)){
+            return Utils.FormatLocalVar(varName);
+        }
+        if (fieldsVars.containsKey(varName)){
+            return Utils.FormatLocalVar(varName); // todo: do we have different fomat for fields? if not, delete all the function
+        }
+        System.out.println("BUG in getVarType for "+ varName); //todo delte after debug
+        return "?";
+    }
+
     public ClassData getClassData() {
         return classData;
     }
@@ -62,23 +81,5 @@ public class MethodData {
         this.offset = offset;
     }
 
-    /**
-     * Searches through the mapping in order to find the the type of a given variable name
-     * @param varName
-     * @return the type of a given var name
-     */
-    public String getVarType(String varName){
-        if(formalVars.containsKey(varName)){
-            return formalVars.get(varName);
-        }
-        else if(localVars.containsKey(varName)){
-            return localVars.get(varName);
-        }
-        else if(fieldsVars.containsKey(varName)){//todo: any different between localvar to field var?
-            VarData fieldVar=fieldsVars.get(varName);
-            return fieldVar.getType();
-        }
-        System.out.println("WARNING: could not find var: "+ varName+" in the mapping ");
-        return null;// variable wasn't found in our tables.
-    }
+
 }

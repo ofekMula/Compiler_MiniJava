@@ -11,7 +11,7 @@ class Utils {
         typesStrings = new HashMap<>();
         typesStrings.put("int", "i32");
         typesStrings.put("boolean", "i1");
-        typesStrings.put("array", "i8*");
+        typesStrings.put("int-array", "i32*"); //todo "i8*"?? i32* in examples
         typesStrings.put("classPointer", "i8*");
     }
 
@@ -20,7 +20,6 @@ class Utils {
     static {
         infixSymbolStrings = new HashMap<>();
         infixSymbolStrings.put("+", "add");
-        infixSymbolStrings.put("&&", "and");
         infixSymbolStrings.put("-", "sub");
         infixSymbolStrings.put("*", "mul");
         infixSymbolStrings.put("<", "icmp slt");
@@ -39,8 +38,10 @@ class Utils {
     }
 
     static String getStrForInfixSymbol(String infixSymbol) {
-        if (infixSymbolStrings.containsKey(infixSymbol))
-            return typesStrings.get(infixSymbol);
+        if (infixSymbolStrings.containsKey(infixSymbol)){
+            return infixSymbolStrings.get(infixSymbol);
+        }
+
         else { //TODO delete after debug
             System.out.println("BUG: Binary op doesnt exists");
             return "?";

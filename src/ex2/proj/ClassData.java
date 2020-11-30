@@ -8,20 +8,20 @@ public class ClassData {
     private ClassData superClassData;
     private String name;
     private ArrayList<ClassData> subClassesData;
-    private Map<String,MethodData> methodsData; // override and inherited
+    public Map<String,MethodData> methodDataMap; // override and inherited
     private Map<String, VarData> fieldsVars;
 
 
     public ClassData(){
         subClassesData = new ArrayList<>();
-        methodsData = new HashMap<>();
+        methodDataMap = new HashMap<>();
         fieldsVars = new HashMap<>();
     }
 
     public ClassData(String name, ClassData superClassData, Map<String,MethodData> methodData, Map<String, VarData> fieldsVars){
         this.name = name;
         this.superClassData = superClassData;
-        this.methodsData = methodData;
+        this.methodDataMap = methodData;
         this.fieldsVars = fieldsVars;
         this.subClassesData = new ArrayList<>();
     }
@@ -41,21 +41,18 @@ public class ClassData {
     }
 
     public void putMethodDataInMap(String methodName, MethodData methodData){
-        this.methodsData.put(methodName, methodData);
+        this.methodDataMap.put(methodName, methodData);
     }
 
     public Map<String, VarData> getFieldsVars() {
         return fieldsVars;
     }
 
-    public Map<String, MethodData> getMethodsData() {
-        return methodsData;
+    public Map<String, MethodData> getMethodDataMap() {
+        return methodDataMap;
     }
 
-    public MethodData getMethodDataByName(String methodName){
-        return methodsData.get(methodName);
-    }
-    public void setMethodsData(Map<String, MethodData> methodsData) {
-        this.methodsData = methodsData;
+    public void setMethodDataMap(Map<String, MethodData> methodDataMap) {
+        this.methodDataMap = methodDataMap;
     }
 }

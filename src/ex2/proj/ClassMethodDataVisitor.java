@@ -90,7 +90,7 @@ public class ClassMethodDataVisitor implements Visitor {
         //////////// bring superclass methods /////////////////
         if (classDecl.superName() != null) { // bring to this class all the superClass methods
             ClassData superClassData = classNameToData.get(classDecl.superName()); // get the super table
-            methodData = superClassData.getMethodsData(); // put all methods from super class in this class
+            methodData = superClassData.getMethodDataMap(); // put all methods from super class in this class
         }
         // bring to this class all the superClass methods and then override them if needed - in a way that the offset remains the same as in super!!
         initializeOffsetByMax(methodData); // initialize the offset to be the highest offset + 1
@@ -112,7 +112,7 @@ public class ClassMethodDataVisitor implements Visitor {
             methodData.put(methodDecl.name(), methodDataAddToClass);
         }
         if (classDataAddToMethod != null)
-            classDataAddToMethod.setMethodsData(methodData); // put all the methods
+            classDataAddToMethod.setMethodDataMap(methodData); // put all the methods
 
         offset = 0; // initialize before calculating next, and after all methods been calculated in this class
 

@@ -6,6 +6,9 @@ import jflex.base.Pair;
 import java.util.ArrayList;
 import java.util.Map;
 
+// todo: probably only registrs that are passed in res reg need to be added to the reg type map
+// todo: all arr funcs are only for int arrays based on Arrays.ll example, are there more options for arrays?
+
 public class ExprVisitor implements Visitor {
 
     private Map<String, ClassData> classNameToData;
@@ -21,6 +24,7 @@ public class ExprVisitor implements Visitor {
     private void emit(String data) {
         //todo
         //todo rename function name
+        System.out.println(data);
     }
 
     private void appendWithIndent(String str) {
@@ -83,12 +87,12 @@ public class ExprVisitor implements Visitor {
         String e2Reg = resReg;
 
         String regTye = "";
-        String operandTye = methodContext.RegTypesMap.get(e1Reg);
+        String operandTye = methodContext.regTypesMap.get(e1Reg);
 
-        // case 1: && , + , - , *
+        // case 1: + , - , *
         if (!infixSymbol.equals("<")) {
             // The result is the same type as the operands.
-             regTye = operandTye;
+            regTye = operandTye;
         }
         // case 2: <
         else {
@@ -98,10 +102,10 @@ public class ExprVisitor implements Visitor {
 
         // save the result in a new temp reg
         String reg = methodContext.getNewReg();
-        methodContext.RegTypesMap.put(reg,regTye);
+        methodContext.regTypesMap.put(reg, regTye);
 
         // comment for debug
-        emit("\n\t; BinaryExpr: "+ infixSymbol);
+        emit("\n\t; BinaryExpr: " + infixSymbol);
 
         // get String matching the infixSymbol
         String infixSymbolStr = Utils.getStrForInfixSymbol(infixSymbol);
@@ -129,7 +133,6 @@ public class ExprVisitor implements Visitor {
         currClassData = classNameToData.get(classDecl.name());
 
         if (classDecl.superName() != null) {
-
         }
 
         for (var fieldDecl : classDecl.fields()) {
@@ -154,7 +157,8 @@ public class ExprVisitor implements Visitor {
     public void visit(MethodDecl methodDecl) {
 
         methodContext = new MethodContext();
-        currMethodData =new MethodData(methodDecl.name());
+        currMethodData = currClassData.methodDataMap.get(methodDecl.name());
+
         methodDecl.returnType().accept(this);
 
         for (var formal : methodDecl.formals()) {
@@ -177,9 +181,28 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(FormalArg formalArg) {
+        // format the var name
+        String localFormalVarNameFormatted = Utils.FormatLocalVar(formalArg.name());
 
-        formalArg.type().accept(this);
+        // todo delete this if the replacement after it works
+        // get the allocation string for this type
+        // formalArg.type().accept(this);
+        // String typeAllocStr = Utils.getTypeStrForAlloc(varDeclType);
 
+        // get the allocation string for this type
+        String type = currMethodData.formalVars.get(formalArg.name());
+        String typeAllocStr = Utils.getTypeStrForAlloc(type);
+
+
+        // comment for debug
+        emit("\n\t; formal arg: name: " + formalArg.name() + ", type: " + varDeclType + "%");
+
+        // allocate on the stack
+        emit("\n\t" + localFormalVarNameFormatted + " = alloca " + typeAllocStr);
+
+//        if (varDeclType.equals("classPointer")){
+//            //TODO
+//        }
     }
 
     @Override
@@ -189,20 +212,23 @@ public class ExprVisitor implements Visitor {
         // format the var name
         String localVarNameFormatted = Utils.FormatLocalVar(varDecl.name());
 
-        // save the type string into varDeclType
-        varDecl.type().accept(this);
+        // todo delete this if the replacement after it works
+        // get the allocation string for this type
+        // varDecl.type().accept(this);
+        //String typeAllocStr = Utils.getTypeStrForAlloc(varDeclType);
 
         // get the allocation string for this type
-        String typeAllocStr = Utils.getTypeStrForAlloc(varDeclType);
+        String type = currMethodData.localVars.get(varDecl.name());
+        String typeAllocStr = Utils.getTypeStrForAlloc(type);
 
         // comment for debug
-        emit("\n\t; local variable: name: " + varDecl.name() + ", type: "+ varDeclType + "%");
+        emit("\n\t; local variable: name: " + varDecl.name() + ", type: " + varDeclType + "%");
 
         // allocate on the stack
         emit("\n\t" + localVarNameFormatted + " = alloca " + typeAllocStr);
 
 //        if (varDeclType.equals("classPointer")){
-//            //TODO alloc Class On Stack
+//            //TODO
 //        }
 
     }
@@ -277,7 +303,7 @@ public class ExprVisitor implements Visitor {
         lvId=assignStatement.lv();
         lvType=currMethodData.getVarType(lvId);
         lvReg=Utils.FormatLocalVar(lvId);
-
+        String lvTypeAllocStr = Utils.getTypeStrForAlloc(lvType);
         //rv
         assignStatement.rv().accept(this);
         rvReg=resReg;//the result of rv will be in this register.
@@ -289,33 +315,134 @@ public class ExprVisitor implements Visitor {
             lvType=rvType;
             llvmStore(lvType,rvReg,lvType,newLvReg);
         }
+        // todo: verify the *
         else{
             // store the content calculated for the right side, at the address calculated for the left side
             llvmStore(lvType,rvReg,lvType,lvReg);
         }
     }
+    private String getArrElement(String localArrName, String index, boolean isAssign){
+        String arrAddrReg;
 
+        // get labels
+        String negativeIndexLabel = methodContext.getNewLabel("negativeIndex");
+        String positiveIndexLabel = methodContext.getNewLabel("positiveIndex");
+        String outBoundsLabel = methodContext.getNewLabel("outBounds");
+        String inBoundsLabel = methodContext.getNewLabel("inBounds");
+
+        if (isAssign) {
+            emit("\n\t; Load the address of the array");
+            arrAddrReg = methodContext.getNewReg();
+            emit("\n\t" + arrAddrReg + " = load i32*, i32** " + localArrName);
+        }
+        else {
+            arrAddrReg = localArrName;
+        }
+
+        emit("\n\t; Check that the index is greater than zero");
+        String isNegativeReg = methodContext.getNewReg();
+        emit("\n\t"+isNegativeReg+" = icmp slt i32 "+index+", 0");
+        emit("\n\tbr i1 "+isNegativeReg+", label %"+negativeIndexLabel+", label %"+positiveIndexLabel);
+
+        emit("\n"+negativeIndexLabel+":");
+        emit("\n\t; Else throw out of bounds exception");
+        emit("\n\tcall void @throw_oob()");
+        emit("\n\tbr label %"+positiveIndexLabel);
+
+        emit("\n"+positiveIndexLabel+":");
+        emit("\n\t; Load the size of the array (first integer of the array)");
+        String arrSizeElementReg = methodContext.getNewReg();
+        emit("\n\t"+arrSizeElementReg+" = getelementptr i32, i32* "+arrAddrReg+", i32 0");
+        String arrSizeReg = methodContext.getNewReg();
+        emit("\n\t"+arrSizeReg+" = load i32, i32* "+arrSizeElementReg);
+
+        emit("\n\t; Check that the index is less than the size of the array");
+        String isOutBoundsReg = methodContext.getNewReg();
+        emit("\n\t"+isOutBoundsReg+" = icmp sle i32 "+arrSizeReg+", "+index);
+        emit("\n\tbr i1 "+isOutBoundsReg+", label %"+outBoundsLabel+", label %"+inBoundsLabel);
+
+        emit("\n"+outBoundsLabel+":");
+        emit("\n\t; Else throw out of bounds exception");
+        emit("\n\tcall void @throw_oob()");
+        emit("\n\tbr label %"+inBoundsLabel);
+
+        emit("\n"+inBoundsLabel+":");
+        emit("\n\t; All ok, we can safely index the array now");
+        emit("\n\t; We'll be accessing our array at index + 1, since the first element holds the size");
+        String realIndexReg = methodContext.getNewReg();
+        emit("\n\t"+realIndexReg+" = add i32 "+index+", 1");
+
+        emit("\n\t; Get pointer to the i + 1 element of the array");
+        String elementPtrReg = methodContext.getNewReg();
+        emit("\n\t"+elementPtrReg+" = getelementptr i32, i32* "+arrAddrReg+", i32 "+realIndexReg);
+        return elementPtrReg;
+    }
     @Override
     public void visit(AssignArrayStatement assignArrayStatement) {
+        String arrName = assignArrayStatement.lv();
+        String localArrName = Utils.FormatLocalVar(arrName);
 
         assignArrayStatement.index().accept(this);
+        String index = resReg;
 
+        String elementPtrReg = getArrElement(localArrName,index,true);
+
+        emit("\n\t; store rv");
         assignArrayStatement.rv().accept(this);
+        String rvReg = resReg;
+        emit("\n\tstore i32 "+rvReg+", i32* "+elementPtrReg);
     }
 
     @Override
     public void visit(AndExpr e) {
-        visitBinaryExpr(e, "&&");
+        // get labels
+        String checkLeftLabel = methodContext.getNewLabel("checkLeft");
+        String leftTrueLabel = methodContext.getNewLabel("leftTrue");
+        String rightLoadedLabel = methodContext.getNewLabel("rightLoaded");
+        String finallyLabel = methodContext.getNewLabel("finally");
+
+        // get left first, the result will be in resReg
+        e.e1().accept(this);
+        String leftReg = resReg;
+
+        // comment for debug
+        emit("\n\t; andExpr");
+
+        // Check left result, short circuit if false
+        emit("\n\tbr label %" + checkLeftLabel);
+        emit("\n" + checkLeftLabel + ":");
+        emit("\n\t; Check result, short circuit if false");
+        emit("\n\tbr i1 " + leftReg + ", label %" + leftTrueLabel + ", label %" + finallyLabel);
+        emit("\n" + leftTrueLabel + ":");
+
+        // get right, the result will be in resReg
+        e.e2().accept(this);
+        String rightReg = resReg;
+        emit("\n\tbr label %" + rightLoadedLabel);
+        emit("\n" + rightLoadedLabel + ":");
+
+        // phi
+        emit("\n\tbr label %" + finallyLabel);
+        emit("\n" + finallyLabel + ":");
+        emit("\n\t; Get appropriate value, depending on the predecessor block");
+
+        // save the result in a new temp reg
+        String reg = methodContext.getNewReg();
+        methodContext.regTypesMap.put(reg, "i1");
+        emit("\n\t" + reg + " = phi i1 [0, %" + checkLeftLabel + "], [" + rightReg + ", %" + rightLoadedLabel + "]");
+
+        // update resReg
+        resReg = reg;
     }
 
     @Override
     public void visit(LtExpr e) {
-        visitBinaryExpr(e, "<");;
+        visitBinaryExpr(e, "<");
     }
 
     @Override
     public void visit(AddExpr e) {
-        visitBinaryExpr(e, "+");;
+        visitBinaryExpr(e, "+");
     }
 
     @Override
@@ -330,15 +457,38 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(ArrayAccessExpr e) {
+
         e.arrayExpr().accept(this);
+        String arr = resReg;
 
         e.indexExpr().accept(this);
+        String index = resReg;
+
+        String elementPtrReg = getArrElement(arr,index,false);
+
+        emit("\n\t; load element");
+        String loadedElementReg = methodContext.getNewReg();
+        emit("\n\t"+loadedElementReg+" = load i32, i32* "+elementPtrReg);
+        methodContext.regTypesMap.put(loadedElementReg,"i32");
+        resReg = loadedElementReg;
     }
 
     @Override
-    public void visit(ArrayLengthExpr e) {
+    public void visit(ArrayLengthExpr e) { //todo: was not in example so not 100% sure
         e.arrayExpr().accept(this);
+        String arr = resReg;
 
+        emit("\n\t; Load the address of the array");
+        String arrAddrReg = methodContext.getNewReg();
+        emit("\n\t"+arrAddrReg+" = load i32*, i32** "+arr);
+
+        emit("\n\t; Load the size of the array (first integer of the array)");
+        String arrSizeElementReg = methodContext.getNewReg();
+        emit("\n\t"+arrSizeElementReg+" = getelementptr i32, i32* "+arrAddrReg+", i32 0");
+        String arrSizeReg = methodContext.getNewReg();
+        emit("\n\t"+arrSizeReg+" = load i32, i32* "+arrSizeElementReg);
+        methodContext.regTypesMap.put(arrSizeReg,"i32");
+        resReg = arrSizeReg;
     }
 
     @Override
@@ -352,31 +502,132 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(IntegerLiteralExpr e) {
-        resReg=e.num()+"";
+        String numStr = String.valueOf(e.num());
+        methodContext.regTypesMap.put(numStr, "i32");
+        resReg = numStr;
     }
 
     @Override
     public void visit(TrueExpr e) {
-
+        methodContext.regTypesMap.put("1", "i1");
+        resReg = "1";
     }
 
     @Override
     public void visit(FalseExpr e) {
-
+        methodContext.regTypesMap.put("0", "i1");
+        resReg = "0";
     }
 
     @Override
     public void visit(IdentifierExpr e) {
+        //todo verify load os always from same_type* to same_type
+        // should point to an allocated var on the stack/heap
+        String varName = e.id();
+        if (currMethodData.localVars.containsKey(varName)){
+            // load from the stack into a new reg
+            String localFormalVarNameFormatted = Utils.FormatLocalVar(varName);
+
+            // get the allocation string for this type
+            String type = currMethodData.localVars.get(varName);
+            String typeAllocStr = Utils.getTypeStrForAlloc(type);
+
+            // save the result in a new temp reg
+            String reg = methodContext.getNewReg();
+            methodContext.regTypesMap.put(reg, typeAllocStr);
+
+            emit("\n\t"+reg+" = load "+typeAllocStr+", "+typeAllocStr+"* "+localFormalVarNameFormatted);
+
+            resReg = reg;
+            return;
+        }
+
+        if (currMethodData.formalVars.containsKey(varName)){
+            // load from the stack into a new reg
+            String localFormalVarNameFormatted = Utils.FormatLocalVar(varName);
+
+            // get the allocation string for this type
+            String type = currMethodData.formalVars.get(varName);
+            String typeAllocStr = Utils.getTypeStrForAlloc(type);
+
+            // save the result in a new temp reg
+            String reg = methodContext.getNewReg();
+            methodContext.regTypesMap.put(reg, typeAllocStr);
+
+            emit("\n\t"+reg+" = load "+typeAllocStr+", "+typeAllocStr+"* "+localFormalVarNameFormatted);
+
+            resReg = reg;
+            return;
+        }
+
+
+//        if (currMethodData.fieldsVars.containsKey(varName)){
+//            // todo get from the heap
+//        }
 
     }
 
-    public void visit(ThisExpr e) {
-
+    public void visit(ThisExpr e) { //todo: need to verify
+        methodContext.regTypesMap.put("%this", "i8*");
+        resReg = "%this";
     }
 
     @Override
     public void visit(NewIntArrayExpr e) {
+        // get labels
+        String negativeLengthLabel = methodContext.getNewLabel("negativeLength");
+        String positiveLengthLabel = methodContext.getNewLabel("positiveLength");
+
+        // get length
         e.lengthExpr().accept(this);
+        String length = resReg;
+
+        emit("\n\t; Check that the size of the array is not negative");
+
+        // save the result in a new temp reg
+        String isNegativeReg = methodContext.getNewReg();
+        methodContext.regTypesMap.put(isNegativeReg, "i1");
+
+        emit("\n\t" + isNegativeReg + " = icmp slt i32 " + length + ", 0");
+        emit("\n\tbr i1 " + isNegativeReg + ", label %" + negativeLengthLabel + ", label %" + positiveLengthLabel);
+
+        // negative length
+        emit("\n" + negativeLengthLabel + ":");
+        emit("\n\t; Size was negative, throw negative size exception");
+        emit("\n\tcall void @throw_oob()");
+        emit("\n\tbr label %" + positiveLengthLabel);
+
+        // positive length
+        emit("\n" + positiveLengthLabel + ":");
+        emit("\n\t; All ok, we can proceed with the allocation");
+
+        // calculate size
+        emit("\n\t; Calculate size bytes to be allocated for the array");
+        emit("\n\t; Additional int worth of space, to store the size of the array");
+        String arrSizeReg = methodContext.getNewReg();
+        methodContext.regTypesMap.put(arrSizeReg, "i32");
+        emit("\n\t" + arrSizeReg + " = add i32 " + length + ", 1");
+
+        // allocation
+        emit("\n\t; Allocate sz + 1 integers (4 bytes each)");
+        String allocPtrReg = methodContext.getNewReg();
+        methodContext.regTypesMap.put(arrSizeReg, "i8*");
+        emit("\n\t" + allocPtrReg + " = call i8* @calloc(i32 4, i32 " + arrSizeReg + ")");
+
+        // casting
+        emit("\n\t; Cast the returned pointer");
+        String arrPtrReg = methodContext.getNewReg();
+        methodContext.regTypesMap.put(arrPtrReg, "i32*");
+        emit("\n\t" + arrPtrReg + " = bitcast i8* " + allocPtrReg + " to i32*");
+
+        // store size
+        emit("\n\t; Store the size of the array in the first position of the array");
+        emit("\n\tstore i32 "+length+", i32* "+arrPtrReg);
+
+        resReg = arrPtrReg;
+
+        //todo: make sure Assign the array pointer to a local var x looks like this:
+        // store i32* resReg, i32** %x
     }
 
     @Override
@@ -385,8 +636,23 @@ public class ExprVisitor implements Visitor {
     }
 
     @Override
-    public void visit(NotExpr e) {
+    public void visit(NotExpr e) { //todo: need to verify
+        // the result will be in resReg
         e.e().accept(this);
+        String res = resReg;
+
+        // save the result in a new temp reg
+        String reg = methodContext.getNewReg();
+        methodContext.regTypesMap.put(reg, "i1");
+
+        // comment for debug
+        emit("\n\t;NotExpr");
+
+        // xor with 1
+        emit("\n\t" + reg + " = xor " + res + ", 1");
+
+        // update resReg
+        resReg = reg;
 
     }
 
@@ -402,7 +668,7 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(IntArrayAstType t) {
-        varDeclType = "array";
+        varDeclType = "int-array";
     }
 
     @Override
