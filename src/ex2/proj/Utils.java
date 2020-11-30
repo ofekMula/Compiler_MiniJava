@@ -11,7 +11,7 @@ class Utils {
         typesStrings = new HashMap<>();
         typesStrings.put("int", "i32");
         typesStrings.put("boolean", "i1");
-        typesStrings.put("int-array", "i32*"); //todo "i8*"?? i32* in examples
+        typesStrings.put("int-array", "i32*");
         typesStrings.put("classPointer", "i8*");
     }
 

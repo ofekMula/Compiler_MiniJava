@@ -6,8 +6,7 @@ import jflex.base.Pair;
 import java.util.ArrayList;
 import java.util.Map;
 
-// todo: probably only registrs that are passed in res reg need to be added to the reg type map
-// todo: all arr funcs are only for int arrays based on Arrays.ll example, are there more options for arrays?
+// todo: only registers that are passed in res reg need to be added to the reg type map - need to remove unnecessary inserts
 
 public class ExprVisitor implements Visitor {
 
@@ -45,6 +44,7 @@ public class ExprVisitor implements Visitor {
     private void llvmAlloca(String reg,String type){
         emit("\t"+reg+" = "+InstructionType.alloc_a+" "+type);
     }
+
     private void llvmStore(String storedType,String storedValue,String regType,String regPtr){
         emit("\tstore "+storedType+" "+storedValue+", "+regType+"* "+regPtr+"\n");
     }
@@ -184,11 +184,6 @@ public class ExprVisitor implements Visitor {
         // format the var name
         String localFormalVarNameFormatted = Utils.FormatLocalVar(formalArg.name());
 
-        // todo delete this if the replacement after it works
-        // get the allocation string for this type
-        // formalArg.type().accept(this);
-        // String typeAllocStr = Utils.getTypeStrForAlloc(varDeclType);
-
         // get the allocation string for this type
         String type = currMethodData.formalVars.get(formalArg.name());
         String typeAllocStr = Utils.getTypeStrForAlloc(type);
@@ -201,7 +196,7 @@ public class ExprVisitor implements Visitor {
         emit("\n\t" + localFormalVarNameFormatted + " = alloca " + typeAllocStr);
 
 //        if (varDeclType.equals("classPointer")){
-//            //TODO
+//            //TODO implement objects
 //        }
     }
 
@@ -211,11 +206,6 @@ public class ExprVisitor implements Visitor {
 
         // format the var name
         String localVarNameFormatted = Utils.FormatLocalVar(varDecl.name());
-
-        // todo delete this if the replacement after it works
-        // get the allocation string for this type
-        // varDecl.type().accept(this);
-        //String typeAllocStr = Utils.getTypeStrForAlloc(varDeclType);
 
         // get the allocation string for this type
         String type = currMethodData.localVars.get(varDecl.name());
@@ -308,18 +298,17 @@ public class ExprVisitor implements Visitor {
         assignStatement.rv().accept(this);
         rvReg=resReg;//the result of rv will be in this register.
         rvType=methodContext.regTypesMap.get(rvReg);
-        //casting if needed(?)
-        if(!lvType.equals(rvType)){//need to do casting
-            newLvReg=methodContext.getNewReg();
-            llvmBitcast(newLvReg,lvType,lvReg,rvType);
-            lvType=rvType;
-            llvmStore(lvType,rvReg,lvType,newLvReg);
-        }
-        // todo: verify the *
-        else{
+        //TODO: do we need casting?
+//        if(!lvType.equals(rvType)){//need to do casting
+//            newLvReg=methodContext.getNewReg();
+//            llvmBitcast(newLvReg,lvType,lvReg,rvType);
+//            lvType=rvType;
+//            llvmStore(lvType,rvReg,lvType,newLvReg);
+//        }
+//        else{
             // store the content calculated for the right side, at the address calculated for the left side
             llvmStore(lvType,rvReg,lvType,lvReg);
-        }
+//        }
     }
     private String getArrElement(String localArrName, String index, boolean isAssign){
         String arrAddrReg;
@@ -521,7 +510,8 @@ public class ExprVisitor implements Visitor {
 
     @Override
     public void visit(IdentifierExpr e) {
-        //todo verify load os always from same_type* to same_type
+        //todo verify load is always from same_type* to same_type
+        //
         // should point to an allocated var on the stack/heap
         String varName = e.id();
         if (currMethodData.localVars.containsKey(varName)){
@@ -567,7 +557,7 @@ public class ExprVisitor implements Visitor {
 
     }
 
-    public void visit(ThisExpr e) { //todo: need to verify
+    public void visit(ThisExpr e) { //todo: need to verify - no examples
         methodContext.regTypesMap.put("%this", "i8*");
         resReg = "%this";
     }

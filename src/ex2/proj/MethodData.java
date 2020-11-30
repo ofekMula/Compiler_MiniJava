@@ -47,7 +47,7 @@ public class MethodData {
             return Utils.FormatLocalVar(varName);
         }
         if (fieldsVars.containsKey(varName)){
-            return Utils.FormatLocalVar(varName); // todo: do we have different fomat for fields? if not, delete all the function
+            return Utils.FormatLocalVar(varName); // todo: do we have different format for fields? if not, delete all the function
         }
         System.out.println("BUG in getVarType for "+ varName); //todo delte after debug
         return "?";
