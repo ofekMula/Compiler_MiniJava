@@ -273,15 +273,16 @@ public class ExprVisitor implements Visitor {
     @Override
     public void visit(AssignStatement assignStatement) {
         String lvId,lvType,lvReg,rvReg,rvType,newLvReg;
-
+        //lv
         lvId=assignStatement.lv();
-        //todo: check if there is any adjusment between local and formal to calss fields.
         lvType=currMethodData.getVarType(lvId);
         lvReg=Utils.FormatLocalVar(lvId);
 
+        //rv
         assignStatement.rv().accept(this);
         rvReg=resReg;//the result of rv will be in this register.
         rvType=methodContext.RegTypesMap.get(rvReg);
+        //casting if needed(?)
         if(!lvType.equals(rvType)){//need to do casting
             newLvReg=methodContext.getNewReg();
             llvmBitcast(newLvReg,lvType,lvReg,rvType);

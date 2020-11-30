@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="- Added helper functions for emitting(printing) llvm instructions.">
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="- fixed llvmBrTwoLabels">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/ExprVisitor.java" afterDir="false" />
     </list>
@@ -80,7 +80,13 @@
       <option name="presentableId" value="LOCAL‎00007" />
       <updated>1606729784526</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL‎00008" summary="- fixed llvmBrTwoLabels">
+      <created>1606730577181</created>
+      <option name="number" value="LOCAL‎00008" />
+      <option name="presentableId" value="LOCAL‎00008" />
+      <updated>1606730577181</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,7 +109,8 @@
     <MESSAGE value="- Assignment Statement continued.&#10;- Added function getVarType() for getting the type of local/formal/field var type." />
     <MESSAGE value="-Assignment statement:&#10;added casting handling." />
     <MESSAGE value="- Added helper functions for emitting(printing) llvm instructions." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added helper functions for emitting(printing) llvm instructions." />
+    <MESSAGE value="- fixed llvmBrTwoLabels" />
+    <option name="LAST_COMMIT_MESSAGE" value="- fixed llvmBrTwoLabels" />
   </component>
   <component name="WindowStateProjectService">
     <state x="90" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606655321753">
