@@ -38,19 +38,19 @@ public class CompileVisitor implements Visitor {
 
     }
     private void llvmRet(String retType,String reg){
-        emit("\tret " + retType + " " + reg);
+        emit("\n\tret " + retType + " " + reg);
     }
 
     private void llvmAlloca(String reg,String type){
-        emit("\t" + reg + " = alloca " + type);
+        emit("\n\t" + reg + " = alloca " + type);
     }
 
     private void llvmStore(String storedType,String storedValue,String regType,String regPtr){
-        emit("\tstore "+storedType+" "+storedValue+", "+regType+"* "+regPtr+"\n");
+        emit("\n\tstore "+storedType+" "+storedValue+", "+regType+"* "+regPtr);
     }
 
     private void llvmLoad(String resultReg,String type,String regPtr){
-        emit("\t" + resultReg + " = load " + type + ", " + type + "* " + regPtr);
+        emit("\n\t" + resultReg + " = load " + type + ", " + type + "* " + regPtr);
     }
 
     private void llvmCall(){
@@ -61,19 +61,19 @@ public class CompileVisitor implements Visitor {
     }
 
     private void llvmBrTwoLabels(String resultReg,String firstLabel,String secLabel){
-        emit("\tbr i1 " + resultReg + ", label %" + firstLabel + " label %" + secLabel);// br i1 %1,label %if0, label %else1
+        emit("\n\tbr i1 " + resultReg + ", label %" + firstLabel + " label %" + secLabel);// br i1 %1,label %if0, label %else1
     }
 
     private void llvmBrOneLabel(String label){
-        emit("\tbr label %" + label + "\n");
+        emit("\n\tbr label %" + label);
     }
 
     private void llvmPrintLabel(String label){
-        emit(label+":\n\t");
+        emit(label+":");
     }
 
     private void llvmBitcast(String newReg,String oldReg,String oldType,String newType){
-        emit(newReg+" = bitcast"+" "+oldType+" "+oldReg+ "to "+newType+"\n");
+        emit("\n\t"+newReg+" = bitcast"+" "+oldType+" "+oldReg+ "to "+newType);
 
     }
 
@@ -298,7 +298,7 @@ public class CompileVisitor implements Visitor {
         lvId=assignStatement.lv();
         lvType=currMethodData.getVarType(lvId);
         lvReg=Utils.FormatLocalVar(lvId);
-        String lvTypeAllocStr = Utils.getTypeStrForAlloc(lvType);
+        String lvTypeAllocStr = Utils.getTypeStrForAlloc(lvType);//todo: check if needed.
         //rv
         assignStatement.rv().accept(this);
         rvReg=resReg;//the result of rv will be in this register.

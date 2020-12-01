@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="renamed">
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="merge ofek and shirly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java" afterDir="false" />
     </list>
@@ -72,29 +72,21 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\src\duda\Compiler\src\tests_ex1" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ex2.proj" />
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\src\duda\Compiler\src\ex2" />
       <recent name="C:\src\duda\Compiler\src\tests_ex1" />
       <recent name="C:\src\duda\Compiler\src" />
       <recent name="C:\src\duda\Compiler" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ex2.proj" />
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\src\duda\Compiler\src\tests_ex1" />
-    </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal compile &quot;C:\Users\ריקי בנקוביץ'\Downloads\5_lowering (1)\5_if\If.java.xml&quot; fdg" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -102,6 +94,14 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Compiler" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal compile &quot;C:\Users\ריקי בנקוביץ'\Downloads\5_lowering (1)\5_if\If.java.xml&quot; fdg" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -443,31 +443,35 @@
     <state x="533" y="207" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606420332307" />
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606204610773" />
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605607850898" />
-    <state width="1865" height="540" key="GridCell.Tab.0.bottom" timestamp="1606754553406">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="143" key="GridCell.Tab.0.bottom" timestamp="1606757651263">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="931" height="383" key="GridCell.Tab.0.bottom/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850898" />
+    <state width="1237" height="143" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606757651263" />
     <state width="1481" height="305" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606594239584" />
     <state width="1865" height="540" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606754553406" />
     <state width="1865" height="499" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606582047149" />
-    <state width="1865" height="540" key="GridCell.Tab.0.center" timestamp="1606754553406">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="143" key="GridCell.Tab.0.center" timestamp="1606757651263">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="931" height="383" key="GridCell.Tab.0.center/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850899" />
+    <state width="1237" height="143" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606757651263" />
     <state width="1481" height="305" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606594239584" />
     <state width="1865" height="540" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606754553406" />
     <state width="1865" height="499" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606582047149" />
-    <state width="1865" height="540" key="GridCell.Tab.0.left" timestamp="1606754553406">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="143" key="GridCell.Tab.0.left" timestamp="1606757651263">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="931" height="383" key="GridCell.Tab.0.left/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850899" />
+    <state width="1237" height="143" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606757651263" />
     <state width="1481" height="305" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606594239583" />
     <state width="1865" height="540" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606754553406" />
     <state width="1865" height="499" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606582047149" />
-    <state width="1865" height="540" key="GridCell.Tab.0.right" timestamp="1606754553406">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="143" key="GridCell.Tab.0.right" timestamp="1606757651263">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="931" height="383" key="GridCell.Tab.0.right/0.0.1280.680/15.-1080.1920.1040@15.-1080.1920.1040" timestamp="1605607850899" />
+    <state width="1237" height="143" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606757651263" />
     <state width="1481" height="305" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606594239584" />
     <state width="1865" height="540" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606754553406" />
     <state width="1865" height="499" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606582047149" />
@@ -523,6 +527,10 @@
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606582004400" />
     <state x="832" y="364" key="cloudConfig.SelfSettingsDialog" timestamp="1605607850899" />
     <state x="832" y="364" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850899" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606805727510">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606805727510" />
     <state x="485" y="256" width="950" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1605607850899" />
     <state x="485" y="256" width="950" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1605607850899" />
     <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1605607850899" />
@@ -558,17 +566,17 @@
       <pinned-members>
         <PinnedItemInfo parentTag="ex2.proj.ClassMethodDataVisitor" memberName="classDataAddToMethod" />
         <PinnedItemInfo parentTag="ex2.proj.MethodData" memberName="classData" />
-        <PinnedItemInfo parentTag="ast.ClassDecl" memberName="table" />
         <PinnedItemInfo parentTag="ex1.Symbol" memberName="insideTable" />
-        <PinnedItemInfo parentTag="ast.Program" memberName="table" />
+        <PinnedItemInfo parentTag="ast.ClassDecl" memberName="table" />
         <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+        <PinnedItemInfo parentTag="ast.Program" memberName="table" />
         <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
         <PinnedItemInfo parentTag="ex2.proj.MethodData" memberName="name" />
       </pinned-members>
     </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
