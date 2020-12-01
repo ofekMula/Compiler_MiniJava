@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class ClassData {
     private ClassData superClassData;
-    private String name;
+    public String name;
     private ArrayList<ClassData> subClassesData;
     public Map<String,MethodData> methodDataMap; // override and inherited
     private Map<String, VarData> fieldsVars;
