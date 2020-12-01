@@ -82,7 +82,9 @@ public class CompileVisitor implements Visitor {
     private void llvmPrintStatement(String data){
         emit("\n\t"+"call void (i32) @print_int(i32 "+data+")");
     }
-
+    private void llvmGetelementptr(String ptrElemReg,String ptrType,String arrayReg,String index){
+        emit("/n/t"+ptrElemReg+" = getelementptr "+ptrType+", "+ptrType+"* "+arrayReg+", "+"i32 "+index);
+    }
     private void visitBinaryExpr(BinaryExpr e, String infixSymbol) {
         // examples: %sum = add i32 %a, %b
         //           %case = icmp slt i32 %a, %b
