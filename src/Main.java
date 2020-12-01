@@ -48,8 +48,9 @@ public class Main {
                     ClassMethodDataVisitor firstVisitor = new ClassMethodDataVisitor();
                     firstVisitor.visit(prog);
                     Map<String, ClassData> classNameToData = firstVisitor.classNameToData;
-                    CompileVisitor llvmVisitor = new CompileVisitor(classNameToData);
+                    CompileVisitor llvmVisitor = new CompileVisitor(classNameToData,outFile);
                     llvmVisitor.visit(prog);
+                    llvmVisitor.closeWriter();
                 }
                 else if (action.equals("rename")) {
                     var type = args[2];

@@ -1,7 +1,9 @@
 package ex2.proj;
 
 import ast.*;
+import jflex.base.Pair;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -20,13 +22,20 @@ public class CompileVisitor implements Visitor {
     private ClassData currClassData;
     private MethodData currMethodData;// initialized in every method dec.
     private int currNum;
+    private PrintWriter writerToLlvmFile;
+
     public CompileVisitor(Map<String, ClassData> classNameToData){
         this.classNameToData = classNameToData;
+        this.writerToLlvmFile = writerToLlvmFile;
     }
-
+    public void closeWriter(){
+        this.writerToLlvmFile.flush();
+        this.writerToLlvmFile.close();
+    }
     private void emit(String data) {
         //todo
         //todo rename function name
+        writerToLlvmFile.print(data);
         System.out.print(data);
     }
 
@@ -84,7 +93,12 @@ public class CompileVisitor implements Visitor {
         emit("\n\t" + newReg + " = bitcast " + oldType + " " + oldReg + " to " + newType + "*");
 
     }
-
+    private void llvmPrintStatement(String data){
+        emit("\n\t"+"call void (i32) @print_int(i32 "+data+")");
+    }
+    private void llvmGetelementptr(String ptrElemReg,String ptrType,String arrayReg,String index){
+        emit("/n/t"+ptrElemReg+" = getelementptr "+ptrType+", "+ptrType+"* "+arrayReg+", "+"i32 "+index);
+    }
     private void visitBinaryExpr(BinaryExpr e, String infixSymbol) {
         // examples: %sum = add i32 %a, %b
         //           %case = icmp slt i32 %a, %b
@@ -355,11 +369,9 @@ public class CompileVisitor implements Visitor {
 
     @Override
     public void visit(BlockStatement blockStatement) {
-
         for (var s : blockStatement.statements()) {
             s.accept(this);
         }
-
     }
 
     @Override
@@ -407,12 +419,14 @@ public class CompileVisitor implements Visitor {
         llvmBrOneLabel(whileCondLabel);//branch back to while condition
 
         llvmPrintLabel(whileEndLabel);//branch out of while
+
+
     }
 
     @Override
     public void visit(SysoutStatement sysoutStatement) {
         sysoutStatement.arg().accept(this);
-        //TODO
+        llvmPrintStatement(resReg);
     }
 
     @Override
