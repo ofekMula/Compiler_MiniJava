@@ -32,7 +32,7 @@ public class CompileVisitor implements Visitor {
     private void appendWithIndent(String str) {
 
     }
-
+    //***********llvm methods**********///
     private void llvmRet(String retType,String reg){
         emit("\n\tret " + retType + " " + reg);
     }
