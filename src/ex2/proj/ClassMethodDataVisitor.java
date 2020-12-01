@@ -2,6 +2,7 @@ package ex2.proj;
 
 import ast.*;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -167,6 +168,7 @@ public class ClassMethodDataVisitor implements Visitor {
     public void visit(MethodDecl methodDecl) {
         Map<String, String> localVars = new HashMap<>();
         Map<String, String> formalVars = new HashMap<>();
+        ArrayList<FormalVars> formalVarsList = new ArrayList<FormalVars>();
         String returnType;
 
         methodDecl.returnType().accept(this); // in accept the type will be decided in refName
@@ -174,6 +176,7 @@ public class ClassMethodDataVisitor implements Visitor {
 
         for (var formal : methodDecl.formals()) {
             formal.accept(this); // in accept the type will be decided in refName
+            formalVarsList.add(new FormalVars(formal.name(), refName));
             formalVars.put(formal.name(), refName);
         }
 
@@ -194,7 +197,7 @@ public class ClassMethodDataVisitor implements Visitor {
 
         methodDecl.ret().accept(this);
 
-        methodDataAddToClass = new MethodData(methodDecl.name(), classDataAddToMethod, localVars, formalVars, fieldsVars, 0, returnType); // offset will be calculated in class level
+        methodDataAddToClass = new MethodData(methodDecl.name(), formalVarsList, classDataAddToMethod, localVars, formalVars, fieldsVars, 0, returnType); // offset will be calculated in class level
     }
 
     @Override
