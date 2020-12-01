@@ -33,6 +33,13 @@ public class CompileVisitor implements Visitor {
 
     }
     //***********llvm methods**********///
+
+    private void llvmGetElemPointer(String newReg, int numOfMethodsElemVTable, String elemClass, int firstIndex, int secondIndex) {
+        String methodSymbol = "[" + numOfMethodsElemVTable + " x i8*]";
+        emit("\n\t" + newReg + " = getelementptr " + methodSymbol + ", " + methodSymbol
+                + "* @." + elemClass + "_vtable, i32 " + firstIndex + ", i32 " + secondIndex);
+    }
+
     private void llvmRet(String retType,String reg){
         emit("\n\tret " + retType + " " + reg);
     }
@@ -41,8 +48,8 @@ public class CompileVisitor implements Visitor {
         emit("\n\t" + reg + " = alloca " + type);
     }
 
-    private void llvmStore(String storedType,String storedValue,String regType,String regPtr){
-        emit("\n\tstore "+storedType+" "+storedValue+", "+regType+"* "+regPtr);
+    private void llvmStore(String storedType,String storedReg,String regType,String regPtr){
+        emit("\n\tstore " + storedType + " " + storedReg + ", " + regType + "* " + regPtr);
     }
 
     private void llvmLoad(String resultReg,String type,String regPtr){
@@ -69,7 +76,7 @@ public class CompileVisitor implements Visitor {
     }
 
     private void llvmBitcast(String newReg,String oldReg,String oldType,String newType){
-        emit("\n\t"+newReg+" = bitcast"+" "+oldType+" "+oldReg+ "to "+newType);
+        emit("\n\t" + newReg + " = bitcast " + oldType + " " + oldReg + " to " + newType + "*");
 
     }
 
@@ -105,7 +112,7 @@ public class CompileVisitor implements Visitor {
         methodContext.regTypesMap.put(reg, regTye);
 
         // comment for debug
-        emit("\n\t; BinaryExpr: " + infixSymbol);
+//        emit("\n\t; BinaryExpr: " + infixSymbol);
 
         // get String matching the infixSymbol
         String infixSymbolStr = Utils.getStrForInfixSymbol(infixSymbol);
@@ -215,7 +222,7 @@ public class CompileVisitor implements Visitor {
 
     public void printMethodSignature() {
         insertNewLine();
-        emit("define " + Utils.getTypeStrForAlloc(currMethodData.returnType)
+        emit("\ndefine " + Utils.getTypeStrForAlloc(currMethodData.returnType)
                 + " @" + currClassData.name + "." + currMethodData.name + "(i8* %this");
 
         for (FormalVars formalVar : currMethodData.formalVarsList) {
@@ -251,16 +258,21 @@ public class CompileVisitor implements Visitor {
         }
         for (var methodDecl : classDecl.methoddecls()) {
             methodDecl.accept(this);
-            insertNewLine();
+            emit("\n}");
         }
     }
 
     @Override
     public void visit(MainClass mainClass) {
+        methodContext = new MethodContext();
+
         insertNewLine();
         insertNewLine();
-        emit("define i32 @main() {\n");
+        emit("define i32 @main() {");
+
         mainClass.mainStatement().accept(this);
+
+        emit("\n}");
     }
 
     @Override
@@ -303,12 +315,12 @@ public class CompileVisitor implements Visitor {
 
 
         // comment for debug
-        emit("\n\t; formal arg: name: " + formalArg.name() + ", type: " + varDeclType + "%");
+//        emit("\n\t; formal arg: name: " + formalArg.name() + ", type: " + varDeclType + "%");
 
         // allocate on the stack
         emit("\n\t" + localFormalVarNameFormatted + " = alloca " + typeAllocStr);
 
-//        if (varDeclType.equals("classPointer")){
+//        if (varDeclType.equals("classPointer")){ // changed!!!
 //            //TODO implement objects
 //        }
     }
@@ -325,12 +337,12 @@ public class CompileVisitor implements Visitor {
         String typeAllocStr = Utils.getTypeStrForAlloc(type);
 
         // comment for debug
-        emit("\n\t; local variable: name: " + varDecl.name() + ", type: " + varDeclType + "%");
+//        emit("\n\t; local variable: name: " + varDecl.name() + ", type: " + varDeclType + "%");
 
         // allocate on the stack
         emit("\n\t" + localVarNameFormatted + " = alloca " + typeAllocStr);
 
-//        if (varDeclType.equals("classPointer")){
+//        if (varDeclType.equals("classPointer")){ // changed
 //            //TODO
 //        }
 
@@ -390,39 +402,42 @@ public class CompileVisitor implements Visitor {
         llvmBrOneLabel(whileCondLabel);//branch back to while condition
 
         llvmPrintLabel(whileEndLabel);//branch out of while
-
-
     }
 
     @Override
     public void visit(SysoutStatement sysoutStatement) {
         sysoutStatement.arg().accept(this);
+        //TODO
     }
 
     @Override
     public void visit(AssignStatement assignStatement) {
-        String lvId,lvType,lvReg,rvReg,rvType,newLvReg;
-        //lv
+        String lvId,lvType,lvReg,rvReg,rvType,newLvReg, lvTypeAlloc;
         lvId=assignStatement.lv();
         lvType=currMethodData.getVarType(lvId);
         lvReg=Utils.FormatLocalVar(lvId);
-        String lvTypeAllocStr = Utils.getTypeStrForAlloc(lvType);//todo: check if needed.
-        //rv
+        lvTypeAlloc = Utils.getTypeStrForAlloc(lvType);
+
         assignStatement.rv().accept(this);
-        rvReg=resReg;//the result of rv will be in this register.
+
+        rvReg=resReg;
         rvType=methodContext.regTypesMap.get(rvReg);
-        //TODO: do we need casting?
-//        if(!lvType.equals(rvType)){//need to do casting
-//            newLvReg=methodContext.getNewReg();
-//            llvmBitcast(newLvReg,lvType,lvReg,rvType);
-//            lvType=rvType;
-//            llvmStore(lvType,rvReg,lvType,newLvReg);
-//        }
-//        else{
-            // store the content calculated for the right side, at the address calculated for the left side
-            llvmStore(lvType,rvReg,lvType,lvReg);
-//        }
+
+        // casting //
+
+        System.out.print(" AAAASIGN : " + lvTypeAlloc + " " + rvType);
+        if(!lvTypeAlloc.equals(rvType)){
+            newLvReg=methodContext.getNewReg();
+            llvmBitcast(newLvReg,lvReg,lvTypeAlloc,rvType);
+            lvTypeAlloc=rvType;
+            llvmStore(rvType,rvReg,lvTypeAlloc,newLvReg);
+        }
+        else{
+            llvmStore(rvType,rvReg,lvTypeAlloc,lvReg); // store the content calculated for the right side, at the address calculated for the left side
+        }
     }
+
+
     private String getArrElement(String localArrName, String index, boolean isAssign){
         String arrAddrReg;
 
@@ -479,6 +494,7 @@ public class CompileVisitor implements Visitor {
         emit("\n\t"+elementPtrReg+" = getelementptr i32, i32* "+arrAddrReg+", i32 "+realIndexReg);
         return elementPtrReg;
     }
+
     @Override
     public void visit(AssignArrayStatement assignArrayStatement) {
         String arrName = assignArrayStatement.lv();
@@ -508,7 +524,7 @@ public class CompileVisitor implements Visitor {
         String leftReg = resReg;
 
         // comment for debug
-        emit("\n\t; andExpr");
+//        emit("\n\t; andExpr");
 
         // Check left result, short circuit if false
         emit("\n\tbr label %" + checkLeftLabel);
@@ -559,7 +575,6 @@ public class CompileVisitor implements Visitor {
 
     @Override
     public void visit(ArrayAccessExpr e) {
-
         e.arrayExpr().accept(this);
         String arr = resReg;
 
@@ -595,6 +610,7 @@ public class CompileVisitor implements Visitor {
 
     @Override
     public void visit(MethodCallExpr e) {
+        // TODO
         e.ownerExpr().accept(this);
 
         for (Expr arg : e.actuals()) {
@@ -735,7 +751,30 @@ public class CompileVisitor implements Visitor {
 
     @Override
     public void visit(NewObjectExpr e) {
+        ClassData refClass = classNameToData.get(e.classId());
+        int numOfMethodsInClassVT = refClass.getMethodDataMap().size();
+        String reg = methodContext.getNewReg();
+        methodContext.regTypesMap.put(reg, "i8*");
 
+        // allocate the required memory on heap for our object //
+        emit("\n\t" + reg + " = call i8* @calloc(i32 1, i32 " + refClass.getClassSize() + ")");
+
+        String castReg = methodContext.getNewReg();
+        methodContext.regTypesMap.put(castReg, "i8**");
+
+        // set the vtable pointer to point to the correct vtable //
+        llvmBitcast(castReg, reg, "i8*", "i8**");
+
+        String firstVtableReg = methodContext.getNewReg();
+        methodContext.regTypesMap.put(firstVtableReg, "i8**");
+
+        // address of the first element of the element's vtable //
+        llvmGetElemPointer(firstVtableReg, numOfMethodsInClassVT, refClass.name, 0, 0);
+
+        // Set the vtable to the correct address //
+        llvmStore("i8**", firstVtableReg, "i8**", castReg);
+
+        resReg = reg; // the register we allocated the memory to
     }
 
     @Override
@@ -749,7 +788,7 @@ public class CompileVisitor implements Visitor {
         methodContext.regTypesMap.put(reg, "i1");
 
         // comment for debug
-        emit("\n\t;NotExpr");
+//        emit("\n\t;NotExpr");
 
         // xor with 1
         emit("\n\t" + reg + " = xor " + res + ", 1");

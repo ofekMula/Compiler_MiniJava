@@ -49,4 +49,15 @@ class Utils {
         }
     }
 
+    public static int calculateSizeByType(String type){
+        switch (type){
+            case "boolean":
+                return 1;
+            case "int":
+                return 4;
+            default:
+                return 8; // i8* and i32*
+        }
+    }
+
 }

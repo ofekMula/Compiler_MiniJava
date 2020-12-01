@@ -9,7 +9,7 @@
 //		Base b;
 //		Derived d;
 //
-//  		b = new Base();
+//  	b = new Base();
 // 		d = new Derived();
 //
 //		System.out.println(b.set(1));
