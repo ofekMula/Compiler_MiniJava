@@ -24,14 +24,16 @@ public class CompileVisitor implements Visitor {
     private int currNum;
     private PrintWriter writerToLlvmFile;
 
-    public CompileVisitor(Map<String, ClassData> classNameToData){
+    public CompileVisitor(Map<String, ClassData> classNameToData, PrintWriter writerToLlvmFile){
         this.classNameToData = classNameToData;
         this.writerToLlvmFile = writerToLlvmFile;
     }
+
     public void closeWriter(){
         this.writerToLlvmFile.flush();
         this.writerToLlvmFile.close();
     }
+
     private void emit(String data) {
         //todo
         //todo rename function name
@@ -345,7 +347,8 @@ public class CompileVisitor implements Visitor {
     }
 
     @Override
-    public void visit(VarDecl varDecl) {
+    public void visit(VarDecl varDecl) { // TODO: need to chek if it is from a method or from a class - currently we print both
+        // TODO: but we don't need to allocate memory for vars in class, only inside method - fix that!
         // local variables
 
         // format the var name
