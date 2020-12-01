@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class ClassMethodDataVisitor implements Visitor {
     public Map<String, ClassData> classNameToData;
     static int offset = 0;
@@ -18,6 +19,7 @@ public class ClassMethodDataVisitor implements Visitor {
         classNameToData = new HashMap<>();
     }
 
+
     public int calculateVarOffset(int sizeByType){
         if (offset == 0)
             return (offset = 8);
@@ -27,17 +29,6 @@ public class ClassMethodDataVisitor implements Visitor {
 
     public int calculateMethodOffset(){
         return offset ++;
-    }
-
-    public int calculateSizeByType(String type){
-        switch (type){
-            case "boolean":
-                return 1;
-            case "int":
-                return 4;
-            default:
-                return 8; // i8* and i32*
-        }
     }
 
     // so new methods that don't have offset yet will have a higher offset - after the inherited methods
@@ -54,7 +45,7 @@ public class ClassMethodDataVisitor implements Visitor {
             offset = maxOffset + 1;
     }
 
-    // so new vars that don't have offset yet will have a higher offset - after the inherited vars
+    // new vars that don't have offset yet will have a higher offset - after the inherited vars
     public void initializeVarsOffsetByMax(Map<String,VarData> varData){
         int maxOffset = -1;
         for (Map.Entry<String,VarData> var : varData.entrySet()){
@@ -113,7 +104,7 @@ public class ClassMethodDataVisitor implements Visitor {
 
             fieldDecl.accept(this); // first need to get the type
 
-            int size = calculateSizeByType(refName);
+            int size = Utils.calculateSizeByType(refName);
             int offset = calculateVarOffset(size);
             fieldsVars.put(fieldDecl.name(), new VarData(refName, offset));
         }

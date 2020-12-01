@@ -27,8 +27,17 @@ public class ClassData {
     }
 
     public int getClassSize(){ // only fields
-        int res = 8;
-        // TODO
+        int res = 8, offset, typeSize;
+        String type;
+        for (Map.Entry<String,VarData> var : fieldsVars.entrySet()) {
+            offset = var.getValue().getOffset();
+            type = var.getValue().getType();
+            typeSize = Utils.calculateSizeByType(type);
+
+            if (offset >= res) { // equals only when offset == 8, // maximal value
+                res = offset + typeSize;
+            }
+        }
         return res;
     }
 
