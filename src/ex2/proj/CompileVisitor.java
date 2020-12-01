@@ -33,13 +33,6 @@ public class CompileVisitor implements Visitor {
 
     }
 
-    //Methods for printing llvm instructions
-    private void llvmDeclare(){
-
-    }
-    private void llvmDefine(String methodType, String methodName, ArrayList<Pair<String,String>> parameters){
-
-    }
     private void llvmRet(String retType,String reg){
         emit("\tret " + retType + " " + reg);
     }
@@ -198,10 +191,44 @@ public class CompileVisitor implements Visitor {
         }
     }
 
+    public void printUtilMethodsDecl() {
+        insertNewLine();
+        emit("declare i8* @calloc(i32, i32)\n");
+        emit("declare i32 @printf(i8*, ...)\n");
+        emit("declare void @exit(i32)\n");
+        insertNewLine();
+        emit("@_cint = constant [4 x i8] c\"%d\\0a\\00\"\n");
+        emit("@_cOOB = constant [15 x i8] c\"Out of bounds\\0a\\00\"\n");
+        emit("define void @print_int(i32 %i) {\n");
+        emit("\t%_str = bitcast [4 x i8]* @_cint to i8*\n");
+        emit("\tcall i32 (i8*, ...) @printf(i8* %_str, i32 %i)\n");
+        emit("\tret void\n");
+        emit("}\n");
+        insertNewLine();
+        emit("define void @throw_oob() {\n");
+        emit("\t%_str = bitcast [15 x i8]* @_cOOB to i8*\n");
+        emit("\tcall i32 (i8*, ...) @printf(i8* %_str)\n");
+        emit("\tcall void @exit(i32 1)\n");
+        emit("\tret void\n");
+        emit("}\n");
+    }
+
+    public void printMethodSignature() {
+        insertNewLine();
+        emit("define " + Utils.getTypeStrForAlloc(currMethodData.returnType)
+                + " @" + currClassData.name + "." + currMethodData.name + "(i8* %this");
+
+        for (FormalVars formalVar : currMethodData.formalVarsList) {
+            String formalType = currMethodData.formalVars.get(formalVar.name);
+            emit(", " + Utils.getTypeStrForAlloc(formalType) + " %." + formalVar.name);
+        }
+        emit(") {\n");
+    }
 
     @Override
     public void visit(Program program) {
         createVTable(program.classDecls());
+        printUtilMethodsDecl();
 
         program.mainClass().accept(this);
 
@@ -213,7 +240,6 @@ public class CompileVisitor implements Visitor {
 
     @Override
     public void visit(ClassDecl classDecl) {
-
         currClassData = classNameToData.get(classDecl.name());
 
         if (classDecl.superName() != null) {
@@ -224,17 +250,17 @@ public class CompileVisitor implements Visitor {
             fieldDecl.accept(this);
         }
         for (var methodDecl : classDecl.methoddecls()) {
-
             methodDecl.accept(this);
+            insertNewLine();
         }
-
     }
 
     @Override
     public void visit(MainClass mainClass) {
-
+        insertNewLine();
+        insertNewLine();
+        emit("define i32 @main() {\n");
         mainClass.mainStatement().accept(this);
-
     }
 
     @Override
@@ -242,6 +268,8 @@ public class CompileVisitor implements Visitor {
 
         methodContext = new MethodContext();
         currMethodData = currClassData.methodDataMap.get(methodDecl.name());
+
+        printMethodSignature();
 
         methodDecl.returnType().accept(this);
 
