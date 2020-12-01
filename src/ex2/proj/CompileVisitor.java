@@ -1,8 +1,8 @@
 package ex2.proj;
 
 import ast.*;
-import jflex.base.Pair;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -19,13 +19,20 @@ public class CompileVisitor implements Visitor {
     private MethodContext methodContext; // to be initialized in every new method
     private ClassData currClassData;
     private MethodData currMethodData;// initialized in every method dec.
-    public CompileVisitor(Map<String, ClassData> classNameToData){
-        this.classNameToData = classNameToData;
-    }
+    private PrintWriter writerToLlvmFile;
 
+    public CompileVisitor(Map<String, ClassData> classNameToData, PrintWriter writerToLlvmFile){
+        this.classNameToData = classNameToData;
+        this.writerToLlvmFile = writerToLlvmFile;
+    }
+    public void closeWriter(){
+        this.writerToLlvmFile.flush();
+        this.writerToLlvmFile.close();
+    }
     private void emit(String data) {
         //todo
         //todo rename function name
+        writerToLlvmFile.print(data);
         System.out.print(data);
     }
 
@@ -71,6 +78,9 @@ public class CompileVisitor implements Visitor {
     private void llvmBitcast(String newReg,String oldReg,String oldType,String newType){
         emit("\n\t"+newReg+" = bitcast"+" "+oldType+" "+oldReg+ " to "+newType);
 
+    }
+    private void llvmPrintStatement(String data){
+        emit("\n\t"+"call void (i32) @print_int(i32 "+data+")");
     }
 
     private void visitBinaryExpr(BinaryExpr e, String infixSymbol) {
@@ -338,11 +348,9 @@ public class CompileVisitor implements Visitor {
 
     @Override
     public void visit(BlockStatement blockStatement) {
-
         for (var s : blockStatement.statements()) {
             s.accept(this);
         }
-
     }
 
     @Override
@@ -397,31 +405,33 @@ public class CompileVisitor implements Visitor {
     @Override
     public void visit(SysoutStatement sysoutStatement) {
         sysoutStatement.arg().accept(this);
+        llvmPrintStatement(resReg);
     }
 
     @Override
     public void visit(AssignStatement assignStatement) {
-        String lvId,lvType,lvReg,rvReg,rvType,newLvReg;
-        //lv
+        String lvId,lvType,lvReg,rvReg,rvType,newLvReg, lvTypeAlloc;
         lvId=assignStatement.lv();
         lvType=currMethodData.getVarType(lvId);
         lvReg=Utils.FormatLocalVar(lvId);
-        String lvTypeAllocStr = Utils.getTypeStrForAlloc(lvType);
-        //rv
+        lvTypeAlloc = Utils.getTypeStrForAlloc(lvType);
+
         assignStatement.rv().accept(this);
-        rvReg=resReg;//the result of rv will be in this register.
+
+        rvReg=resReg;
         rvType=methodContext.regTypesMap.get(rvReg);
-        //TODO: do we need casting?
-//        if(!lvTypeAllocStr.equals(rvType)){//need to do casting
-//            newLvReg=methodContext.getNewReg();
-//            llvmBitcast(newLvReg,lvTypeAllocStr,lvReg,rvType);
-//            lvTypeAllocStr=rvType;
-//            llvmStore(lvTypeAllocStr,rvReg,lvTypeAllocStr,newLvReg);
-//        }
-//        else{
-            //store the content calculated for the right side, at the address calculated for the left side
-            llvmStore(lvTypeAllocStr,rvReg,lvTypeAllocStr,lvReg);
-//        }
+
+        // casting //
+
+        if(!lvTypeAlloc.equals(rvType)){
+            newLvReg=methodContext.getNewReg();
+            llvmBitcast(newLvReg,lvReg,lvTypeAlloc,rvType);
+            lvTypeAlloc=rvType;
+            llvmStore(rvType,rvReg,lvTypeAlloc,newLvReg);
+        }
+        else{
+            llvmStore(rvType,rvReg,lvTypeAlloc,lvReg); // store the content calculated for the right side, at the address calculated for the left side
+        }
     }
     private String getArrElement(String localArrName, String index, boolean isAssign){
         String arrAddrReg;
