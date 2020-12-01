@@ -69,7 +69,7 @@ public class CompileVisitor implements Visitor {
     }
 
     private void llvmBitcast(String newReg,String oldReg,String oldType,String newType){
-        emit("\n\t"+newReg+" = bitcast"+" "+oldType+" "+oldReg+ "to "+newType);
+        emit("\n\t"+newReg+" = bitcast"+" "+oldType+" "+oldReg+ " to "+newType);
 
     }
 
@@ -406,21 +406,21 @@ public class CompileVisitor implements Visitor {
         lvId=assignStatement.lv();
         lvType=currMethodData.getVarType(lvId);
         lvReg=Utils.FormatLocalVar(lvId);
-        String lvTypeAllocStr = Utils.getTypeStrForAlloc(lvType);//todo: check if needed.
+        String lvTypeAllocStr = Utils.getTypeStrForAlloc(lvType);
         //rv
         assignStatement.rv().accept(this);
         rvReg=resReg;//the result of rv will be in this register.
         rvType=methodContext.regTypesMap.get(rvReg);
         //TODO: do we need casting?
-//        if(!lvType.equals(rvType)){//need to do casting
+//        if(!lvTypeAllocStr.equals(rvType)){//need to do casting
 //            newLvReg=methodContext.getNewReg();
-//            llvmBitcast(newLvReg,lvType,lvReg,rvType);
-//            lvType=rvType;
-//            llvmStore(lvType,rvReg,lvType,newLvReg);
+//            llvmBitcast(newLvReg,lvTypeAllocStr,lvReg,rvType);
+//            lvTypeAllocStr=rvType;
+//            llvmStore(lvTypeAllocStr,rvReg,lvTypeAllocStr,newLvReg);
 //        }
 //        else{
-            // store the content calculated for the right side, at the address calculated for the left side
-            llvmStore(lvType,rvReg,lvType,lvReg);
+            //store the content calculated for the right side, at the address calculated for the left side
+            llvmStore(lvTypeAllocStr,rvReg,lvTypeAllocStr,lvReg);
 //        }
     }
     private String getArrElement(String localArrName, String index, boolean isAssign){
