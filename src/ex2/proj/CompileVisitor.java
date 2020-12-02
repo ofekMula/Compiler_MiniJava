@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 // todo: only registers that are passed in res reg need to be added to the reg type map - need to remove unnecessary inserts
-
+// todo: check if void is possible in a method that isn't main
 public class CompileVisitor implements Visitor {
 
     private Map<String, ClassData> classNameToData;
@@ -24,26 +24,22 @@ public class CompileVisitor implements Visitor {
     private int currNum;
     private PrintWriter writerToLlvmFile;
 
-    public CompileVisitor(Map<String, ClassData> classNameToData, PrintWriter writerToLlvmFile){
+    public CompileVisitor(Map<String, ClassData> classNameToData, PrintWriter writerToLlvmFile) {
         this.classNameToData = classNameToData;
         this.writerToLlvmFile = writerToLlvmFile;
     }
 
-    public void closeWriter(){
+    public void closeWriter() {
         this.writerToLlvmFile.flush();
         this.writerToLlvmFile.close();
     }
 
     private void emit(String data) {
         //todo
-        //todo rename function name
         writerToLlvmFile.print(data);
         System.out.print(data);
     }
 
-    private void appendWithIndent(String str) {
-
-    }
     //***********llvm methods**********///
 
     private void llvmGetElemPointerNewObject(String newReg, int numOfMethodsElemVTable, String elemClass, int firstIndex, int secondIndex) {
@@ -56,51 +52,53 @@ public class CompileVisitor implements Visitor {
         emit("\n\t" + newReg + " = getelementptr " + newRegType + ", " + oldRegType + " " + oldReg + ", i32 " + index);
     }
 
-        private void llvmRet(String retType,String reg){
+    private void llvmRet(String retType, String reg) {
         emit("\n\tret " + retType + " " + reg);
     }
 
-    private void llvmAlloca(String reg,String type){
+    private void llvmAlloca(String reg, String type) {
         emit("\n\t" + reg + " = alloca " + type);
     }
 
-    private void llvmStore(String storedType,String storedReg,String regType,String regPtr){
+    private void llvmStore(String storedType, String storedReg, String regType, String regPtr) {
         emit("\n\tstore " + storedType + " " + storedReg + ", " + regType + "* " + regPtr);
     }
 
-    private void llvmLoad(String resultReg,String type,String regPtr){
+    private void llvmLoad(String resultReg, String type, String regPtr) {
         emit("\n\t" + resultReg + " = load " + type + ", " + type + "* " + regPtr);
     }
 
-    private void llvmCall(){
+    private void llvmCall() {
     }
 
-    private void llvmBinaryExpr(String resultReg,String op,String operandTye,String e1Reg,String e2Reg){
+    private void llvmBinaryExpr(String resultReg, String op, String operandTye, String e1Reg, String e2Reg) {
         emit("\n\t" + resultReg + " = " + op + " " + operandTye + " " + e1Reg + ", " + e2Reg);
     }
 
-    private void llvmBrTwoLabels(String resultReg,String firstLabel,String secLabel){
+    private void llvmBrTwoLabels(String resultReg, String firstLabel, String secLabel) {
         emit("\n\tbr i1 " + resultReg + ", label %" + firstLabel + " label %" + secLabel);// br i1 %1,label %if0, label %else1
     }
 
-    private void llvmBrOneLabel(String label){
+    private void llvmBrOneLabel(String label) {
         emit("\n\tbr label %" + label);
     }
 
-    private void llvmPrintLabel(String label){
-        emit(label+":");
+    private void llvmPrintLabel(String label) {
+        emit("\n"+label + ":");
     }
 
-    private void llvmBitcast(String newReg,String oldReg,String oldType,String newType){
+    private void llvmBitcast(String newReg, String oldReg, String oldType, String newType) {
         emit("\n\t" + newReg + " = bitcast " + oldType + " " + oldReg + " to " + newType + "*");
+    }
 
+    private void llvmPrintStatement(String data) {
+        emit("\n\t" + "call void (i32) @print_int(i32 " + data + ")");
     }
-    private void llvmPrintStatement(String data){
-        emit("\n\t"+"call void (i32) @print_int(i32 "+data+")");
+
+    private void llvmGetelementptr(String ptrElemReg, String ptrType, String arrayReg, String index) {
+        emit("\n\t" + ptrElemReg + " = getelementptr " + ptrType + ", " + ptrType + "* " + arrayReg + ", " + "i32 " + index);
     }
-    private void llvmGetelementptr(String ptrElemReg,String ptrType,String arrayReg,String index){
-        emit("/n/t"+ptrElemReg+" = getelementptr "+ptrType+", "+ptrType+"* "+arrayReg+", "+"i32 "+index);
-    }
+
     private void visitBinaryExpr(BinaryExpr e, String infixSymbol) {
         // examples: %sum = add i32 %a, %b
         //           %case = icmp slt i32 %a, %b
@@ -132,9 +130,6 @@ public class CompileVisitor implements Visitor {
         String reg = methodContext.getNewReg();
         methodContext.regTypesMap.put(reg, regTye);
 
-        // comment for debug
-//        emit("\n\t; BinaryExpr: " + infixSymbol);
-
         // get String matching the infixSymbol
         String infixSymbolStr = Utils.getStrForInfixSymbol(infixSymbol);
 
@@ -145,24 +140,24 @@ public class CompileVisitor implements Visitor {
         resReg = reg;
     }
 
-    public void addComma(int cntLines, int numOfMethods){
+    public void addComma(int cntLines, int numOfMethods) {
         if (numOfMethods > 1 && cntLines < numOfMethods - 1) {
             emit(",");
         }
     }
 
-    public void addEmptyNewLine(int numOfMethods){
-        if (numOfMethods > 1){
+    public void addEmptyNewLine(int numOfMethods) {
+        if (numOfMethods > 1) {
             emit("\n");
         }
     }
 
-    public void insertNewLine(){
+    public void insertNewLine() {
         emit("\n");
     }
 
     public void insertIndent(int numOfMethods) {
-        if (numOfMethods > 1){
+        if (numOfMethods > 1) {
             emit("\t");
         }
     }
@@ -173,12 +168,12 @@ public class CompileVisitor implements Visitor {
         }
     }
 
-    public List<MethodData> getOrderedMethodsByOffset(Map<String, MethodData> methodDataMap){
+    public List<MethodData> getOrderedMethodsByOffset(Map<String, MethodData> methodDataMap) {
         return methodDataMap
-                    .values()
-                    .stream()
-                    .sorted(new methodDataOrderByOffset())
-                    .collect(Collectors.toCollection(ArrayList::new));
+                .values()
+                .stream()
+                .sorted(new methodDataOrderByOffset())
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public void createVTable(List<ClassDecl> classDeclList) {
@@ -212,7 +207,7 @@ public class CompileVisitor implements Visitor {
 
                 addComma(cntLines, numOfMethods);
                 addEmptyNewLine(numOfMethods);
-                cntLines ++;
+                cntLines++;
             }
             emit("]");
             insertNewLine();
@@ -273,10 +268,6 @@ public class CompileVisitor implements Visitor {
         if (classDecl.superName() != null) {
         }
 
-        for (var fieldDecl : classDecl.fields()) {
-
-            fieldDecl.accept(this);
-        }
         for (var methodDecl : classDecl.methoddecls()) {
             methodDecl.accept(this);
             emit("\n}");
@@ -292,7 +283,7 @@ public class CompileVisitor implements Visitor {
         emit("define i32 @main() {");
 
         mainClass.mainStatement().accept(this);
-
+        emit("\n\tret i32 0"); //todo: verify. (appears in examples)
         emit("\n}");
     }
 
@@ -321,29 +312,23 @@ public class CompileVisitor implements Visitor {
             stmt.accept(this);
         }
 
-        // TODO:
         methodDecl.ret().accept(this);
+        llvmRet(methodContext.regTypesMap.get(resReg), resReg);
     }
 
     @Override
     public void visit(FormalArg formalArg) {
         // format the var name
         String localFormalVarNameFormatted = Utils.FormatLocalVar(formalArg.name());
+        String SigFormalVarNameFormatted = Utils.FormatSigFormalVar(formalArg.name());
 
         // get the allocation string for this type
         String type = currMethodData.formalVars.get(formalArg.name());
         String typeAllocStr = Utils.getTypeStrForAlloc(type);
 
-
-        // comment for debug
-//        emit("\n\t; formal arg: name: " + formalArg.name() + ", type: " + varDeclType + "%");
-
-        // allocate on the stack
+        // allocate on the stack (to support code that assigns to the formal parameter)
         emit("\n\t" + localFormalVarNameFormatted + " = alloca " + typeAllocStr);
-
-//        if (varDeclType.equals("classPointer")){ // changed!!!
-//            //TODO implement objects
-//        }
+        llvmStore(typeAllocStr, SigFormalVarNameFormatted, typeAllocStr, localFormalVarNameFormatted);
     }
 
     @Override
@@ -358,15 +343,8 @@ public class CompileVisitor implements Visitor {
         String type = currMethodData.localVars.get(varDecl.name());
         String typeAllocStr = Utils.getTypeStrForAlloc(type);
 
-        // comment for debug
-//        emit("\n\t; local variable: name: " + varDecl.name() + ", type: " + varDeclType + "%");
-
         // allocate on the stack
         emit("\n\t" + localVarNameFormatted + " = alloca " + typeAllocStr);
-
-//        if (varDeclType.equals("classPointer")){ // changed
-//            //TODO
-//        }
 
     }
 
@@ -385,7 +363,7 @@ public class CompileVisitor implements Visitor {
         String endIfLabel = methodContext.getNewLabel("endIf");
 
         ifStatement.cond().accept(this);//loading the condition in registers
-        llvmBrTwoLabels(resReg,ifLabel,elseLabel);
+        llvmBrTwoLabels(resReg, ifLabel, elseLabel);
 
         llvmPrintLabel(ifLabel);//if0:
         ifStatement.thencase().accept(this);//add this content to the last queue line;
@@ -406,7 +384,6 @@ public class CompileVisitor implements Visitor {
         //if case:start the loop and accept to the body and re-enter condtion.
         //else case: branch to end loop branch
         //reference: https://stackoverflow.com/questions/27540761/how-to-change-a-do-while-form-loop-into-a-while-form-loop-in-llvm-ir
-        //and also in kostats.
 
         String whileCondLabel = methodContext.getNewLabel("condLabel");
         String whileStartLabel = methodContext.getNewLabel("startLabel");
@@ -415,7 +392,7 @@ public class CompileVisitor implements Visitor {
         llvmBrOneLabel(whileCondLabel);
         llvmPrintLabel(whileCondLabel);
         whileStatement.cond().accept(this);//update the result of the condtion in resreg
-        llvmBrTwoLabels(resReg,whileStartLabel,whileEndLabel);// br i1 %reg,label %start, label %end
+        llvmBrTwoLabels(resReg, whileStartLabel, whileEndLabel);// br i1 %reg,label %start, label %end
 
         llvmPrintLabel(whileStartLabel);
         whileStatement.body().accept(this);
@@ -434,32 +411,39 @@ public class CompileVisitor implements Visitor {
 
     @Override
     public void visit(AssignStatement assignStatement) {
-        String lvId,lvType,lvReg,rvReg,rvType,newLvReg, lvTypeAlloc;
-        lvId=assignStatement.lv();
-        lvType=currMethodData.getVarType(lvId);
-        lvReg=Utils.FormatLocalVar(lvId);
-        lvTypeAlloc = Utils.getTypeStrForAlloc(lvType);
+        String lvId, lvType, lvReg, rvReg, rvType, newLvReg, lvTypeAlloc;
 
+        // rv
         assignStatement.rv().accept(this);
+        rvReg = resReg;
+        rvType = methodContext.regTypesMap.get(rvReg);
 
-        rvReg=resReg;
-        rvType=methodContext.regTypesMap.get(rvReg);
-
-        // casting //
-
-        if(!lvTypeAlloc.equals(rvType)){
-            newLvReg=methodContext.getNewReg();
-            llvmBitcast(newLvReg,lvReg,lvTypeAlloc,rvType);
-            lvTypeAlloc=rvType;
-            llvmStore(rvType,rvReg,lvTypeAlloc,newLvReg);
+        // lv
+        lvId = assignStatement.lv();
+        lvType = currMethodData.getVarType(lvId);
+        lvTypeAlloc = Utils.getTypeStrForAlloc(lvType);
+        if (currMethodData.isField(lvId)){
+            lvReg = getFieldPtr(lvId);
         }
-        else{
-            llvmStore(rvType,rvReg,lvTypeAlloc,lvReg); // store the content calculated for the right side, at the address calculated for the left side
+        else {
+            lvReg = Utils.FormatLocalVar(lvId);
         }
+
+//        // casting //
+//        //todo check when its relevant. causes error in VarTypeBad.java demo
+//        if (!lvTypeAlloc.equals(rvType)) {
+//            newLvReg = methodContext.getNewReg();
+//            llvmBitcast(newLvReg, lvReg, lvTypeAlloc, rvType);
+//            lvTypeAlloc = rvType;
+//            llvmStore(rvType, rvReg, lvTypeAlloc, newLvReg);
+//        } else {
+        //todo: changes rvType to lvTypeAlloc due to arTypeBad.java demo
+        llvmStore(lvTypeAlloc, rvReg, lvTypeAlloc, lvReg); // store the content calculated for the right side, at the address calculated for the left side
+       // }
     }
 
 
-    private String getArrElement(String localArrName, String index, boolean isAssign){
+    private String getArrElement(String localArrName, String index, boolean isAssign) {
         String arrAddrReg;
 
         // get labels
@@ -472,47 +456,46 @@ public class CompileVisitor implements Visitor {
             emit("\n\t; Load the address of the array");
             arrAddrReg = methodContext.getNewReg();
             emit("\n\t" + arrAddrReg + " = load i32*, i32** " + localArrName);
-        }
-        else {
+        } else {
             arrAddrReg = localArrName;
         }
 
         emit("\n\t; Check that the index is greater than zero");
         String isNegativeReg = methodContext.getNewReg();
-        emit("\n\t"+isNegativeReg+" = icmp slt i32 "+index+", 0");
-        emit("\n\tbr i1 "+isNegativeReg+", label %"+negativeIndexLabel+", label %"+positiveIndexLabel);
+        emit("\n\t" + isNegativeReg + " = icmp slt i32 " + index + ", 0");
+        emit("\n\tbr i1 " + isNegativeReg + ", label %" + negativeIndexLabel + ", label %" + positiveIndexLabel);
 
-        emit("\n"+negativeIndexLabel+":");
+        emit("\n" + negativeIndexLabel + ":");
         emit("\n\t; Else throw out of bounds exception");
         emit("\n\tcall void @throw_oob()");
-        emit("\n\tbr label %"+positiveIndexLabel);
+        emit("\n\tbr label %" + positiveIndexLabel);
 
-        emit("\n"+positiveIndexLabel+":");
+        emit("\n" + positiveIndexLabel + ":");
         emit("\n\t; Load the size of the array (first integer of the array)");
         String arrSizeElementReg = methodContext.getNewReg();
-        emit("\n\t"+arrSizeElementReg+" = getelementptr i32, i32* "+arrAddrReg+", i32 0");
+        emit("\n\t" + arrSizeElementReg + " = getelementptr i32, i32* " + arrAddrReg + ", i32 0");
         String arrSizeReg = methodContext.getNewReg();
-        emit("\n\t"+arrSizeReg+" = load i32, i32* "+arrSizeElementReg);
+        emit("\n\t" + arrSizeReg + " = load i32, i32* " + arrSizeElementReg);
 
         emit("\n\t; Check that the index is less than the size of the array");
         String isOutBoundsReg = methodContext.getNewReg();
-        emit("\n\t"+isOutBoundsReg+" = icmp sle i32 "+arrSizeReg+", "+index);
-        emit("\n\tbr i1 "+isOutBoundsReg+", label %"+outBoundsLabel+", label %"+inBoundsLabel);
+        emit("\n\t" + isOutBoundsReg + " = icmp sle i32 " + arrSizeReg + ", " + index);
+        emit("\n\tbr i1 " + isOutBoundsReg + ", label %" + outBoundsLabel + ", label %" + inBoundsLabel);
 
-        emit("\n"+outBoundsLabel+":");
+        emit("\n" + outBoundsLabel + ":");
         emit("\n\t; Else throw out of bounds exception");
         emit("\n\tcall void @throw_oob()");
-        emit("\n\tbr label %"+inBoundsLabel);
+        emit("\n\tbr label %" + inBoundsLabel);
 
-        emit("\n"+inBoundsLabel+":");
+        emit("\n" + inBoundsLabel + ":");
         emit("\n\t; All ok, we can safely index the array now");
         emit("\n\t; We'll be accessing our array at index + 1, since the first element holds the size");
         String realIndexReg = methodContext.getNewReg();
-        emit("\n\t"+realIndexReg+" = add i32 "+index+", 1");
+        emit("\n\t" + realIndexReg + " = add i32 " + index + ", 1");
 
         emit("\n\t; Get pointer to the i + 1 element of the array");
         String elementPtrReg = methodContext.getNewReg();
-        emit("\n\t"+elementPtrReg+" = getelementptr i32, i32* "+arrAddrReg+", i32 "+realIndexReg);
+        emit("\n\t" + elementPtrReg + " = getelementptr i32, i32* " + arrAddrReg + ", i32 " + realIndexReg);
         return elementPtrReg;
     }
 
@@ -524,12 +507,12 @@ public class CompileVisitor implements Visitor {
         assignArrayStatement.index().accept(this);
         String index = resReg;
 
-        String elementPtrReg = getArrElement(localArrName,index,true);
+        String elementPtrReg = getArrElement(localArrName, index, true);
 
         emit("\n\t; store rv");
         assignArrayStatement.rv().accept(this);
         String rvReg = resReg;
-        emit("\n\tstore i32 "+rvReg+", i32* "+elementPtrReg);
+        emit("\n\tstore i32 " + rvReg + ", i32* " + elementPtrReg);
     }
 
     @Override
@@ -543,9 +526,6 @@ public class CompileVisitor implements Visitor {
         // get left first, the result will be in resReg
         e.e1().accept(this);
         String leftReg = resReg;
-
-        // comment for debug
-//        emit("\n\t; andExpr");
 
         // Check left result, short circuit if false
         emit("\n\tbr label %" + checkLeftLabel);
@@ -602,12 +582,12 @@ public class CompileVisitor implements Visitor {
         e.indexExpr().accept(this);
         String index = resReg;
 
-        String elementPtrReg = getArrElement(arr,index,false);
+        String elementPtrReg = getArrElement(arr, index, false);
 
         emit("\n\t; load element");
         String loadedElementReg = methodContext.getNewReg();
-        emit("\n\t"+loadedElementReg+" = load i32, i32* "+elementPtrReg);
-        methodContext.regTypesMap.put(loadedElementReg,"i32");
+        emit("\n\t" + loadedElementReg + " = load i32, i32* " + elementPtrReg);
+        methodContext.regTypesMap.put(loadedElementReg, "i32");
         resReg = loadedElementReg;
     }
 
@@ -618,14 +598,14 @@ public class CompileVisitor implements Visitor {
 
         emit("\n\t; Load the address of the array");
         String arrAddrReg = methodContext.getNewReg();
-        emit("\n\t"+arrAddrReg+" = load i32*, i32** "+arr);
+        emit("\n\t" + arrAddrReg + " = load i32*, i32** " + arr);
 
         emit("\n\t; Load the size of the array (first integer of the array)");
         String arrSizeElementReg = methodContext.getNewReg();
-        emit("\n\t"+arrSizeElementReg+" = getelementptr i32, i32* "+arrAddrReg+", i32 0");
+        emit("\n\t" + arrSizeElementReg + " = getelementptr i32, i32* " + arrAddrReg + ", i32 0");
         String arrSizeReg = methodContext.getNewReg();
-        emit("\n\t"+arrSizeReg+" = load i32, i32* "+arrSizeElementReg);
-        methodContext.regTypesMap.put(arrSizeReg,"i32");
+        emit("\n\t" + arrSizeReg + " = load i32, i32* " + arrSizeElementReg);
+        methodContext.regTypesMap.put(arrSizeReg, "i32");
         resReg = arrSizeReg;
     }
 
@@ -689,7 +669,7 @@ public class CompileVisitor implements Visitor {
                     .append(" ")
                     .append(currNum);
 
-            indexOfArgument ++;
+            indexOfArgument++;
         }
         emit("\n\t" + preformReg + " = call " + funcRetType + " " + callReg + "(" + methodArgs + ")");
         resReg = preformReg;
@@ -721,7 +701,7 @@ public class CompileVisitor implements Visitor {
         //
         // should point to an allocated var on the stack/heap
         String varName = e.id();
-        if (currMethodData.localVars.containsKey(varName)){
+        if (currMethodData.localVars.containsKey(varName)) {
             // load from the stack into a new reg
             String localFormalVarNameFormatted = Utils.FormatLocalVar(varName);
 
@@ -733,14 +713,14 @@ public class CompileVisitor implements Visitor {
             String reg = methodContext.getNewReg();
             methodContext.regTypesMap.put(reg, typeAllocStr);
 
-            emit("\n\t"+reg+" = load "+typeAllocStr+", "+typeAllocStr+"* "+localFormalVarNameFormatted);
+            emit("\n\t" + reg + " = load " + typeAllocStr + ", " + typeAllocStr + "* " + localFormalVarNameFormatted);
 
             refCallClassName = currMethodData.localVars.get(varName);
             resReg = reg;
             return;
         }
 
-        if (currMethodData.formalVars.containsKey(varName)){
+        if (currMethodData.formalVars.containsKey(varName)) {
             // load from the stack into a new reg
             String localFormalVarNameFormatted = Utils.FormatLocalVar(varName);
 
@@ -752,20 +732,44 @@ public class CompileVisitor implements Visitor {
             String reg = methodContext.getNewReg();
             methodContext.regTypesMap.put(reg, typeAllocStr);
 
-            emit("\n\t"+reg+" = load "+typeAllocStr+", "+typeAllocStr+"* "+localFormalVarNameFormatted);
+            emit("\n\t" + reg + " = load " + typeAllocStr + ", " + typeAllocStr + "* " + localFormalVarNameFormatted);
 
             resReg = reg;
             refCallClassName = currMethodData.formalVars.get(varName);
             return;
         }
 
-        if (currMethodData.fieldsVars.containsKey(varName)){ // only if not method call - it is already taken cared of
+        if (currMethodData.fieldsVars.containsKey(varName)) { // only if not method call - it is already taken cared of
             // todo get from the heap
+            // Get pointer to the byte where the field starts
+
+            String fieldPtrReg = getFieldPtr(varName);
+
+            // load
+            String type = currMethodData.fieldsVars.get(varName).getType();
+            String typeAllocStr = Utils.getTypeStrForAlloc(type);
+            String loadedFieldReg = methodContext.getNewReg();
+            methodContext.regTypesMap.put(loadedFieldReg, typeAllocStr);
+            emit("\n\t" + loadedFieldReg + " = load " + typeAllocStr + ", " + typeAllocStr + "* " + fieldPtrReg);
+
+            resReg = loadedFieldReg;
+
             refCallClassName = currMethodData.fieldsVars.get(varName).getType(); // for method call
         }
     }
 
+    private String getFieldPtr(String varName){
+        String elementPtrReg = methodContext.getNewReg();
+        String elementIndex = String.valueOf(currMethodData.fieldsVars.get(varName).getOffset());
+        llvmGetelementptr(elementPtrReg, "i8", "%this", elementIndex);
 
+        // Cast to a pointer to the field with the correct type
+        String fieldPtrReg = methodContext.getNewReg();
+        String type = currMethodData.fieldsVars.get(varName).getType();
+        String typeAllocStr = Utils.getTypeStrForAlloc(type);
+        llvmBitcast(fieldPtrReg, elementPtrReg, "i8*", typeAllocStr);
+        return (fieldPtrReg);
+    }
 
     public void visit(ThisExpr e) { //todo: need to verify - no examples
         methodContext.regTypesMap.put("%this", "i8*");
@@ -822,7 +826,7 @@ public class CompileVisitor implements Visitor {
 
         // store size
         emit("\n\t; Store the size of the array in the first position of the array");
-        emit("\n\tstore i32 "+length+", i32* "+arrPtrReg);
+        emit("\n\tstore i32 " + length + ", i32* " + arrPtrReg);
 
         resReg = arrPtrReg;
 
@@ -870,9 +874,6 @@ public class CompileVisitor implements Visitor {
         // save the result in a new temp reg
         String reg = methodContext.getNewReg();
         methodContext.regTypesMap.put(reg, "i1");
-
-        // comment for debug
-//        emit("\n\t;NotExpr");
 
         // xor with 1
         emit("\n\t" + reg + " = xor " + res + ", 1");

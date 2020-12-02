@@ -44,6 +44,10 @@ public class MethodData  {
         return "?";
     }
 
+    boolean isField(String varName){
+        return (fieldsVars.containsKey(varName));
+    }
+
     String getVarFormatName(String varName){
         if (localVars.containsKey(varName)){
             return Utils.FormatLocalVar(varName);
