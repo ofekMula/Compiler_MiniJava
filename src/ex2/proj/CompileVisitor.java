@@ -385,9 +385,9 @@ public class CompileVisitor implements Visitor {
         //else case: branch to end loop branch
         //reference: https://stackoverflow.com/questions/27540761/how-to-change-a-do-while-form-loop-into-a-while-form-loop-in-llvm-ir
 
-        String whileCondLabel = methodContext.getNewLabel("condLabel");
-        String whileStartLabel = methodContext.getNewLabel("startLabel");
-        String whileEndLabel = methodContext.getNewLabel("EndLabel");
+        String whileCondLabel = methodContext.getNewLabel("loopCond");
+        String whileStartLabel = methodContext.getNewLabel("startLoop");
+        String whileEndLabel = methodContext.getNewLabel("EndLoop");
 
         llvmBrOneLabel(whileCondLabel);
         llvmPrintLabelWhile(whileCondLabel);
