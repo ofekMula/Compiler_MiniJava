@@ -22,7 +22,6 @@
     <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,23 +42,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal compile &quot;C:\Users\Shirly\Desktop\desktop -שירלי\אונ תא\קומפילציה\tr2\5_lowering\4_compound_expr\CompoundExpr.java.xml&quot; out.ll" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal compile &quot;C:\Users\ריקי בנקוביץ'\Downloads\6_lowering_oo (2)\6_lowering_oo\Classes.xml&quot; jj" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,6 +128,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'expr_shirly' of https://github.com/rickben/CompilerMiniJava into expr_shirly&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
@@ -148,6 +136,24 @@
     <MESSAGE value="printing to screen for debug" />
     <MESSAGE value="+AssignStatement +fixed bugs in arrays" />
     <option name="LAST_COMMIT_MESSAGE" value="+AssignStatement +fixed bugs in arrays" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1865" height="3" key="GridCell.Tab.0.bottom" timestamp="1606908767005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="3" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606908767005" />
+    <state width="1865" height="3" key="GridCell.Tab.0.center" timestamp="1606908767005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="3" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606908767005" />
+    <state width="1865" height="3" key="GridCell.Tab.0.left" timestamp="1606908767005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="3" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606908767005" />
+    <state width="1865" height="3" key="GridCell.Tab.0.right" timestamp="1606908767005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="3" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606908767005" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -182,9 +188,21 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="ex2.proj.ClassMethodDataVisitor" memberName="classDataAddToMethod" />
+        <PinnedItemInfo parentTag="ex2.proj.MethodData" memberName="classData" />
+        <PinnedItemInfo parentTag="ast.ClassDecl" memberName="table" />
+        <PinnedItemInfo parentTag="ex1.Symbol" memberName="insideTable" />
+        <PinnedItemInfo parentTag="ast.Program" memberName="table" />
+        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+        <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
+        <PinnedItemInfo parentTag="ex2.proj.MethodData" memberName="name" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
