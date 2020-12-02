@@ -16,12 +16,10 @@ public class CompileVisitor implements Visitor {
 
     private Map<String, ClassData> classNameToData;
     private String refCallClassName; // ref type of call to method from certain class
-    private String varDeclType;
     private String resReg;
     private MethodContext methodContext; // to be initialized in every new method
     private ClassData currClassData;
     private MethodData currMethodData;// initialized in every method dec.
-    private int currNum;
     private PrintWriter writerToLlvmFile;
 
     public CompileVisitor(Map<String, ClassData> classNameToData, PrintWriter writerToLlvmFile) {
@@ -655,11 +653,7 @@ public class CompileVisitor implements Visitor {
         methodContext.regTypesMap.put(callReg, funcType);
         llvmBitcast(callReg, actualFuncPtr, "i8*", funcType);
 
-        // Perform the call on the function pointer //
-        String preformReg = methodContext.getNewReg();
-        methodContext.regTypesMap.put(preformReg, funcRetType);
         StringBuilder methodArgs = new StringBuilder("i8* " + resReg);
-
         int indexOfArgument = 0;
         for (Expr arg : e.actuals()) {
             arg.accept(this);
@@ -667,17 +661,21 @@ public class CompileVisitor implements Visitor {
             methodArgs.append(", ")
                     .append(Utils.getTypeStrForAlloc(funcFormalVars.get(indexOfArgument).type)) // type of the i-th formal by the prog order
                     .append(" ")
-                    .append(currNum);
+                    .append(resReg);
 
             indexOfArgument++;
         }
+
+        // Perform the call on the function pointer //
+        String preformReg = methodContext.getNewReg();
+        methodContext.regTypesMap.put(preformReg, funcRetType);
+
         emit("\n\t" + preformReg + " = call " + funcRetType + " " + callReg + "(" + methodArgs + ")");
         resReg = preformReg;
     }
 
     @Override
     public void visit(IntegerLiteralExpr e) {
-        currNum = e.num();
         String numStr = String.valueOf(e.num());
         methodContext.regTypesMap.put(numStr, "i32");
         resReg = numStr;
@@ -774,6 +772,7 @@ public class CompileVisitor implements Visitor {
     public void visit(ThisExpr e) { //todo: need to verify - no examples
         methodContext.regTypesMap.put("%this", "i8*");
         resReg = "%this";
+        refCallClassName = currClassData.name;
     }
 
     @Override
@@ -885,21 +884,17 @@ public class CompileVisitor implements Visitor {
 
     @Override
     public void visit(IntAstType t) {
-        varDeclType = "int";
     }
 
     @Override
     public void visit(BoolAstType t) {
-        varDeclType = "boolean";
     }
 
     @Override
     public void visit(IntArrayAstType t) {
-        varDeclType = "int-array";
     }
 
     @Override
     public void visit(RefType t) {
-        varDeclType = "classPointer";
     }
 }
