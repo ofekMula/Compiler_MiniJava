@@ -33,6 +33,9 @@ class Utils {
             return typesStrings.get("classPointer");
     }
 
+    static String FormatSigFormalVar(String varName) {
+        return "%." + varName;
+    }
     static String FormatLocalVar(String varName) {
         return "%" + varName;
     }
