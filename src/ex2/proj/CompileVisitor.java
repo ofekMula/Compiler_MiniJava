@@ -74,7 +74,7 @@ public class CompileVisitor implements Visitor {
     }
 
     private void llvmBrTwoLabels(String resultReg, String firstLabel, String secLabel) {
-        emit("\n\tbr i1 " + resultReg + ", label %" + firstLabel + " label %" + secLabel);// br i1 %1,label %if0, label %else1
+        emit("\n\tbr i1 " + resultReg + ", label %" + firstLabel + ", label %" + secLabel);// br i1 %1,label %if0, label %else1
     }
 
     private void llvmBrOneLabel(String label) {
@@ -84,7 +84,9 @@ public class CompileVisitor implements Visitor {
     private void llvmPrintLabel(String label) {
         emit("\n"+label + ":");
     }
-
+    private void llvmPrintLabelWhile(String label) {
+        emit("\n\t"+label + ":");
+    }
     private void llvmBitcast(String newReg, String oldReg, String oldType, String newType) {
         emit("\n\t" + newReg + " = bitcast " + oldType + " " + oldReg + " to " + newType + "*");
     }
@@ -388,15 +390,15 @@ public class CompileVisitor implements Visitor {
         String whileEndLabel = methodContext.getNewLabel("EndLabel");
 
         llvmBrOneLabel(whileCondLabel);
-        llvmPrintLabel(whileCondLabel);
+        llvmPrintLabelWhile(whileCondLabel);
         whileStatement.cond().accept(this);//update the result of the condtion in resreg
         llvmBrTwoLabels(resReg, whileStartLabel, whileEndLabel);// br i1 %reg,label %start, label %end
 
-        llvmPrintLabel(whileStartLabel);
+        llvmPrintLabelWhile(whileStartLabel);
         whileStatement.body().accept(this);
         llvmBrOneLabel(whileCondLabel);//branch back to while condition
 
-        llvmPrintLabel(whileEndLabel);//branch out of while
+        llvmPrintLabelWhile(whileEndLabel);//branch out of while
 
 
     }
