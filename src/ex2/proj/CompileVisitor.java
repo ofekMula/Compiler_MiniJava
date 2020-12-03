@@ -74,7 +74,7 @@ public class CompileVisitor implements Visitor {
     }
 
     private void llvmBrTwoLabels(String resultReg, String firstLabel, String secLabel) {
-        emit("\n\tbr i1 " + resultReg + ", label %" + firstLabel + " label %" + secLabel);// br i1 %1,label %if0, label %else1
+        emit("\n\tbr i1 " + resultReg + ", label %" + firstLabel + ", label %" + secLabel);// br i1 %1,label %if0, label %else1
     }
 
     private void llvmBrOneLabel(String label) {
@@ -84,7 +84,7 @@ public class CompileVisitor implements Visitor {
     private void llvmPrintLabel(String label) {
         emit("\n"+label + ":");
     }
-
+  
     private void llvmPrintLoopLabel(String label) {
         emit("\n\t"+label + ":");
     }
@@ -401,8 +401,6 @@ public class CompileVisitor implements Visitor {
         llvmBrOneLabel(whileCondLabel);//branch back to while condition
 
         llvmPrintLoopLabel(whileEndLabel);//branch out of while
-
-
     }
 
     @Override
