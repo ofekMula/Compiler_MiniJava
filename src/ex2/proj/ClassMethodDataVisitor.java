@@ -2,7 +2,6 @@ package ex2.proj;
 
 import ast.*;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +9,7 @@ import java.util.Map;
 
 public class ClassMethodDataVisitor implements Visitor {
     public Map<String, ClassData> classNameToData;
-    static int offset = 0;
+    static int varOffset = 0;
     private String refName;
     private MethodData methodDataAddToClass; // add the method after calculating it in accept - when returning to class
     private ClassData classDataAddToMethod; // add the class - after calculating it, to the method
@@ -20,15 +19,19 @@ public class ClassMethodDataVisitor implements Visitor {
     }
 
 
-    public int calculateVarOffset(int sizeByType){
-        if (offset == 0)
-            return (offset = 8);
-        else
-            return (offset += sizeByType);
-    } // update the offset and return the new type
+    private int calculateFieldOffset(int sizeByType){
+        // return the current offset and update by zie for the next field
+        if (varOffset == 0){
+            // first field is right after the vtable pointer
+            varOffset = 8;
+        }
+        int offsetToReturn = varOffset;
+        varOffset += sizeByType;
+        return offsetToReturn;
+    }
 
     public int calculateMethodOffset(){
-        return offset ++;
+        return varOffset++;
     }
 
     // so new methods that don't have offset yet will have a higher offset - after the inherited methods
@@ -40,9 +43,9 @@ public class ClassMethodDataVisitor implements Visitor {
                 maxOffset = newOffset;
         }
         if (maxOffset == -1)
-            offset = 0;
+            varOffset = 0;
         else
-            offset = maxOffset + 1;
+            varOffset = maxOffset + 1;
     }
 
     // new vars that don't have offset yet will have a higher offset - after the inherited vars
@@ -54,9 +57,9 @@ public class ClassMethodDataVisitor implements Visitor {
                 maxOffset = newOffset;
         }
         if (maxOffset > 0)
-            offset = maxOffset;
+            varOffset = maxOffset;
         else
-            offset = 0;
+            varOffset = 0;
     }
 
     public void bringSuperClassMethods(String superClassName, Map<String, MethodData> methodData){
@@ -89,7 +92,7 @@ public class ClassMethodDataVisitor implements Visitor {
 
     @Override
     public void visit(ClassDecl classDecl) {
-        offset = 0;
+        varOffset = 0;
         ClassData superClass = null; // default - no super class
         ArrayList<ClassData> subClassesData = null; // will be updated in visit in the next classes
         Map<String,MethodData> methodData = new HashMap<>();
@@ -105,10 +108,10 @@ public class ClassMethodDataVisitor implements Visitor {
             fieldDecl.accept(this); // first need to get the type
 
             int size = Utils.calculateSizeByType(refName);
-            int offset = calculateVarOffset(size);
+            int offset = calculateFieldOffset(size);
             fieldsVars.put(fieldDecl.name(), new VarData(refName, offset));
         }
-        offset = 0; // initialize before calculating for methods, and after all vars been calculated in this class
+        varOffset = 0; // initialize before calculating for methods, and after all vars been calculated in this class
 
         bringSuperClassMethods(classDecl.superName(), methodData);
 
@@ -133,7 +136,7 @@ public class ClassMethodDataVisitor implements Visitor {
         else
             classDataAddToMethod = new ClassData(classDecl.name(), null, methodData, fieldsVars);
 
-        offset = 0; // initialize before calculating next, and after all methods been calculated in this class
+        varOffset = 0; // initialize before calculating next, and after all methods been calculated in this class
 
 
         // add at the end after the building of methodData and filedVars:
