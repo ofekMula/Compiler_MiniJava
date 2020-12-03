@@ -85,6 +85,10 @@ public class CompileVisitor implements Visitor {
         emit("\n"+label + ":");
     }
 
+    private void llvmPrintLoopLabel(String label) {
+        emit("\n\t"+label + ":");
+    }
+
     private void llvmBitcast(String newReg, String oldReg, String oldType, String newType) {
         emit("\n\t" + newReg + " = bitcast " + oldType + " " + oldReg + " to " + newType + "*");
     }
@@ -388,15 +392,15 @@ public class CompileVisitor implements Visitor {
         String whileEndLabel = methodContext.getNewLabel("EndLabel");
 
         llvmBrOneLabel(whileCondLabel);
-        llvmPrintLabel(whileCondLabel);
+        llvmPrintLoopLabel(whileCondLabel);
         whileStatement.cond().accept(this);//update the result of the condtion in resreg
         llvmBrTwoLabels(resReg, whileStartLabel, whileEndLabel);// br i1 %reg,label %start, label %end
 
-        llvmPrintLabel(whileStartLabel);
+        llvmPrintLoopLabel(whileStartLabel);
         whileStatement.body().accept(this);
         llvmBrOneLabel(whileCondLabel);//branch back to while condition
 
-        llvmPrintLabel(whileEndLabel);//branch out of while
+        llvmPrintLoopLabel(whileEndLabel);//branch out of while
 
 
     }
@@ -441,8 +445,7 @@ public class CompileVisitor implements Visitor {
     }
 
 
-    private String getArrElement(String localArrName, String index, boolean isAssign) {
-        String arrAddrReg;
+    private String getArrElement(String formattedArrName, String index) {
 
         // get labels
         String negativeIndexLabel = methodContext.getNewLabel("negativeIndex");
@@ -450,66 +453,68 @@ public class CompileVisitor implements Visitor {
         String outBoundsLabel = methodContext.getNewLabel("outBounds");
         String inBoundsLabel = methodContext.getNewLabel("inBounds");
 
-        if (isAssign) {
-            emit("\n\t; Load the address of the array");
-            arrAddrReg = methodContext.getNewReg();
-            emit("\n\t" + arrAddrReg + " = load i32*, i32** " + localArrName);
-        } else {
-            arrAddrReg = localArrName;
-        }
-
-        emit("\n\t; Check that the index is greater than zero");
+        //emit("\n\t; Check that the index is greater than zero");
         String isNegativeReg = methodContext.getNewReg();
         emit("\n\t" + isNegativeReg + " = icmp slt i32 " + index + ", 0");
         emit("\n\tbr i1 " + isNegativeReg + ", label %" + negativeIndexLabel + ", label %" + positiveIndexLabel);
 
         emit("\n" + negativeIndexLabel + ":");
-        emit("\n\t; Else throw out of bounds exception");
+        //emit("\n\t; Else throw out of bounds exception");
         emit("\n\tcall void @throw_oob()");
         emit("\n\tbr label %" + positiveIndexLabel);
 
         emit("\n" + positiveIndexLabel + ":");
-        emit("\n\t; Load the size of the array (first integer of the array)");
+        //emit("\n\t; Load the size of the array (first integer of the array)");
         String arrSizeElementReg = methodContext.getNewReg();
-        emit("\n\t" + arrSizeElementReg + " = getelementptr i32, i32* " + arrAddrReg + ", i32 0");
+        emit("\n\t" + arrSizeElementReg + " = getelementptr i32, i32* " + formattedArrName + ", i32 0");
         String arrSizeReg = methodContext.getNewReg();
         emit("\n\t" + arrSizeReg + " = load i32, i32* " + arrSizeElementReg);
 
-        emit("\n\t; Check that the index is less than the size of the array");
+       // emit("\n\t; Check that the index is less than the size of the array");
         String isOutBoundsReg = methodContext.getNewReg();
         emit("\n\t" + isOutBoundsReg + " = icmp sle i32 " + arrSizeReg + ", " + index);
         emit("\n\tbr i1 " + isOutBoundsReg + ", label %" + outBoundsLabel + ", label %" + inBoundsLabel);
 
         emit("\n" + outBoundsLabel + ":");
-        emit("\n\t; Else throw out of bounds exception");
+        //emit("\n\t; Else throw out of bounds exception");
         emit("\n\tcall void @throw_oob()");
         emit("\n\tbr label %" + inBoundsLabel);
 
         emit("\n" + inBoundsLabel + ":");
-        emit("\n\t; All ok, we can safely index the array now");
-        emit("\n\t; We'll be accessing our array at index + 1, since the first element holds the size");
+        //emit("\n\t; All ok, we can safely index the array now");
+        //emit("\n\t; We'll be accessing our array at index + 1, since the first element holds the size");
         String realIndexReg = methodContext.getNewReg();
         emit("\n\t" + realIndexReg + " = add i32 " + index + ", 1");
 
-        emit("\n\t; Get pointer to the i + 1 element of the array");
+        //emit("\n\t; Get pointer to the i + 1 element of the array");
         String elementPtrReg = methodContext.getNewReg();
-        emit("\n\t" + elementPtrReg + " = getelementptr i32, i32* " + arrAddrReg + ", i32 " + realIndexReg);
+        emit("\n\t" + elementPtrReg + " = getelementptr i32, i32* " + formattedArrName + ", i32 " + realIndexReg);
         return elementPtrReg;
     }
 
     @Override
     public void visit(AssignArrayStatement assignArrayStatement) {
         String arrName = assignArrayStatement.lv();
-        String localArrName = Utils.FormatLocalVar(arrName);
+        String FormattedArrName;
+        if (currMethodData.isField(arrName)){
+            FormattedArrName = getFieldPtr(arrName);
+        }
+        else {
+            FormattedArrName = Utils.FormatLocalVar(arrName);
+        }
+
+        //emit("\n\t; Load the address of the array");
+        String arrAddrReg = methodContext.getNewReg();
+        emit("\n\t" + arrAddrReg + " = load i32*, i32** " + FormattedArrName);
 
         assignArrayStatement.index().accept(this);
         String index = resReg;
 
-        String elementPtrReg = getArrElement(localArrName, index, true);
-
         emit("\n\t; store rv");
         assignArrayStatement.rv().accept(this);
         String rvReg = resReg;
+
+        String elementPtrReg = getArrElement(arrAddrReg, index);
         emit("\n\tstore i32 " + rvReg + ", i32* " + elementPtrReg);
     }
 
@@ -580,7 +585,7 @@ public class CompileVisitor implements Visitor {
         e.indexExpr().accept(this);
         String index = resReg;
 
-        String elementPtrReg = getArrElement(arr, index, false);
+        String elementPtrReg = getArrElement(arr, index);
 
         emit("\n\t; load element");
         String loadedElementReg = methodContext.getNewReg();
@@ -785,7 +790,7 @@ public class CompileVisitor implements Visitor {
         e.lengthExpr().accept(this);
         String length = resReg;
 
-        emit("\n\t; Check that the size of the array is not negative");
+        //emit("\n\t; Check that the size of the array is not negative");
 
         // save the result in a new temp reg
         String isNegativeReg = methodContext.getNewReg();
@@ -796,35 +801,35 @@ public class CompileVisitor implements Visitor {
 
         // negative length
         emit("\n" + negativeLengthLabel + ":");
-        emit("\n\t; Size was negative, throw negative size exception");
+        //emit("\n\t; Size was negative, throw negative size exception");
         emit("\n\tcall void @throw_oob()");
         emit("\n\tbr label %" + positiveLengthLabel);
 
         // positive length
         emit("\n" + positiveLengthLabel + ":");
-        emit("\n\t; All ok, we can proceed with the allocation");
+        //emit("\n\t; All ok, we can proceed with the allocation");
 
         // calculate size
-        emit("\n\t; Calculate size bytes to be allocated for the array");
-        emit("\n\t; Additional int worth of space, to store the size of the array");
+        //emit("\n\t; Calculate size bytes to be allocated for the array");
+        //emit("\n\t; Additional int worth of space, to store the size of the array");
         String arrSizeReg = methodContext.getNewReg();
         methodContext.regTypesMap.put(arrSizeReg, "i32");
         emit("\n\t" + arrSizeReg + " = add i32 " + length + ", 1");
 
         // allocation
-        emit("\n\t; Allocate sz + 1 integers (4 bytes each)");
+        //emit("\n\t; Allocate sz + 1 integers (4 bytes each)");
         String allocPtrReg = methodContext.getNewReg();
         methodContext.regTypesMap.put(arrSizeReg, "i8*");
         emit("\n\t" + allocPtrReg + " = call i8* @calloc(i32 4, i32 " + arrSizeReg + ")");
 
         // casting
-        emit("\n\t; Cast the returned pointer");
+        //emit("\n\t; Cast the returned pointer");
         String arrPtrReg = methodContext.getNewReg();
         methodContext.regTypesMap.put(arrPtrReg, "i32*");
         emit("\n\t" + arrPtrReg + " = bitcast i8* " + allocPtrReg + " to i32*");
 
         // store size
-        emit("\n\t; Store the size of the array in the first position of the array");
+        //emit("\n\t; Store the size of the array in the first position of the array");
         emit("\n\tstore i32 " + length + ", i32* " + arrPtrReg);
 
         resReg = arrPtrReg;
