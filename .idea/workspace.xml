@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="--">
+    <list default="true" id="221cd556-6855-449c-a3cf-6266d16de790" name="Default Changelist" comment="--">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="shirly-2" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,6 +58,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
@@ -161,19 +163,49 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1865" height="3" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606908767005" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1607004840870">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607004840870" />
+    <state x="769" y="174" key="RollbackChangesDialog" timestamp="1607005009040">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="174" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607005009040" />
+    <state x="703" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607004852072">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="703" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607004852072" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
+          <line>19</line>
+          <properties class="ex1.VisitorRenameVar">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex2/proj/ClassMethodDataVisitor.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="88" />
+          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="95" />
+          <line>65</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="86" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
