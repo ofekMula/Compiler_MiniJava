@@ -21,6 +21,7 @@ public class CompileVisitor implements Visitor {
     private ClassData currClassData;
     private MethodData currMethodData;// initialized in every method dec.
     private PrintWriter writerToLlvmFile;
+    private boolean wasLoaded = false;
 
     public CompileVisitor(Map<String, ClassData> classNameToData, PrintWriter writerToLlvmFile) {
         this.classNameToData = classNameToData;
@@ -596,18 +597,24 @@ public class CompileVisitor implements Visitor {
     public void visit(ArrayLengthExpr e) { //todo: was not in example so not 100% sure
         e.arrayExpr().accept(this);
         String arr = resReg;
+        String arrSizeElementReg;
 
-        emit("\n\t; Load the address of the array");
-        String arrAddrReg = methodContext.getNewReg();
-        emit("\n\t" + arrAddrReg + " = load i32*, i32** " + arr);
+        if (!wasLoaded) { // already loaded in access to field
+            emit("\n\t; Load the address of the array");
+            String arrAddrReg = methodContext.getNewReg();
+            emit("\n\t" + arrAddrReg + " = load i32*, i32** " + arr);
 
-        emit("\n\t; Load the size of the array (first integer of the array)");
-        String arrSizeElementReg = methodContext.getNewReg();
-        emit("\n\t" + arrSizeElementReg + " = getelementptr i32, i32* " + arrAddrReg + ", i32 0");
+            emit("\n\t; Load the size of the array (first integer of the array)");
+            arrSizeElementReg = methodContext.getNewReg();
+            emit("\n\t" + arrSizeElementReg + " = getelementptr i32, i32* " + arrAddrReg + ", i32 0");
+        } else {
+            arrSizeElementReg = resReg;
+        }
         String arrSizeReg = methodContext.getNewReg();
         emit("\n\t" + arrSizeReg + " = load i32, i32* " + arrSizeElementReg);
         methodContext.regTypesMap.put(arrSizeReg, "i32");
         resReg = arrSizeReg;
+        wasLoaded = false;
     }
 
     @Override
@@ -743,7 +750,6 @@ public class CompileVisitor implements Visitor {
         if (currMethodData.fieldsVars.containsKey(varName)) { // only if not method call - it is already taken cared of
             // todo get from the heap
             // Get pointer to the byte where the field starts
-
             String fieldPtrReg = getFieldPtr(varName);
 
             // load
@@ -756,6 +762,7 @@ public class CompileVisitor implements Visitor {
             resReg = loadedFieldReg;
 
             refCallClassName = currMethodData.fieldsVars.get(varName).getType(); // for method call
+            wasLoaded = true;
         }
     }
 
