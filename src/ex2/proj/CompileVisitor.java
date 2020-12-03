@@ -885,6 +885,7 @@ public class CompileVisitor implements Visitor {
         methodContext.regTypesMap.put(reg, "i1");
 
         // xor with 1
+        //llvmBinaryExpr(reg,"xor","i1",res,"1");
         emit("\n\t" + reg + " = xor " + res + ", 1");
 
         // update resReg
