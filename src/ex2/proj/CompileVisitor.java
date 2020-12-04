@@ -75,7 +75,7 @@ public class CompileVisitor implements Visitor {
     }
 
     private void llvmBrTwoLabels(String resultReg, String firstLabel, String secLabel) {
-        emit("\n\tbr i1 " + resultReg + ", label %" + firstLabel + " label %" + secLabel);// br i1 %1,label %if0, label %else1
+        emit("\n\tbr i1 " + resultReg + ", label %" + firstLabel + ", label %" + secLabel);// br i1 %1,label %if0, label %else1
     }
 
     private void llvmBrOneLabel(String label) {
@@ -85,7 +85,7 @@ public class CompileVisitor implements Visitor {
     private void llvmPrintLabel(String label) {
         emit("\n"+label + ":");
     }
-
+  
     private void llvmPrintLoopLabel(String label) {
         emit("\n\t"+label + ":");
     }
@@ -388,9 +388,9 @@ public class CompileVisitor implements Visitor {
         //else case: branch to end loop branch
         //reference: https://stackoverflow.com/questions/27540761/how-to-change-a-do-while-form-loop-into-a-while-form-loop-in-llvm-ir
 
-        String whileCondLabel = methodContext.getNewLabel("condLabel");
-        String whileStartLabel = methodContext.getNewLabel("startLabel");
-        String whileEndLabel = methodContext.getNewLabel("EndLabel");
+        String whileCondLabel = methodContext.getNewLabel("loopCond");
+        String whileStartLabel = methodContext.getNewLabel("startLoop");
+        String whileEndLabel = methodContext.getNewLabel("EndLoop");
 
         llvmBrOneLabel(whileCondLabel);
         llvmPrintLoopLabel(whileCondLabel);
@@ -402,8 +402,6 @@ public class CompileVisitor implements Visitor {
         llvmBrOneLabel(whileCondLabel);//branch back to while condition
 
         llvmPrintLoopLabel(whileEndLabel);//branch out of while
-
-
     }
 
     @Override
@@ -599,7 +597,6 @@ public class CompileVisitor implements Visitor {
     public void visit(ArrayLengthExpr e) { //todo: was not in example so not 100% sure
         e.arrayExpr().accept(this);
         String arr = resReg;
-
         String arrSizeElementReg;
 
         if (!wasLoaded) { // already loaded in access to field
@@ -754,7 +751,6 @@ public class CompileVisitor implements Visitor {
         if (currMethodData.fieldsVars.containsKey(varName)) { // only if not method call - it is already taken cared of
             // todo get from the heap
             // Get pointer to the byte where the field starts
-
             String fieldPtrReg = getFieldPtr(varName);
 
             // load
