@@ -21,6 +21,7 @@ public class CompileVisitor implements Visitor {
     private ClassData currClassData;
     private MethodData currMethodData;// initialized in every method dec.
     private PrintWriter writerToLlvmFile;
+    private boolean wasLoaded = false;
 
     public CompileVisitor(Map<String, ClassData> classNameToData, PrintWriter writerToLlvmFile) {
         this.classNameToData = classNameToData;
@@ -599,17 +600,25 @@ public class CompileVisitor implements Visitor {
         e.arrayExpr().accept(this);
         String arr = resReg;
 
-        emit("\n\t; Load the address of the array");
-        String arrAddrReg = methodContext.getNewReg();
-        emit("\n\t" + arrAddrReg + " = load i32*, i32** " + arr);
+        String arrSizeElementReg;
 
-        emit("\n\t; Load the size of the array (first integer of the array)");
-        String arrSizeElementReg = methodContext.getNewReg();
-        emit("\n\t" + arrSizeElementReg + " = getelementptr i32, i32* " + arrAddrReg + ", i32 0");
+        if (!wasLoaded) { // already loaded in access to field
+            emit("\n\t; Load the address of the array");
+            String arrAddrReg = methodContext.getNewReg();
+            emit("\n\t" + arrAddrReg + " = load i32*, i32** " + arr);
+
+            emit("\n\t; Load the size of the array (first integer of the array)");
+            arrSizeElementReg = methodContext.getNewReg();
+            emit("\n\t" + arrSizeElementReg + " = getelementptr i32, i32* " + arrAddrReg + ", i32 0");
+        } else {
+            arrSizeElementReg = resReg;
+        }
+
         String arrSizeReg = methodContext.getNewReg();
         emit("\n\t" + arrSizeReg + " = load i32, i32* " + arrSizeElementReg);
         methodContext.regTypesMap.put(arrSizeReg, "i32");
         resReg = arrSizeReg;
+        wasLoaded = false;
     }
 
     @Override
@@ -758,6 +767,7 @@ public class CompileVisitor implements Visitor {
             resReg = loadedFieldReg;
 
             refCallClassName = currMethodData.fieldsVars.get(varName).getType(); // for method call
+            wasLoaded = true;
         }
     }
 
@@ -879,8 +889,10 @@ public class CompileVisitor implements Visitor {
         String reg = methodContext.getNewReg();
         methodContext.regTypesMap.put(reg, "i1");
 
-        // xor with 1
-        emit("\n\t" + reg + " = xor " + res + ", 1");
+        // !res <==> 1 - res
+        // if res == 1: 1 - res = 1 - 1 = 0 = !res
+        // if res == 0: 1 - res = 1 - 0 = 1 = !res
+        emit("\n\t" + reg + " = sub i1 1, " + res);
 
         // update resReg
         resReg = reg;
