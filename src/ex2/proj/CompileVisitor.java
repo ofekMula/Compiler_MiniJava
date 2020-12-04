@@ -610,6 +610,7 @@ public class CompileVisitor implements Visitor {
         } else {
             arrSizeElementReg = resReg;
         }
+
         String arrSizeReg = methodContext.getNewReg();
         emit("\n\t" + arrSizeReg + " = load i32, i32* " + arrSizeElementReg);
         methodContext.regTypesMap.put(arrSizeReg, "i32");
@@ -884,9 +885,10 @@ public class CompileVisitor implements Visitor {
         String reg = methodContext.getNewReg();
         methodContext.regTypesMap.put(reg, "i1");
 
-        // xor with 1
-        //llvmBinaryExpr(reg,"xor","i1",res,"1");
-        emit("\n\t" + reg + " = xor " + res + ", 1");
+        // !res <==> 1 - res
+        // if res == 1: 1 - res = 1 - 1 = 0 = !res
+        // if res == 0: 1 - res = 1 - 0 = 1 = !res
+        emit("\n\t" + reg + " = sub i1 1, " + res);
 
         // update resReg
         resReg = reg;
