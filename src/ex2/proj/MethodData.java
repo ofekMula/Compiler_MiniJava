@@ -40,26 +40,11 @@ public class MethodData  {
         if (fieldsVars.containsKey(varName)){
             return fieldsVars.get(varName).getType();
         }
-        System.out.println("BUG in getVarType for "+ varName); //todo delte after debug
         return "?";
     }
 
     boolean isField(String varName){
         return (fieldsVars.containsKey(varName));
-    }
-
-    String getVarFormatName(String varName){
-        if (localVars.containsKey(varName)){
-            return Utils.FormatLocalVar(varName);
-        }
-        if (formalVars.containsKey(varName)){
-            return Utils.FormatLocalVar(varName);
-        }
-        if (fieldsVars.containsKey(varName)){
-            return Utils.FormatLocalVar(varName); // todo: do we have different format for fields? if not, delete all the function
-        }
-        System.out.println("BUG in getVarType for "+ varName); //todo delte after debug
-        return "?";
     }
 
     public ClassData getClassData() {
