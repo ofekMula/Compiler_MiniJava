@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="221cd556-6855-449c-a3cf-6266d16de790" name="Default Changelist" comment="--">
-      <change afterPath="$PROJECT_DIR$/src/BinarySearch" afterDir="false" />
+    <list default="true" id="221cd556-6855-449c-a3cf-6266d16de790" name="Default Changelist" comment="added check to see if the field arr length was already loaded">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,17 +52,6 @@
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
       <option name="PROGRAM_PARAMETERS" value="unmarshal compile src/BinarySearch binaryCheck" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607005181605</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added check to see if the field arr length was already loaded">
+      <created>1607007958244</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607007958244</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,33 +159,34 @@
     <MESSAGE value="printing to screen for debug" />
     <MESSAGE value="+AssignStatement +fixed bugs in arrays" />
     <MESSAGE value="--" />
-    <option name="LAST_COMMIT_MESSAGE" value="--" />
+    <MESSAGE value="added check to see if the field arr length was already loaded" />
+    <option name="LAST_COMMIT_MESSAGE" value="added check to see if the field arr length was already loaded" />
   </component>
   <component name="WindowStateProjectService">
     <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607005830550">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607005830550" />
-    <state width="1865" height="768" key="GridCell.Tab.0.bottom" timestamp="1607007424072">
+    <state width="1865" height="768" key="GridCell.Tab.0.bottom" timestamp="1607008444476">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1865" height="3" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606908767005" />
-    <state width="1865" height="768" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607007424072" />
-    <state width="1865" height="768" key="GridCell.Tab.0.center" timestamp="1607007424072">
+    <state width="1865" height="768" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607008444476" />
+    <state width="1865" height="768" key="GridCell.Tab.0.center" timestamp="1607008444476">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1865" height="3" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606908767005" />
-    <state width="1865" height="768" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607007424072" />
-    <state width="1865" height="768" key="GridCell.Tab.0.left" timestamp="1607007424072">
+    <state width="1865" height="768" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607008444476" />
+    <state width="1865" height="768" key="GridCell.Tab.0.left" timestamp="1607008444476">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1865" height="3" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606908767005" />
-    <state width="1865" height="768" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607007424072" />
-    <state width="1865" height="768" key="GridCell.Tab.0.right" timestamp="1607007424072">
+    <state width="1865" height="768" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607008444476" />
+    <state width="1865" height="768" key="GridCell.Tab.0.right" timestamp="1607008444476">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1865" height="3" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1606908767005" />
-    <state width="1865" height="768" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607007424072" />
+    <state width="1865" height="768" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607008444476" />
     <state x="184" y="86" key="MergeDialog" timestamp="1607004840870">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -200,10 +195,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="174" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607005009040" />
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1607005267025">
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1607008405755">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607005267025" />
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607008405755" />
     <state x="605" y="188" width="710" height="664" key="find.popup" timestamp="1607007138197">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
