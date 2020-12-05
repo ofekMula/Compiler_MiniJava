@@ -1,9 +1,6 @@
 package ex2.proj;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Map;
 
 public class MethodData  {
@@ -47,16 +44,9 @@ public class MethodData  {
         return (fieldsVars.containsKey(varName));
     }
 
-    public ClassData getClassData() {
-        return classData;
-    }
 
     public String getReturnType() {
         return returnType;
-    }
-
-    public void setClassData(ClassData classData) {
-        this.classData = classData;
     }
 
     public int getOffset() {
