@@ -26,7 +26,7 @@ public class ClassData {
         this.subClassesData = new ArrayList<>();
     }
 
-    public int getClassSize() { // only fields //TODO: changed logic, based on  8 for vtable + type only, if ok remove comments
+    public int getClassSize() { // only fields
         int res = 8, typeSize; //offset, ;
         String type;
         for (Map.Entry<String, VarData> var : fieldsVars.entrySet()) {

@@ -10,8 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-// todo: only registers that are passed in res reg need to be added to the reg type map - need to remove unnecessary inserts
-// todo: check if void is possible in a method that isn't main
+
 public class CompileVisitor implements Visitor {
 
     private Map<String, ClassData> classNameToData;
@@ -34,9 +33,7 @@ public class CompileVisitor implements Visitor {
     }
 
     private void emit(String data) {
-        //todo
         writerToLlvmFile.print(data);
-        System.out.print(data);
     }
 
     //***********llvm methods**********///
@@ -268,9 +265,6 @@ public class CompileVisitor implements Visitor {
     public void visit(ClassDecl classDecl) {
         currClassData = classNameToData.get(classDecl.name());
 
-        if (classDecl.superName() != null) {
-        }
-
         for (var methodDecl : classDecl.methoddecls()) {
             methodDecl.accept(this);
             emit("\n}");
@@ -286,7 +280,7 @@ public class CompileVisitor implements Visitor {
         emit("define i32 @main() {");
 
         mainClass.mainStatement().accept(this);
-        emit("\n\tret i32 0"); //todo: verify. (appears in examples)
+        emit("\n\tret i32 0");
         emit("\n}");
     }
 
@@ -335,8 +329,7 @@ public class CompileVisitor implements Visitor {
     }
 
     @Override
-    public void visit(VarDecl varDecl) { // TODO: need to chek if it is from a method or from a class - currently we print both
-        // TODO: but we don't need to allocate memory for vars in class, only inside method - fix that!
+    public void visit(VarDecl varDecl) {
         // local variables
 
         // format the var name
@@ -384,9 +377,8 @@ public class CompileVisitor implements Visitor {
         //branch to condition expr
         //then store the result in a register
         //then branch accordingly to the if case or else case
-        //if case:start the loop and accept to the body and re-enter condtion.
+        //if case:start the loop and accept to the body and re-enter condition.
         //else case: branch to end loop branch
-        //reference: https://stackoverflow.com/questions/27540761/how-to-change-a-do-while-form-loop-into-a-while-form-loop-in-llvm-ir
 
         String whileCondLabel = methodContext.getNewLabel("loopCond");
         String whileStartLabel = methodContext.getNewLabel("startLoop");
@@ -430,15 +422,6 @@ public class CompileVisitor implements Visitor {
             lvReg = Utils.FormatLocalVar(lvId);
         }
 
-//        // casting //
-//        //todo check when its relevant. causes error in VarTypeBad.java demo
-//        if (!lvTypeAlloc.equals(rvType)) {
-//            newLvReg = methodContext.getNewReg();
-//            llvmBitcast(newLvReg, lvReg, lvTypeAlloc, rvType);
-//            lvTypeAlloc = rvType;
-//            llvmStore(rvType, rvReg, lvTypeAlloc, newLvReg);
-//        } else {
-        //todo: changes rvType to lvTypeAlloc due to arTypeBad.java demo
         llvmStore(lvTypeAlloc, rvReg, lvTypeAlloc, lvReg); // store the content calculated for the right side, at the address calculated for the left side
        // }
     }
@@ -594,7 +577,7 @@ public class CompileVisitor implements Visitor {
     }
 
     @Override
-    public void visit(ArrayLengthExpr e) { //todo: was not in example so not 100% sure
+    public void visit(ArrayLengthExpr e) {
         e.arrayExpr().accept(this);
         String arr = resReg;
         String arrSizeElementReg;
@@ -706,8 +689,6 @@ public class CompileVisitor implements Visitor {
 
     @Override
     public void visit(IdentifierExpr e) {
-        //todo verify load is always from same_type* to same_type
-        //
         // should point to an allocated var on the stack/heap
         String varName = e.id();
         if (currMethodData.localVars.containsKey(varName)) {
@@ -749,7 +730,6 @@ public class CompileVisitor implements Visitor {
         }
 
         if (currMethodData.fieldsVars.containsKey(varName)) { // only if not method call - it is already taken cared of
-            // todo get from the heap
             // Get pointer to the byte where the field starts
             String fieldPtrReg = getFieldPtr(varName);
 
@@ -780,7 +760,7 @@ public class CompileVisitor implements Visitor {
         return (fieldPtrReg);
     }
 
-    public void visit(ThisExpr e) { //todo: need to verify - no examples
+    public void visit(ThisExpr e) {
         methodContext.regTypesMap.put("%this", "i8*");
         resReg = "%this";
         refCallClassName = currClassData.name;
@@ -839,9 +819,6 @@ public class CompileVisitor implements Visitor {
         emit("\n\tstore i32 " + length + ", i32* " + arrPtrReg);
 
         resReg = arrPtrReg;
-
-        //todo: make sure Assign the array pointer to a local var x looks like this:
-        // store i32* resReg, i32** %x
     }
 
     @Override
@@ -876,7 +853,7 @@ public class CompileVisitor implements Visitor {
     }
 
     @Override
-    public void visit(NotExpr e) { //todo: need to verify
+    public void visit(NotExpr e) {
         // the result will be in resReg
         e.e().accept(this);
         String res = resReg;
