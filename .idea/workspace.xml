@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="shirly-2-12" />
+        <entry key="$PROJECT_DIR$" value="shirly-2-4" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,6 +68,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
@@ -123,9 +128,39 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606880373735</updated>
-      <workItem from="1606880384318" duration="333000" />
+      <workItem from="1606880384318" duration="536000" />
+      <workItem from="1606880975132" duration="32263000" />
+      <workItem from="1607046655120" duration="5323000" />
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="-">
+      <created>1606880859101</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606880859101</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fields+ret+fixes">
+      <created>1606906071092</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606906071092</updated>
+    </task>
+    <task id="LOCAL-00009" summary="MethodCallExpr fix for Factorial.java">
+      <created>1606944013665</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606944013665</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fields offset fix, added fields to assignArray and changed the order to match LinearSearch.java example">
+      <created>1606965542873</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606965542873</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +171,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -147,7 +184,11 @@
     <MESSAGE value="arrays, &amp;&amp;, formals, basic expr" />
     <MESSAGE value="printing to screen for debug" />
     <MESSAGE value="+AssignStatement +fixed bugs in arrays" />
-    <option name="LAST_COMMIT_MESSAGE" value="+AssignStatement +fixed bugs in arrays" />
+    <MESSAGE value="-" />
+    <MESSAGE value="fields+ret+fixes" />
+    <MESSAGE value="MethodCallExpr fix for Factorial.java" />
+    <MESSAGE value="fields offset fix, added fields to assignArray and changed the order to match LinearSearch.java example" />
+    <option name="LAST_COMMIT_MESSAGE" value="fields offset fix, added fields to assignArray and changed the order to match LinearSearch.java example" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -172,16 +213,29 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>65</line>
+          <line>72</line>
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>66</line>
+          <line>73</line>
           <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java</url>
+          <line>436</line>
+          <option name="timeStamp" value="92" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="refCallClassName" />
+        <watch expression="registerCnt" />
+        <watch expression="resReg" />
+        <watch expression="varOffset" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
