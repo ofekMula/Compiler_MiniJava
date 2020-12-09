@@ -707,6 +707,7 @@ public class CompileVisitor implements Visitor {
 
             refCallClassName = currMethodData.localVars.get(varName);
             resReg = reg;
+            wasLoaded = true;
             return;
         }
 
@@ -726,6 +727,7 @@ public class CompileVisitor implements Visitor {
 
             resReg = reg;
             refCallClassName = currMethodData.formalVars.get(varName);
+            wasLoaded = true;
             return;
         }
 
