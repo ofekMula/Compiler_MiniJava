@@ -18,7 +18,6 @@ public class ClassMethodDataVisitor implements Visitor {
         classNameToData = new HashMap<>();
     }
 
-
     private int calculateFieldOffset(int sizeByType){
         // return the current offset and update by zie for the next field
         if (varOffset == 0){
@@ -52,7 +51,8 @@ public class ClassMethodDataVisitor implements Visitor {
     public void initializeVarsOffsetByMax(Map<String,VarData> varData){
         int maxOffset = -1;
         for (Map.Entry<String,VarData> var : varData.entrySet()){
-            int newOffset = var.getValue().getOffset();
+            int size = Utils.calculateSizeByType(var.getValue().getType());
+            int newOffset = var.getValue().getOffset() + size;
             if (newOffset > maxOffset)
                 maxOffset = newOffset;
         }
