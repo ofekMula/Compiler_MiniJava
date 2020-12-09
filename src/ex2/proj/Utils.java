@@ -33,6 +33,9 @@ class Utils {
             return typesStrings.get("classPointer");
     }
 
+    static String FormatSigFormalVar(String varName) {
+        return "%." + varName;
+    }
     static String FormatLocalVar(String varName) {
         return "%" + varName;
     }
@@ -41,12 +44,7 @@ class Utils {
         if (infixSymbolStrings.containsKey(infixSymbol)){
             return infixSymbolStrings.get(infixSymbol);
         }
-
-        else { //TODO delete after debug
-            System.out.println("BUG: Binary op doesnt exists");
-            return "?";
-
-        }
+        return "?";
     }
 
     public static int calculateSizeByType(String type){
