@@ -17,41 +17,42 @@ public class ClassMethodDataVisitor implements Visitor {
     public ClassMethodDataVisitor() {
         classNameToData = new HashMap<>();
     }
-    public boolean checkOverridingMethod(MethodData overriddenMethod){
+    public void checkOverridingMethod(MethodData overriddenMethod){
         Map<String, String> OverriddenFormalVars = overriddenMethod.formalVars;
         Map<String, String> methodToAddFormalArgs = methodDataAddToClass.formalVars;
-
+        String message="An overriding method matches the ancestor's method signature with the same name";
         if (OverriddenFormalVars.size() != methodToAddFormalArgs.size()){
-            return false;
+            throw new SemanticErrorException(message+": different number of formal args");
         }
         for (Map.Entry<String, String> entry : overriddenMethod.formalVars.entrySet()){
             if (methodToAddFormalArgs.get(entry.getKey()) ==null){
-                return false;
+                throw new SemanticErrorException(message+":a formal arg does not exists");
+                //todo: signature include formal args name?
+
             }
             if (!(methodToAddFormalArgs.get(entry.getKey())).equals(entry.getValue())){
-                return false;
+                throw new SemanticErrorException(message+": same arg with different type");
+
             }
             if (!overriddenMethod.returnType.equals(methodDataAddToClass.returnType)){
-                return false;
+                throw new SemanticErrorException(message+": different return type");
+
                 //todo: check correctness - a covariant static return type need to check.
             }
         }
-        return true;
+        return;
     }
-    public boolean checkMethodDec( Map<String,MethodData> methodData,String className){
-        MethodData methodWithSameName=methodData.get(methodDataAddToClass.name);
-        if (methodWithSameName != null){//already exists
-            if (methodWithSameName.classData.name.equals(className)){// already exists in this method's class scope
-                return false;
-            }
-            else{//defined in one of super classes
-                if (!checkOverridingMethod(methodWithSameName)){
-                    return false;
-                }
+    public void checkMethodDec( Map<String,MethodData> methodData,String className) {
+        MethodData methodWithSameName = methodData.get(methodDataAddToClass.name);
+        if (methodWithSameName != null) {//already exists
+            if (methodWithSameName.classData.name.equals(className)) {// already exists in this method's class scope
+                throw new SemanticErrorException("The same name cannot be used for the same method in one class");
+            } else {//defined in one of super classes
+                checkOverridingMethod(methodWithSameName);//defined in one of super classes
             }
 
         }
-        return true;
+        return;
     }
 
 
@@ -124,13 +125,9 @@ public class ClassMethodDataVisitor implements Visitor {
 
             classDataAddToMethod = new ClassData(classDecl.name(), null, methodData, fieldsVars); // superClass will be defined later (1)
             methodDecl.accept(this); // first need to calculate this method's data -> there the method will update the method data
-            if (checkMethodDec(methodData,classDecl.name())){
-                methodData.put(methodDecl.name(), methodDataAddToClass);
-            }
-            else{
-                throw new SemanticErrorException("The same name cannot be used for the same method in one class Or" +
-                        "An overriding method matches the ancestor's method signature with the same name ");
-            }
+            checkMethodDec(methodData,classDecl.name());
+            methodData.put(methodDecl.name(), methodDataAddToClass);
+
 
         }
         if (classDataAddToMethod != null)
