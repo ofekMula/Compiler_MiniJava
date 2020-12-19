@@ -31,8 +31,14 @@
 //        max = new int[renamedVar * anotherVar]
 //
 //        if (anotherVar < renamedVar) {
-//            max[anotherVar] = renamedVar;
+    //        if (anotherVar < renamedVar) {
+    //            max[anotherVar] = renamedVar;
+    //            x = 5;
+    //        } else {
+    //            max[renamedVar] = anotherVar;
+    //        }
 //        } else {
+                //x = 6;
 //            max[renamedVar] = anotherVar;
 //        }
 //
