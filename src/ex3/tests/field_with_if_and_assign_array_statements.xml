@@ -94,7 +94,7 @@
                         <formal>
                             <lineNumber>26</lineNumber>
                             <type>
-                                <int/>
+                                <bool/>
                             </type>
                             <name>anotherVar</name>
                         </formal>

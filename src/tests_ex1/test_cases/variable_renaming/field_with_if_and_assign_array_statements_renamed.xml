@@ -107,6 +107,13 @@
                             </type>
                             <name>max</name>
                         </vardecl>
+                        <vardecl>
+                            <lineNumber>30</lineNumber>
+                            <type>
+                                <int/>
+                            </type>
+                            <name>x</name>
+                        </vardecl>
                     </vardecls>
                     <body>
                         <assign>
@@ -146,19 +153,60 @@
                                 </lt>
                             </cond>
                             <thencase>
-                                <assign-array>
-                                    <lv>max</lv>
-                                    <index>
-                                        <ref-id>
-                                            <id>anotherVar</id>
-                                        </ref-id>
-                                    </index>
-                                    <rv>
-                                        <ref-id>
-                                            <id>renamedVar</id>
-                                        </ref-id>
-                                    </rv>
-                                </assign-array>
+                                <if>
+                                    <cond>
+                                        <lt>
+                                            <e1>
+                                                <ref-id>
+                                                    <id>anotherVar</id>
+                                                </ref-id>
+                                            </e1>
+                                            <e2>
+                                                <ref-id>
+                                                    <id>renamedVar</id>
+                                                </ref-id>
+                                            </e2>
+                                        </lt>
+                                    </cond>
+                                    <thencase>
+                                        <assign-array>
+                                            <lv>max</lv>
+                                            <index>
+                                                <ref-id>
+                                                    <id>anotherVar</id>
+                                                </ref-id>
+                                            </index>
+                                            <rv>
+                                                <ref-id>
+                                                    <id>renamedVar</id>
+                                                </ref-id>
+                                            </rv>
+                                        </assign-array>
+                                        <assign>
+                                            <lv>x</lv>
+                                            <rv>
+                                                <int-literal>
+                                                    <num>5</num>
+                                                </int-literal>
+                                            </rv>
+                                        </assign>
+                                    </thencase>
+                                    <elsecase>
+                                        <assign-array>
+                                            <lv>max</lv>
+                                            <index>
+                                                <ref-id>
+                                                    <id>renamedVar</id>
+                                                </ref-id>
+                                            </index>
+                                            <rv>
+                                                <ref-id>
+                                                    <id>anotherVar</id>
+                                                </ref-id>
+                                            </rv>
+                                        </assign-array>
+                                    </elsecase>
+                                </if>
                             </thencase>
                             <elsecase>
                                 <assign-array>
@@ -174,6 +222,14 @@
                                         </ref-id>
                                     </rv>
                                 </assign-array>
+                                <assign>
+                                    <lv>x</lv>
+                                    <rv>
+                                        <int-literal>
+                                            <num>6</num>
+                                        </int-literal>
+                                    </rv>
+                                </assign>
                             </elsecase>
                         </if>
                     </body>

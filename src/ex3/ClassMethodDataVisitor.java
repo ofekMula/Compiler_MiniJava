@@ -1,4 +1,4 @@
-package ex2.proj;
+package ex3;
 
 import ast.*;
 
@@ -9,8 +9,8 @@ import java.util.Map;
 
 public class ClassMethodDataVisitor implements Visitor {
     public Map<String, ClassData> classNameToData;
-    static int varOffset = 0;
-    private String refName;
+    private String mainClassName;
+    private String refName; // type
     private MethodData methodDataAddToClass; // add the method after calculating it in accept - when returning to class
     private ClassData classDataAddToMethod; // add the class - after calculating it, to the method
 
@@ -18,49 +18,50 @@ public class ClassMethodDataVisitor implements Visitor {
         classNameToData = new HashMap<>();
     }
 
-    private int calculateFieldOffset(int sizeByType){
-        // return the current offset and update by zie for the next field
-        if (varOffset == 0){
-            // first field is right after the vtable pointer
-            varOffset = 8;
+    public void checkOverridingMethod(MethodData overriddenMethod){
+        Map<String, String> OverriddenFormalVars = overriddenMethod.formalVars;
+        Map<String, String> methodToAddFormalArgs = methodDataAddToClass.formalVars;
+        String message="An overriding method matches the ancestor's method signature with the same name";
+        if (OverriddenFormalVars.size() != methodToAddFormalArgs.size()){
+            throw new SemanticErrorException(message+": different number of formal args");
         }
-        int offsetToReturn = varOffset;
-        varOffset += sizeByType;
-        return offsetToReturn;
+        for (Map.Entry<String, String> entry : overriddenMethod.formalVars.entrySet()){
+            if (methodToAddFormalArgs.get(entry.getKey()) ==null){
+                throw new SemanticErrorException(message+":a formal arg does not exists");
+                //todo: signature include formal args name?
+
+            }
+            if (!(methodToAddFormalArgs.get(entry.getKey())).equals(entry.getValue())){
+                throw new SemanticErrorException(message+": same arg with different type");
+
+            }
+            if (!overriddenMethod.returnType.equals(methodDataAddToClass.returnType)){
+                throw new SemanticErrorException(message+": different return type");
+
+                //todo: check correctness - a covariant static return type need to check.
+            }
+        }
     }
 
-    public int calculateMethodOffset(){
-        return varOffset++;
+    public void checkMethodDec( Map<String,MethodData> methodData,String className) {
+        MethodData methodWithSameName = methodData.get(methodDataAddToClass.name);
+        if (methodWithSameName != null) {//already exists
+            if (methodWithSameName.classData.name.equals(className)) {// already exists in this method's class scope
+                throw new SemanticErrorException("The same name cannot be used for the same method in one class");
+            } else {//defined in one of super classes
+                checkOverridingMethod(methodWithSameName);//defined in one of super classes
+            }
+
+        }
     }
 
-    // so new methods that don't have offset yet will have a higher offset - after the inherited methods
-    public void initializeMethodsOffsetByMax(Map<String,MethodData> methodData){
-        int maxOffset = -1;
-        for (Map.Entry<String,MethodData> method : methodData.entrySet()){
-            int newOffset = method.getValue().getOffset();
-            if (newOffset > maxOffset)
-                maxOffset = newOffset;
-        }
-        if (maxOffset == -1)
-            varOffset = 0;
-        else
-            varOffset = maxOffset + 1;
+    public void checkIfVarRedeclared(Map<String, String> varsMap, String varName) {
+        for (Map.Entry<String, String> seenVarName : varsMap.entrySet())
+            if (seenVarName.getKey().equals(varName))
+                throw new SemanticErrorException("The same var name cannot be used");
     }
 
-    // new vars that don't have offset yet will have a higher offset - after the inherited vars
-    public void initializeVarsOffsetByMax(Map<String,VarData> varData){
-        int maxOffset = -1;
-        for (Map.Entry<String,VarData> var : varData.entrySet()){
-            int size = Utils.calculateSizeByType(var.getValue().getType());
-            int newOffset = var.getValue().getOffset() + size;
-            if (newOffset > maxOffset)
-                maxOffset = newOffset;
-        }
-        if (maxOffset > 0)
-            varOffset = maxOffset;
-        else
-            varOffset = 0;
-    }
+
 
     public void bringSuperClassMethods(String superClassName, Map<String, MethodData> methodData){
         if (superClassName != null) { // bring to this class all the superClass methods
@@ -70,8 +71,7 @@ public class ClassMethodDataVisitor implements Visitor {
             }
         }
     }
-
-    public void bringSuperClassVars(String superClassName, Map<String, VarData> fieldsVars){
+    public void bringSuperClassVars(String superClassName, Map<String, String> fieldsVars){
         if (superClassName != null) { // bring to this class all the superClass fields
             ClassData superClassData = classNameToData.get(superClassName); // get the super table
             if (superClassData.getFieldsVars() != null) {
@@ -83,7 +83,7 @@ public class ClassMethodDataVisitor implements Visitor {
     @Override
     public void visit(Program program) {
         program.mainClass().accept(this);
-
+        mainClassName = program.mainClass().name();
         for (ClassDecl classdecl : program.classDecls()) {
 
             classdecl.accept(this);
@@ -92,51 +92,56 @@ public class ClassMethodDataVisitor implements Visitor {
 
     @Override
     public void visit(ClassDecl classDecl) {
-        varOffset = 0;
         ClassData superClass = null; // default - no super class
         ArrayList<ClassData> subClassesData = null; // will be updated in visit in the next classes
         Map<String,MethodData> methodData = new HashMap<>();
-        Map<String, VarData> fieldsVars = new HashMap<>();
-
+        Map<String, String> fieldsVars = new HashMap<>();
+        String className;
+        String superClassName;
+        Map<String,MethodData> currentClassMethodData= new HashMap<>();
         classDataAddToMethod = new ClassData(classDecl.name(), null, methodData, fieldsVars); // superClass will be defined later (1)
 
-        bringSuperClassVars(classDecl.superName(), fieldsVars);
+        className=classDecl.name();
+        if(classNameToData.get(className)!=null || className.equals(mainClassName)){// class name already exists
+            throw new SemanticErrorException("The same name cannot be used to name two classes.");
 
-        initializeVarsOffsetByMax(fieldsVars);
+        }
+        superClassName=classDecl.superName();
+        if (superClassName !=null){
+            if (classNameToData.get(superClassName) ==null ){// super class not defined yet
+                //todo: is it necessary to check circular extends?
+                throw new SemanticErrorException("The superclass of a class precedes it in the file");
+            }
+            else if (superClassName.equals(mainClassName)){
+                throw new SemanticErrorException("The main class cannot be extended");
+            }
+        }
+
+        bringSuperClassVars(classDecl.superName(), fieldsVars);
         for (var fieldDecl : classDecl.fields()) {
 
             fieldDecl.accept(this); // first need to get the type
-
-            int size = Utils.calculateSizeByType(refName);
-            int offset = calculateFieldOffset(size);
-            fieldsVars.put(fieldDecl.name(), new VarData(refName, offset));
+            if (fieldsVars.get(fieldDecl.name()) !=null){ // field with the same name already exists
+                throw new SemanticErrorException("The same name cannot be used for the same field in one class.");
+            }
+            fieldsVars.put(fieldDecl.name(), refName);
         }
-        varOffset = 0; // initialize before calculating for methods, and after all vars been calculated in this class
 
         bringSuperClassMethods(classDecl.superName(), methodData);
 
-        initializeMethodsOffsetByMax(methodData); // initialize the offset to be the highest offset + 1
-        int currOffset;
         for (var methodDecl : classDecl.methoddecls()) {
 
             classDataAddToMethod = new ClassData(classDecl.name(), null, methodData, fieldsVars); // superClass will be defined later (1)
             methodDecl.accept(this); // first need to calculate this method's data -> there the method will update the method data
-
-            ////////// check if need to override some methods - only need to keep the offset: ////////////
-            if (methodData.containsKey(methodDecl.name())) // override
-                currOffset = methodData.get(methodDecl.name()).getOffset(); // super's method offset
-            else
-                currOffset = calculateMethodOffset(); // new offset
-
-            methodDataAddToClass.setOffset(currOffset);
+            checkMethodDec(methodData,classDecl.name());
             methodData.put(methodDecl.name(), methodDataAddToClass);
+
+
         }
         if (classDataAddToMethod != null)
             classDataAddToMethod.setMethodDataMap(methodData); // put all the methods
         else
             classDataAddToMethod = new ClassData(classDecl.name(), null, methodData, fieldsVars);
-
-        varOffset = 0; // initialize before calculating next, and after all methods been calculated in this class
 
 
         // add at the end after the building of methodData and filedVars:
@@ -170,14 +175,19 @@ public class ClassMethodDataVisitor implements Visitor {
 
         for (var formal : methodDecl.formals()) {
             formal.accept(this); // in accept the type will be decided in refName
+
+            checkIfVarRedeclared(formalVars, formal.name());
+
             formalVarsList.add(new FormalVars(formal.name(), refName));
             formalVars.put(formal.name(), refName);
         }
 
-        Map<String, VarData> fieldsVars = new HashMap<>(classDataAddToMethod.getFieldsVars());
+        Map<String, String> fieldsVars = new HashMap<>(classDataAddToMethod.getFieldsVars());
 
         for (var varDecl : methodDecl.vardecls()) {
             varDecl.accept(this);// in accept the type will be decided in refName
+
+            checkIfVarRedeclared(localVars, varDecl.name());
 
             /////// check if some local var overrides field - so remove it from the fields map //////////
             fieldsVars.remove(varDecl.name()); // local overrides field - if it contains this name: remove field from fields-map, it is masked by the local
@@ -191,20 +201,17 @@ public class ClassMethodDataVisitor implements Visitor {
 
         methodDecl.ret().accept(this);
 
-        methodDataAddToClass = new MethodData(methodDecl.name(), formalVarsList, classDataAddToMethod, localVars, formalVars, fieldsVars, 0, returnType); // offset will be calculated in class level
+        methodDataAddToClass = new MethodData(methodDecl.name(), formalVarsList, classDataAddToMethod, localVars, formalVars, fieldsVars, returnType); // offset will be calculated in class level
     }
 
     @Override
     public void visit(FormalArg formalArg) {
-
         formalArg.type().accept(this);
-
     }
 
     @Override
     public void visit(VarDecl varDecl) {
         varDecl.type().accept(this);
-
     }
 
     @Override

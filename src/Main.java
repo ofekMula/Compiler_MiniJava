@@ -5,6 +5,7 @@ import ex1_final.*;
 import ex2.proj.ClassData;
 import ex2.proj.ClassMethodDataVisitor;
 import ex2.proj.CompileVisitor;
+import ex3.SemanticErrorException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,7 +43,18 @@ public class Main {
                     outFile.write(astPrinter.getString());
 
                 } else if (action.equals("semantic")) {
-                    throw new UnsupportedOperationException("TODO - Ex. 3");
+                    try{
+                        ex3.ClassMethodDataVisitor firstVisitor = new ex3.ClassMethodDataVisitor();
+                        firstVisitor.visit(prog);
+                        ex3.SemanticAnalysisVisitor semanticVisitor = new ex3.SemanticAnalysisVisitor(firstVisitor.classNameToData);
+                        semanticVisitor.visit(prog);
+                        outFile.print("OK\n");
+                    }
+                    catch (SemanticErrorException e){
+                        outFile.print(e.getMessage()+"\n");
+                        outFile.print("ERROR\n");
+                    }
+
 
                 } else if (action.equals("compile")) {
                     ClassMethodDataVisitor firstVisitor = new ClassMethodDataVisitor();
@@ -87,8 +99,8 @@ public class Main {
                     throw new IllegalArgumentException("unknown command line action " + action);
                 }
             } finally {
-//                outFile.flush();
-//                outFile.close();
+                outFile.flush();
+                outFile.close();
             }
 
         } catch (FileNotFoundException e) {
