@@ -334,7 +334,8 @@ public class SemanticAnalysisVisitor implements Visitor {
     }
 
     @Override
-    public void visit(NewObjectExpr e) {
+    public void visit(NewObjectExpr e)
+    {
         exprType = e.classId();
     }
 
@@ -362,6 +363,12 @@ public class SemanticAnalysisVisitor implements Visitor {
 
     @Override
     public void visit(RefType t) {
+
         exprType = t.id();
+        if (classNameToData.get(exprType) ==null){
+            throw new SemanticErrorException("A type declaration of a reference type of " +exprType+
+                    " does refers to classes that are defined somewhere in the file");
+        }
+
     }
 }
