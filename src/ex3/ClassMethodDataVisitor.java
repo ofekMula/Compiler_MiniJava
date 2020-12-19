@@ -109,6 +109,7 @@ public class ClassMethodDataVisitor implements Visitor {
         superClassName=classDecl.superName();
         if (superClassName !=null){
             if (classNameToData.get(superClassName) ==null ){// super class not defined yet
+                //todo: is it necessary to check circular extends?
                 throw new SemanticErrorException("The superclass of a class precedes it in the file");
             }
             else if (superClassName.equals(mainClassName)){
