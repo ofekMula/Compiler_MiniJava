@@ -33,6 +33,7 @@ public class CompileVisitor implements Visitor {
     }
 
     private void emit(String data) {
+        System.out.print(data); //todo d
         writerToLlvmFile.print(data);
     }
 

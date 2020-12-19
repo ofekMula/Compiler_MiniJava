@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="wasLoaded added to all">
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java" afterDir="false" />
     </list>
@@ -60,7 +60,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal compile &quot;C:\Users\Shirly\Downloads\array_iota_simple.xml&quot; out.ll" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal compile &quot;C:\Users\Shirly\Downloads\ex2_tests\examples\subclass_fields.xml&quot; out.ll" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,7 +130,9 @@
       <workItem from="1606880384318" duration="536000" />
       <workItem from="1606880975132" duration="32263000" />
       <workItem from="1607046655120" duration="5323000" />
-      <workItem from="1607529030389" duration="1546000" />
+      <workItem from="1607529030389" duration="3926000" />
+      <workItem from="1608052688370" duration="1492000" />
+      <workItem from="1608394138563" duration="1179000" />
     </task>
     <task id="LOCAL-00007" summary="-">
       <created>1606880859101</created>
@@ -167,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607529189574</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="wasLoaded added to all">
+      <created>1607530646900</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607530646900</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,8 +240,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java</url>
-          <line>580</line>
+          <line>581</line>
           <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java</url>
+          <line>606</line>
+          <option name="timeStamp" value="96" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
