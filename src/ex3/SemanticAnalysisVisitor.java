@@ -1,26 +1,81 @@
 package ex3;
 
-import ex3.ast.*;
+import ast.*;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class SemanticAnalysisVisitor implements Visitor {
-    boolean isBooleanConditionWhile = false;
-    boolean isBooleanConditionIf = false;
     String exprType = null;
     Boolean isBinaryExprIntType = false;
     Boolean isBinaryExprBooleanType = false;
-    Boolean isSysOutArgIntType = false;
-    String exprName = null;
     Map<String, ClassData> classNameToData;
+    MethodData methodData;
 
 
-    SemanticAnalysisVisitor(Map<String, ClassData> classNameToData) {
+    public SemanticAnalysisVisitor(Map<String, ClassData> classNameToData) {
         this.classNameToData = classNameToData;
     }
 
-    private String getTypeFromMap(String varID){
-        //TODO
+    public String getTypeFromMap(String varName) {
+        for (Map.Entry<String, String> field : methodData.fieldsVars.entrySet()){
+            if (field.getKey().equals(varName)) {
+                System.out.println("field: " + varName + " type:" + field.getValue() + " method: " + methodData.name);
+                return field
+                        .getValue();
+            }
+        }
+        for (Map.Entry<String, String> local : methodData.localVars.entrySet()){
+            if (local.getKey().equals(varName)) {
+                System.out.println("local: " + varName +  " type:" + local.getValue() + " method: " + methodData.name);
+                return local
+                        .getValue();
+            }
+        }
+        for (Map.Entry<String, String> formal : methodData.formalVars.entrySet()){
+            if (formal.getKey().equals(varName)) {
+                System.out.println("formal: " + varName + " type:" + formal.getValue() + " method: " + methodData.name);
+                return formal
+                        .getValue();
+            }
+        }
+        return null;
+    }
+
+    public boolean atLeastOneIsPrimitiveType(String firstType, String secondType) {
+        switch (firstType){
+            case "int":
+            case "int-array":
+            case "boolean":
+                return true;
+            default:
+                switch (secondType){
+                    case "int":
+                    case "int-array":
+                    case "boolean":
+                        return true;
+                    default:
+                        return false;
+                }
+        }
+    }
+
+    // check if possibleSubClass is a SubClass of possibleSuperClass if (sub extends super)
+    public boolean IsClassSubtypeOf(String possibleSubClass, String possibleSuperClass) {
+        if (possibleSubClass.equals(possibleSuperClass)) {
+            return true;
+        } else if (atLeastOneIsPrimitiveType(possibleSubClass, possibleSuperClass)) { // primitives from different types
+            return false;
+        } else {
+            ClassData secondClass = classNameToData.get(possibleSuperClass);
+            ArrayList<ClassData> secondSubClasses = secondClass.getSubClassesData();
+            for (ClassData subClassData : secondSubClasses) {
+                if (possibleSubClass.equals(subClassData.name)){
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
     @Override
@@ -33,15 +88,15 @@ public class SemanticAnalysisVisitor implements Visitor {
 
     @Override
     public void visit(ClassDecl classDecl) {
-
-        if (classDecl.superName() != null) {
-            ;
-        }
+        if (classDecl.superName() != null) { }
 
         for (var fieldDecl : classDecl.fields()) {
             fieldDecl.accept(this);
         }
         for (var methodDecl : classDecl.methoddecls()) {
+            methodData = classNameToData
+                    .get(classDecl.name())
+                    .getMethodDataFromMap(methodDecl.name());
             methodDecl.accept(this);
         }
     }
@@ -56,6 +111,7 @@ public class SemanticAnalysisVisitor implements Visitor {
     @Override
     public void visit(MethodDecl methodDecl) {
         methodDecl.returnType().accept(this);
+        String requiredMethodReturnType = exprType;
 
         for (var formal : methodDecl.formals()) {
             formal.accept(this);
@@ -69,40 +125,35 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
 
         methodDecl.ret().accept(this);
+        String actualMethodReturnType = exprType;
+
+        if (!IsClassSubtypeOf(actualMethodReturnType, requiredMethodReturnType))
+            throw new SemanticErrorException("The required and the actual return types are not the same." + actualMethodReturnType + " " + requiredMethodReturnType);
     }
 
-    public boolean isVarNameAlreadyDeclared(String varType, String name) {
-        // TODO
-    }
 
     @Override
     public void visit(FormalArg formalArg) {
         formalArg.type().accept(this);
-        if (isVarNameAlreadyDeclared("formal", exprName))
-            System.out.println("ERROR!");
     }
 
     @Override
     public void visit(VarDecl varDecl) {
         varDecl.type().accept(this);
-        if (isVarNameAlreadyDeclared("local", exprName))
-            System.out.println("ERROR!");
     }
 
     @Override
     public void visit(BlockStatement blockStatement) {
-
         for (var s : blockStatement.statements()) {
             s.accept(this);
         }
-
     }
 
     @Override
     public void visit(IfStatement ifStatement) {
         ifStatement.cond().accept(this);
-        if (!isBooleanConditionIf)
-            System.out.println("ERROR!");
+        if (!exprType.equals("boolean"))
+            throw new SemanticErrorException("If statement expr isn't of boolean type");
         ifStatement.thencase().accept(this);
 
         ifStatement.elsecase().accept(this);
@@ -111,8 +162,8 @@ public class SemanticAnalysisVisitor implements Visitor {
     @Override
     public void visit(WhileStatement whileStatement) {
         whileStatement.cond().accept(this);
-        if (!isBooleanConditionWhile)
-            System.out.println("ERROR!");
+        if (!exprType.equals("boolean"))
+            throw new SemanticErrorException("While statement expr isn't of boolean type");
         whileStatement.body().accept(this);
 
     }
@@ -120,30 +171,26 @@ public class SemanticAnalysisVisitor implements Visitor {
     @Override
     public void visit(SysoutStatement sysoutStatement) {
         sysoutStatement.arg().accept(this);
-        if (!isSysOutArgIntType)
-            System.out.println("ERROR!");
-        isSysOutArgIntType = false;
+        if (!exprType.equals("int"))
+            throw new SemanticErrorException("System.out.println arg type isn't int.");
     }
 
     @Override
     public void visit(AssignStatement assignStatement) {
-
         assignStatement.rv().accept(this);
     }
 
     @Override
     public void visit(AssignArrayStatement assignArrayStatement) {
-//        if (assignArrayStatement.lv() is not of type int-array) - need to check in table
-        // then print "ERROR!"
         String idType = getTypeFromMap(assignArrayStatement.lv());
         if (!idType.equals("int-array"))
-            System.out.println("ERROR!");
+            throw new SemanticErrorException("The array assign statement isn't of type int-array.");
         assignArrayStatement.index().accept(this);
         if (!exprType.equals("int"))
-            System.out.println("ERROR!");
+            throw new SemanticErrorException("The array assign statement index isn't of type int.");
         assignArrayStatement.rv().accept(this);
         if (!exprType.equals("int"))
-            System.out.println("ERROR!");
+            throw new SemanticErrorException("The array assign to value isn't of type int.");
     }
 
     private void visitBinaryExpr(BinaryExpr e, String infixSymbol) {
@@ -152,9 +199,9 @@ public class SemanticAnalysisVisitor implements Visitor {
         e.e2().accept(this);
         String e2Type = exprType;
         if (isBinaryExprIntType && (!(e1Type.equals("int")) || !(e2Type.equals("int"))))
-            System.out.println("ERROR!");
+            throw new SemanticErrorException("At least one of the integer binary expression values isn't an int.");
         if (isBinaryExprBooleanType && (!(e1Type.equals("boolean")) || !(e2Type.equals("boolean"))))
-            System.out.println("ERROR!");
+            throw new SemanticErrorException("At least one of the AND expression values isn't an boolean.");
     }
 
     @Override
@@ -196,10 +243,10 @@ public class SemanticAnalysisVisitor implements Visitor {
     public void visit(ArrayAccessExpr e) {
         e.arrayExpr().accept(this);
         if (!exprType.equals("int-array"))
-            System.out.println("ERROR!");
+            throw new SemanticErrorException("The array access expression is not of int-array type.");
         e.indexExpr().accept(this);
         if (!exprType.equals("int"))
-            System.out.println("ERROR!");
+            throw new SemanticErrorException("The array access expression index is not of int type.");
     }
 
     @Override
@@ -220,42 +267,22 @@ public class SemanticAnalysisVisitor implements Visitor {
     @Override
     public void visit(IntegerLiteralExpr e) {
         exprType = "int";
-        isSysOutArgIntType = true;
     }
 
     @Override
     public void visit(TrueExpr e) {
         exprType = "boolean";
-        isBooleanConditionWhile = true;
-        isBooleanConditionIf = true;
     }
 
     @Override
     public void visit(FalseExpr e) {
         exprType = "boolean";
-        isBooleanConditionWhile = true;
-        isBooleanConditionIf = true;
     }
 
     @Override
     public void visit(IdentifierExpr e) {
         exprType = getTypeFromMap(e.id());
-        exprName = e.id();
-        if (exprType.equals("boolean")) {
 
-            isBooleanConditionWhile = true;
-            isBooleanConditionIf = true;
-        }
-        // need to check if e is boolean (check it's type)
-//        if (boolean):
-        //        exprType = "boolean";
-        //        isBooleanConditionWhile = true;
-        //        isBooleanConditionIf = true;
-
-        // check if (int-array)
-        //      exprType = "int-array"
-        /// check if (int):
-        //      exprType = "int"
     }
 
     public void visit(ThisExpr e) {
@@ -274,6 +301,8 @@ public class SemanticAnalysisVisitor implements Visitor {
     @Override
     public void visit(NotExpr e) {
         e.e().accept(this);
+        if (!exprType.equals("boolean"))
+            throw new SemanticErrorException("Not expression should be on boolean, but it isn't.");
     }
 
     @Override

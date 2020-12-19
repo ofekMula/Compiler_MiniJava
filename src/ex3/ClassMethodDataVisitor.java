@@ -10,13 +10,20 @@ import java.util.Map;
 public class ClassMethodDataVisitor implements Visitor {
     public Map<String, ClassData> classNameToData;
     private String mainClassName;
-    private String refName;
+    private String refName; // type
     private MethodData methodDataAddToClass; // add the method after calculating it in accept - when returning to class
     private ClassData classDataAddToMethod; // add the class - after calculating it, to the method
+    boolean isBooleanConditionWhile = false;
+    boolean isBooleanConditionIf = false;
+    String exprType = null;
+    Boolean isBinaryExprIntType = false;
+    Boolean isBinaryExprBooleanType = false;
+    Boolean isSysOutArgIntType = false;
 
     public ClassMethodDataVisitor() {
         classNameToData = new HashMap<>();
     }
+
     public void checkOverridingMethod(MethodData overriddenMethod){
         Map<String, String> OverriddenFormalVars = overriddenMethod.formalVars;
         Map<String, String> methodToAddFormalArgs = methodDataAddToClass.formalVars;
@@ -40,8 +47,8 @@ public class ClassMethodDataVisitor implements Visitor {
                 //todo: check correctness - a covariant static return type need to check.
             }
         }
-        return;
     }
+
     public void checkMethodDec( Map<String,MethodData> methodData,String className) {
         MethodData methodWithSameName = methodData.get(methodDataAddToClass.name);
         if (methodWithSameName != null) {//already exists
@@ -52,8 +59,14 @@ public class ClassMethodDataVisitor implements Visitor {
             }
 
         }
-        return;
     }
+
+    public void checkIfVarRedeclared(Map<String, String> varsMap, String varName) {
+        for (Map.Entry<String, String> seenVarName : varsMap.entrySet())
+            if (seenVarName.getKey().equals(varName))
+                throw new SemanticErrorException("The same var name cannot be used");
+    }
+
 
 
     public void bringSuperClassMethods(String superClassName, Map<String, MethodData> methodData){
@@ -64,7 +77,7 @@ public class ClassMethodDataVisitor implements Visitor {
             }
         }
     }
-    public void bringSuperClassVars(String superClassName, Map<String, VarData> fieldsVars){
+    public void bringSuperClassVars(String superClassName, Map<String, String> fieldsVars){
         if (superClassName != null) { // bring to this class all the superClass fields
             ClassData superClassData = classNameToData.get(superClassName); // get the super table
             if (superClassData.getFieldsVars() != null) {
@@ -88,7 +101,7 @@ public class ClassMethodDataVisitor implements Visitor {
         ClassData superClass = null; // default - no super class
         ArrayList<ClassData> subClassesData = null; // will be updated in visit in the next classes
         Map<String,MethodData> methodData = new HashMap<>();
-        Map<String, VarData> fieldsVars = new HashMap<>();
+        Map<String, String> fieldsVars = new HashMap<>();
         String className;
         String superClassName;
         Map<String,MethodData> currentClassMethodData= new HashMap<>();
@@ -116,7 +129,7 @@ public class ClassMethodDataVisitor implements Visitor {
             if (fieldsVars.get(fieldDecl.name()) !=null){ // field with the same name already exists
                 throw new SemanticErrorException("The same name cannot be used for the same field in one class.");
             }
-            fieldsVars.put(fieldDecl.name(), new VarData(fieldDecl.name()));
+            fieldsVars.put(fieldDecl.name(), refName);
         }
 
         bringSuperClassMethods(classDecl.superName(), methodData);
@@ -167,14 +180,19 @@ public class ClassMethodDataVisitor implements Visitor {
 
         for (var formal : methodDecl.formals()) {
             formal.accept(this); // in accept the type will be decided in refName
+
+            checkIfVarRedeclared(formalVars, formal.name());
+
             formalVarsList.add(new FormalVars(formal.name(), refName));
             formalVars.put(formal.name(), refName);
         }
 
-        Map<String, VarData> fieldsVars = new HashMap<>(classDataAddToMethod.getFieldsVars());
+        Map<String, String> fieldsVars = new HashMap<>(classDataAddToMethod.getFieldsVars());
 
         for (var varDecl : methodDecl.vardecls()) {
             varDecl.accept(this);// in accept the type will be decided in refName
+
+            checkIfVarRedeclared(localVars, varDecl.name());
 
             /////// check if some local var overrides field - so remove it from the fields map //////////
             fieldsVars.remove(varDecl.name()); // local overrides field - if it contains this name: remove field from fields-map, it is masked by the local
@@ -193,15 +211,12 @@ public class ClassMethodDataVisitor implements Visitor {
 
     @Override
     public void visit(FormalArg formalArg) {
-
         formalArg.type().accept(this);
-
     }
 
     @Override
     public void visit(VarDecl varDecl) {
         varDecl.type().accept(this);
-
     }
 
     @Override

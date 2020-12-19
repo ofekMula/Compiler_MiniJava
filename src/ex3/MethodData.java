@@ -11,10 +11,10 @@ public class MethodData  {
     public Map<String, String> localVars; // <name : type (String because of ****)>
     public Map<String, String> formalVars;
     public ArrayList<FormalVars> formalVarsList;
-    public Map<String, VarData> fieldsVars; // fields that weren't overridden
+    public Map<String, String> fieldsVars; // fields that weren't overridden
     public String returnType;
 
-    public MethodData(String name, ArrayList<FormalVars> formalVarsList, ClassData classData,Map<String, String> localVars,Map<String, String> formalVars,Map<String, VarData>  fieldsVars,String returnType){
+    public MethodData(String name, ArrayList<FormalVars> formalVarsList, ClassData classData,Map<String, String> localVars,Map<String, String> formalVars,Map<String, String>  fieldsVars,String returnType){
         this.name = name;
         this.classData = classData;
         this.localVars = localVars;
@@ -35,7 +35,7 @@ public class MethodData  {
             return formalVars.get(varName);
         }
         if (fieldsVars.containsKey(varName)){
-            return fieldsVars.get(varName).getType();
+            return fieldsVars.get(varName);
         }
         return "?";
     }
