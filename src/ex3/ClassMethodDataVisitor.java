@@ -13,12 +13,6 @@ public class ClassMethodDataVisitor implements Visitor {
     private String refName; // type
     private MethodData methodDataAddToClass; // add the method after calculating it in accept - when returning to class
     private ClassData classDataAddToMethod; // add the class - after calculating it, to the method
-    boolean isBooleanConditionWhile = false;
-    boolean isBooleanConditionIf = false;
-    String exprType = null;
-    Boolean isBinaryExprIntType = false;
-    Boolean isBinaryExprBooleanType = false;
-    Boolean isSysOutArgIntType = false;
 
     public ClassMethodDataVisitor() {
         classNameToData = new HashMap<>();

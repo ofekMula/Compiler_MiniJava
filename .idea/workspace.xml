@@ -19,58 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="ricky's change">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ClassData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/ClassData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/AddExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/AndExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/ArrayAccessExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/ArrayLengthExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/AssignArrayStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/AssignStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/AstNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/AstPrintVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/AstType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/AstTypeWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/AstXMLSerializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/BinaryExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/BlockStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/BoolAstType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/ClassDecl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/Expr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/ExprWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/FalseExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/FormalArg.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/IdentifierExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/IfStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/IntArrayAstType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/IntAstType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/IntegerLiteralExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/LtExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/MainClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/MethodCallExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/MethodDecl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/MultExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/NewIntArrayExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/NewObjectExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/NotExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/Program.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/RefType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/Statement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/StatementWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/SubtractExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/SysoutStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/ThisExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/TrueExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/VarDecl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/VariableIntroduction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/Visitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ast/WhileStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests_ex1/Recitation3_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/Recitation3_8.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="ricky's NEW changeS" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -262,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608370156752</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="ricky's NEW changeS">
+      <created>1608376412643</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1608376412643</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +245,8 @@
     <MESSAGE value="--" />
     <MESSAGE value="removed todos" />
     <MESSAGE value="ricky's change" />
-    <option name="LAST_COMMIT_MESSAGE" value="ricky's change" />
+    <MESSAGE value="ricky's NEW changeS" />
+    <option name="LAST_COMMIT_MESSAGE" value="ricky's NEW changeS" />
   </component>
   <component name="WindowStateProjectService">
     <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608375997873">
@@ -297,30 +254,34 @@
     </state>
     <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533759054" />
     <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1608375997873" />
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608376229090">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608376229090" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1608369930194">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608369930194" />
-    <state width="1865" height="289" key="GridCell.Tab.0.bottom" timestamp="1608376141668">
+    <state width="1865" height="272" key="GridCell.Tab.0.bottom" timestamp="1608376373452">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1865" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
-    <state width="1865" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608376141668" />
-    <state width="1865" height="289" key="GridCell.Tab.0.center" timestamp="1608376141668">
+    <state width="1865" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608376373452" />
+    <state width="1865" height="272" key="GridCell.Tab.0.center" timestamp="1608376373452">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1865" height="319" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
-    <state width="1865" height="289" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608376141668" />
-    <state width="1865" height="289" key="GridCell.Tab.0.left" timestamp="1608376141668">
+    <state width="1865" height="272" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608376373452" />
+    <state width="1865" height="272" key="GridCell.Tab.0.left" timestamp="1608376373452">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1865" height="319" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
-    <state width="1865" height="289" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608376141668" />
-    <state width="1865" height="289" key="GridCell.Tab.0.right" timestamp="1608376141668">
+    <state width="1865" height="272" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608376373452" />
+    <state width="1865" height="272" key="GridCell.Tab.0.right" timestamp="1608376373452">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1865" height="319" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
-    <state width="1865" height="289" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608376141668" />
+    <state width="1865" height="272" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608376373452" />
     <state width="1865" height="319" key="GridCell.Tab.1.bottom" timestamp="1607533380486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -349,12 +310,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="351" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607532194553" />
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1608370157928">
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1608376415323">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607191149309" />
     <state x="453" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533369301" />
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608370157928" />
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608376415323" />
     <state x="484" y="149" width="686" height="664" key="find.popup" timestamp="1607190221445">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -364,12 +325,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607004852072" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1608370142354">
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1608376398574">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="431" y="4" width="840" height="820" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608311333279" />
     <state x="539" y="5" width="1050" height="1035" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533350865" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608370142354" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608376398574" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
