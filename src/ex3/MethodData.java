@@ -44,6 +44,10 @@ public class MethodData  {
         return (fieldsVars.containsKey(varName));
     }
 
+    boolean isFormal(String varName){
+        return (formalVars.containsKey(varName));
+    }
+
 
     public String getReturnType() {
         return returnType;

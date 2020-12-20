@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/tester.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/tester.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex3/MethodData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/MethodData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +135,7 @@
       <workItem from="1607046655120" duration="5323000" />
       <workItem from="1607529030389" duration="3926000" />
       <workItem from="1608052688370" duration="1492000" />
-      <workItem from="1608394138563" duration="1179000" />
+      <workItem from="1608394138563" duration="14876000" />
     </task>
     <task id="LOCAL-00007" summary="-">
       <created>1606880859101</created>
@@ -176,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607530646900</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="-">
+      <created>1608412974689</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1608412974689</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,9 +213,9 @@
     <MESSAGE value="fields+ret+fixes" />
     <MESSAGE value="MethodCallExpr fix for Factorial.java" />
     <MESSAGE value="fields offset fix, added fields to assignArray and changed the order to match LinearSearch.java example" />
-    <MESSAGE value="-" />
     <MESSAGE value="wasLoaded added to all" />
-    <option name="LAST_COMMIT_MESSAGE" value="wasLoaded added to all" />
+    <MESSAGE value="-" />
+    <option name="LAST_COMMIT_MESSAGE" value="-" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -227,16 +237,6 @@
           <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
           <line>50</line>
           <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java</url>
