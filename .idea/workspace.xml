@@ -20,10 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/tester.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/tester.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/MethodData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/MethodData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,7 +61,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal compile &quot;C:\Users\Shirly\Downloads\ex2_tests\examples\subclass_fields.xml&quot; out.ll" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\Users\Shirly\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OwnerExprValid\OwnerExprValid.java.xml&quot; out.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -135,7 +133,7 @@
       <workItem from="1607046655120" duration="5323000" />
       <workItem from="1607529030389" duration="3926000" />
       <workItem from="1608052688370" duration="1492000" />
-      <workItem from="1608394138563" duration="14876000" />
+      <workItem from="1608394138563" duration="16633000" />
     </task>
     <task id="LOCAL-00007" summary="-">
       <created>1606880859101</created>
@@ -186,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608412974689</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="ex3 9-16">
+      <created>1608458782746</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1608458782746</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +220,8 @@
     <MESSAGE value="fields offset fix, added fields to assignArray and changed the order to match LinearSearch.java example" />
     <MESSAGE value="wasLoaded added to all" />
     <MESSAGE value="-" />
-    <option name="LAST_COMMIT_MESSAGE" value="-" />
+    <MESSAGE value="ex3 9-16" />
+    <option name="LAST_COMMIT_MESSAGE" value="ex3 9-16" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -247,6 +253,16 @@
           <url>file://$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java</url>
           <line>606</line>
           <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java</url>
+          <line>352</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java</url>
+          <line>344</line>
+          <option name="timeStamp" value="102" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

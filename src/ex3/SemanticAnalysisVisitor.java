@@ -16,11 +16,13 @@ public class SemanticAnalysisVisitor implements Visitor {
     private HashSet<String> initializedLocalVars;
     private HashSet<String> newInitializedLocalVars;
     private boolean isInWhile = false;
+    private boolean isInIf = false;
 
 
     public SemanticAnalysisVisitor(Map<String, ClassData> classNameToData) {
         this.classNameToData = classNameToData;
         this.initializedLocalVars = new HashSet<>();
+        this.newInitializedLocalVars = new HashSet<>();
     }
 
     private String getTypeFromMap(String varName) {
@@ -173,6 +175,8 @@ public class SemanticAnalysisVisitor implements Visitor {
         HashSet<String> currInitialized = initializedLocalVars;
         newInitializedLocalVars = new HashSet<>();
 
+        isInIf = true;
+
         ifStatement.thencase().accept(this);
         HashSet<String> thenInitializedResult = newInitializedLocalVars;
         newInitializedLocalVars = new HashSet<>();
@@ -181,6 +185,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         HashSet<String> elseInitialized = newInitializedLocalVars;
         newInitializedLocalVars = new HashSet<>();
 
+        isInIf = false;
         join(thenInitializedResult, elseInitialized);
         currInitialized.addAll(thenInitializedResult);
         initializedLocalVars = currInitialized;
@@ -217,7 +222,12 @@ public class SemanticAnalysisVisitor implements Visitor {
             throw new SemanticErrorException("Assign of "+rvType+" to "+lvType +" (AssignStatement,#16)");
         }
         if (!isInWhile) {
-            newInitializedLocalVars.add(assignStatement.lv());
+            if (isInIf){
+                newInitializedLocalVars.add(assignStatement.lv());
+            }
+            else{
+                initializedLocalVars.add(assignStatement.lv());
+            }
         }
     }
 
@@ -318,8 +328,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         if (!((e.ownerExpr() instanceof ThisExpr) ||
                 (e.ownerExpr() instanceof NewObjectExpr) ||
                 (e.ownerExpr() instanceof IdentifierExpr))) {
-            throw new SemanticErrorException("ownerExpr of method " + methodName + "is " + e.ownerExpr() +
-                    " and is not new / this / variable (MethodCallExpr #12)");
+            throw new SemanticErrorException("ownerExpr of method " + methodName + " is not new / this / variable (MethodCallExpr #12)");
         }
         e.ownerExpr().accept(this);
         String methodOwnerRefName = exprType;
