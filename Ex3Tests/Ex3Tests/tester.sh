@@ -52,3 +52,4 @@ test MainExtended MainExtended
 test MethodInvalid MethodInvalid
 test OverridingSameSignInvalid OverridingSameSignInvalid
 test SameFieldInClass SameFieldInClass
+test OverridingDifferentNumOfFormals OverridingDifferentNumOfFormals

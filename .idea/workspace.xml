@@ -19,28 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="Item 8 - working.">
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/ClassPrecedingInvalid/ClassPrecedingInvalid.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/DeclTypeNotExists/DeclTypeNotExists.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/DeclTypeNotExists/DeclTypeNotExists.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/DupClassName/DupClassName.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/DupClassName/DupClassName.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/DupMethodName/DupMethodName.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/DupMethodName/DupMethodName.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/Items1-8_valid/Items1-8_valid.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/Items1-8_valid/Items1-8_valid.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/MainExtended/MainExtended.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/MainExtended/MainExtended.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingSameSignInvalid/OverridingSameSignInvalid.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingSameSignInvalid/OverridingSameSignInvalid.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/SameFieldInClass/SameFieldInClass.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/SameFieldInClass/SameFieldInClass.xml" afterDir="false" />
+    <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="- added tests for cases 1-8 + u[dated tester.sh&#10;- out prog passes Yotam's tests and Ofek's tests.">
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingDifferentNumOfFormals/OverridingDifferentNumOfFormals.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingDifferentNumOfFormals/OverridingDifferentNumOfFormals.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/tester.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/tester.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests_ex1/override_method.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/override_method.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests_ex1/resolve_fields.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/resolve_fields.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_ex1/array_field.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_ex1/array_field.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ex3Tests/Ex3Tests/SameFieldInClass" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingSameSignInvalid3" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
@@ -81,11 +66,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid3" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid2" />
       <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\SameFieldInClass" />
       <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\DupMethodName" />
       <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\DeclTypeNotExists" />
-      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid" />
-      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\DupClassName" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ex3" />
@@ -100,7 +85,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\Users\Ofek Mula\Desktop\Programming\Compilation\ex3\CompilerMiniJava\Ex3Tests\Ex3Tests\SameFieldInClass\field_related_sibling_class.xml&quot; result.txt" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid3\OverridingSameSignInvalid.xml&quot; result.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -252,7 +237,13 @@
       <option name="project" value="LOCAL" />
       <updated>1608401483147</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL‎00017" summary="- added tests for cases 1-8 + u[dated tester.sh&#10;- out prog passes Yotam's tests and Ofek's tests.">
+      <created>1608575999153</created>
+      <option name="number" value="LOCAL‎00017" />
+      <option name="presentableId" value="LOCAL‎00017" />
+      <updated>1608575999153</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,13 +272,14 @@
     <MESSAGE value="ricky's change" />
     <MESSAGE value="ricky's NEW changeS" />
     <MESSAGE value="added changes SemanticAnalysisVisitor" />
-    <option name="LAST_COMMIT_MESSAGE" value="added changes SemanticAnalysisVisitor" />
+    <MESSAGE value="- added tests for cases 1-8 + u[dated tester.sh&#10;- out prog passes Yotam's tests and Ofek's tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="- added tests for cases 1-8 + u[dated tester.sh&#10;- out prog passes Yotam's tests and Ofek's tests." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="58" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608575531658">
+    <state x="0" y="0" width="1280" height="680" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608578082893">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="58" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1608575531658" />
+    <state x="0" y="0" width="1280" height="680" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1608578082893" />
     <state x="449" y="198" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608559128223">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -302,31 +294,31 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608369930194" />
-    <state width="1237" height="169" key="GridCell.Tab.0.bottom" timestamp="1608575609327">
+    <state width="1237" height="169" key="GridCell.Tab.0.bottom" timestamp="1608578177301">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="169" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608575609327" />
+    <state width="1237" height="169" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608578177301" />
     <state width="1865" height="392" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
     <state width="1865" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
     <state width="1865" height="392" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1237" height="169" key="GridCell.Tab.0.center" timestamp="1608575609327">
+    <state width="1237" height="169" key="GridCell.Tab.0.center" timestamp="1608578177301">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="169" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608575609327" />
+    <state width="1237" height="169" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608578177301" />
     <state width="1865" height="392" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
     <state width="1865" height="319" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
     <state width="1865" height="392" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1237" height="169" key="GridCell.Tab.0.left" timestamp="1608575609326">
+    <state width="1237" height="169" key="GridCell.Tab.0.left" timestamp="1608578177301">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="169" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608575609326" />
+    <state width="1237" height="169" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608578177301" />
     <state width="1865" height="392" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
     <state width="1865" height="319" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
     <state width="1865" height="392" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1237" height="169" key="GridCell.Tab.0.right" timestamp="1608575609327">
+    <state width="1237" height="169" key="GridCell.Tab.0.right" timestamp="1608578177301">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="169" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608575609327" />
+    <state width="1237" height="169" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608578177301" />
     <state width="1865" height="392" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
     <state width="1865" height="319" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
     <state width="1865" height="392" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
@@ -370,9 +362,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="351" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607532194553" />
-    <state x="362" y="149" key="Vcs.Push.Dialog.v2" timestamp="1608401484807">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="302" y="123" key="Vcs.Push.Dialog.v2" timestamp="1608576002195">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="302" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1608576002195" />
     <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608401484807" />
     <state x="453" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533369301" />
     <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608376752187" />
