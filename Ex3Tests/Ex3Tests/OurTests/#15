@@ -15,13 +15,7 @@
     </mainclass>
     <classdecls>
         <classdecl>
-            <name>A</name>
-            <fields/>
-            <methoddecls/>
-        </classdecl>
-        <classdecl>
-            <name>B</name>
-            <superName>A</superName>
+            <name>D</name>
             <fields>
                 <field>
                     <lineNumber>12</lineNumber>
@@ -33,66 +27,14 @@
             </fields>
             <methoddecls>
                 <methoddecl>
-                    <lineNumber>15</lineNumber>
-                    <returnType>
-                        <int/>
-                    </returnType>
-                    <name>foo</name>
-                    <formals/>
-                    <vardecls/>
-                    <body/>
-                    <ret>
-                        <ref-id>
-                            <id>theVar</id>
-                        </ref-id>
-                    </ret>
-                </methoddecl>
-            </methoddecls>
-        </classdecl>
-        <classdecl>
-            <name>C</name>
-            <superName>A</superName>
-            <fields>
-                <field>
-                    <lineNumber>20</lineNumber>
-                    <type>
-                        <int/>
-                    </type>
-                    <name>theVar</name>
-                </field>
-            </fields>
-            <methoddecls>
-                <methoddecl>
-                    <lineNumber>23</lineNumber>
-                    <returnType>
-                        <int/>
-                    </returnType>
-                    <name>foo</name>
-                    <formals/>
-                    <vardecls/>
-                    <body/>
-                    <ret>
-                        <ref-id>
-                            <id>theVar</id>
-                        </ref-id>
-                    </ret>
-                </methoddecl>
-            </methoddecls>
-        </classdecl>
-        <classdecl>
-            <name>D</name>
-            <superName>C</superName>
-            <fields/>
-            <methoddecls>
-                <methoddecl>
-                    <lineNumber>39</lineNumber>
+                    <lineNumber>10</lineNumber>
                     <returnType>
                         <int/>
                     </returnType>
                     <name>bar</name>
                     <formals>
                         <formal>
-                            <lineNumber>26</lineNumber>
+                            <lineNumber>11</lineNumber>
                             <type>
                                 <bool/>
                             </type>

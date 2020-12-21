@@ -141,7 +141,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         String actualMethodReturnType = exprType;
 
         if (!IsClassSubtypeOf(actualMethodReturnType, requiredMethodReturnType))
-            throw new SemanticErrorException("The required and the actual return types are not the same." + actualMethodReturnType + " " + requiredMethodReturnType);
+            throw new SemanticErrorException("The required "+ requiredMethodReturnType +" and the actual " +actualMethodReturnType + " return types are not the same.");
     }
 
     @Override
@@ -419,6 +419,9 @@ public class SemanticAnalysisVisitor implements Visitor {
     @Override
     public void visit(NewIntArrayExpr e) {
         e.lengthExpr().accept(this);
+        if (!exprType.equals("int"))
+            throw new SemanticErrorException("Array initialize length value isn't int.");
+        exprType = "int-array";
     }
 
     @Override

@@ -188,7 +188,7 @@ public class ClassMethodDataVisitor implements Visitor {
             varDecl.accept(this);// in accept the type will be decided in refName
 
             checkIfVarRedeclared(localVars, varDecl.name());
-
+            checkIfVarRedeclared(formalVars, varDecl.name()); // check if it's already declared in formal vars
             /////// check if some local var overrides field - so remove it from the fields map //////////
             fieldsVars.remove(varDecl.name()); // local overrides field - if it contains this name: remove field from fields-map, it is masked by the local
 

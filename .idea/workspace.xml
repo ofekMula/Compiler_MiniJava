@@ -20,8 +20,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="ricky's NEW changeS">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#17-FAIL-IfInt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#17-FAIL-WhileNotBool.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#17-SUCCESS-While.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#17-SUCESS-IfBoolean.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#18-FAIL-NotCorrectSubType.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#18-RequiredIntReturnedBool-FAIL.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#18-SUCCESS-CorrectSubType.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#20-FAIL-BoolInsteadOfInt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#20-SUCCESS.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#21-BoolBinary-SUCCESS.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#21-IntBinary-SUCCESS.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#21-OneExprNotBool-FAIL.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#21-OneExprNotInt-FAIL.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#22-FAIL-NotIntArray.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#22-FAIL-NotIntIndex.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#22-SUCCESS.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#23-FAIL-NotIntArray.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#23-FAIL-NotIntIndex.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#23-SUCCESS.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#24-Formal-FAIL.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#24-Formal-SUCCESS.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#24-FormalAndLocal-FAIL.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#24-Local-FAIL.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#24-Local-SUCCESS.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#25-FAIL.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#25-SUCCESS.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/field_with_if_and_assign_array_statements.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests/#15" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +82,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ex3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -61,16 +90,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\src\duda\Compiler\Ex3Tests\Ex3Tests\OurTests" />
+      <recent name="C:\src\duda\Compiler\Ex3Tests" />
+      <recent name="C:\src\duda\Compiler\src\ex3\tests" />
       <recent name="C:\src\duda\Compiler\src\ex3" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ex3" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\src\duda\Compiler\Ex3Tests\Ex3Tests\OurTests" />
-      <recent name="C:\src\duda\Compiler\Ex3Tests" />
-      <recent name="C:\src\duda\Compiler\src\ex3\tests" />
       <recent name="C:\src\duda\Compiler\src\ex3" />
     </key>
   </component>
@@ -78,7 +108,18 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\src\duda\Compiler\src\tests_ex1\test_cases\variable_renaming\field_with_if_and_assign_array_statements_renamed.xml&quot; result.txt" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\src\duda\Compiler\Ex3Tests\Ex3Tests\OurTests\#17-FAIL-WhileNotBool.xml&quot; result.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,7 +201,7 @@
       <workItem from="1608452249056" duration="190000" />
       <workItem from="1608534675983" duration="631000" />
       <workItem from="1608539981750" duration="955000" />
-      <workItem from="1608572214878" duration="181000" />
+      <workItem from="1608572214878" duration="7475000" />
     </task>
     <task id="LOCAL-00007" summary="--">
       <created>1607005181605</created>
@@ -239,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608538054091</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="--">
+      <created>1608572551379</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608572551379</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,18 +311,19 @@
     <MESSAGE value="printing to screen for debug" />
     <MESSAGE value="+AssignStatement +fixed bugs in arrays" />
     <MESSAGE value="added check to see if the field arr length was already loaded" />
-    <MESSAGE value="--" />
     <MESSAGE value="removed todos" />
     <MESSAGE value="ricky's change" />
     <MESSAGE value="ricky's NEW changeS" />
     <MESSAGE value="added changes SemanticAnalysisVisitor" />
     <MESSAGE value="moved test to Ex3Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved test to Ex3Tests" />
+    <MESSAGE value="--" />
+    <option name="LAST_COMMIT_MESSAGE" value="--" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608375997873">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="538" y="240" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608574742922">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="538" y="240" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1608574742922" />
     <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533759054" />
     <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1608375997873" />
     <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608376229090">
@@ -285,28 +334,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608369930194" />
-    <state width="1865" height="392" key="GridCell.Tab.0.bottom" timestamp="1608401493792">
+    <state width="1481" height="257" key="GridCell.Tab.0.bottom" timestamp="1608580299667">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1865" height="392" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
+    <state width="1481" height="257" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608580299667" />
     <state width="1865" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
     <state width="1865" height="392" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1865" height="392" key="GridCell.Tab.0.center" timestamp="1608401493792">
+    <state width="1481" height="257" key="GridCell.Tab.0.center" timestamp="1608580299666">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1865" height="392" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
+    <state width="1481" height="257" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608580299666" />
     <state width="1865" height="319" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
     <state width="1865" height="392" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1865" height="392" key="GridCell.Tab.0.left" timestamp="1608401493792">
+    <state width="1481" height="257" key="GridCell.Tab.0.left" timestamp="1608580299663">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1865" height="392" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
+    <state width="1481" height="257" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608580299663" />
     <state width="1865" height="319" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
     <state width="1865" height="392" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1865" height="392" key="GridCell.Tab.0.right" timestamp="1608401493792">
+    <state width="1481" height="257" key="GridCell.Tab.0.right" timestamp="1608580299667">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1865" height="392" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
+    <state width="1481" height="257" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608580299667" />
     <state width="1865" height="319" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
     <state width="1865" height="392" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
     <state width="1865" height="392" key="GridCell.Tab.1.bottom" timestamp="1608401493792">
