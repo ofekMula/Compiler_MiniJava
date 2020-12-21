@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="ricky's NEW changeS">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,20 +55,22 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ex3" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\src\duda\Compiler\src\ex3\tests" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\src\duda\Compiler\src\ex3" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ex3" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\src\duda\Compiler\Ex3Tests\Ex3Tests\OurTests" />
+      <recent name="C:\src\duda\Compiler\Ex3Tests" />
+      <recent name="C:\src\duda\Compiler\src\ex3\tests" />
       <recent name="C:\src\duda\Compiler\src\ex3" />
     </key>
   </component>
@@ -156,6 +159,8 @@
       <workItem from="1608369030416" duration="13000" />
       <workItem from="1608452249056" duration="190000" />
       <workItem from="1608534675983" duration="631000" />
+      <workItem from="1608539981750" duration="955000" />
+      <workItem from="1608572214878" duration="181000" />
     </task>
     <task id="LOCAL-00007" summary="--">
       <created>1607005181605</created>
@@ -227,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608401483147</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="moved test to Ex3Tests">
+      <created>1608538054091</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608538054091</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +268,8 @@
     <MESSAGE value="ricky's change" />
     <MESSAGE value="ricky's NEW changeS" />
     <MESSAGE value="added changes SemanticAnalysisVisitor" />
-    <option name="LAST_COMMIT_MESSAGE" value="added changes SemanticAnalysisVisitor" />
+    <MESSAGE value="moved test to Ex3Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved test to Ex3Tests" />
   </component>
   <component name="WindowStateProjectService">
     <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608375997873">
@@ -328,16 +341,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="174" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608369715417" />
-    <state x="351" y="0" key="SettingsEditor" timestamp="1607532194553">
+    <state x="351" y="0" key="SettingsEditor" timestamp="1608540000865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="351" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607532194553" />
-    <state x="362" y="149" key="Vcs.Push.Dialog.v2" timestamp="1608401484807">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="351" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1608540000865" />
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1608538055128">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608401484807" />
     <state x="453" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533369301" />
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608376752187" />
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608538055128" />
     <state x="484" y="149" width="686" height="664" key="find.popup" timestamp="1607190221445">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
