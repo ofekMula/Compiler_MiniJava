@@ -30,15 +30,7 @@
                         <int/>
                     </returnType>
                     <name>override_method</name>
-                    <formals>
-                        <formal>
-                            <lineNumber>15</lineNumber>
-                            <type>
-                                <int/>
-                            </type>
-                            <name>x</name>
-                        </formal>
-                    </formals>
+                    <formals/>
                     <vardecls>
                         <vardecl>
                             <lineNumber>10</lineNumber>
@@ -75,7 +67,7 @@
             </methoddecls>
         </classdecl>
         <classdecl>
-            <name>class2</name>
+            <name>class1</name>
 			<superName>class1</superName>
             <fields/>
             <methoddecls>
@@ -85,15 +77,7 @@
                         <int/>
                     </returnType>
                     <name>override_method</name>
-                    <formals>
-                        <formal>
-                            <lineNumber>50</lineNumber>
-                            <type>
-                                <int/>
-                            </type>
-                            <name>x</name>
-                        </formal>
-                    </formals>
+                    <formals/>
                     <vardecls/>
                     <body/>
                     <ret>
@@ -110,5 +94,34 @@
                 </methoddecl>
             </methoddecls>
         </classdecl>
+		<classdecl>
+            <name>class3</name>
+			<superName>class2</superName>
+            <fields/>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>25</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>override_method</name>
+                    <formals/>
+                    <vardecls/>
+                    <body/>
+                    <ret>
+                        <call>
+                            <ownerExpr>
+<new-object>
+    <classId>class3</classId>
+</new-object>
+                            </ownerExpr>
+                            <methodId>override_method</methodId>
+                            <actuals/>
+                        </call>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+		
     </classdecls>
 </program>

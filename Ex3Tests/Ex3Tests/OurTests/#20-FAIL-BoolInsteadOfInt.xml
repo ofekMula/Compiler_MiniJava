@@ -1,7 +1,6 @@
-<?xml version = "1.0" encoding = "utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <program>
     <mainclass>
-        <lineNumber>1</lineNumber>
         <name>Main</name>
         <argsName>args</argsName>
         <mainStatement>
@@ -16,41 +15,46 @@
     </mainclass>
     <classdecls>
         <classdecl>
-            <name>A</name>
+            <name>D</name>
             <fields>
                 <field>
-                    <lineNumber>5</lineNumber>
+                    <lineNumber>12</lineNumber>
                     <type>
-                        <int-array/>
+                        <bool/>
                     </type>
-                    <name>arr</name>
+                    <name>theVar</name>
                 </field>
             </fields>
-            <methoddecls/>
-        </classdecl>
-        <classdecl>
-            <name>B</name>
-            <superName>A</superName>
-            <fields/>
             <methoddecls>
                 <methoddecl>
+                    <lineNumber>10</lineNumber>
                     <returnType>
-                        <bool/>
+                        <int/>
                     </returnType>
-                    <name>bar1</name>
-                    <formals/>
+                    <name>bar</name>
+                    <formals>
+                        <formal>
+                            <lineNumber>11</lineNumber>
+                            <type>
+                                <int/>
+                            </type>
+                            <name>anotherVar</name>
+                        </formal>
+                    </formals>
                     <vardecls>
                         <vardecl>
-                            <lineNumber>10</lineNumber>
+                            <lineNumber>29</lineNumber>
                             <type>
                                 <int-array/>
                             </type>
-                            <name>arr</name>
+                            <name>max</name>
                         </vardecl>
                     </vardecls>
-                    <body></body>
+                    <body/>
                     <ret>
-                        <false></false>
+                        <ref-id>
+                            <id>theVar</id>
+                        </ref-id>
                     </ret>
                 </methoddecl>
             </methoddecls>

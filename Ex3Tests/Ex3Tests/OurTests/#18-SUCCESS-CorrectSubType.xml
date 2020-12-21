@@ -1,7 +1,6 @@
-<?xml version = "1.0" encoding = "utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <program>
     <mainclass>
-        <lineNumber>1</lineNumber>
         <name>Main</name>
         <argsName>args</argsName>
         <mainStatement>
@@ -17,40 +16,34 @@
     <classdecls>
         <classdecl>
             <name>A</name>
-            <fields>
-                <field>
-                    <lineNumber>5</lineNumber>
-                    <type>
-                        <int-array/>
-                    </type>
-                    <name>arr</name>
-                </field>
-            </fields>
+            <fields/>
             <methoddecls/>
         </classdecl>
         <classdecl>
             <name>B</name>
             <superName>A</superName>
             <fields/>
+            <methoddecls/>
+        </classdecl>
+        <classdecl>
+            <name>D</name>
+            <fields/>
             <methoddecls>
                 <methoddecl>
+                    <lineNumber>10</lineNumber>
                     <returnType>
-                        <bool/>
+                        <ref>
+                            <id>A</id>
+                        </ref>
                     </returnType>
-                    <name>bar1</name>
+                    <name>bar</name>
                     <formals/>
-                    <vardecls>
-                        <vardecl>
-                            <lineNumber>10</lineNumber>
-                            <type>
-                                <int-array/>
-                            </type>
-                            <name>arr</name>
-                        </vardecl>
-                    </vardecls>
-                    <body></body>
+                    <vardecls/>
+                    <body/>
                     <ret>
-                        <false></false>
+                        <new-object>
+                            <classId>B</classId>
+                        </new-object>
                     </ret>
                 </methoddecl>
             </methoddecls>

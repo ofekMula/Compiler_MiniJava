@@ -1,7 +1,6 @@
-<?xml version = "1.0" encoding = "utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <program>
     <mainclass>
-        <lineNumber>1</lineNumber>
         <name>Main</name>
         <argsName>args</argsName>
         <mainStatement>
@@ -16,41 +15,51 @@
     </mainclass>
     <classdecls>
         <classdecl>
-            <name>A</name>
+            <name>D</name>
             <fields>
                 <field>
-                    <lineNumber>5</lineNumber>
+                    <lineNumber>7</lineNumber>
                     <type>
                         <int-array/>
                     </type>
-                    <name>arr</name>
+                    <name>theArr</name>
                 </field>
             </fields>
-            <methoddecls/>
-        </classdecl>
-        <classdecl>
-            <name>B</name>
-            <superName>A</superName>
-            <fields/>
             <methoddecls>
                 <methoddecl>
+                    <lineNumber>10</lineNumber>
                     <returnType>
-                        <bool/>
+                        <int/>
                     </returnType>
-                    <name>bar1</name>
+                    <name>bar</name>
                     <formals/>
                     <vardecls>
                         <vardecl>
-                            <lineNumber>10</lineNumber>
+                            <lineNumber>14</lineNumber>
                             <type>
                                 <int-array/>
                             </type>
-                            <name>arr</name>
+                            <name>max</name>
                         </vardecl>
                     </vardecls>
-                    <body></body>
+                    <body>
+                        <assign>
+                            <lv>max</lv>
+                            <rv>
+                                <new-int-array>
+                                    <lengthExpr>
+                                        <ref-id>
+                                            <id>theArr</id>
+                                        </ref-id>
+                                    </lengthExpr>
+                                </new-int-array>
+                            </rv>
+                        </assign>
+                    </body>
                     <ret>
-                        <false></false>
+                        <int-literal>
+                            <num>1</num>
+                        </int-literal>
                     </ret>
                 </methoddecl>
             </methoddecls>
