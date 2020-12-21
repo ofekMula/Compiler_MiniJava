@@ -7,7 +7,7 @@
         <mainStatement>
             <sysout>
                 <arg>
-                    <true/>
+                    1
                 </arg>
             </sysout>
         </mainStatement>

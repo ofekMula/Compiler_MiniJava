@@ -7,7 +7,9 @@
         <mainStatement>
             <sysout>
                 <arg>
-                    <true/>
+                    <int-literal>
+                        <num>1</num>
+                    </int-literal>
                 </arg>
             </sysout>
         </mainStatement>
