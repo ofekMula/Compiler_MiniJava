@@ -8,7 +8,7 @@
 # you should see the names of all of the tests with "Success"
 
 
-COMMAND="java -jar ../../mjavac.jar unmarshal semantic"
+COMMAND="java -jar C:\Users\Shirly\IdeaProjects\CompilerMiniJava\mjavac.jar unmarshal semantic"
 FILEPATH="."
 function test()
 {
