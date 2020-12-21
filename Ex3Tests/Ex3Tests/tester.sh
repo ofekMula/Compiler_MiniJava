@@ -25,7 +25,7 @@ function test()
 	fi
 
 	$COMMAND $TESTFOLDER/$XMLFILE.xml $result_file > $log_file
-	diff $result_file $TESTFOLDER/$TESTFOLDER.res
+	diff -w $result_file $TESTFOLDER/$TESTFOLDER.res
 	if [ $? -eq 0 ]
 	then
 		echo Success
@@ -42,3 +42,13 @@ test InitVarValid.java InitVarValid
 test OwnerExprInvalid.java OwnerExprInvalid
 test OwnerExprValid.java OwnerExprValid
 test MethodInvalid MethodInvalid
+
+test ClassPrecedingInvalid ClassPrecedingInvalid
+test DeclTypeNotExists DeclTypeNotExists
+test DupClassName DupClassName
+test DupMethodName DupMethodName
+test Items1-8_valid Items1-8_valid
+test MainExtended MainExtended
+test MethodInvalid MethodInvalid
+test OverridingSameSignInvalid OverridingSameSignInvalid
+test SameFieldInClass SameFieldInClass

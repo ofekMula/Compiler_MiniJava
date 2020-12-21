@@ -35,11 +35,11 @@ public class ClassMethodDataVisitor implements Visitor {
                 throw new SemanticErrorException(message+": same arg with different type");
 
             }
-            if (!overriddenMethod.returnType.equals(methodDataAddToClass.returnType)){
-                throw new SemanticErrorException(message+": different return type");
+        }
+        if (!overriddenMethod.returnType.equals(methodDataAddToClass.returnType)){
+            throw new SemanticErrorException(message+": different return type");
 
-                //todo: check correctness - a covariant static return type need to check.
-            }
+            //todo: check correctness - a covariant static return type need to check.
         }
     }
 

@@ -48,11 +48,11 @@ public class Main {
                         firstVisitor.visit(prog);
                         ex3.SemanticAnalysisVisitor semanticVisitor = new ex3.SemanticAnalysisVisitor(firstVisitor.classNameToData);
                         semanticVisitor.visit(prog);
-                        outFile.print("OK\n");
+                        outFile.print("OK"+"\n");
                     }
                     catch (SemanticErrorException e){
-                        outFile.print(e.getMessage()+"\n");
-                        outFile.print("ERROR\n");
+                        //outFile.print(e.getMessage()+"\n");
+                        outFile.print("ERROR"+"\n");
                     }
 
 
