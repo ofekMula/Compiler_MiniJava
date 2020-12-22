@@ -19,48 +19,75 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="fix bugs">
+    <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="- added test for override method.">
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingDifferentFormalName/OverridingDifferentFormalName.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingDifferentFormalName/OverridingDifferentFormalName.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingDifferentFormalType/OverridingDifferentFormalType.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingDifferentFormalType/OverridingDifferentFormalType.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingSameSignInvalid/OverridingSameSignInvalid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingSameSignInvalid/OverridingSameSignInvalid.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/tester.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/tester.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="shirly-2-4" />
+        <entry key="$PROJECT_DIR$" value="shirly-2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1l5I9DfTVUnC4fL9Axy0K7673gm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingSameSignInvalid4" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid4" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid3" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid2" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\SameFieldInClass" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\DupMethodName" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\Items1-8_valid" />
+      <recent name="C:\src\duda\Compiler\src\ex3\tests" />
+      <recent name="C:\src\duda\Compiler\src\ex3" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ex3" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\Users\Shirly\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OwnerExprValid\OwnerExprValid.java.xml&quot; out.txt" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid3\OverridingDifferentNumOfFormals.xml&quot; result.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -71,10 +98,10 @@
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -122,161 +149,191 @@
       <updated>1606722164622</updated>
     </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="" />
+      <changelist id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="ricky's change" />
       <created>1606880373735</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606880373735</updated>
-      <workItem from="1606880384318" duration="536000" />
-      <workItem from="1606880975132" duration="32263000" />
-      <workItem from="1607046655120" duration="5323000" />
-      <workItem from="1607529030389" duration="3926000" />
-      <workItem from="1608052688370" duration="1492000" />
-      <workItem from="1608394138563" duration="17441000" />
-      <workItem from="1608581099975" duration="210000" />
+      <workItem from="1606880384318" duration="333000" />
+      <workItem from="1606976487119" duration="624000" />
+      <workItem from="1607190092163" duration="1057000" />
+      <workItem from="1607237421820" duration="21000" />
+      <workItem from="1607272427781" duration="505000" />
+      <workItem from="1607359210202" duration="84000" />
+      <workItem from="1607530037058" duration="534000" />
+      <workItem from="1607531027685" duration="983000" />
+      <workItem from="1607533675685" duration="809000" />
+      <workItem from="1607582573713" duration="71000" />
+      <workItem from="1608308646549" duration="2790000" />
+      <workItem from="1608369030416" duration="13000" />
+      <workItem from="1608452249056" duration="190000" />
+      <workItem from="1608534675983" duration="631000" />
     </task>
-    <task id="LOCAL-00007" summary="-">
-      <created>1606880859101</created>
+    <task id="LOCAL-00007" summary="--">
+      <created>1607005181605</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1606880859101</updated>
+      <updated>1607005181605</updated>
     </task>
-    <task id="LOCAL-00008" summary="fields+ret+fixes">
-      <created>1606906071092</created>
+    <task id="LOCAL-00008" summary="added check to see if the field arr length was already loaded">
+      <created>1607007958244</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1606906071092</updated>
+      <updated>1607007958244</updated>
     </task>
-    <task id="LOCAL-00009" summary="MethodCallExpr fix for Factorial.java">
-      <created>1606944013665</created>
+    <task id="LOCAL-00009" summary="--">
+      <created>1607190162595</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1606944013665</updated>
+      <updated>1607190162595</updated>
     </task>
-    <task id="LOCAL-00010" summary="fields offset fix, added fields to assignArray and changed the order to match LinearSearch.java example">
-      <created>1606965542873</created>
+    <task id="LOCAL-00010" summary="removed todos">
+      <created>1607190973415</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1606965542873</updated>
+      <updated>1607190973415</updated>
     </task>
-    <task id="LOCAL-00011" summary="-">
-      <created>1607529189574</created>
+    <task id="LOCAL-00011" summary="removed todos">
+      <created>1607191146585</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1607529189574</updated>
+      <updated>1607191146585</updated>
     </task>
-    <task id="LOCAL-00012" summary="wasLoaded added to all">
-      <created>1607530646900</created>
+    <task id="LOCAL-00012" summary="ricky's change">
+      <created>1607533368072</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1607530646900</updated>
+      <updated>1607533368072</updated>
     </task>
-    <task id="LOCAL-00013" summary="-">
-      <created>1608412974689</created>
+    <task id="LOCAL-00013" summary="ricky's change">
+      <created>1608370156752</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1608412974689</updated>
+      <updated>1608370156752</updated>
     </task>
-    <task id="LOCAL-00014" summary="ex3 9-16">
-      <created>1608458782746</created>
+    <task id="LOCAL-00014" summary="ricky's NEW changeS">
+      <created>1608376412643</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1608458782746</updated>
+      <updated>1608376412643</updated>
     </task>
-    <task id="LOCAL-00015" summary="fix bugs">
-      <created>1608460696207</created>
+    <task id="LOCAL-00015" summary="ricky's NEW changeS">
+      <created>1608376751008</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1608460696207</updated>
+      <updated>1608376751008</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added changes SemanticAnalysisVisitor">
+      <created>1608401483147</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1608401483147</updated>
+    </task>
+    <task id="LOCAL‎00017" summary="- added tests for cases 1-8 + u[dated tester.sh&#10;- out prog passes Yotam's tests and Ofek's tests.">
+      <created>1608575999153</created>
+      <option name="number" value="LOCAL‎00017" />
+      <option name="presentableId" value="LOCAL‎00017" />
+      <updated>1608575999153</updated>
+    </task>
+    <task id="LOCAL‎00018" summary="- added test for override method.">
+      <created>1608578337335</created>
+      <option name="number" value="LOCAL‎00018" />
+      <option name="presentableId" value="LOCAL‎00018" />
+      <updated>1608578337336</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'expr_shirly' of https://github.com/rickben/CompilerMiniJava into expr_shirly&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="arrays, &amp;&amp;, formals, basic expr" />
     <MESSAGE value="printing to screen for debug" />
     <MESSAGE value="+AssignStatement +fixed bugs in arrays" />
-    <MESSAGE value="fields+ret+fixes" />
-    <MESSAGE value="MethodCallExpr fix for Factorial.java" />
-    <MESSAGE value="fields offset fix, added fields to assignArray and changed the order to match LinearSearch.java example" />
-    <MESSAGE value="wasLoaded added to all" />
-    <MESSAGE value="-" />
-    <MESSAGE value="ex3 9-16" />
-    <MESSAGE value="fix bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
+    <MESSAGE value="added check to see if the field arr length was already loaded" />
+    <MESSAGE value="--" />
+    <MESSAGE value="removed todos" />
+    <MESSAGE value="ricky's change" />
+    <MESSAGE value="ricky's NEW changeS" />
+    <MESSAGE value="added changes SemanticAnalysisVisitor" />
+    <MESSAGE value="- added tests for cases 1-8 + u[dated tester.sh&#10;- out prog passes Yotam's tests and Ofek's tests." />
+    <MESSAGE value="- added test for override method." />
+    <option name="LAST_COMMIT_MESSAGE" value="- added test for override method." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>19</line>
-          <properties class="ex1.VisitorRenameVar">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex1/VisitorRenameVar.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java</url>
-          <line>581</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java</url>
-          <line>606</line>
+          <url>file://$PROJECT_DIR$/src/ex2/proj/ClassMethodDataVisitor.java</url>
+          <line>102</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java</url>
-          <line>352</line>
-          <option name="timeStamp" value="101" />
+          <url>file://$PROJECT_DIR$/src/ex2/proj/ClassMethodDataVisitor.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java</url>
-          <line>344</line>
+          <url>file://$PROJECT_DIR$/src/ex2/proj/ClassMethodDataVisitor.java</url>
+          <line>117</line>
           <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="117" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="ex2.proj.ClassMethodDataVisitor" memberName="classDataAddToMethod" />
+        <PinnedItemInfo parentTag="ex2.proj.MethodData" memberName="classData" />
+        <PinnedItemInfo parentTag="ex1.Symbol" memberName="insideTable" />
+        <PinnedItemInfo parentTag="ast.ClassDecl" memberName="table" />
+        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+        <PinnedItemInfo parentTag="ast.Program" memberName="table" />
+        <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
+        <PinnedItemInfo parentTag="ex2.proj.MethodData" memberName="name" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
