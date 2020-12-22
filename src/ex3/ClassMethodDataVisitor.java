@@ -63,6 +63,11 @@ public class ClassMethodDataVisitor implements Visitor {
                 throw new SemanticErrorException(message+":formals with diff types");
             }
         }
+        if ((methodDataAddToClass.returnType == null && overriddenMethod.returnType !=null)
+                 || (methodDataAddToClass.returnType != null && overriddenMethod.returnType ==null)){
+            throw new SemanticErrorException(message+": different return type");
+
+        }
         if (!IsClassSubtypeOf(methodDataAddToClass.returnType,overriddenMethod.returnType)){
             throw new SemanticErrorException(message+": different return type");
 
