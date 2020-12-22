@@ -175,16 +175,14 @@ public class SemanticAnalysisVisitor implements Visitor {
         if (!exprType.equals("boolean"))
             throw new SemanticErrorException("If statement expr isn't of boolean type");
 
-        if (isInWhile){
-            currInitialized = whileInitializedLocalVars;
-        }
-        else {
-            currInitialized = initializedLocalVars;
-        }
+        // save state
+        HashSet<String> tmpInitializedLocalVars = initializedLocalVars;
+        HashSet<String> tmpNewInitializedLocalVars = newInitializedLocalVars;
+        HashSet<String> tmpWhileInitializedLocalVars = whileInitializedLocalVars;
+
+        // run if
         newInitializedLocalVars = new HashSet<>();
-
         isInIf = true;
-
         ifStatement.thencase().accept(this);
         HashSet<String> thenInitializedResult = newInitializedLocalVars;
         newInitializedLocalVars = new HashSet<>();
@@ -195,14 +193,17 @@ public class SemanticAnalysisVisitor implements Visitor {
 
         isInIf = false;
         join(thenInitializedResult, elseInitialized);
-        currInitialized.addAll(thenInitializedResult);
-        if (isInWhile){
-            whileInitializedLocalVars = currInitialized;
+
+        // load & update
+        if (isInWhile) {
+            tmpWhileInitializedLocalVars.addAll(thenInitializedResult);
+        } else {
+            tmpInitializedLocalVars.addAll(thenInitializedResult);
         }
-        else {
-            initializedLocalVars = currInitialized;
-        }
-}
+        whileInitializedLocalVars = tmpWhileInitializedLocalVars;
+        initializedLocalVars = tmpInitializedLocalVars;
+        newInitializedLocalVars = tmpNewInitializedLocalVars;
+    }
 
     @Override
     public void visit(WhileStatement whileStatement) {
@@ -213,11 +214,22 @@ public class SemanticAnalysisVisitor implements Visitor {
 
         isInWhile = true;
         System.out.println("while in");//todo delete
-        this.whileInitializedLocalVars = new HashSet<>();
+        // save state
+        HashSet<String> tmpInitializedLocalVars = initializedLocalVars;
+        HashSet<String> tmpNewInitializedLocalVars = newInitializedLocalVars;
+        HashSet<String> tmpWhileInitializedLocalVars = whileInitializedLocalVars;
+
+        // run while
+        initializedLocalVars.addAll(whileInitializedLocalVars);
+        whileInitializedLocalVars = new HashSet<>();
         whileStatement.body().accept(this);
         isInWhile = false;
         System.out.println("while out"); //todo delete
-        this.whileInitializedLocalVars = new HashSet<>();
+
+        // load state
+        initializedLocalVars = tmpInitializedLocalVars;
+        newInitializedLocalVars = tmpNewInitializedLocalVars;
+        whileInitializedLocalVars = tmpWhileInitializedLocalVars;
     }
 
     @Override
@@ -227,7 +239,7 @@ public class SemanticAnalysisVisitor implements Visitor {
             throw new SemanticErrorException("System.out.println arg type isn't int.");
     }
 
-    private void addToInitialized(String varName){
+    private void addToInitialized(String varName) {
         if (isInWhile) {
             whileInitializedLocalVars.add(varName);
         } else {
@@ -427,15 +439,16 @@ public class SemanticAnalysisVisitor implements Visitor {
         if (!(methodData.isField(varName) || methodData.isFormal(varName))) {
             // must be initialized before
             if (isInWhile) {
-                if (!(initializedLocalVars.contains(varName) || whileInitializedLocalVars.contains(varName))) {
+                if (!(initializedLocalVars.contains(varName) || newInitializedLocalVars.contains(varName) || whileInitializedLocalVars.contains(varName))) {
                     throw new SemanticErrorException("var " + varName + " is not initialized before it is used, (IdentifierExpr, #15)");
                 }
             } else {
-                if (!initializedLocalVars.contains(varName)) {
+                if (!(initializedLocalVars.contains(varName) || newInitializedLocalVars.contains(varName))) {
                     throw new SemanticErrorException("var " + varName + " is not initialized before it is used, (IdentifierExpr, #15)");
                 }
             }
         }
+
         exprType = varType;
         System.out.println("exprType:" + exprType);
     }
@@ -485,7 +498,6 @@ public class SemanticAnalysisVisitor implements Visitor {
 
     @Override
     public void visit(RefType t) {
-
         exprType = t.id();
         if (classNameToData.get(exprType) == null) {
             throw new SemanticErrorException("A type declaration of a reference type of " + exprType +
