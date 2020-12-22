@@ -40,7 +40,7 @@ test AssignmentValid.java AssignmentValid
 test InitVarInvalid.java InitVarInvalid
 test InitVarValid.java InitVarValid
 test OwnerExprInvalid.java OwnerExprInvalid
-test OwnerExprValid.java OwnerExprValid
+test NewClassValid.java OwnerExprValid
 test MethodInvalid MethodInvalid
 
 test ClassPrecedingInvalid ClassPrecedingInvalid
@@ -53,3 +53,5 @@ test MethodInvalid MethodInvalid
 test OverridingSameSignInvalid OverridingSameSignInvalid
 test SameFieldInClass SameFieldInClass
 test OverridingDifferentNumOfFormals OverridingDifferentNumOfFormals
+test OverridingDifferentFormalType OverridingDifferentFormalType
+test OverridingDifferentFormalName OverridingDifferentFormalName

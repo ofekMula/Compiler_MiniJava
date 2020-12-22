@@ -15,6 +15,7 @@ public class SemanticAnalysisVisitor implements Visitor {
     private ClassData currClassData;
     private HashSet<String> initializedLocalVars;
     private HashSet<String> newInitializedLocalVars;
+    private HashSet<String> whileInitializedLocalVars;
     private boolean isInWhile = false;
     private boolean isInIf = false;
 
@@ -23,6 +24,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         this.classNameToData = classNameToData;
         this.initializedLocalVars = new HashSet<>();
         this.newInitializedLocalVars = new HashSet<>();
+        this.whileInitializedLocalVars = new HashSet<>();
     }
 
     private String getTypeFromMap(String varName) {
@@ -141,7 +143,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         String actualMethodReturnType = exprType;
 
         if (!IsClassSubtypeOf(actualMethodReturnType, requiredMethodReturnType))
-            throw new SemanticErrorException("The required "+ requiredMethodReturnType +" and the actual " +actualMethodReturnType + " return types are not the same.");
+            throw new SemanticErrorException("The required " + requiredMethodReturnType + " and the actual " + actualMethodReturnType + " return types are not the same.");
     }
 
     @Override
@@ -167,12 +169,18 @@ public class SemanticAnalysisVisitor implements Visitor {
 
     @Override
     public void visit(IfStatement ifStatement) {
+        HashSet<String> currInitialized;
         ifStatement.cond().accept(this);
 
         if (!exprType.equals("boolean"))
             throw new SemanticErrorException("If statement expr isn't of boolean type");
 
-        HashSet<String> currInitialized = initializedLocalVars;
+        if (isInWhile){
+            currInitialized = whileInitializedLocalVars;
+        }
+        else {
+            currInitialized = initializedLocalVars;
+        }
         newInitializedLocalVars = new HashSet<>();
 
         isInIf = true;
@@ -188,8 +196,13 @@ public class SemanticAnalysisVisitor implements Visitor {
         isInIf = false;
         join(thenInitializedResult, elseInitialized);
         currInitialized.addAll(thenInitializedResult);
-        initializedLocalVars = currInitialized;
-    }
+        if (isInWhile){
+            whileInitializedLocalVars = currInitialized;
+        }
+        else {
+            initializedLocalVars = currInitialized;
+        }
+}
 
     @Override
     public void visit(WhileStatement whileStatement) {
@@ -199,8 +212,12 @@ public class SemanticAnalysisVisitor implements Visitor {
             throw new SemanticErrorException("While statement expr isn't of boolean type");
 
         isInWhile = true;
+        System.out.println("while in");//todo delete
+        this.whileInitializedLocalVars = new HashSet<>();
         whileStatement.body().accept(this);
         isInWhile = false;
+        System.out.println("while out"); //todo delete
+        this.whileInitializedLocalVars = new HashSet<>();
     }
 
     @Override
@@ -208,6 +225,18 @@ public class SemanticAnalysisVisitor implements Visitor {
         sysoutStatement.arg().accept(this);
         if (!exprType.equals("int"))
             throw new SemanticErrorException("System.out.println arg type isn't int.");
+    }
+
+    private void addToInitialized(String varName){
+        if (isInWhile) {
+            whileInitializedLocalVars.add(varName);
+        } else {
+            if (isInIf) {
+                newInitializedLocalVars.add(varName);
+            } else {
+                initializedLocalVars.add(varName);
+            }
+        }
     }
 
     @Override
@@ -218,22 +247,15 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
         assignStatement.rv().accept(this);
         String rvType = exprType;
-        if (!IsClassSubtypeOf(rvType,lvType)){
-            throw new SemanticErrorException("Assign of "+rvType+" to "+lvType +" (AssignStatement,#16)");
+        if (!IsClassSubtypeOf(rvType, lvType)) {
+            throw new SemanticErrorException("Assign of " + rvType + " to " + lvType + " (AssignStatement,#16)");
         }
-        if (!isInWhile) {
-            if (isInIf){
-                newInitializedLocalVars.add(assignStatement.lv());
-            }
-            else{
-                initializedLocalVars.add(assignStatement.lv());
-            }
-        }
+
+        addToInitialized(assignStatement.lv());
     }
 
     @Override
     public void visit(AssignArrayStatement assignArrayStatement) {
-        // todo: no need to check initialize inside array?
         String idType = getTypeFromMap(assignArrayStatement.lv());
         if (idType == null) {
             throw new SemanticErrorException(assignArrayStatement.lv()
@@ -247,6 +269,8 @@ public class SemanticAnalysisVisitor implements Visitor {
         assignArrayStatement.rv().accept(this);
         if (!exprType.equals("int"))
             throw new SemanticErrorException("The array assign to value isn't of type int.");
+
+        addToInitialized(assignArrayStatement.lv());
     }
 
     private void visitBinaryExpr(BinaryExpr e, String infixSymbol) {
@@ -336,7 +360,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         //todo: check this is indeed the meaning of #10
         if (methodOwnerRefName.equals("int") || methodOwnerRefName.equals("boolean") || methodOwnerRefName.equals("int-array")) {
             throw new SemanticErrorException("In method " + methodName + " invocation, the static type of the object should be a reference type"
-                    + "and not" + exprType + " (not int, bool, or int[]).  (MethodCallExpr #10)");
+                    + " and not " + exprType + " (not int, bool, or int[]).  (MethodCallExpr #10)");
         }
 
         System.out.println("methodOwnerRefName:" + methodOwnerRefName);
@@ -397,17 +421,21 @@ public class SemanticAnalysisVisitor implements Visitor {
     public void visit(IdentifierExpr e) {
         String varName = e.id();
         String varType = getTypeFromMap(e.id());
-        if (varType == null){
-            throw new SemanticErrorException("var "+varName+" is not defined for the current method, (IdentifierExpr, #14)");
+        if (varType == null) {
+            throw new SemanticErrorException("var " + varName + " is not defined for the current method, (IdentifierExpr, #14)");
         }
-        if (!(methodData.isField(varName) || methodData.isFormal(varName) || varType.equals("int-array"))){
+        if (!(methodData.isField(varName) || methodData.isFormal(varName))) {
             // must be initialized before
-            if (!initializedLocalVars.contains(varName)){
-                throw new SemanticErrorException("var "+varName+" is not initialized before it is used, (IdentifierExpr, #15)");
+            if (isInWhile) {
+                if (!(initializedLocalVars.contains(varName) || whileInitializedLocalVars.contains(varName))) {
+                    throw new SemanticErrorException("var " + varName + " is not initialized before it is used, (IdentifierExpr, #15)");
+                }
+            } else {
+                if (!initializedLocalVars.contains(varName)) {
+                    throw new SemanticErrorException("var " + varName + " is not initialized before it is used, (IdentifierExpr, #15)");
+                }
             }
-
         }
-
         exprType = varType;
         System.out.println("exprType:" + exprType);
     }
@@ -428,7 +456,7 @@ public class SemanticAnalysisVisitor implements Visitor {
     public void visit(NewObjectExpr e) {
         exprType = e.classId();
         if (!classNameToData.containsKey(exprType)) {
-            throw new SemanticErrorException("new " + exprType + "() is invoked for a class A that is not defined " +
+            throw new SemanticErrorException("new " + exprType + "() is invoked for a class that is not defined " +
                     "somewhere in the file. (NewObjectExpr, #9)");
         }
     }

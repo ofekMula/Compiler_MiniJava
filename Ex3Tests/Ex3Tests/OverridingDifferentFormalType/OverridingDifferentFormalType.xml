@@ -34,7 +34,22 @@
                         </ref>
                     </returnType>
                     <name>theThing</name>
-                    <formals/>
+                    <formals>
+                        <formal>
+                            <lineNumber>20</lineNumber>
+                            <type>
+                                <int/>
+                            </type>
+                            <name>x</name>
+                        </formal>
+                        <formal>
+                            <lineNumber>20</lineNumber>
+                            <type>
+                                <int/>
+                            </type>
+                            <name>y</name>
+                        </formal>
+                    </formals>
                     <vardecls/>
                     <body/>
                     <ret>
@@ -60,11 +75,26 @@
                     <lineNumber>21</lineNumber>
                     <returnType>
                         <ref>
-                            <id>A</id>
+                            <id>Shared</id>
                         </ref>
                     </returnType>
                     <name>theThing</name>
-                    <formals/>
+                    <formals>
+                        <formal>
+                            <lineNumber>20</lineNumber>
+                            <type>
+                                <int/>
+                            </type>
+                            <name>x</name>
+                        </formal>
+                        <formal>
+                            <lineNumber>20</lineNumber>
+                            <type>
+                                <bool/>
+                            </type>
+                            <name>y</name>
+                        </formal>
+                    </formals>
                     <vardecls/>
                     <body/>
                     <ret>
