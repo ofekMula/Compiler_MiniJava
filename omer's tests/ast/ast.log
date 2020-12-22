@@ -1,0 +1,406 @@
+methodOwnerRefName:TV
+ownerClassData:ex3.ClassData@45dd4eda
+In Method call:int
+return required:int
+local: root type:Tree method: Start
+local: ntb type:boolean method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: v type:MyVisitor method: Start
+local: nti type:int method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+local: v type:MyVisitor method: Start
+exprType:MyVisitor
+local: v type:MyVisitor method: Start
+exprType:MyVisitor
+In Method call:int
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:int
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:int
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:int
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:int
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:int
+local: ntb type:boolean method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Start
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: root type:Tree method: Start
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:int
+return required:boolean
+field: key type:int method: Init
+formal: v_key type:int method: Init
+exprType:int
+field: has_left type:boolean method: Init
+field: has_right type:boolean method: Init
+return required:boolean
+field: right type:Tree method: SetRight
+formal: rn type:Tree method: SetRight
+exprType:Tree
+return required:boolean
+field: left type:Tree method: SetLeft
+formal: ln type:Tree method: SetLeft
+exprType:Tree
+return required:Tree
+field: right type:Tree method: GetRight
+exprType:Tree
+return required:Tree
+field: left type:Tree method: GetLeft
+exprType:Tree
+return required:int
+field: key type:int method: GetKey
+exprType:int
+return required:boolean
+field: key type:int method: SetKey
+formal: v_key type:int method: SetKey
+exprType:int
+return required:boolean
+field: has_right type:boolean method: GetHas_Right
+exprType:boolean
+return required:boolean
+field: has_left type:boolean method: GetHas_Left
+exprType:boolean
+return required:boolean
+field: has_left type:boolean method: SetHas_Left
+formal: val type:boolean method: SetHas_Left
+exprType:boolean
+return required:boolean
+field: has_right type:boolean method: SetHas_Right
+formal: val type:boolean method: SetHas_Right
+exprType:boolean
+return required:boolean
+local: ntb type:boolean method: Compare
+local: nti type:int method: Compare
+formal: num2 type:int method: Compare
+exprType:int
+formal: num1 type:int method: Compare
+exprType:int
+formal: num2 type:int method: Compare
+exprType:int
+local: ntb type:boolean method: Compare
+formal: num1 type:int method: Compare
+exprType:int
+local: nti type:int method: Compare
+exprType:int
+local: ntb type:boolean method: Compare
+local: ntb type:boolean method: Compare
+local: ntb type:boolean method: Compare
+exprType:boolean
+return required:boolean
+local: new_node type:Tree method: Insert
+local: ntb type:boolean method: Insert
+local: new_node type:Tree method: Insert
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+formal: v_key type:int method: Insert
+exprType:int
+formal: v_key type:int method: Insert
+exprType:int
+In Method call:boolean
+local: current_node type:Tree method: Insert
+local: cont type:boolean method: Insert
+local: cont type:boolean method: Insert
+exprType:boolean
+while in
+local: key_aux type:int method: Insert
+local: current_node type:Tree method: Insert
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:int
+formal: v_key type:int method: Insert
+exprType:int
+local: key_aux type:int method: Insert
+exprType:int
+local: current_node type:Tree method: Insert
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: current_node type:Tree method: Insert
+local: current_node type:Tree method: Insert
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:Tree
+local: cont type:boolean method: Insert
+local: ntb type:boolean method: Insert
+local: current_node type:Tree method: Insert
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Insert
+local: current_node type:Tree method: Insert
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+local: new_node type:Tree method: Insert
+exprType:Tree
+local: new_node type:Tree method: Insert
+exprType:Tree
+In Method call:boolean
+local: current_node type:Tree method: Insert
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: current_node type:Tree method: Insert
+local: current_node type:Tree method: Insert
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:Tree
+local: cont type:boolean method: Insert
+local: ntb type:boolean method: Insert
+local: current_node type:Tree method: Insert
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Insert
+local: current_node type:Tree method: Insert
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+local: new_node type:Tree method: Insert
+exprType:Tree
+local: new_node type:Tree method: Insert
+exprType:Tree
+In Method call:boolean
+while out
+return required:boolean
+local: current_node type:Tree method: Delete
+local: parent_node type:Tree method: Delete
+local: cont type:boolean method: Delete
+local: found type:boolean method: Delete
+local: is_root type:boolean method: Delete
+local: cont type:boolean method: Delete
+exprType:boolean
+while in
+local: key_aux type:int method: Delete
+local: current_node type:Tree method: Delete
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:int
+formal: v_key type:int method: Delete
+exprType:int
+local: key_aux type:int method: Delete
+exprType:int
+local: current_node type:Tree method: Delete
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: parent_node type:Tree method: Delete
+local: current_node type:Tree method: Delete
+exprType:Tree
+local: current_node type:Tree method: Delete
+local: current_node type:Tree method: Delete
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:Tree
+local: cont type:boolean method: Delete
+local: key_aux type:int method: Delete
+exprType:int
+formal: v_key type:int method: Delete
+exprType:int
+local: current_node type:Tree method: Delete
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: parent_node type:Tree method: Delete
+local: current_node type:Tree method: Delete
+exprType:Tree
+local: current_node type:Tree method: Delete
+local: current_node type:Tree method: Delete
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:Tree
+local: cont type:boolean method: Delete
+local: is_root type:boolean method: Delete
+exprType:boolean
+local: current_node type:Tree method: Delete
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: current_node type:Tree method: Delete
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Delete
+local: ntb type:boolean method: Delete
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+local: parent_node type:Tree method: Delete
+exprType:Tree
+local: current_node type:Tree method: Delete
+exprType:Tree
+local: parent_node type:Tree method: Delete
+exprType:Tree
+local: current_node type:Tree method: Delete
+exprType:Tree
+In Method call:boolean
+local: ntb type:boolean method: Delete
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+local: parent_node type:Tree method: Delete
+exprType:Tree
+local: current_node type:Tree method: Delete
+exprType:Tree
+local: parent_node type:Tree method: Delete
+exprType:Tree
+local: current_node type:Tree method: Delete
+exprType:Tree
+In Method call:boolean
+local: found type:boolean method: Delete
+local: cont type:boolean method: Delete
+local: is_root type:boolean method: Delete
+while out
+local: found type:boolean method: Delete
+exprType:boolean
+return required:boolean
+formal: c_node type:Tree method: Remove
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Remove
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+formal: p_node type:Tree method: Remove
+exprType:Tree
+formal: c_node type:Tree method: Remove
+exprType:Tree
+formal: p_node type:Tree method: Remove
+exprType:Tree
+formal: c_node type:Tree method: Remove
+exprType:Tree
+In Method call:boolean
+formal: c_node type:Tree method: Remove
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:boolean
+local: ntb type:boolean method: Remove
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+formal: p_node type:Tree method: Remove
+exprType:Tree
+formal: c_node type:Tree method: Remove
+exprType:Tree
+formal: p_node type:Tree method: Remove
+exprType:Tree
+formal: c_node type:Tree method: Remove
+exprType:Tree
+In Method call:boolean
+local: auxkey1 type:int method: Remove
+formal: c_node type:Tree method: Remove
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:int
+local: t type:Tree method: Remove
+formal: p_node type:Tree method: Remove
+exprType:Tree
+methodOwnerRefName:Tree
+ownerClassData:ex3.ClassData@402e37bc
+In Method call:Tree
+local: auxkey2 type:int method: Remove
+local: t type:Tree method: Remove

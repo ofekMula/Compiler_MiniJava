@@ -1,0 +1,2 @@
+return required:int
+field: arr type:int-array method: foo

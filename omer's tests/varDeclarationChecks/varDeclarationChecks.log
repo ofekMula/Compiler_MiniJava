@@ -1,0 +1,206 @@
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+In Method call:int
+return required:int
+local: aux01 type:int method: Start
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+formal: sz type:int method: Start
+exprType:int
+formal: sz type:int method: Start
+exprType:int
+In Method call:int
+local: aux02 type:int method: Start
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+In Method call:int
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+In Method call:boolean
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+In Method call:boolean
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+In Method call:boolean
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+In Method call:boolean
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+In Method call:boolean
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+In Method call:boolean
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+In Method call:boolean
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+In Method call:boolean
+return required:boolean
+local: aux01 type:int method: Search
+local: bs01 type:boolean method: Search
+local: right type:int method: Search
+field: number type:int-array method: Search
+exprType:int-array
+local: right type:int method: Search
+local: right type:int method: Search
+exprType:int
+local: left type:int method: Search
+local: var_cont type:boolean method: Search
+local: var_cont type:boolean method: Search
+exprType:boolean
+while in
+local: medium type:int method: Search
+local: left type:int method: Search
+exprType:int
+local: right type:int method: Search
+exprType:int
+local: medium type:int method: Search
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+local: medium type:int method: Search
+exprType:int
+local: medium type:int method: Search
+exprType:int
+In Method call:int
+local: aux01 type:int method: Search
+field: number type:int-array method: Search
+exprType:int-array
+local: medium type:int method: Search
+exprType:int
+formal: num type:int method: Search
+exprType:int
+local: aux01 type:int method: Search
+exprType:int
+local: right type:int method: Search
+local: medium type:int method: Search
+exprType:int
+local: left type:int method: Search
+local: medium type:int method: Search
+exprType:int
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+local: aux01 type:int method: Search
+exprType:int
+formal: num type:int method: Search
+exprType:int
+local: aux01 type:int method: Search
+exprType:int
+formal: num type:int method: Search
+exprType:int
+In Method call:boolean
+local: var_cont type:boolean method: Search
+local: var_cont type:boolean method: Search
+local: right type:int method: Search
+exprType:int
+local: left type:int method: Search
+exprType:int
+local: var_cont type:boolean method: Search
+local: nt type:int method: Search
+while out
+methodOwnerRefName:BS
+ownerClassData:ex3.ClassData@3a079870
+local: aux01 type:int method: Search
+exprType:int
+formal: num type:int method: Search
+exprType:int
+local: aux01 type:int method: Search
+exprType:int
+formal: num type:int method: Search
+exprType:int
+In Method call:boolean
+local: bs01 type:boolean method: Search
+local: bs01 type:boolean method: Search
+local: bs01 type:boolean method: Search
+exprType:boolean
+return required:int
+local: count01 type:int method: Div
+local: count02 type:int method: Div
+local: aux03 type:int method: Div
+formal: num type:int method: Div
+exprType:int
+local: count02 type:int method: Div
+exprType:int
+local: aux03 type:int method: Div
+exprType:int
+while in
+local: count01 type:int method: Div
+local: count01 type:int method: Div
+exprType:int
+local: count02 type:int method: Div
+local: count02 type:int method: Div
+exprType:int
+while out
+local: count01 type:int method: Div
+exprType:int
+return required:boolean
+local: retval type:boolean method: Compare
+local: aux02 type:int method: Compare
+formal: num2 type:int method: Compare
+exprType:int
+formal: num1 type:int method: Compare
+exprType:int
+formal: num2 type:int method: Compare
+exprType:int
+local: retval type:boolean method: Compare
+formal: num1 type:int method: Compare
+exprType:int
+local: aux02 type:int method: Compare
+exprType:int
+local: retval type:boolean method: Compare
+local: retval type:boolean method: Compare
+local: retval type:boolean method: Compare
+exprType:boolean
+return required:int
+local: j type:int method: Print
+local: j type:int method: Print
+exprType:int
+field: size type:int method: Print
+exprType:int
+while in
+field: number type:int-array method: Print
+exprType:int-array
+local: j type:int method: Print
+exprType:int
+local: j type:int method: Print
+local: j type:int method: Print
+exprType:int
+while out
+return required:int
+field: size type:int method: Init
+formal: sz type:int method: Init
+exprType:int
+field: number type:int-array method: Init
+formal: sz type:int method: Init
+exprType:int
+local: j type:int method: Init
+local: k type:int method: Init
+field: size type:int method: Init
+exprType:int
+local: j type:int method: Init
+exprType:int
+field: size type:int method: Init
+exprType:int
+while in
+local: aux01 type:int method: Init
+local: j type:int method: Init
+exprType:int
+local: aux02 type:int method: Init
+local: k type:int method: Init
+exprType:int
+field: number type:int-array method: Init
+local: j type:int method: Init
+exprType:int
+local: aux01 type:int method: Init
+exprType:int
+local: aux02 type:int method: Init
+exprType:int
+local: j type:int method: Init
+local: j type:int method: Init
+exprType:int
+local: k type:int method: Init
+local: k type:int method: Init
+exprType:int
+while out

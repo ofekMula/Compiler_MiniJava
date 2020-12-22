@@ -18,28 +18,54 @@ public class ClassMethodDataVisitor implements Visitor {
         classNameToData = new HashMap<>();
     }
 
+    public boolean atLeastOneIsPrimitiveType(String firstType, String secondType) {
+        switch (firstType) {
+            case "int":
+            case "int-array":
+            case "boolean":
+                return true;
+            default:
+                switch (secondType) {
+                    case "int":
+                    case "int-array":
+                    case "boolean":
+                        return true;
+                    default:
+                        return false;
+                }
+        }
+    }
+    public boolean IsClassSubtypeOf(String possibleSubClass, String possibleSuperClass) {
+        if (possibleSubClass.equals(possibleSuperClass)) {
+            return true;
+        } else if (atLeastOneIsPrimitiveType(possibleSubClass, possibleSuperClass)) { // primitives from different types
+            return false;
+        } else {
+            ClassData secondClass = classNameToData.get(possibleSuperClass);
+            ArrayList<ClassData> secondSubClasses = secondClass.getSubClassesData();
+            for (ClassData subClassData : secondSubClasses) {
+                if (possibleSubClass.equals(subClassData.name)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
     public void checkOverridingMethod(MethodData overriddenMethod){
-        Map<String, String> OverriddenFormalVars = overriddenMethod.formalVars;
-        Map<String, String> methodToAddFormalArgs = methodDataAddToClass.formalVars;
+        ArrayList<FormalVars> overriddenFormalVars = overriddenMethod.formalVarsList;
+        ArrayList<FormalVars> methodToAddFormalArgs = methodDataAddToClass.formalVarsList;
         String message="An overriding method matches the ancestor's method signature with the same name";
-        if (OverriddenFormalVars.size() != methodToAddFormalArgs.size()){
+        if (overriddenFormalVars.size() != methodToAddFormalArgs.size()){
             throw new SemanticErrorException(message+": different number of formal args");
         }
-        for (Map.Entry<String, String> entry : overriddenMethod.formalVars.entrySet()){
-            if (methodToAddFormalArgs.get(entry.getKey()) ==null){
-                throw new SemanticErrorException(message+":a formal arg does not exists");
-                //todo: signature include formal args name?
-
-            }
-            if (!(methodToAddFormalArgs.get(entry.getKey())).equals(entry.getValue())){
-                throw new SemanticErrorException(message+": same arg with different type");
-
+        for ( int i=0; i<overriddenFormalVars.size();i++){
+            if( !overriddenFormalVars.get(i).type.equals(methodToAddFormalArgs.get(i).type)){
+                throw new SemanticErrorException(message+":formals with diff types");
             }
         }
-        if (!overriddenMethod.returnType.equals(methodDataAddToClass.returnType)){
+        if (!IsClassSubtypeOf(methodDataAddToClass.returnType,overriddenMethod.returnType)){
             throw new SemanticErrorException(message+": different return type");
 
-            //todo: check correctness - a covariant static return type need to check.
         }
     }
 

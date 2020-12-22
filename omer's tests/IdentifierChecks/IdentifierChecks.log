@@ -1,0 +1,8 @@
+return required:int
+local: b type:Banana method: fun
+local: b type:Banana method: fun
+exprType:Banana
+methodOwnerRefName:Banana
+ownerClassData:ex3.ClassData@15761df8
+In Method call:int
+return required:int
