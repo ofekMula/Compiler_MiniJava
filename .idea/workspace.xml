@@ -19,14 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="- added test for override method.">
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingDifferentFormalName/OverridingDifferentFormalName.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingDifferentFormalName/OverridingDifferentFormalName.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingDifferentFormalType/OverridingDifferentFormalType.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingDifferentFormalType/OverridingDifferentFormalType.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingSameSignInvalid/OverridingSameSignInvalid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OverridingSameSignInvalid/OverridingSameSignInvalid.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/tester.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/tester.sh" afterDir="false" />
+    <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="added more tests.">
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +244,13 @@
       <option name="presentableId" value="LOCAL‎00018" />
       <updated>1608578337336</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL‎00019" summary="added more tests.">
+      <created>1608644259692</created>
+      <option name="number" value="LOCAL‎00019" />
+      <option name="presentableId" value="LOCAL‎00019" />
+      <updated>1608644259692</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +281,8 @@
     <MESSAGE value="added changes SemanticAnalysisVisitor" />
     <MESSAGE value="- added tests for cases 1-8 + u[dated tester.sh&#10;- out prog passes Yotam's tests and Ofek's tests." />
     <MESSAGE value="- added test for override method." />
-    <option name="LAST_COMMIT_MESSAGE" value="- added test for override method." />
+    <MESSAGE value="added more tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="added more tests." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
