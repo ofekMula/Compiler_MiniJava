@@ -40,7 +40,7 @@ test AssignmentValid.java AssignmentValid
 test InitVarInvalid.java InitVarInvalid
 test InitVarValid.java InitVarValid
 test OwnerExprInvalid.java OwnerExprInvalid
-test OwnerExprValid.java OwnerExprValid
+test NewClassValid.java OwnerExprValid
 test MethodInvalid MethodInvalid
 
 test ClassPrecedingInvalid ClassPrecedingInvalid

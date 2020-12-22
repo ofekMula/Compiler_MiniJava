@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="fix bugs">
+    <list default="true" id="7a8c650f-7039-4637-8840-268058b4de7a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/tester.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3Tests/Ex3Tests/tester.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +45,19 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ex3Tests/Ex3Tests/#15-fail" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Shirly\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\#15-fail" />
+      <recent name="C:\Users\Shirly\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\#15-ok" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Shirly\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\#15-fail" />
+      <recent name="C:\Users\Shirly\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\#13-fail" />
+      <recent name="C:\Users\Shirly\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\NewClass#9" />
+      <recent name="C:\Users\Shirly\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -60,7 +75,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\Users\Shirly\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OwnerExprValid\OwnerExprValid.java.xml&quot; out.txt" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic C:\Users\Shirly\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\#14-fail\ref4.xml C:\Users\Shirly\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\#14-fail\ref4.xml.res" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,7 +148,7 @@
       <workItem from="1607529030389" duration="3926000" />
       <workItem from="1608052688370" duration="1492000" />
       <workItem from="1608394138563" duration="17441000" />
-      <workItem from="1608581099975" duration="210000" />
+      <workItem from="1608581099975" duration="18700000" />
     </task>
     <task id="LOCAL-00007" summary="-">
       <created>1606880859101</created>
@@ -198,7 +213,28 @@
       <option name="project" value="LOCAL" />
       <updated>1608460696207</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="-">
+      <created>1608581428477</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1608581428477</updated>
+    </task>
+    <task id="LOCAL-00017" summary="ex3 tests">
+      <created>1608608245290</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608608245290</updated>
+    </task>
+    <task id="LOCAL-00018" summary="while fix">
+      <created>1608608291350</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608608291350</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,10 +262,12 @@
     <MESSAGE value="MethodCallExpr fix for Factorial.java" />
     <MESSAGE value="fields offset fix, added fields to assignArray and changed the order to match LinearSearch.java example" />
     <MESSAGE value="wasLoaded added to all" />
-    <MESSAGE value="-" />
     <MESSAGE value="ex3 9-16" />
     <MESSAGE value="fix bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
+    <MESSAGE value="-" />
+    <MESSAGE value="ex3 tests" />
+    <MESSAGE value="while fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="while fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -264,13 +302,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java</url>
-          <line>352</line>
+          <line>376</line>
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java</url>
-          <line>344</line>
+          <line>368</line>
           <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java</url>
+          <line>360</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java</url>
+          <line>430</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java</url>
+          <line>434</line>
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

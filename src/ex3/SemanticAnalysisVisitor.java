@@ -227,6 +227,18 @@ public class SemanticAnalysisVisitor implements Visitor {
             throw new SemanticErrorException("System.out.println arg type isn't int.");
     }
 
+    private void addToInitialized(String varName){
+        if (isInWhile) {
+            whileInitializedLocalVars.add(varName);
+        } else {
+            if (isInIf) {
+                newInitializedLocalVars.add(varName);
+            } else {
+                initializedLocalVars.add(varName);
+            }
+        }
+    }
+
     @Override
     public void visit(AssignStatement assignStatement) {
         String lvType = getTypeFromMap(assignStatement.lv());
@@ -239,20 +251,11 @@ public class SemanticAnalysisVisitor implements Visitor {
             throw new SemanticErrorException("Assign of " + rvType + " to " + lvType + " (AssignStatement,#16)");
         }
 
-        if (isInWhile) {
-            whileInitializedLocalVars.add(assignStatement.lv());
-        } else {
-            if (isInIf) {
-                newInitializedLocalVars.add(assignStatement.lv());
-            } else {
-                initializedLocalVars.add(assignStatement.lv());
-            }
-        }
+        addToInitialized(assignStatement.lv());
     }
 
     @Override
     public void visit(AssignArrayStatement assignArrayStatement) {
-        // todo: no need to check initialize inside array?
         String idType = getTypeFromMap(assignArrayStatement.lv());
         if (idType == null) {
             throw new SemanticErrorException(assignArrayStatement.lv()
@@ -266,6 +269,8 @@ public class SemanticAnalysisVisitor implements Visitor {
         assignArrayStatement.rv().accept(this);
         if (!exprType.equals("int"))
             throw new SemanticErrorException("The array assign to value isn't of type int.");
+
+        addToInitialized(assignArrayStatement.lv());
     }
 
     private void visitBinaryExpr(BinaryExpr e, String infixSymbol) {
@@ -419,7 +424,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         if (varType == null) {
             throw new SemanticErrorException("var " + varName + " is not defined for the current method, (IdentifierExpr, #14)");
         }
-        if (!(methodData.isField(varName) || methodData.isFormal(varName) || varType.equals("int-array"))) {
+        if (!(methodData.isField(varName) || methodData.isFormal(varName))) {
             // must be initialized before
             if (isInWhile) {
                 if (!(initializedLocalVars.contains(varName) || whileInitializedLocalVars.contains(varName))) {
