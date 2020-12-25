@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>args</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <int-literal>
+                            <num>0</num>
+                        </int-literal>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        
+        <classdecl>
+            <name>Base</name>
+            <fields>
+                <field>
+                    <lineNumber>30</lineNumber>
+                    <type>
+                        <int/>
+                    </type>
+                    <name>data</name>
+                </field>
+            </fields>
+            <methoddecls/>
+        </classdecl>
+        <classdecl>
+            <name>Derived</name>
+            <superName>Base</superName>
+            <fields/>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>47</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>set</name>
+                    <formals>
+                        <formal>
+                            <lineNumber>42</lineNumber>
+                            <type>
+<int/>
+                            </type>
+                            <name>x</name>
+                        </formal>
+                    </formals>
+                    <vardecls/>
+                    <body>
+
+<assign>
+                            <lv>data</lv>
+                            <rv>
+                                <call>
+                                    <ownerExpr>
+                                        <this/>
+                                    </ownerExpr>
+                                    <methodId>doesntExist</methodId>
+                                    <actuals/>
+                                </call>
+                            </rv>
+                        </assign>
+
+
+                
+                    </body>
+                    <ret>
+                        <ref-id>
+                            <id>data</id>
+                        </ref-id>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>

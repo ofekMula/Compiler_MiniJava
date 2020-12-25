@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="ast.xsd" ?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>args</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <add>
+                        <e1>
+                            <int-literal>
+                                <num>1</num>
+                            </int-literal>
+                        </e1>
+                        <e2>
+                            <mult>
+                                <e1>
+                                    <int-literal>
+                                        <num>5</num>
+                                    </int-literal>
+                                </e1>
+                                <e2>
+                                    <int-literal>
+                                        <num>7</num>
+                                    </int-literal>
+                                </e2>
+                            </mult>
+                        </e2>
+                    </add>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls></classdecls>
+</program>

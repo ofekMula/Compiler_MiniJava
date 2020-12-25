@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>args</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <int-literal>
+                        <num>1</num>
+                    </int-literal>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>A</name>
+            <fields>
+            
+                <field>
+                    <lineNumber>10</lineNumber>
+                    <type>
+                        <int/>
+                    </type>
+                    <name>x</name>
+                </field>
+                <field>
+                    <lineNumber>12</lineNumber>
+                    <type>
+                        <ref>
+    <id>B</id>
+</ref>
+                    </type>
+                    <name>b</name>
+                </field>
+            </fields>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>27</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>foo</name>
+                    <formals/>
+                    
+                    <vardecls/>
+                    <body>
+                    
+                    
+                    <assign>
+                            <lv>b</lv>
+                            <rv>
+                                <int-literal>
+                        <num>1</num>
+                    </int-literal>
+                            </rv>
+                        </assign>
+                    
+
+
+                    </body>
+                    <ret>
+                        <int-literal>
+                        <num>1</num>
+                        </int-literal>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+        <classdecl>
+            <name>B</name>
+            <fields/>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>27</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>run</name>
+                    <formals>
+                    <formal>
+                            <lineNumber>16</lineNumber>
+                            <type>
+<int/>
+                            </type>
+                            <name>sz</name>
+                        </formal>
+                    </formals>
+                    <vardecls/>
+                    <body/>
+                    <ret>
+                        <int-literal>
+                        <num>1</num>
+                        </int-literal>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>

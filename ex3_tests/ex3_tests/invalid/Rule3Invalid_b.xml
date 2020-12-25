@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>a</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <int-literal>
+                        <num>0</num>
+                    </int-literal>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>Base</name>
+            <fields/>
+            <methoddecls/>
+        </classdecl>
+        <classdecl>
+            <name>Child</name>
+            <superName>Base</superName>
+            <fields/>
+            <methoddecls/>
+        </classdecl>
+        <classdecl>
+            <name>Main</name>
+            <fields/>
+            <methoddecls/>
+        </classdecl>
+    </classdecls>
+</program>

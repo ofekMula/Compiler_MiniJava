@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>args</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <call>
+                        <ownerExpr>
+                            <new-object>
+                                <classId>Classes</classId>
+                            </new-object>
+                        </ownerExpr>
+                        <methodId>run</methodId>
+                        <actuals/>
+                    </call>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>Classes</name>
+            <fields>
+            <field>
+                <lineNumber>10</lineNumber>
+                <type>
+                    <ref>
+                        <id>Base</id>
+                    </ref>
+                </type>
+                <name>b</name>
+            </field>
+            </fields>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>25</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>run</name>
+                    <formals/>
+                    <vardecls/>
+                        
+                    <body>
+                        
+                    </body>
+                    <ret>
+                        <int-literal>
+                            <num>0</num>
+                        </int-literal>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>
