@@ -204,6 +204,10 @@ public class ClassMethodDataVisitor implements Visitor {
         methodDecl.returnType().accept(this); // in accept the type will be decided in refName
         returnType = refName;
 
+        if (returnType == null){ //todo: check if needed
+            throw new SemanticErrorException("returnType of a method is null");
+        }
+
         for (var formal : methodDecl.formals()) {
             formal.accept(this); // in accept the type will be decided in refName
 
@@ -256,6 +260,9 @@ public class ClassMethodDataVisitor implements Visitor {
 
     @Override
     public void visit(IfStatement ifStatement) {
+        if (ifStatement.cond() == null || ifStatement.thencase() == null ||  ifStatement.elsecase() == null){ //todo: check if needed
+            throw new SemanticErrorException("one part of IfStatement is null");
+        }
 
         ifStatement.cond().accept(this);
 
