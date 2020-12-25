@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<program>
+    <mainclass>
+        <name>MainClass</name>
+        <argsName>a</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <int-literal>
+                        <num>0</num>
+                    </int-literal>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>Base</name>
+            <superName>MainClass</superName>
+            <fields/>
+            <methoddecls/>
+        </classdecl>
+    </classdecls>
+</program>

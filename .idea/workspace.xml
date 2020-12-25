@@ -19,8 +19,369 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="ricky's NEW changeS">
+    <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/10methodCallOnlyFromObject/10methodCallOnlyFromObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/10methodCallOnlyFromObject/10methodCallOnlyFromObject.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/10methodCallOnlyFromObject/10methodCallOnlyFromObject.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/11methodCallStaticType/11methodCallStaticType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/11methodCallStaticType/11methodCallStaticType.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/11methodCallStaticType/11methodCallStaticType.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/12OwnerExprInvalid/12OwnerExprInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/12OwnerExprInvalid/12OwnerExprInvalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/12OwnerExprInvalid/12OwnerExprInvalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/12OwnerExprThisValid/12OwnerExprThisValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/12OwnerExprThisValid/12OwnerExprThisValid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/12OwnerExprThisValid/12OwnerExprThisValid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/13LengthInvalid/13LengthInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/13LengthInvalid/13LengthInvalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/13LengthInvalid/13LengthInvalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/13LengthValid/13LengthValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/13LengthValid/13LengthValid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/13LengthValid/13LengthValid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/13LengthValid2/13LengthValid2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/13LengthValid2/13LengthValid2.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/13LengthValid2/13LengthValid2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/14definedInDiffClass/14definedInDiffClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/14definedInDiffClass/14definedInDiffClass.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/14definedInDiffClass/14definedInDiffClass.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/14notDefined/14notDefined.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/14notDefined/14notDefined.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/14notDefined/14notDefined.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/15IfInitialized/15IfInitialized.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/15IfInitialized/15IfInitialized.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/15IfInitialized/15IfInitialized.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/16assignmentInvalid/16assignmentInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/16assignmentInvalid/16assignmentInvalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/16assignmentInvalid/16assignmentInvalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/16assignmentValid/16assignmentValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/16assignmentValid/16assignmentValid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/16assignmentValid/16assignmentValid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/17ifCond/17ifCond.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/17ifCond/17ifCond.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/17ifCond/17ifCond.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/17whileCond/17whileCond.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/17whileCond/17whileCond.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/17whileCond/17whileCond.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/18returnValueInvalid/18returnValueInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/18returnValueInvalid/18returnValueInvalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/18returnValueInvalid/18returnValueInvalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/18returnValueValid/18returnValueValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/18returnValueValid/18returnValueValid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/18returnValueValid/18returnValueValid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/1orderOfClassesDecls/1orderOfClassesDecls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/1orderOfClassesDecls/1orderOfClassesDecls.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/1orderOfClassesDecls/1orderOfClassesDecls.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/20printInt/20printInt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/20printInt/20printInt.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/20printInt/20printInt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/21addInvalid/21addInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/21addInvalid/21addInvalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/21addInvalid/21addInvalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/21multInvalid/21multInavlid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/21multInvalid/21multInvalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/21multInvalid/21multInvalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/21notInvalid/21notInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/21notInvalid/21notInvalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/21notInvalid/21notInvalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/22arrayInvalid/22arrayInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/22arrayInvalid/22arrayInvalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/22arrayInvalid/22arrayInvalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/24varsWithSameName/24varsWithSameName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/24varsWithSameName/24varsWithSameName.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/24varsWithSameName/24varsWithSameName.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/2mainInheritance/2mainInheritance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/2mainInheritance/2mainInheritance.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/2mainInheritance/2mainInheritance.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/3classesWithSameName/3classesWithSameName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/3classesWithSameName/3classesWithSameName.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/3classesWithSameName/3classesWithSameName.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/4FieldInheritClassSameName/4FieldInheritClassSameName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/4FieldInheritClassSameName/4FieldInheritClassSameName.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/4FieldInheritClassSameName/4FieldInheritClassSameName.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/4FieldWithSameDecl/4FieldWithSameDecl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/4FieldWithSameDecl/4FieldWithSameDecl.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/4FieldWithSameDecl/4FieldWithSameDecl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/5methodsWithSameName/5methodsWithSameName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/5methodsWithSameName/5methodsWithSameName.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/5methodsWithSameName/5methodsWithSameName.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/6declOfOverrideMethodFotmalVal/6declOfOverrideMethodFotmalVal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/6declOfOverrideMethodFotmalVal/6declOfOverrideMethodFotmalVal.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/6declOfOverrideMethodFotmalVal/6declOfOverrideMethodFotmalVal.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/6declOfOverrideMethodSubTypeValid/6declOfOverrideMethodSubTypeValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/6declOfOverrideMethodSubTypeValid/6declOfOverrideMethodSubTypeValid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/6declOfOverrideMethodSubTypeValid/6declOfOverrideMethodSubTypeValid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/6declOfOverrodeMethodRetVal/6declOfOverrodeMethodRetVal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/6declOfOverrodeMethodRetVal/6declOfOverrodeMethodRetVal.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/6declOfOverrodeMethodRetVal/6declOfOverrodeMethodRetVal.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/8declareObjectOfUndeclaredClass/8declareObjectOfUndeclaredClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/8declareObjectOfUndeclaredClass/8declareObjectOfUndeclaredClass.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/8declareObjectOfUndeclaredClass/8declareObjectOfUndeclaredClass.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/9Invalid/9Invalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/9Invalid/9Invalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/9Invalid/9Invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/9Valid/9Valid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/9Valid/9Valid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/9Valid/9Valid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/AssignmentInvalid/AssignmentInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/AssignmentInvalid/AssignmentInvalid.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/AssignmentInvalid/AssignmentInvalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/AssignmentValid/AssignmentValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/AssignmentValid/AssignmentValid.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/AssignmentValid/AssignmentValid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/InitVarInvalid/InitVarInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/InitVarInvalid/InitVarInvalid.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/InitVarInvalid/InitVarInvalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/InitVarValid/InitVarValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/InitVarValid/InitVarValid.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/InitVarValid/InitVarValid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/MethodInvalid/MethodInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/MethodInvalid/MethodInvalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/MethodInvalid/MethodInvalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/OwnerExprInvalid/OwnerExprInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/OwnerExprInvalid/OwnerExprInvalid.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/OwnerExprInvalid/OwnerExprInvalid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/OwnerExprValid/OwnerExprValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/OwnerExprValid/OwnerExprValid.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/OwnerExprValid/OwnerExprValid.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3-tests/ex3-tests/tester.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/AssignmentInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/AssignmentInvalid.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/InitVarInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/InitVarInvalid.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/InitVarInvalid2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/InitVarInvalid2.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/OwnerExprInvalid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/OwnerExprInvalid.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule10Invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule10Invalid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule10Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule10Invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule11Invalid_not_declared_in_owner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule11Invalid_not_declared_in_owner.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule11Invalid_not_declared_in_owner2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule11Invalid_not_declared_in_owner2.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule11Invalid_wrong_params.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule11Invalid_wrong_params.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule11Invalid_wrong_params2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule11Invalid_wrong_params2.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule11Invalid_wrong_params3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule11Invalid_wrong_params3.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule11Invalid_wrong_params4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule11Invalid_wrong_params4.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule12Invalid_a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule12Invalid_a.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule12Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule12Invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule13Invalid_a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule13Invalid_a.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule13Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule13Invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule13Invalid_c.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule13Invalid_c.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule14Invalid_a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule14Invalid_a.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule14Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule14Invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule14Invalid_c.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule14Invalid_c.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule16Invalid_a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule16Invalid_a.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule16Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule16Invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule16Invalid_c.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule16Invalid_c.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule16Invalid_call_return.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule16Invalid_call_return.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule17Invalid_if.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule17Invalid_while.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule18Invalid_a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule18Invalid_a.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule18Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule18Invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule18Invalid_c.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule18Invalid_c.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule18Invalid_d.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule18Invalid_d.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule18Invalid_e.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule18Invalid_e.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule18Invalid_non_exist.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule18Invalid_non_exist.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule1Invalid_a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule1Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule20Invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule21invalid_a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule21invalid_a.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule21invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule21invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule21invalid_c.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule21invalid_c.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule21invalid_d.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule21invalid_d.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule21invalid_e.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule21invalid_e.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule22Invalid_a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule22Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule23Invalid_a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule23Invalid_a.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule23Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule23Invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule23Invalid_c.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule23Invalid_c.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule24Invalid_formals.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule24Invalid_variables.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule25Invalid_a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule25Invalid_a.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule25Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule25Invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule25Invalid_nonexisting_param.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule25Invalid_nonexisting_param.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule2Invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule2Invalid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule2Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule2Invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule3Invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule3Invalid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule3Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule3Invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule4Invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule4Invalid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule4Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule4Invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule4Invalid_c.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule4Invalid_c.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule5Invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule5Invalid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule6Invalid_covariance_return.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule6Invalid_covariance_return.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule6Invalid_formal_types.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule6Invalid_formal_types.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule6Invalid_formals.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule6Invalid_formals.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule6Invalid_formals_class.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule6Invalid_formals_class.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule6Invalid_ret.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule6Invalid_ret.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule6Invalid_ret_indirect.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule6Invalid_ret_indirect.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule8Invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule8Invalid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule8Invalid_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule8Invalid_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule9Invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/Rule9Invalid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/VarTypeBad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/VarTypeBad.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/field_with_local_var_shadowing_Error_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/field_with_while_and_assign_statements_Error15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/formal_param_with_while_and_assign_statements_Error15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/local_var_with_if_and_assign_array_statements_Error15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/local_var_with_while_and_assign_statements_Error15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/method_and_variable_with_the_same_name_Error15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/method_with_while_and_assign_statements_Error15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/invalid/variable_and_method_with_the_same_name_Error15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/tester_inv.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/And.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/And.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Arrays.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Arrays.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/AssignmentValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/AssignmentValid.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/BinarySearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/BinarySearch.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/BinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/BinaryTree.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/BubbleSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/BubbleSort.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Classes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Classes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/CompoundExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/CompoundExpr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Factorial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Factorial.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/If.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/If.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/InitVarValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/InitVarValid.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/LinearSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/LinearSearch.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/LinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/LinkedList.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/OwnerExprValid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/OwnerExprValid.java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/QuickSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/QuickSort.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule11Valid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule13Valid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule13Valid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule16Valid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule16Valid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule18Valid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule18Valid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule25Valid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule25Valid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule6Valid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule6Valid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule6Valid_covariance.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule6Valid_covariance.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule6Valid_covariance_b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule6Valid_covariance_b.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule6Valid_covariance_c.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule8Valid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule8Valid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule9Valid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Rule9Valid.xml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Simple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/Simple.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/SimpleExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/SimpleExpr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/TreeVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/TreeVisitor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/TreeVisitorBrotherMethod.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/TreeVisitorChildMethod.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/TreeVisitorFieldRename.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/TreeVisitorMethodRename.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/VarType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/VarType.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/and_short_circuit_arr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/and_short_circuit_arr_backward.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/array_access_in_access.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/array_iota_print_all.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/array_iota_print_all_oob.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/array_iota_simple.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/array_iota_simple_neg_size.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/array_iota_simple_oob.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/binary_search.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/binary_tree.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/bubble_sort.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/empty_vtable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/empty_vtable.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/field_related_sibling_class.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/field_unrelated_sibling_class.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/field_with_if_and_assign_array_statements.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/field_with_sysout_and_array_length_statements.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/formal_param_with_if_and_assign_array_statements.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/linear_search.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/linked_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/method_related_sibling_class.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/method_related_sibling_class.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/method_unrelated_sibling_class.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/method_with_new_object.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/method_with_ref_id.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/method_with_sysout_statement.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/method_with_this.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/partial_overrides.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/quick_sort.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/simple_if.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/simple_if_and.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/simple_print.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/simple_print_mult.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/subclass_fields.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/subclass_fields.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/thisDotMethod.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/tree_visitor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/valid/tree_visitor.xml.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,33 +413,35 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid4" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid3" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid2" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\SameFieldInClass" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\src\duda\Compiler\Ex3Tests\Ex3Tests\OurTests" />
-      <recent name="C:\src\duda\Compiler\Ex3Tests" />
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\Items1-8_valid" />
       <recent name="C:\src\duda\Compiler\src\ex3\tests" />
       <recent name="C:\src\duda\Compiler\src\ex3" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ex3" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\src\duda\Compiler\Ex3Tests\Ex3Tests\OurTests" />
-      <recent name="C:\src\duda\Compiler\src\ex3" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\src\duda\Compiler\Ex3Tests\Ex3Tests\OurTests\#17-FAIL-WhileNotBool.xml&quot; result.txt" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\omer_ex3\ClassChecks\method_same_name_in_inheritance_class2.java.xml&quot; result.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -159,9 +522,6 @@
       <workItem from="1608369030416" duration="13000" />
       <workItem from="1608452249056" duration="190000" />
       <workItem from="1608534675983" duration="631000" />
-      <workItem from="1608539981750" duration="955000" />
-      <workItem from="1608572214878" duration="7904000" />
-      <workItem from="1608620810366" duration="5000" />
     </task>
     <task id="LOCAL-00007" summary="--">
       <created>1607005181605</created>
@@ -233,28 +593,49 @@
       <option name="project" value="LOCAL" />
       <updated>1608401483147</updated>
     </task>
-    <task id="LOCAL-00017" summary="moved test to Ex3Tests">
-      <created>1608538054091</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1608538054091</updated>
+    <task id="LOCAL‎00017" summary="- added tests for cases 1-8 + u[dated tester.sh&#10;- out prog passes Yotam's tests and Ofek's tests.">
+      <created>1608575999153</created>
+      <option name="number" value="LOCAL‎00017" />
+      <option name="presentableId" value="LOCAL‎00017" />
+      <updated>1608575999153</updated>
     </task>
-    <task id="LOCAL-00018" summary="--">
-      <created>1608572551379</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1608572551379</updated>
+    <task id="LOCAL‎00018" summary="- added test for override method.">
+      <created>1608578337335</created>
+      <option name="number" value="LOCAL‎00018" />
+      <option name="presentableId" value="LOCAL‎00018" />
+      <updated>1608578337336</updated>
     </task>
-    <task id="LOCAL-00019" summary="added Tests and fixed bug">
-      <created>1608580352213</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1608580352213</updated>
+    <task id="LOCAL‎00019" summary="added more tests.">
+      <created>1608644259692</created>
+      <option name="number" value="LOCAL‎00019" />
+      <option name="presentableId" value="LOCAL‎00019" />
+      <updated>1608644259692</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL‎00020" summary="added more tests.">
+      <created>1608644288834</created>
+      <option name="number" value="LOCAL‎00020" />
+      <option name="presentableId" value="LOCAL‎00020" />
+      <updated>1608644288834</updated>
+    </task>
+    <task id="LOCAL‎00021" summary="- fixed overriding method signature check.&#10;- added omer's tests .">
+      <created>1608656529829</created>
+      <option name="number" value="LOCAL‎00021" />
+      <option name="presentableId" value="LOCAL‎00021" />
+      <updated>1608656529829</updated>
+    </task>
+    <task id="LOCAL‎00022" summary="- changed tests folder name">
+      <created>1608656713816</created>
+      <option name="number" value="LOCAL‎00022" />
+      <option name="presentableId" value="LOCAL‎00022" />
+      <updated>1608656713816</updated>
+    </task>
+    <task id="LOCAL‎00023" summary="- fixed bug in return type check">
+      <created>1608657573837</created>
+      <option name="number" value="LOCAL‎00023" />
+      <option name="presentableId" value="LOCAL‎00023" />
+      <updated>1608657573837</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,116 +659,18 @@
     <MESSAGE value="printing to screen for debug" />
     <MESSAGE value="+AssignStatement +fixed bugs in arrays" />
     <MESSAGE value="added check to see if the field arr length was already loaded" />
+    <MESSAGE value="--" />
     <MESSAGE value="removed todos" />
     <MESSAGE value="ricky's change" />
     <MESSAGE value="ricky's NEW changeS" />
     <MESSAGE value="added changes SemanticAnalysisVisitor" />
-    <MESSAGE value="moved test to Ex3Tests" />
-    <MESSAGE value="--" />
-    <MESSAGE value="added Tests and fixed bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Tests and fixed bug" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="538" y="240" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608574742922">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="538" y="240" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1608574742922" />
-    <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533759054" />
-    <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1608375997873" />
-    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608376229090">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608376229090" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1608369930194">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608369930194" />
-    <state width="1481" height="257" key="GridCell.Tab.0.bottom" timestamp="1608580751285">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1481" height="257" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608580751285" />
-    <state width="1865" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
-    <state width="1865" height="392" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1481" height="257" key="GridCell.Tab.0.center" timestamp="1608580751284">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1481" height="257" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608580751284" />
-    <state width="1865" height="319" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
-    <state width="1865" height="392" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1481" height="257" key="GridCell.Tab.0.left" timestamp="1608580751284">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1481" height="257" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608580751284" />
-    <state width="1865" height="319" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
-    <state width="1865" height="392" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1481" height="257" key="GridCell.Tab.0.right" timestamp="1608580751285">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1481" height="257" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608580751285" />
-    <state width="1865" height="319" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
-    <state width="1865" height="392" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1865" height="392" key="GridCell.Tab.1.bottom" timestamp="1608401493792">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1865" height="392" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
-    <state width="1865" height="319" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
-    <state width="1865" height="392" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540750" />
-    <state width="1865" height="392" key="GridCell.Tab.1.center" timestamp="1608401493792">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1865" height="392" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
-    <state width="1865" height="319" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
-    <state width="1865" height="392" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540750" />
-    <state width="1865" height="392" key="GridCell.Tab.1.left" timestamp="1608401493792">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1865" height="392" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
-    <state width="1865" height="319" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
-    <state width="1865" height="392" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540750" />
-    <state width="1865" height="392" key="GridCell.Tab.1.right" timestamp="1608401493792">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1865" height="392" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
-    <state width="1865" height="319" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
-    <state width="1865" height="392" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540750" />
-    <state x="184" y="86" key="MergeDialog" timestamp="1607004840870">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607004840870" />
-    <state x="323" y="116" key="MultipleFileMergeDialog" timestamp="1608580374776">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="323" y="116" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1608580374776" />
-    <state x="769" y="174" key="RollbackChangesDialog" timestamp="1608369715417">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="769" y="174" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608369715417" />
-    <state x="351" y="0" key="SettingsEditor" timestamp="1608540000865">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="351" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607532194553" />
-    <state x="351" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1608540000865" />
-    <state x="362" y="149" key="Vcs.Push.Dialog.v2" timestamp="1608580390559">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608580390559" />
-    <state x="453" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533369301" />
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608538055128" />
-    <state x="484" y="149" width="686" height="664" key="find.popup" timestamp="1607190221445">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="484" y="149" width="686" height="664" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1607190221445" />
-    <state x="605" y="188" width="710" height="664" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607007138197" />
-    <state x="703" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607004852072">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="703" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607004852072" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1608376746105">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="431" y="4" width="840" height="820" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608311333279" />
-    <state x="539" y="5" width="1050" height="1035" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533350865" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608376746105" />
+    <MESSAGE value="- added tests for cases 1-8 + u[dated tester.sh&#10;- out prog passes Yotam's tests and Ofek's tests." />
+    <MESSAGE value="- added test for override method." />
+    <MESSAGE value="added more tests." />
+    <MESSAGE value="- fixed overriding method signature check.&#10;- added omer's tests ." />
+    <MESSAGE value="- changed tests folder name" />
+    <MESSAGE value="- fixed bug in return type check" />
+    <option name="LAST_COMMIT_MESSAGE" value="- fixed bug in return type check" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -407,16 +690,51 @@
           <line>117</line>
           <option name="timeStamp" value="102" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="ex2.proj.ClassMethodDataVisitor" memberName="classDataAddToMethod" />
         <PinnedItemInfo parentTag="ex2.proj.MethodData" memberName="classData" />
-        <PinnedItemInfo parentTag="ast.ClassDecl" memberName="table" />
         <PinnedItemInfo parentTag="ex1.Symbol" memberName="insideTable" />
-        <PinnedItemInfo parentTag="ast.Program" memberName="table" />
+        <PinnedItemInfo parentTag="ast.ClassDecl" memberName="table" />
         <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+        <PinnedItemInfo parentTag="ast.Program" memberName="table" />
         <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
         <PinnedItemInfo parentTag="ex2.proj.MethodData" memberName="name" />
       </pinned-members>

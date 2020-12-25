@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>a</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <call>
+                        <ownerExpr>
+                            <new-object>
+<classId>Simple</classId>
+                            </new-object>
+                        </ownerExpr>
+                        <methodId>bar</methodId>
+                        <actuals/>
+                    </call>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>Simple</name>
+            <fields/>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>19</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>bar</name>
+                    <formals/>
+                    <vardecls>
+                        <vardecl>
+                            <lineNumber>10</lineNumber>
+                            <type>
+<int-array/>
+                            </type>
+                            <name>x</name>
+                        </vardecl>
+                    </vardecls>
+                    <body>
+                        <assign>
+                            <lv>x</lv>
+                            <rv>
+<new-int-array>
+    <lengthExpr>
+        <int-literal>
+            <num>2</num>
+        </int-literal>
+    </lengthExpr>
+</new-int-array>
+                            </rv>
+                        </assign>
+                        <assign-array>
+                            <lv>x</lv>
+                            <index>
+<int-literal>
+    <num>0</num>
+</int-literal>
+                            </index>
+                            <rv>
+<int-literal>
+    <num>1</num>
+</int-literal>
+                            </rv>
+                        </assign-array>
+                        <assign-array>
+                            <lv>x</lv>
+                            <index>
+<int-literal>
+    <num>1</num>
+</int-literal>
+                            </index>
+                            <rv>
+<int-literal>
+    <num>2</num>
+</int-literal>
+                            </rv>
+                        </assign-array>
+                        <sysout>
+                            <arg>
+<add>
+    <e1>
+        <array-access>
+            <arrayExpr>
+                <ref-id>
+                    <id>x</id>
+                </ref-id>
+            </arrayExpr>
+            <indexExpr>
+                <int-literal>
+                    <num>0</num>
+                </int-literal>
+            </indexExpr>
+        </array-access>
+    </e1>
+    <e2>
+        <array-access>
+            <arrayExpr>
+                <ref-id>
+                    <id>x</id>
+                </ref-id>
+            </arrayExpr>
+            <indexExpr>
+                <int-literal>
+                    <num>1</num>
+                </int-literal>
+            </indexExpr>
+        </array-access>
+    </e2>
+</add>
+                            </arg>
+                        </sysout>
+                    </body>
+                    <ret>
+                        <int-literal>
+                            <num>0</num>
+                        </int-literal>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>

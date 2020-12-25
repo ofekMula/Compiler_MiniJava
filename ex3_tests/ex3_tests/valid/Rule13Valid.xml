@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>args</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <int-literal>
+                        <num>1</num>
+                    </int-literal>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>A</name>
+            <fields/>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>15</lineNumber>
+                    <returnType>
+                        <int-array/>
+                    </returnType>
+                    <name>test</name>
+                    <formals/>
+                    <vardecls>
+                        <vardecl>
+                            <lineNumber>10</lineNumber>
+                            <type>
+<int-array/>
+                            </type>
+                            <name>x</name>
+                        </vardecl>
+                    </vardecls>
+                    <body>
+                    <assign>
+                            <lv>x</lv>
+                            <rv>
+<new-int-array>
+    <lengthExpr>
+        <int-literal>
+            <num>2</num>
+        </int-literal>
+    </lengthExpr>
+</new-int-array>
+                            </rv>
+                        </assign>
+                        <assign-array>
+                            <lv>x</lv>
+                            <index>
+<int-literal>
+    <num>0</num>
+</int-literal>
+                            </index>
+                            <rv>
+<int-literal>
+    <num>1</num>
+</int-literal>
+                            </rv>
+                        </assign-array>
+                        </body>
+                    <ret>
+                        <ref-id>
+            <id>x</id>
+        </ref-id>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+        <classdecl>
+            <name>B</name>
+            <superName>A</superName>
+            <fields>
+                <field>
+                    <lineNumber>12</lineNumber>
+                    <type>
+                        <ref>
+                            <id>A</id>
+                        </ref>
+                    </type>
+                    <name>theVar</name>
+                </field>
+            </fields>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>15</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>foo</name>
+                    <formals/>
+                    <vardecls/>
+                    <body>
+
+                        <assign>
+                            <lv>theVar</lv>
+                            <rv>
+                            <new-object>
+                                <classId>A</classId>
+                            </new-object>
+                            </rv>
+                        </assign>
+
+
+                    </body>
+                    <ret>
+                        <array-length>
+                            <arrayExpr>
+                                <call>
+                            <ownerExpr>
+                                <ref-id>
+            <id>theVar</id>
+        </ref-id>
+                            </ownerExpr>
+                            <methodId>test</methodId>
+                            <actuals/>
+                        </call>
+                            </arrayExpr>
+                        </array-length>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>a</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <call>
+                        <ownerExpr>
+                            <new-object>
+<classId>Simple</classId>
+                            </new-object>
+                        </ownerExpr>
+                        <methodId>bar</methodId>
+                        <actuals/>
+                    </call>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>Simple</name>
+            <fields/>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>20</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>bar</name>
+                    <formals/>
+                    <vardecls>
+                        <vardecl>
+                            <lineNumber>11</lineNumber>
+                            <type>
+<int/>
+                            </type>
+                            <name>x</name>
+                        </vardecl>
+                    </vardecls>
+                    <body>
+                        <assign>
+                            <lv>x</lv>
+                            <rv>
+<int-literal>
+    <num>10</num>
+</int-literal>
+                            </rv>
+                        </assign>
+                        <if>
+                            <cond>
+<lt>
+    <e1>
+        <ref-id>
+            <id>x</id>
+        </ref-id>
+    </e1>
+    <e2>
+        <int-literal>
+            <num>2</num>
+        </int-literal>
+    </e2>
+</lt>
+                            </cond>
+                            <thencase>
+<sysout>
+    <arg>
+        <int-literal>
+            <num>0</num>
+        </int-literal>
+    </arg>
+</sysout>
+                            </thencase>
+                            <elsecase>
+<sysout>
+    <arg>
+        <int-literal>
+            <num>1</num>
+        </int-literal>
+    </arg>
+</sysout>
+                            </elsecase>
+                        </if>
+                    </body>
+                    <ret>
+                        <int-literal>
+                            <num>0</num>
+                        </int-literal>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>

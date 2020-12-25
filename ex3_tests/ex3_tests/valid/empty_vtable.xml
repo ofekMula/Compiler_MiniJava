@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="ast.xsd" ?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>args</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <call>
+                        <ownerExpr>
+                            <new-object>
+                                <classId>Tester</classId>
+                            </new-object>
+                        </ownerExpr>
+                        <methodId>test</methodId>
+                        <actuals>
+                            <actual>
+                                <new-object>
+                                    <classId>A</classId>
+                                </new-object>
+                            </actual>
+                        </actuals>
+                    </call>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>Tester</name>
+            <fields />
+            <methoddecls>
+                <methoddecl>
+                    <returnType>
+                        <int />
+                    </returnType>
+                    <name>test</name>
+                    <formals>
+                        <formal>
+                            <type>
+                                <ref>
+                                    <id>A</id>
+                                </ref>
+                            </type>
+                            <name>a</name>
+                        </formal>
+                    </formals>
+                    <vardecls></vardecls>
+                    <body>
+                        <sysout>
+                            <arg>
+                                <int-literal>
+                                    <num>1</num>
+                                </int-literal>
+                            </arg>
+                        </sysout>
+                    </body>
+                    <ret>
+                        <int-literal>
+                            <num>0</num>
+                        </int-literal>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+        <classdecl>
+            <name>A</name>
+            <fields>
+                <field>
+                    <type>
+                        <int />
+                    </type>
+                    <name>a</name>
+                </field>
+            </fields>
+            <methoddecls></methoddecls>
+        </classdecl>
+    </classdecls>
+</program>

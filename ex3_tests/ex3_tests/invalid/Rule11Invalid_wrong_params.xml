@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>args</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <call>
+                        <ownerExpr>
+                            <new-object>
+<classId>Classes</classId>
+                            </new-object>
+                        </ownerExpr>
+                        <methodId>run</methodId>
+                        <actuals/>
+                    </call>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>Classes</name>
+            <fields/>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>25</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>run</name>
+                    <formals/>
+                    <vardecls>
+                        <vardecl>
+                            <lineNumber>10</lineNumber>
+                            <type>
+<ref>
+    <id>Base</id>
+</ref>
+                            </type>
+                            <name>b</name>
+                        </vardecl>
+                        <vardecl>
+                            <lineNumber>12</lineNumber>
+                            <type>
+<ref>
+    <id>Derived</id>
+</ref>
+                            </type>
+                            <name>d</name>
+                        </vardecl>
+                    </vardecls>
+                    <body>
+                        <assign>
+                            <lv>b</lv>
+                            <rv>
+<new-object>
+    <classId>Base</classId>
+</new-object>
+                            </rv>
+                        </assign>
+                        <assign>
+                            <lv>d</lv>
+                            <rv>
+<new-object>
+    <classId>Derived</classId>
+</new-object>
+                            </rv>
+                        </assign>
+                        <sysout>
+                            <arg>
+<call>
+    <ownerExpr>
+        <ref-id>
+            <id>b</id>
+        </ref-id>
+    </ownerExpr>
+    <methodId>set</methodId>
+    <actuals>
+        <actual>
+            <int-literal>
+                <num>1</num>
+            </int-literal>
+        </actual>
+        <actual>
+            <int-literal>
+                <num>1</num>
+            </int-literal>
+        </actual>
+    </actuals>
+</call>
+                            </arg>
+                        </sysout>
+                        <assign>
+                            <lv>b</lv>
+                            <rv>
+<ref-id>
+    <id>d</id>
+</ref-id>
+                            </rv>
+                        </assign>
+                        <sysout>
+                            <arg>
+<call>
+    <ownerExpr>
+        <ref-id>
+            <id>b</id>
+        </ref-id>
+    </ownerExpr>
+    <methodId>set</methodId>
+    <actuals>
+        <actual>
+            <int-literal>
+                <num>3</num>
+            </int-literal>
+        </actual>
+    </actuals>
+</call>
+                            </arg>
+                        </sysout>
+                        <sysout>
+                            <arg>
+<call>
+    <ownerExpr>
+        <ref-id>
+            <id>d</id>
+        </ref-id>
+    </ownerExpr>
+    <methodId>get</methodId>
+    <actuals/>
+</call>
+                            </arg>
+                        </sysout>
+                    </body>
+                    <ret>
+                        <int-literal>
+                            <num>0</num>
+                        </int-literal>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+        <classdecl>
+            <name>Base</name>
+            <fields>
+                <field>
+                    <lineNumber>30</lineNumber>
+                    <type>
+                        <int/>
+                    </type>
+                    <name>data</name>
+                </field>
+            </fields>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>36</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>set</name>
+                    <formals>
+                        <formal>
+                            <lineNumber>30</lineNumber>
+                            <type>
+<int/>
+                            </type>
+                            <name>x</name>
+                        </formal>
+                    </formals>
+                    <vardecls/>
+                    <body>
+                        <assign>
+                            <lv>data</lv>
+                            <rv>
+<ref-id>
+    <id>x</id>
+</ref-id>
+                            </rv>
+                        </assign>
+                    </body>
+                    <ret>
+                        <ref-id>
+                            <id>data</id>
+                        </ref-id>
+                    </ret>
+                </methoddecl>
+                <methoddecl>
+                    <lineNumber>39</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>get</name>
+                    <formals/>
+                    <vardecls/>
+                    <body/>
+                    <ret>
+                        <ref-id>
+                            <id>data</id>
+                        </ref-id>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+        <classdecl>
+            <name>Derived</name>
+            <superName>Base</superName>
+            <fields/>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>47</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>set</name>
+                    <formals>
+                        <formal>
+                            <lineNumber>42</lineNumber>
+                            <type>
+<int/>
+                            </type>
+                            <name>x</name>
+                        </formal>
+                    </formals>
+                    <vardecls/>
+                    <body>
+                        <assign>
+                            <lv>data</lv>
+                            <rv>
+<mult>
+    <e1>
+        <ref-id>
+            <id>x</id>
+        </ref-id>
+    </e1>
+    <e2>
+        <int-literal>
+            <num>2</num>
+        </int-literal>
+    </e2>
+</mult>
+                            </rv>
+                        </assign>
+                    </body>
+                    <ret>
+                        <ref-id>
+                            <id>data</id>
+                        </ref-id>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>

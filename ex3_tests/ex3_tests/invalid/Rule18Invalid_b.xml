@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>args</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <int-literal>
+                        <num>0</num>
+                    </int-literal>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>Parent</name>
+            <fields/>
+            <methoddecls>
+                <methoddecl>
+                    <lineNumber>25</lineNumber>
+                    <returnType>
+                        <int/>
+                    </returnType>
+                    <name>run</name>
+                    <formals/>
+                    <vardecls/>
+                    <body/>
+                    <ret>
+                        <new-object>
+                    <classId>Parent</classId>
+                            </new-object>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+        
+    </classdecls>
+</program>

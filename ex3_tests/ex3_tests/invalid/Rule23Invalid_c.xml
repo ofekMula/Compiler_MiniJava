@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="ast.xsd" ?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>args</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <call>
+                        <ownerExpr>
+                            <new-object>
+                                <classId>Arr</classId>
+                            </new-object>
+                        </ownerExpr>
+                        <methodId>iota</methodId>
+                        <actuals>
+                            <actual>
+                                <int-literal>
+                                    <num>0</num>
+                                </int-literal>
+                            </actual>
+                        </actuals>
+                    </call>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>Arr</name>
+            <fields />
+            <methoddecls>
+                <methoddecl>
+                    <returnType>
+                        <int />
+                    </returnType>
+                    <name>iota</name>
+                    <formals>
+                        <formal>
+                            <type>
+                                <int/>
+                            </type>
+                            <name>size</name>
+                        </formal>
+                    </formals>
+                    <vardecls>
+                        <vardecl>
+                            <type>
+                                <int-array />
+                            </type>
+                            <name>arr</name>
+                        </vardecl>
+                        <vardecl>
+                            <type>
+                                <int />
+                            </type>
+                            <name>i</name>
+                        </vardecl>
+                    </vardecls>
+                    <body>
+                        
+                        <assign>
+                            <lv>i</lv>
+                            <rv>
+                                <int-literal>
+                                    <num>0</num>
+                                </int-literal>
+                            </rv>
+                        </assign>
+                        <assign-array>
+                            <lv>i</lv>
+                            <index>
+                                <int-literal>
+                                    <num>0</num>
+                                </int-literal>
+                            </index>
+                            <rv>
+                                <int-literal>
+                                    <num>0</num>
+                                </int-literal>
+                            </rv>
+                        </assign-array>
+                    </body>
+                    <ret>
+                        <int-literal>
+                                    <num>0</num>
+                                </int-literal>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>
