@@ -341,6 +341,9 @@ public class ClassMethodDataVisitor implements Visitor {
 
     @Override
     public void visit(MethodCallExpr e) {
+        if (e.ownerExpr() == null){
+            throw new SemanticErrorException("ownerExpr of method " + e.methodId() + " is null");
+        }
         e.ownerExpr().accept(this);
 
         for (Expr arg : e.actuals()) {
