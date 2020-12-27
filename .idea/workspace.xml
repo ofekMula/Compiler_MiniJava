@@ -20,8 +20,220 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="- ADDED more testers for ex3">
-      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/tester_v.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/ast.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_type_after_field.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_type_after_local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_type_after_param.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_type_before_field.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_type_before_local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_type_before_param.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_type_undecl_field.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_type_undecl_local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_type_undecl_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_type_undecl_param.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_type_undecl_ret.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_type_undecl_ret_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_var_undecl_add.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_var_undecl_arr_access.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_var_undecl_arr_index.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_var_undecl_assign.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_var_undecl_assign_arr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_var_undecl_assign_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_var_undecl_owner_expr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_var_undecl_ret.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_var_undecl_sysout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/bindck_var_undecl_sysout_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_class_duplicate.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_class_duplicate_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_class_super_after.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_class_super_cycle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_class_super_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_class_super_self.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_class_super_undecl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_field_redecl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_field_shadow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_field_unrelated.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_local_field_shadow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_method_override.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_method_redecl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_method_unrelated.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_param_field_shadow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_var_local_param.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_var_local_redecl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_var_param_redecl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/declck_var_unrelated.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_add.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_add_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_and.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_and_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_arr_access_arr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_arr_access_arr_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_arr_access_idx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_arr_access_idx_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_arr_length.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_arr_length_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_assign_arr_arr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_assign_arr_arr_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_assign_arr_idx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_assign_arr_idx_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_assign_arr_rv.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_assign_arr_rv_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_assign_rv.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_assign_rv_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_assign_self.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_assign_self_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_block.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_block_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_call_arg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_call_arg_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_call_owner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_call_owner_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_field.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_field_shadowed.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_field_shadowed_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_after_assign.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_after_contained_vars.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_after_disjoint_vars.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_after_nested_contained_vars.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_after_nested_uncovered_vars.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_after_nop.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_after_nop_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_after_thencase_assign_elsecase_nop.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_after_thencase_nop_elsecase_assign.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_after_uncovered_vars.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_cond.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_cond_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_disjoint_vars.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_elsecase_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_thencase_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_thencase_assigned_elsecase_nop.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_if_thencase_nop_elsecase_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_lt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_lt_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_mul.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_mul_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_not.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_not_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_param.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_ret.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_ret_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_sub.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_sub_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_sysout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_sysout_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_while.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_while_after_body_assign.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_while_after_nop.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_while_after_nop_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_while_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_while_body_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_while_cond.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/initck_while_cond_assigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_and_short_circuit_arr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_and_short_circuit_arr_wrong_type.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_array_access_in_access.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_array_access_in_access_missing_access.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_array_iota_print_all.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_array_iota_print_all_misspelled_method.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_array_iota_simple.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_array_iota_simple_index_uninit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_binary_search.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_binary_search_search_div_owner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_binary_tree.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_binary_tree_compare_ntb_unassigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_binary_tree_compare_ntb_uninit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_bubble_sort.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_bubble_sort_print_missing_subscript.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_factorial.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_linear_search.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_linked_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_linked_list_insert_swapped_args.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_method_and_variable_with_same_name.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_method_and_variable_with_same_name_added_extends.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_method_and_variable_with_same_name_uninit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_partial_overrides.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_partial_overrides_a_unassigned.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_quick_sort.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_subclass_field_access.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_subclass_field_access_misspelled_field.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_subclass_fields.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_tree_visitor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/misc_tree_visitor_missing_extends.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/provided_assignment_invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/provided_assignment_valid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/provided_int_var_invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/provided_int_var_valid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/provided_owner_expr_invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/provided_owner_expr_valid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_add.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_and.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_arg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_arr_access_arr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_arr_access_idx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_arr_length.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_assign.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_assign_arr_arr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_assign_arr_idx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_assign_arr_val.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_assign_local_field_shadow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_assign_ref.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_assign_ref_subtyping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_assign_ref_super.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_assign_ref_unrelated.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_assign_rv.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_block.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_call_args.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_call_args_ref_subtyping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_call_args_ref_unrelated.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_call_arity.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_call_method_inherited.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_call_method_undecl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_call_ret.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_compound.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_if.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_lt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_args.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_args_ref.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_args_ref_subtyping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_args_ref_super.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_args_ref_unrelated.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_arity.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_ret.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_ret_ref.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_ret_ref_contravariant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_ret_ref_covariant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_ret_ref_covariant_chain.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_ret_ref_covariant_contravariant_chain.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_override_ret_ref_unrelated.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_ret.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_ret_ref.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_ret_ref_subtyping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_method_ret_ref_super.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_mul.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_new_arr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_not.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_owner_expr_bad_var.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_owner_expr_lit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_owner_expr_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_owner_expr_this.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_owner_expr_var.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_sub.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_sysout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_this_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/cases/typeck_while.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_tests2/tester.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/problematic/typeck_method_override_args_ref_unrelated.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/problematic/typeck_method_override_ret_ref_contravariant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/problematic/typeck_method_override_ret_ref_covariant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/problematic/typeck_method_override_ret_ref_covariant_chain.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/problematic/typeck_method_override_ret_ref_covariant_contravariant_chain.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +265,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/problematic" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
@@ -62,11 +274,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\problematic" />
       <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava" />
       <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid4" />
       <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid3" />
       <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid2" />
-      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\SameFieldInClass" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\Items1-8_valid" />
@@ -81,7 +293,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\omer_ex3\ClassChecks\method_same_name_in_inheritance_class2.java.xml&quot; result.txt" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\problematic\typeck_method_override_ret_ref_covariant_contravariant_chain.xml&quot; result.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -281,7 +493,13 @@
       <option name="presentableId" value="LOCAL‎00024" />
       <updated>1608904243224</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL‎00025" summary="- ADDED more testers for ex3">
+      <created>1608906348232</created>
+      <option name="number" value="LOCAL‎00025" />
+      <option name="presentableId" value="LOCAL‎00025" />
+      <updated>1608906348232</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,38 +557,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>54</line>
+          <line>57</line>
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>57</line>
+          <line>60</line>
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>60</line>
+          <line>63</line>
           <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="123" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

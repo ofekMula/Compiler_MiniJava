@@ -30,21 +30,21 @@ public class SemanticAnalysisVisitor implements Visitor {
     private String getTypeFromMap(String varName) {
         for (Map.Entry<String, String> field : methodData.fieldsVars.entrySet()) {
             if (field.getKey().equals(varName)) {
-                System.out.println("field: " + varName + " type:" + field.getValue() + " method: " + methodData.name);
+                //System.out.println("field: " + varName + " type:" + field.getValue() + " method: " + methodData.name);
                 return field
                         .getValue();
             }
         }
         for (Map.Entry<String, String> local : methodData.localVars.entrySet()) {
             if (local.getKey().equals(varName)) {
-                System.out.println("local: " + varName + " type:" + local.getValue() + " method: " + methodData.name);
+                //System.out.println("local: " + varName + " type:" + local.getValue() + " method: " + methodData.name);
                 return local
                         .getValue();
             }
         }
         for (Map.Entry<String, String> formal : methodData.formalVars.entrySet()) {
             if (formal.getKey().equals(varName)) {
-                System.out.println("formal: " + varName + " type:" + formal.getValue() + " method: " + methodData.name);
+                //System.out.println("formal: " + varName + " type:" + formal.getValue() + " method: " + methodData.name);
                 return formal
                         .getValue();
             }
@@ -127,7 +127,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         this.initializedLocalVars = new HashSet<>();
 
         methodDecl.returnType().accept(this);
-        System.out.println("return required:" + exprType);
+        //System.out.println("return required:" + exprType);
         String requiredMethodReturnType = exprType;
         for (var formal : methodDecl.formals()) {
             formal.accept(this);
@@ -213,7 +213,7 @@ public class SemanticAnalysisVisitor implements Visitor {
             throw new SemanticErrorException("While statement expr isn't of boolean type");
 
         isInWhile = true;
-        System.out.println("while in");//todo delete
+        //System.out.println("while in");//todo delete
         // save state
         HashSet<String> tmpInitializedLocalVars = initializedLocalVars;
         HashSet<String> tmpNewInitializedLocalVars = newInitializedLocalVars;
@@ -224,7 +224,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         whileInitializedLocalVars = new HashSet<>();
         whileStatement.body().accept(this);
         isInWhile = false;
-        System.out.println("while out"); //todo delete
+        //System.out.println("while out"); //todo delete
 
         // load state
         initializedLocalVars = tmpInitializedLocalVars;
@@ -375,7 +375,7 @@ public class SemanticAnalysisVisitor implements Visitor {
                     + " and not " + exprType + " (not int, bool, or int[]).  (MethodCallExpr #10)");
         }
 
-        System.out.println("methodOwnerRefName:" + methodOwnerRefName);
+        //System.out.println("methodOwnerRefName:" + methodOwnerRefName);
 
         if (!classNameToData.containsKey(methodOwnerRefName)) {
             throw new SemanticErrorException("method " + methodName + " has owner of type " + methodOwnerRefName
@@ -383,7 +383,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
 
         ClassData ownerClassData = classNameToData.get(methodOwnerRefName);
-        System.out.println("ownerClassData:" + ownerClassData);
+        //System.out.println("ownerClassData:" + ownerClassData);
 
         if (!ownerClassData.methodDataMap.containsKey(methodName)) {
             throw new SemanticErrorException("method " + methodName + " is not defined in the owner's class "
@@ -411,7 +411,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
 
         exprType = methodData.returnType;
-        System.out.println("In Method call:" + exprType);
+        //System.out.println("In Method call:" + exprType);
     }
 
     @Override
@@ -450,7 +450,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
 
         exprType = varType;
-        System.out.println("exprType:" + exprType);
+       // System.out.println("exprType:" + exprType);
     }
 
     public void visit(ThisExpr e) {

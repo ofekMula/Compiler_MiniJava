@@ -42,6 +42,9 @@ public class ClassMethodDataVisitor implements Visitor {
             return false;
         } else {
             ClassData secondClass = classNameToData.get(possibleSuperClass);
+            if (secondClass==null){
+                return true;
+            }
             ArrayList<ClassData> secondSubClasses = secondClass.getSubClassesData();
             for (ClassData subClassData : secondSubClasses) {
                 if (possibleSubClass.equals(subClassData.name)) {
@@ -64,7 +67,7 @@ public class ClassMethodDataVisitor implements Visitor {
             }
         }
         if ((methodDataAddToClass.returnType == null && overriddenMethod.returnType !=null)
-                 || (methodDataAddToClass.returnType != null && overriddenMethod.returnType ==null)){
+                || (methodDataAddToClass.returnType != null && overriddenMethod.returnType ==null)){
             throw new SemanticErrorException(message+": different return type");
 
         }
@@ -204,6 +207,10 @@ public class ClassMethodDataVisitor implements Visitor {
         methodDecl.returnType().accept(this); // in accept the type will be decided in refName
         returnType = refName;
 
+        if (returnType == null){ //todo: check if needed
+            throw new SemanticErrorException("returnType of a method is null");
+        }
+
         for (var formal : methodDecl.formals()) {
             formal.accept(this); // in accept the type will be decided in refName
 
@@ -256,6 +263,9 @@ public class ClassMethodDataVisitor implements Visitor {
 
     @Override
     public void visit(IfStatement ifStatement) {
+        if (ifStatement.cond() == null || ifStatement.thencase() == null ||  ifStatement.elsecase() == null){ //todo: check if needed
+            throw new SemanticErrorException("one part of IfStatement is null");
+        }
 
         ifStatement.cond().accept(this);
 
