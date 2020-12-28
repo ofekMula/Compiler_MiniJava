@@ -18,42 +18,6 @@ public class ClassMethodDataVisitor implements Visitor {
         classNameToData = new HashMap<>();
     }
 
-    public boolean atLeastOneIsPrimitiveType(String firstType, String secondType) {
-        switch (firstType) {
-            case "int":
-            case "int-array":
-            case "boolean":
-                return true;
-            default:
-                switch (secondType) {
-                    case "int":
-                    case "int-array":
-                    case "boolean":
-                        return true;
-                    default:
-                        return false;
-                }
-        }
-    }
-    public boolean IsClassSubtypeOf(String possibleSubClass, String possibleSuperClass) {
-        if (possibleSubClass.equals(possibleSuperClass)) {
-            return true;
-        } else if (atLeastOneIsPrimitiveType(possibleSubClass, possibleSuperClass)) { // primitives from different types
-            return false;
-        } else {
-            ClassData secondClass = classNameToData.get(possibleSuperClass);
-            if (secondClass==null){
-                return true;
-            }
-            ArrayList<ClassData> secondSubClasses = secondClass.getSubClassesData();
-            for (ClassData subClassData : secondSubClasses) {
-                if (possibleSubClass.equals(subClassData.name)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-    }
     public void checkOverridingMethod(MethodData overriddenMethod){
         ArrayList<FormalVars> overriddenFormalVars = overriddenMethod.formalVarsList;
         ArrayList<FormalVars> methodToAddFormalArgs = methodDataAddToClass.formalVarsList;
@@ -71,10 +35,7 @@ public class ClassMethodDataVisitor implements Visitor {
             throw new SemanticErrorException(message+": different return type");
 
         }
-        if (!IsClassSubtypeOf(methodDataAddToClass.returnType,overriddenMethod.returnType)){
-            throw new SemanticErrorException(message+": different return type");
-
-        }
+        //coavraring ret type is being checked in the other visitor.
     }
 
     public void checkMethodDec( Map<String,MethodData> methodData,String className) {

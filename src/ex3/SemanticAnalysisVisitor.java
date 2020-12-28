@@ -3,6 +3,7 @@ package ex3;
 import ast.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
@@ -18,6 +19,53 @@ public class SemanticAnalysisVisitor implements Visitor {
     private HashSet<String> whileInitializedLocalVars;
     private boolean isInWhile = false;
     private boolean isInIf = false;
+
+
+    public void checkOverridingMethod(MethodData overriddenMethod,MethodData methodDataAddToClass ){
+        ArrayList<FormalVars> overriddenFormalVars = overriddenMethod.formalVarsList;
+        ArrayList<FormalVars> methodToAddFormalArgs = methodDataAddToClass.formalVarsList;
+        String message="An overriding method matches the ancestor's method signature with the same name";
+        if (overriddenFormalVars.size() != methodToAddFormalArgs.size()){
+            throw new SemanticErrorException(message+": different number of formal args");
+        }
+        for ( int i=0; i<overriddenFormalVars.size();i++){
+            if( !overriddenFormalVars.get(i).type.equals(methodToAddFormalArgs.get(i).type)){
+                throw new SemanticErrorException(message+":formals with diff types");
+            }
+        }
+        if ((methodDataAddToClass.returnType == null && overriddenMethod.returnType !=null)
+                || (methodDataAddToClass.returnType != null && overriddenMethod.returnType ==null)){
+            throw new SemanticErrorException(message+": different return type");
+
+        }
+        if (!IsClassSubtypeOf(methodDataAddToClass.returnType,overriddenMethod.returnType)){
+            throw new SemanticErrorException(message+": different return type");
+
+        }
+    }
+
+    public void checkMethodDec( Map<String,MethodData> superClassMethodsData,MethodData currentMethodData) {
+        MethodData methodWithSameName = superClassMethodsData.get(currentMethodData.name);
+        String subClassName = currentMethodData.classData.name;
+        if (methodWithSameName != null) {//already exists
+            if (methodWithSameName.classData.name.equals(subClassName)) {// already exists in this method's class scope
+                throw new SemanticErrorException("The same name cannot be used for the same method in one class");
+            } else {//defined in one of super classes
+                checkOverridingMethod(methodWithSameName,currentMethodData);//defined in one of super classes
+            }
+
+        }
+    }
+
+
+    public void bringSuperClassMethods(String superClassName, Map<String, MethodData> methodData){
+        if (superClassName != null) { // bring to this class all the superClass methods
+            ClassData superClassData = classNameToData.get(superClassName); // get the super table
+            if (superClassData.getMethodDataMap() != null) {
+                methodData.putAll(superClassData.getMethodDataMap()); // put all methods from super class in this class
+            }
+        }
+    }
 
 
     public SemanticAnalysisVisitor(Map<String, ClassData> classNameToData) {
@@ -100,6 +148,7 @@ public class SemanticAnalysisVisitor implements Visitor {
     public void visit(ClassDecl classDecl) {
         // todo: must be in classNameToData?
         currClassData = classNameToData.get(classDecl.name());
+        Map<String,MethodData> superMethodsData = new HashMap<>();
 
         if (classDecl.superName() != null) {
         }
@@ -107,10 +156,13 @@ public class SemanticAnalysisVisitor implements Visitor {
         for (var fieldDecl : classDecl.fields()) {
             fieldDecl.accept(this);
         }
+        bringSuperClassMethods(classDecl.superName(), superMethodsData);
+
         for (var methodDecl : classDecl.methoddecls()) {
             methodData = classNameToData
                     .get(classDecl.name())
                     .getMethodDataFromMap(methodDecl.name());
+            checkMethodDec(superMethodsData,methodData);
             methodDecl.accept(this);
         }
     }
@@ -450,7 +502,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
 
         exprType = varType;
-       // System.out.println("exprType:" + exprType);
+        //System.out.println("exprType:" + exprType);
     }
 
     public void visit(ThisExpr e) {
