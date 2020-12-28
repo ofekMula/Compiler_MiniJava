@@ -21,6 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="52a48db8-b9bd-4e48-b0c0-b5f92dcc37af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608909394205</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="--">
+      <created>1609180767422</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1609180767422</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,12 +327,12 @@
     <MESSAGE value="ricky's NEW changeS" />
     <MESSAGE value="added changes SemanticAnalysisVisitor" />
     <MESSAGE value="moved test to Ex3Tests" />
-    <MESSAGE value="--" />
     <MESSAGE value="added Tests and fixed bug" />
     <MESSAGE value="fix by yotam's examples" />
     <MESSAGE value="ownerExpr null check" />
     <MESSAGE value="null checks for if blocks and return type" />
-    <option name="LAST_COMMIT_MESSAGE" value="null checks for if blocks and return type" />
+    <MESSAGE value="--" />
+    <option name="LAST_COMMIT_MESSAGE" value="--" />
   </component>
   <component name="WindowStateProjectService">
     <state x="538" y="240" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608574742922">
@@ -339,28 +349,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608369930194" />
-    <state width="1481" height="443" key="GridCell.Tab.0.bottom" timestamp="1609180738494">
+    <state width="1481" height="443" key="GridCell.Tab.0.bottom" timestamp="1609180912294">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="443" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609180738494" />
+    <state width="1481" height="443" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609180912294" />
     <state width="1865" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
     <state width="1865" height="392" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1481" height="443" key="GridCell.Tab.0.center" timestamp="1609180738494">
+    <state width="1481" height="443" key="GridCell.Tab.0.center" timestamp="1609180912294">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="443" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609180738494" />
+    <state width="1481" height="443" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609180912294" />
     <state width="1865" height="319" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
     <state width="1865" height="392" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1481" height="443" key="GridCell.Tab.0.left" timestamp="1609180738494">
+    <state width="1481" height="443" key="GridCell.Tab.0.left" timestamp="1609180912294">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="443" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609180738494" />
+    <state width="1481" height="443" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609180912294" />
     <state width="1865" height="319" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
     <state width="1865" height="392" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
-    <state width="1481" height="443" key="GridCell.Tab.0.right" timestamp="1609180738494">
+    <state width="1481" height="443" key="GridCell.Tab.0.right" timestamp="1609180912294">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="443" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609180738494" />
+    <state width="1481" height="443" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609180912294" />
     <state width="1865" height="319" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
     <state width="1865" height="392" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
     <state width="1865" height="392" key="GridCell.Tab.1.bottom" timestamp="1608401493792">
@@ -405,10 +415,10 @@
     </state>
     <state x="351" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607532194553" />
     <state x="351" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1608540000865" />
-    <state x="362" y="149" key="Vcs.Push.Dialog.v2" timestamp="1608580390559">
+    <state x="362" y="149" key="Vcs.Push.Dialog.v2" timestamp="1609180809436">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608580390559" />
+    <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609180809436" />
     <state x="453" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533369301" />
     <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608538055128" />
     <state x="484" y="149" width="686" height="664" key="find.popup" timestamp="1607190221445">
@@ -452,22 +462,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>351</line>
+          <line>350</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>263</line>
+          <line>262</line>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java</url>
-          <line>344</line>
+          <line>334</line>
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>207</line>
+          <line>206</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
       </breakpoints>
