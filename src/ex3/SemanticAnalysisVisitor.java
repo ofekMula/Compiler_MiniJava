@@ -297,6 +297,9 @@ public class SemanticAnalysisVisitor implements Visitor {
         HashSet<String> tmpInitializedLocalVars = initializedLocalVars;
         HashSet<String> tmpNewInitializedLocalVars = newInitializedLocalVars;
         HashSet<String> tmpWhileInitializedLocalVars = whileInitializedLocalVars;
+        boolean tmpIsInIf = isInIf;
+        boolean tmpIsInWhile = isInWhile;
+
 
         // run while
         initializedLocalVars.addAll(whileInitializedLocalVars);
@@ -306,6 +309,8 @@ public class SemanticAnalysisVisitor implements Visitor {
         //System.out.println("while out"); //todo delete
 
         // load state
+        isInWhile = tmpIsInWhile;
+        isInIf = tmpIsInIf;
         initializedLocalVars = tmpInitializedLocalVars;
         newInitializedLocalVars = tmpNewInitializedLocalVars;
         whileInitializedLocalVars = tmpWhileInitializedLocalVars;
@@ -354,19 +359,23 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
         if (!idType.equals("int-array"))
             throw new SemanticErrorException("The array assign statement isn't of type int-array.");
-        // must be initialized before
-        if (isInWhile) {
-            if (!(initializedLocalVars.contains(assignArrayStatement.lv()) ||
-                    newInitializedLocalVars.contains(assignArrayStatement.lv()) ||
-                    whileInitializedLocalVars.contains(assignArrayStatement.lv()))) {
-                throw new SemanticErrorException("var " + assignArrayStatement.lv() + " is not initialized before it is used, (IdentifierExpr, #15)");
-            }
-        } else {
-            if (!(initializedLocalVars.contains(assignArrayStatement.lv()) ||
-                    newInitializedLocalVars.contains(assignArrayStatement.lv()))) {
-                throw new SemanticErrorException("var " + assignArrayStatement.lv() + " is not initialized before it is used, (IdentifierExpr, #15)");
+
+        if (!(methodData.isField(assignArrayStatement.lv()) || methodData.isFormal(assignArrayStatement.lv()))) {
+            // must be initialized before
+            if (isInWhile) {
+                if (!(initializedLocalVars.contains(assignArrayStatement.lv()) ||
+                        newInitializedLocalVars.contains(assignArrayStatement.lv()) ||
+                        whileInitializedLocalVars.contains(assignArrayStatement.lv()))) {
+                    throw new SemanticErrorException("var " + assignArrayStatement.lv() + " is not initialized before it is used, (IdentifierExpr, #15)");
+                }
+            } else {
+                if (!(initializedLocalVars.contains(assignArrayStatement.lv()) ||
+                        newInitializedLocalVars.contains(assignArrayStatement.lv()))) {
+                    throw new SemanticErrorException("var " + assignArrayStatement.lv() + " is not initialized before it is used, (IdentifierExpr, #15)");
+                }
             }
         }
+
         assignArrayStatement.index().accept(this);
         if (!exprType.equals("int"))
             throw new SemanticErrorException("The array assign statement index isn't of type int.");
