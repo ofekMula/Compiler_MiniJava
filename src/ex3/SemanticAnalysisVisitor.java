@@ -344,6 +344,19 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
         if (!idType.equals("int-array"))
             throw new SemanticErrorException("The array assign statement isn't of type int-array.");
+        // must be initialized before
+        if (isInWhile) {
+            if (!(initializedLocalVars.contains(assignArrayStatement.lv()) ||
+                    newInitializedLocalVars.contains(assignArrayStatement.lv()) ||
+                    whileInitializedLocalVars.contains(assignArrayStatement.lv()))) {
+                throw new SemanticErrorException("var " + assignArrayStatement.lv() + " is not initialized before it is used, (IdentifierExpr, #15)");
+            }
+        } else {
+            if (!(initializedLocalVars.contains(assignArrayStatement.lv()) ||
+                    newInitializedLocalVars.contains(assignArrayStatement.lv()))) {
+                throw new SemanticErrorException("var " + assignArrayStatement.lv() + " is not initialized before it is used, (IdentifierExpr, #15)");
+            }
+        }
         assignArrayStatement.index().accept(this);
         if (!exprType.equals("int"))
             throw new SemanticErrorException("The array assign statement index isn't of type int.");
