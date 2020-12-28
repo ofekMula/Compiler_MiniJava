@@ -19,10 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="- ADDED more testers for ex3">
-      <change afterPath="$PROJECT_DIR$/ex3_tests/ex3_tests/tester_v.sh" afterDir="false" />
+    <list default="true" id="a948aa23-3a5c-450b-8eab-b0827e9a2122" name="Default Changelist" comment="ricky's NEW changeS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,35 +53,45 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ex3Tests/Ex3Tests/OurTests" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava" />
-      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid4" />
-      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid3" />
-      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\OverridingSameSignInvalid2" />
-      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\SameFieldInClass" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\Ex3Tests\Ex3Tests\Items1-8_valid" />
+      <recent name="C:\src\duda\Compiler\Ex3Tests\Ex3Tests\OurTests" />
+      <recent name="C:\src\duda\Compiler\Ex3Tests" />
       <recent name="C:\src\duda\Compiler\src\ex3\tests" />
       <recent name="C:\src\duda\Compiler\src\ex3" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ex3" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\src\duda\Compiler\Ex3Tests\Ex3Tests\OurTests" />
+      <recent name="C:\src\duda\Compiler\src\ex3" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\Users\Ofek Mula\IdeaProjects\CompilerMiniJava\omer_ex3\ClassChecks\method_same_name_in_inheritance_class2.java.xml&quot; result.txt" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal semantic &quot;C:\Users\Shirly\Downloads\Rule22Invalid_b.xml&quot; result.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,7 +105,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -162,6 +172,11 @@
       <workItem from="1608369030416" duration="13000" />
       <workItem from="1608452249056" duration="190000" />
       <workItem from="1608534675983" duration="631000" />
+      <workItem from="1608539981750" duration="955000" />
+      <workItem from="1608572214878" duration="7904000" />
+      <workItem from="1608620810366" duration="5000" />
+      <workItem from="1608652692909" duration="4259000" />
+      <workItem from="1608895363744" duration="5599000" />
     </task>
     <task id="LOCAL-00007" summary="--">
       <created>1607005181605</created>
@@ -233,71 +248,66 @@
       <option name="project" value="LOCAL" />
       <updated>1608401483147</updated>
     </task>
-    <task id="LOCAL‎00017" summary="- added tests for cases 1-8 + u[dated tester.sh&#10;- out prog passes Yotam's tests and Ofek's tests.">
-      <created>1608575999153</created>
-      <option name="number" value="LOCAL‎00017" />
-      <option name="presentableId" value="LOCAL‎00017" />
-      <updated>1608575999153</updated>
+    <task id="LOCAL-00017" summary="moved test to Ex3Tests">
+      <created>1608538054091</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608538054091</updated>
     </task>
-    <task id="LOCAL‎00018" summary="- added test for override method.">
-      <created>1608578337335</created>
-      <option name="number" value="LOCAL‎00018" />
-      <option name="presentableId" value="LOCAL‎00018" />
-      <updated>1608578337336</updated>
+    <task id="LOCAL-00018" summary="--">
+      <created>1608572551379</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608572551379</updated>
     </task>
-    <task id="LOCAL‎00019" summary="added more tests.">
-      <created>1608644259692</created>
-      <option name="number" value="LOCAL‎00019" />
-      <option name="presentableId" value="LOCAL‎00019" />
-      <updated>1608644259692</updated>
+    <task id="LOCAL-00019" summary="added Tests and fixed bug">
+      <created>1608580352213</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1608580352213</updated>
     </task>
-    <task id="LOCAL‎00020" summary="added more tests.">
-      <created>1608644288834</created>
-      <option name="number" value="LOCAL‎00020" />
-      <option name="presentableId" value="LOCAL‎00020" />
-      <updated>1608644288834</updated>
+    <task id="LOCAL-00020" summary="fix by yotam's examples">
+      <created>1608656376158</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1608656376158</updated>
     </task>
-    <task id="LOCAL‎00021" summary="- fixed overriding method signature check.&#10;- added omer's tests .">
-      <created>1608656529829</created>
-      <option name="number" value="LOCAL‎00021" />
-      <option name="presentableId" value="LOCAL‎00021" />
-      <updated>1608656529829</updated>
+    <task id="LOCAL-00021" summary="ownerExpr null check">
+      <created>1608898736252</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1608898736252</updated>
     </task>
-    <task id="LOCAL‎00022" summary="- changed tests folder name">
-      <created>1608656713816</created>
-      <option name="number" value="LOCAL‎00022" />
-      <option name="presentableId" value="LOCAL‎00022" />
-      <updated>1608656713816</updated>
+    <task id="LOCAL-00022" summary="null checks for if blocks and return type">
+      <created>1608909394205</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1608909394205</updated>
     </task>
-    <task id="LOCAL‎00023" summary="- fixed bug in return type check">
-      <created>1608657573837</created>
-      <option name="number" value="LOCAL‎00023" />
-      <option name="presentableId" value="LOCAL‎00023" />
-      <updated>1608657573837</updated>
-    </task>
-    <task id="LOCAL‎00024" summary="- ADDED more testers for ex3">
-      <created>1608904243223</created>
-      <option name="number" value="LOCAL‎00024" />
-      <option name="presentableId" value="LOCAL‎00024" />
-      <updated>1608904243224</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'expr_shirly' of https://github.com/rickben/CompilerMiniJava into expr_shirly&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
@@ -305,19 +315,119 @@
     <MESSAGE value="printing to screen for debug" />
     <MESSAGE value="+AssignStatement +fixed bugs in arrays" />
     <MESSAGE value="added check to see if the field arr length was already loaded" />
-    <MESSAGE value="--" />
     <MESSAGE value="removed todos" />
     <MESSAGE value="ricky's change" />
     <MESSAGE value="ricky's NEW changeS" />
     <MESSAGE value="added changes SemanticAnalysisVisitor" />
-    <MESSAGE value="- added tests for cases 1-8 + u[dated tester.sh&#10;- out prog passes Yotam's tests and Ofek's tests." />
-    <MESSAGE value="- added test for override method." />
-    <MESSAGE value="added more tests." />
-    <MESSAGE value="- fixed overriding method signature check.&#10;- added omer's tests ." />
-    <MESSAGE value="- changed tests folder name" />
-    <MESSAGE value="- fixed bug in return type check" />
-    <MESSAGE value="- ADDED more testers for ex3" />
-    <option name="LAST_COMMIT_MESSAGE" value="- ADDED more testers for ex3" />
+    <MESSAGE value="moved test to Ex3Tests" />
+    <MESSAGE value="--" />
+    <MESSAGE value="added Tests and fixed bug" />
+    <MESSAGE value="fix by yotam's examples" />
+    <MESSAGE value="ownerExpr null check" />
+    <MESSAGE value="null checks for if blocks and return type" />
+    <option name="LAST_COMMIT_MESSAGE" value="null checks for if blocks and return type" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="538" y="240" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608574742922">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="538" y="240" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1608574742922" />
+    <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533759054" />
+    <state x="673" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1608375997873" />
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608376229090">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608376229090" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1608369930194">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608369930194" />
+    <state width="1481" height="257" key="GridCell.Tab.0.bottom" timestamp="1608580751285">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="257" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608580751285" />
+    <state width="1865" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
+    <state width="1865" height="392" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
+    <state width="1481" height="257" key="GridCell.Tab.0.center" timestamp="1608580751284">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="257" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608580751284" />
+    <state width="1865" height="319" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
+    <state width="1865" height="392" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
+    <state width="1481" height="257" key="GridCell.Tab.0.left" timestamp="1608580751284">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="257" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608580751284" />
+    <state width="1865" height="319" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
+    <state width="1865" height="392" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
+    <state width="1481" height="257" key="GridCell.Tab.0.right" timestamp="1608580751285">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="257" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608580751285" />
+    <state width="1865" height="319" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
+    <state width="1865" height="392" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540749" />
+    <state width="1865" height="392" key="GridCell.Tab.1.bottom" timestamp="1608401493792">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1865" height="392" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
+    <state width="1865" height="319" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
+    <state width="1865" height="392" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540750" />
+    <state width="1865" height="392" key="GridCell.Tab.1.center" timestamp="1608401493792">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1865" height="392" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
+    <state width="1865" height="319" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
+    <state width="1865" height="392" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540750" />
+    <state width="1865" height="392" key="GridCell.Tab.1.left" timestamp="1608401493792">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1865" height="392" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
+    <state width="1865" height="319" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
+    <state width="1865" height="392" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540750" />
+    <state width="1865" height="392" key="GridCell.Tab.1.right" timestamp="1608401493792">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1865" height="392" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1608401493792" />
+    <state width="1865" height="319" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533380486" />
+    <state width="1865" height="392" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608397540750" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1607004840870">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607004840870" />
+    <state x="323" y="116" key="MultipleFileMergeDialog" timestamp="1608580374776">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="323" y="116" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1608580374776" />
+    <state x="769" y="174" key="RollbackChangesDialog" timestamp="1608369715417">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="174" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608369715417" />
+    <state x="351" y="0" key="SettingsEditor" timestamp="1608540000865">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="351" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607532194553" />
+    <state x="351" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1608540000865" />
+    <state x="362" y="149" key="Vcs.Push.Dialog.v2" timestamp="1608580390559">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608580390559" />
+    <state x="453" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533369301" />
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608538055128" />
+    <state x="484" y="149" width="686" height="664" key="find.popup" timestamp="1607190221445">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="484" y="149" width="686" height="664" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1607190221445" />
+    <state x="605" y="188" width="710" height="664" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607007138197" />
+    <state x="703" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607004852072">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="703" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607004852072" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1608376746105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="431" y="4" width="840" height="820" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608311333279" />
+    <state x="539" y="5" width="1050" height="1035" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533350865" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608376746105" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -338,57 +448,41 @@
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$USER_HOME$/Desktop/desktop -שירלי/אונ תא/קומפילציה/compilers-project-2020-public-master/examples/ast/BinaryTree.java</url>
+          <line>224</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>82</line>
+          <line>351</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
+          <line>263</line>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>54</line>
+          <url>file://$PROJECT_DIR$/src/ex3/SemanticAnalysisVisitor.java</url>
+          <line>344</line>
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ex3/ClassMethodDataVisitor.java</url>
-          <line>38</line>
+          <line>207</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="ex2.proj.ClassMethodDataVisitor" memberName="classDataAddToMethod" />
-        <PinnedItemInfo parentTag="ex2.proj.MethodData" memberName="classData" />
-        <PinnedItemInfo parentTag="ex1.Symbol" memberName="insideTable" />
-        <PinnedItemInfo parentTag="ast.ClassDecl" memberName="table" />
-        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
-        <PinnedItemInfo parentTag="ast.Program" memberName="table" />
-        <PinnedItemInfo parentTag="ex1.SymbolTable" memberName="entries" />
-        <PinnedItemInfo parentTag="ex2.proj.MethodData" memberName="name" />
-      </pinned-members>
-    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((MethodData)((SemanticAnalysisVisitor)this).methodData).name" custom="ex3.MethodData,ex3.SemanticAnalysisVisitor" />
+        <watch expression="assignStatement.lv()" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
