@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class SemanticAnalysisVisitor implements Visitor {
     private String exprType = null;
+    private ClassData mainClassData;
     private Boolean isBinaryExprIntType = false;
     private Boolean isBinaryExprBooleanType = false;
     private Map<String, ClassData> classNameToData;
@@ -68,11 +69,13 @@ public class SemanticAnalysisVisitor implements Visitor {
     }
 
 
-    public SemanticAnalysisVisitor(Map<String, ClassData> classNameToData) {
+    public SemanticAnalysisVisitor(Map<String, ClassData> classNameToData, ClassData mainClassData) {
         this.classNameToData = classNameToData;
         this.initializedLocalVars = new HashSet<>();
         this.newInitializedLocalVars = new HashSet<>();
         this.whileInitializedLocalVars = new HashSet<>();
+        this.mainClassData = mainClassData;
+//        this.classNameToData.put(mainClassData.name, mainClassData);
     }
 
     private String getTypeFromMap(String varName) {
@@ -160,7 +163,6 @@ public class SemanticAnalysisVisitor implements Visitor {
 
     @Override
     public void visit(ClassDecl classDecl) {
-        // todo: must be in classNameToData?
         currClassData = classNameToData.get(classDecl.name());
         Map<String,MethodData> superMethodsData = new HashMap<>();
 
@@ -183,7 +185,8 @@ public class SemanticAnalysisVisitor implements Visitor {
 
     @Override
     public void visit(MainClass mainClass) {
-
+        currClassData = mainClassData;
+        methodData = mainClassData.getMethodDataFromMap("main");
         mainClass.mainStatement().accept(this);
 
     }
@@ -368,6 +371,8 @@ public class SemanticAnalysisVisitor implements Visitor {
         isBinaryExprBooleanType = true;
         visitBinaryExpr(e, "&&");
         exprType = "boolean";
+        isBinaryExprIntType = false;
+        isBinaryExprBooleanType = true;
     }
 
     @Override
@@ -376,6 +381,8 @@ public class SemanticAnalysisVisitor implements Visitor {
         isBinaryExprBooleanType = false;
         visitBinaryExpr(e, "<");
         exprType = "boolean";
+        isBinaryExprIntType = false;
+        isBinaryExprBooleanType = true;
     }
 
     @Override
@@ -383,8 +390,9 @@ public class SemanticAnalysisVisitor implements Visitor {
         isBinaryExprIntType = true;
         isBinaryExprBooleanType = false;
         visitBinaryExpr(e, "+");
-        ;
         exprType = "int";
+        isBinaryExprIntType = true;
+        isBinaryExprBooleanType = false;
     }
 
     @Override
@@ -393,6 +401,8 @@ public class SemanticAnalysisVisitor implements Visitor {
         isBinaryExprBooleanType = false;
         visitBinaryExpr(e, "-");
         exprType = "int";
+        isBinaryExprIntType = true;
+        isBinaryExprBooleanType = false;
     }
 
     @Override
@@ -401,6 +411,8 @@ public class SemanticAnalysisVisitor implements Visitor {
         isBinaryExprBooleanType = false;
         visitBinaryExpr(e, "*");
         exprType = "int";
+        isBinaryExprIntType = true;
+        isBinaryExprBooleanType = false;
     }
 
     @Override

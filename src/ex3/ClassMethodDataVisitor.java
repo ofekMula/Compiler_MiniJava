@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class ClassMethodDataVisitor implements Visitor {
     public Map<String, ClassData> classNameToData;
+    public ClassData mainClassData;
     private String mainClassName;
     private String refName; // type
     private MethodData methodDataAddToClass; // add the method after calculating it in accept - when returning to class
@@ -154,8 +155,22 @@ public class ClassMethodDataVisitor implements Visitor {
 
     @Override
     public void visit(MainClass mainClass) {
-        // not inside the classes hierarchy
+        ArrayList<FormalVars> formals = new ArrayList<>();
+        Map<String, String> formalMap = new HashMap<>();
+        Map<String, String> localVars = new HashMap<>();
+        Map<String, String>  fieldsVars = new HashMap<>();
+        formalMap.put(mainClass.argsName(), null);
+        formals.add(new FormalVars(mainClass.argsName(), null));
+
         mainClass.mainStatement().accept(this);
+
+        MethodData mainMethod = new MethodData("main", formals, null, localVars, formalMap, fieldsVars, null);
+        Map<String, MethodData> methodDataMap = new HashMap<>();
+        methodDataMap.put("main", mainMethod);
+        mainClassData = new ClassData(mainClass.name(), null, methodDataMap , fieldsVars);
+        mainMethod.classData = mainClassData;
+
+        classNameToData.put(mainClass.name(), mainClassData);
     }
 
     @Override
