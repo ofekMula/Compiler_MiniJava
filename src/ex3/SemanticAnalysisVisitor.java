@@ -38,7 +38,7 @@ public class SemanticAnalysisVisitor implements Visitor {
             throw new SemanticErrorException(message+": different return type");
 
         }
-        if (!IsClassSubtypeOf(methodDataAddToClass.returnType,overriddenMethod.returnType)){
+        if (!isClassSubtypeOf(methodDataAddToClass.returnType,overriddenMethod.returnType)){
             throw new SemanticErrorException(message+": different return type");
 
         }
@@ -119,12 +119,22 @@ public class SemanticAnalysisVisitor implements Visitor {
     }
 
     // check if possibleSubClass is a SubClass of possibleSuperClass if (sub extends super)
-    private boolean IsClassSubtypeOf(String possibleSubClass, String possibleSuperClass) {
+    private boolean isClassSubtypeOf(String possibleSubClass, String possibleSuperClass) {
         if (possibleSubClass.equals(possibleSuperClass)) {
             return true;
         } else if (atLeastOneIsPrimitiveType(possibleSubClass, possibleSuperClass)) { // primitives from different types
             return false;
         } else {
+            ClassData subClassToCheck = classNameToData.get(possibleSubClass);
+            ClassData superClassToCheck = classNameToData.get(possibleSuperClass);
+            if (subClassToCheck.superClassData != null) {
+                if (subClassToCheck.superClassData == superClassToCheck)
+                    return true;
+                else
+                    return isClassSubtypeOf(subClassToCheck.superClassData.name, possibleSuperClass);
+            } else
+                return false;
+            /*
             ClassData secondClass = classNameToData.get(possibleSuperClass);
             ArrayList<ClassData> secondSubClasses = secondClass.getSubClassesData();
             for (ClassData subClassData : secondSubClasses) {
@@ -132,7 +142,11 @@ public class SemanticAnalysisVisitor implements Visitor {
                     return true;
                 }
             }
+            if (secondClass.superClassData != null) {
+                return IsClassSubtypeOf()
+            }
             return false;
+            */
         }
     }
 
@@ -194,7 +208,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         methodDecl.ret().accept(this);
         String actualMethodReturnType = exprType;
 
-        if (!IsClassSubtypeOf(actualMethodReturnType, requiredMethodReturnType))
+        if (!isClassSubtypeOf(actualMethodReturnType, requiredMethodReturnType))
             throw new SemanticErrorException("The required " + requiredMethodReturnType + " and the actual " + actualMethodReturnType + " return types are not the same.");
     }
 
@@ -311,7 +325,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
         assignStatement.rv().accept(this);
         String rvType = exprType;
-        if (!IsClassSubtypeOf(rvType, lvType)) {
+        if (!isClassSubtypeOf(rvType, lvType)) {
             throw new SemanticErrorException("Assign of " + rvType + " to " + lvType + " (AssignStatement,#16)");
         }
 
@@ -452,7 +466,7 @@ public class SemanticAnalysisVisitor implements Visitor {
             e.actuals().get(i).accept(this);
             String actualType = exprType;
             String formalType = methodData.formalVarsList.get(i).type;
-            if (!(actualType.equals(formalType) || IsClassSubtypeOf(actualType, formalType))) {
+            if (!(actualType.equals(formalType) || isClassSubtypeOf(actualType, formalType))) {
                 throw new SemanticErrorException("in method " + methodName + " actual type " + actualType
                         + " and formal type " + formalType + " don't match (MethodCallExpr #11)");
             }

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ClassData {
-    private ClassData superClassData;
+    public ClassData superClassData;
     public String name;
     private ArrayList<ClassData> subClassesData;
     public Map<String, MethodData> methodDataMap; // override and inherited
