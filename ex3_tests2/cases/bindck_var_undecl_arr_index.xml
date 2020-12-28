@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="ast.xsd" ?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>a</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <int-literal>
+                        <num>3</num>
+                    </int-literal>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>A</name>
+            <fields>
+                <field>
+                    <type>
+                        <int-array></int-array>
+                    </type>
+                    <name>arr</name>
+                </field>
+            </fields>
+            <methoddecls>
+                <methoddecl>
+                    <returnType>
+                        <int />
+                    </returnType>
+                    <name>fun</name>
+                    <formals />
+                    <vardecls></vardecls>
+                    <body></body>
+                    <ret>
+                        <array-access>
+                            <arrayExpr>
+                                <ref-id>
+                                    <id>arr</id>
+                                </ref-id>
+                            </arrayExpr>
+                            <indexExpr>
+                                <ref-id>
+                                    <id>x</id>
+                                </ref-id>
+                            </indexExpr>
+                        </array-access>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>

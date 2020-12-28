@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="ast.xsd" ?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>a</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <int-literal>
+                        <num>3</num>
+                    </int-literal>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>A</name>
+            <fields></fields>
+            <methoddecls>
+                <methoddecl>
+                    <returnType>
+                        <bool />
+                    </returnType>
+                    <name>fun</name>
+                    <formals></formals>
+                    <vardecls>
+                        <vardecl>
+                            <type>
+                                <bool />
+                            </type>
+                            <name>x</name>
+                        </vardecl>
+                    </vardecls>
+                    <body>
+                        <assign>
+                            <lv>x</lv>
+                            <rv>
+                                <call>
+                                    <ownerExpr>
+                                        <this />
+                                    </ownerExpr>
+                                    <methodId>fun2</methodId>
+                                    <actuals>
+                                        <actual>
+                                            <true />
+                                        </actual>
+                                        <actual>
+                                            <new-object>
+                                                <classId>B</classId>
+                                            </new-object>
+                                        </actual>
+                                    </actuals>
+                                </call>
+                            </rv>
+                        </assign>
+                        <assign>
+                            <lv>x</lv>
+                            <rv>
+                                <call>
+                                    <ownerExpr>
+                                        <this />
+                                    </ownerExpr>
+                                    <methodId>fun2</methodId>
+                                    <actuals>
+                                        <actual>
+                                            <true />
+                                        </actual>
+                                        <actual>
+                                            <new-object>
+                                                <classId>C</classId>
+                                            </new-object>
+                                        </actual>
+                                    </actuals>
+                                </call>
+                            </rv>
+                        </assign>
+                        <assign>
+                            <lv>x</lv>
+                            <rv>
+                                <call>
+                                    <ownerExpr>
+                                        <this />
+                                    </ownerExpr>
+                                    <methodId>fun2</methodId>
+                                    <actuals>
+                                        <actual>
+                                            <true />
+                                        </actual>
+                                        <actual>
+                                            <new-object>
+                                                <classId>D</classId>
+                                            </new-object>
+                                        </actual>
+                                    </actuals>
+                                </call>
+                            </rv>
+                        </assign>
+                    </body>
+                    <ret>
+                        <call>
+                            <ownerExpr>
+                                <this />
+                            </ownerExpr>
+                            <methodId>fun2</methodId>
+                            <actuals>
+                                <actual>
+                                    <false />
+                                </actual>
+                                <actual>
+                                    <this />
+                                </actual>
+                            </actuals>
+                        </call>
+                    </ret>
+                </methoddecl>
+                <methoddecl>
+                    <returnType>
+                        <bool />
+                    </returnType>
+                    <name>fun2</name>
+                    <formals>
+                        <formal>
+                            <type>
+                                <bool />
+                            </type>
+                            <name>x</name>
+                        </formal>
+                        <formal>
+                            <type>
+                                <ref>
+                                    <id>A</id>
+                                </ref>
+                            </type>
+                            <name>y</name>
+                        </formal>
+                    </formals>
+                    <vardecls></vardecls>
+                    <body></body>
+                    <ret>
+                        <ref-id>
+                            <id>x</id>
+                        </ref-id>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+        <classdecl>
+            <name>B</name>
+            <superName>A</superName>
+            <fields></fields>
+            <methoddecls></methoddecls>
+        </classdecl>
+        <classdecl>
+            <name>C</name>
+            <superName>B</superName>
+            <fields></fields>
+            <methoddecls></methoddecls>
+        </classdecl>
+        <classdecl>
+            <name>D</name>
+            <superName>C</superName>
+            <fields></fields>
+            <methoddecls></methoddecls>
+        </classdecl>
+    </classdecls>
+</program>

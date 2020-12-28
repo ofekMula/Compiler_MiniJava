@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="ast.xsd" ?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>args</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <call>
+                        <ownerExpr>
+                            <new-object>
+                                <classId>Arr</classId>
+                            </new-object>
+                        </ownerExpr>
+                        <methodId>access</methodId>
+                        <actuals></actuals>
+                    </call>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>Arr</name>
+            <fields />
+            <methoddecls>
+                <methoddecl>
+                    <returnType>
+                        <int />
+                    </returnType>
+                    <name>access</name>
+                    <formals></formals>
+                    <vardecls>
+                        <vardecl>
+                            <type>
+                                <int-array />
+                            </type>
+                            <name>arr</name>
+                        </vardecl>
+                    </vardecls>
+                    <body>
+                        <assign>
+                            <lv>arr</lv>
+                            <rv>
+                                <new-int-array>
+                                    <lengthExpr>
+                                        <int-literal>
+                                            <num>5</num>
+                                        </int-literal>
+                                    </lengthExpr>
+                                </new-int-array>
+                            </rv>
+                        </assign>
+                    </body>
+                    <ret>
+                        <array-access>
+                            <arrayExpr>
+                                <ref-id>
+                                    <id>arr</id>
+                                </ref-id>
+                            </arrayExpr>
+                            <indexExpr>
+                                <array-access>
+                                    <arrayExpr>
+                                        <ref-id>
+                                            <id>arr</id>
+                                        </ref-id>
+                                    </arrayExpr>
+                                    <indexExpr>
+                                        <int-literal>
+                                            <num>1</num>
+                                        </int-literal>
+                                    </indexExpr>
+                                </array-access>
+                            </indexExpr>
+                        </array-access>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>

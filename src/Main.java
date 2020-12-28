@@ -46,12 +46,13 @@ public class Main {
                     try{
                         ex3.ClassMethodDataVisitor firstVisitor = new ex3.ClassMethodDataVisitor();
                         firstVisitor.visit(prog);
-                        ex3.SemanticAnalysisVisitor semanticVisitor = new ex3.SemanticAnalysisVisitor(firstVisitor.classNameToData);
+                        ex3.SemanticAnalysisVisitor semanticVisitor = new ex3.SemanticAnalysisVisitor(firstVisitor.classNameToData,
+                                firstVisitor.mainClassData);
                         semanticVisitor.visit(prog);
                         outFile.print("OK"+"\n");
                     }
                     catch (SemanticErrorException e){
-                        //outFile.print(e.getMessage()+"\n");
+                        outFile.print(e.getMessage()+"\n");
                         outFile.print("ERROR"+"\n");
                     }
 

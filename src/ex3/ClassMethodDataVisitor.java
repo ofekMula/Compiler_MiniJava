@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class ClassMethodDataVisitor implements Visitor {
     public Map<String, ClassData> classNameToData;
+    public ClassData mainClassData;
     private String mainClassName;
     private String refName; // type
     private MethodData methodDataAddToClass; // add the method after calculating it in accept - when returning to class
@@ -18,39 +19,6 @@ public class ClassMethodDataVisitor implements Visitor {
         classNameToData = new HashMap<>();
     }
 
-    public boolean atLeastOneIsPrimitiveType(String firstType, String secondType) {
-        switch (firstType) {
-            case "int":
-            case "int-array":
-            case "boolean":
-                return true;
-            default:
-                switch (secondType) {
-                    case "int":
-                    case "int-array":
-                    case "boolean":
-                        return true;
-                    default:
-                        return false;
-                }
-        }
-    }
-    public boolean IsClassSubtypeOf(String possibleSubClass, String possibleSuperClass) {
-        if (possibleSubClass.equals(possibleSuperClass)) {
-            return true;
-        } else if (atLeastOneIsPrimitiveType(possibleSubClass, possibleSuperClass)) { // primitives from different types
-            return false;
-        } else {
-            ClassData secondClass = classNameToData.get(possibleSuperClass);
-            ArrayList<ClassData> secondSubClasses = secondClass.getSubClassesData();
-            for (ClassData subClassData : secondSubClasses) {
-                if (possibleSubClass.equals(subClassData.name)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-    }
     public void checkOverridingMethod(MethodData overriddenMethod){
         ArrayList<FormalVars> overriddenFormalVars = overriddenMethod.formalVarsList;
         ArrayList<FormalVars> methodToAddFormalArgs = methodDataAddToClass.formalVarsList;
@@ -64,14 +32,11 @@ public class ClassMethodDataVisitor implements Visitor {
             }
         }
         if ((methodDataAddToClass.returnType == null && overriddenMethod.returnType !=null)
-                 || (methodDataAddToClass.returnType != null && overriddenMethod.returnType ==null)){
+                || (methodDataAddToClass.returnType != null && overriddenMethod.returnType ==null)){
             throw new SemanticErrorException(message+": different return type");
 
         }
-        if (!IsClassSubtypeOf(methodDataAddToClass.returnType,overriddenMethod.returnType)){
-            throw new SemanticErrorException(message+": different return type");
-
-        }
+        //coavraring ret type is being checked in the other visitor.
     }
 
     public void checkMethodDec( Map<String,MethodData> methodData,String className) {
@@ -190,8 +155,22 @@ public class ClassMethodDataVisitor implements Visitor {
 
     @Override
     public void visit(MainClass mainClass) {
-        // not inside the classes hierarchy
+        ArrayList<FormalVars> formals = new ArrayList<>();
+        Map<String, String> formalMap = new HashMap<>();
+        Map<String, String> localVars = new HashMap<>();
+        Map<String, String>  fieldsVars = new HashMap<>();
+        formalMap.put(mainClass.argsName(), null);
+        formals.add(new FormalVars(mainClass.argsName(), null));
+
         mainClass.mainStatement().accept(this);
+
+        MethodData mainMethod = new MethodData("main", formals, null, localVars, formalMap, fieldsVars, null);
+        Map<String, MethodData> methodDataMap = new HashMap<>();
+        methodDataMap.put("main", mainMethod);
+        mainClassData = new ClassData(mainClass.name(), null, methodDataMap , fieldsVars);
+        mainMethod.classData = mainClassData;
+
+        classNameToData.put(mainClass.name(), mainClassData);
     }
 
     @Override

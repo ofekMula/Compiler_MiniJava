@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="ast.xsd" ?>
+<program>
+    <mainclass>
+        <name>Main</name>
+        <argsName>a</argsName>
+        <mainStatement>
+            <sysout>
+                <arg>
+                    <int-literal>
+                        <num>3</num>
+                    </int-literal>
+                </arg>
+            </sysout>
+        </mainStatement>
+    </mainclass>
+    <classdecls>
+        <classdecl>
+            <name>A</name>
+            <fields></fields>
+            <methoddecls>
+                <methoddecl>
+                    <returnType>
+                        <int />
+                    </returnType>
+                    <name>fun</name>
+                    <formals></formals>
+                    <vardecls></vardecls>
+                    <body></body>
+                    <ret>
+                        <call>
+                            <ownerExpr>
+                                <this />
+                            </ownerExpr>
+                            <methodId>fun2</methodId>
+                            <actuals>
+                                <actual>
+                                    <add>
+                                        <e1>
+                                            <int-literal>
+                                                <num>2</num>
+                                            </int-literal>
+                                        </e1>
+                                        <e2>
+                                            <true />
+                                        </e2>
+                                    </add>
+                                </actual>
+                            </actuals>
+                        </call>
+                    </ret>
+                </methoddecl>
+                <methoddecl>
+                    <returnType>
+                        <int />
+                    </returnType>
+                    <name>fun2</name>
+                    <formals>
+                        <formal>
+                            <type>
+                                <int />
+                            </type>
+                            <name>x</name>
+                        </formal>
+                    </formals>
+                    <vardecls></vardecls>
+                    <body></body>
+                    <ret>
+                        <ref-id>
+                            <id>x</id>
+                        </ref-id>
+                    </ret>
+                </methoddecl>
+            </methoddecls>
+        </classdecl>
+    </classdecls>
+</program>

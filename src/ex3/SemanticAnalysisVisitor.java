@@ -3,11 +3,13 @@ package ex3;
 import ast.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
 public class SemanticAnalysisVisitor implements Visitor {
     private String exprType = null;
+    private ClassData mainClassData;
     private Boolean isBinaryExprIntType = false;
     private Boolean isBinaryExprBooleanType = false;
     private Map<String, ClassData> classNameToData;
@@ -20,31 +22,80 @@ public class SemanticAnalysisVisitor implements Visitor {
     private boolean isInIf = false;
 
 
-    public SemanticAnalysisVisitor(Map<String, ClassData> classNameToData) {
+    public void checkOverridingMethod(MethodData overriddenMethod,MethodData methodDataAddToClass ){
+        ArrayList<FormalVars> overriddenFormalVars = overriddenMethod.formalVarsList;
+        ArrayList<FormalVars> methodToAddFormalArgs = methodDataAddToClass.formalVarsList;
+        String message="An overriding method matches the ancestor's method signature with the same name";
+        if (overriddenFormalVars.size() != methodToAddFormalArgs.size()){
+            throw new SemanticErrorException(message+": different number of formal args");
+        }
+        for ( int i=0; i<overriddenFormalVars.size();i++){
+            if( !overriddenFormalVars.get(i).type.equals(methodToAddFormalArgs.get(i).type)){
+                throw new SemanticErrorException(message+":formals with diff types");
+            }
+        }
+        if ((methodDataAddToClass.returnType == null && overriddenMethod.returnType !=null)
+                || (methodDataAddToClass.returnType != null && overriddenMethod.returnType ==null)){
+            throw new SemanticErrorException(message+": different return type");
+
+        }
+        if (!isClassSubtypeOf(methodDataAddToClass.returnType,overriddenMethod.returnType)){
+            throw new SemanticErrorException(message+": different return type");
+
+        }
+    }
+
+    public void checkMethodDec( Map<String,MethodData> superClassMethodsData,MethodData currentMethodData) {
+        MethodData methodWithSameName = superClassMethodsData.get(currentMethodData.name);
+        String subClassName = currentMethodData.classData.name;
+        if (methodWithSameName != null) {//already exists
+            if (methodWithSameName.classData.name.equals(subClassName)) {// already exists in this method's class scope
+                throw new SemanticErrorException("The same name cannot be used for the same method in one class");
+            } else {//defined in one of super classes
+                checkOverridingMethod(methodWithSameName,currentMethodData);//defined in one of super classes
+            }
+
+        }
+    }
+
+
+    public void bringSuperClassMethods(String superClassName, Map<String, MethodData> methodData){
+        if (superClassName != null) { // bring to this class all the superClass methods
+            ClassData superClassData = classNameToData.get(superClassName); // get the super table
+            if (superClassData.getMethodDataMap() != null) {
+                methodData.putAll(superClassData.getMethodDataMap()); // put all methods from super class in this class
+            }
+        }
+    }
+
+
+    public SemanticAnalysisVisitor(Map<String, ClassData> classNameToData, ClassData mainClassData) {
         this.classNameToData = classNameToData;
         this.initializedLocalVars = new HashSet<>();
         this.newInitializedLocalVars = new HashSet<>();
         this.whileInitializedLocalVars = new HashSet<>();
+        this.mainClassData = mainClassData;
+//        this.classNameToData.put(mainClassData.name, mainClassData);
     }
 
     private String getTypeFromMap(String varName) {
         for (Map.Entry<String, String> field : methodData.fieldsVars.entrySet()) {
             if (field.getKey().equals(varName)) {
-                System.out.println("field: " + varName + " type:" + field.getValue() + " method: " + methodData.name);
+                //System.out.println("field: " + varName + " type:" + field.getValue() + " method: " + methodData.name);
                 return field
                         .getValue();
             }
         }
         for (Map.Entry<String, String> local : methodData.localVars.entrySet()) {
             if (local.getKey().equals(varName)) {
-                System.out.println("local: " + varName + " type:" + local.getValue() + " method: " + methodData.name);
+                //System.out.println("local: " + varName + " type:" + local.getValue() + " method: " + methodData.name);
                 return local
                         .getValue();
             }
         }
         for (Map.Entry<String, String> formal : methodData.formalVars.entrySet()) {
             if (formal.getKey().equals(varName)) {
-                System.out.println("formal: " + varName + " type:" + formal.getValue() + " method: " + methodData.name);
+                //System.out.println("formal: " + varName + " type:" + formal.getValue() + " method: " + methodData.name);
                 return formal
                         .getValue();
             }
@@ -71,12 +122,22 @@ public class SemanticAnalysisVisitor implements Visitor {
     }
 
     // check if possibleSubClass is a SubClass of possibleSuperClass if (sub extends super)
-    private boolean IsClassSubtypeOf(String possibleSubClass, String possibleSuperClass) {
+    private boolean isClassSubtypeOf(String possibleSubClass, String possibleSuperClass) {
         if (possibleSubClass.equals(possibleSuperClass)) {
             return true;
         } else if (atLeastOneIsPrimitiveType(possibleSubClass, possibleSuperClass)) { // primitives from different types
             return false;
         } else {
+            ClassData subClassToCheck = classNameToData.get(possibleSubClass);
+            ClassData superClassToCheck = classNameToData.get(possibleSuperClass);
+            if (subClassToCheck.superClassData != null) {
+                if (subClassToCheck.superClassData == superClassToCheck)
+                    return true;
+                else
+                    return isClassSubtypeOf(subClassToCheck.superClassData.name, possibleSuperClass);
+            } else
+                return false;
+            /*
             ClassData secondClass = classNameToData.get(possibleSuperClass);
             ArrayList<ClassData> secondSubClasses = secondClass.getSubClassesData();
             for (ClassData subClassData : secondSubClasses) {
@@ -84,7 +145,11 @@ public class SemanticAnalysisVisitor implements Visitor {
                     return true;
                 }
             }
+            if (secondClass.superClassData != null) {
+                return IsClassSubtypeOf()
+            }
             return false;
+            */
         }
     }
 
@@ -98,8 +163,8 @@ public class SemanticAnalysisVisitor implements Visitor {
 
     @Override
     public void visit(ClassDecl classDecl) {
-        // todo: must be in classNameToData?
         currClassData = classNameToData.get(classDecl.name());
+        Map<String,MethodData> superMethodsData = new HashMap<>();
 
         if (classDecl.superName() != null) {
         }
@@ -107,17 +172,21 @@ public class SemanticAnalysisVisitor implements Visitor {
         for (var fieldDecl : classDecl.fields()) {
             fieldDecl.accept(this);
         }
+        bringSuperClassMethods(classDecl.superName(), superMethodsData);
+
         for (var methodDecl : classDecl.methoddecls()) {
             methodData = classNameToData
                     .get(classDecl.name())
                     .getMethodDataFromMap(methodDecl.name());
+            checkMethodDec(superMethodsData,methodData);
             methodDecl.accept(this);
         }
     }
 
     @Override
     public void visit(MainClass mainClass) {
-
+        currClassData = mainClassData;
+        methodData = mainClassData.getMethodDataFromMap("main");
         mainClass.mainStatement().accept(this);
 
     }
@@ -127,7 +196,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         this.initializedLocalVars = new HashSet<>();
 
         methodDecl.returnType().accept(this);
-        System.out.println("return required:" + exprType);
+        //System.out.println("return required:" + exprType);
         String requiredMethodReturnType = exprType;
         for (var formal : methodDecl.formals()) {
             formal.accept(this);
@@ -142,7 +211,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         methodDecl.ret().accept(this);
         String actualMethodReturnType = exprType;
 
-        if (!IsClassSubtypeOf(actualMethodReturnType, requiredMethodReturnType))
+        if (!isClassSubtypeOf(actualMethodReturnType, requiredMethodReturnType))
             throw new SemanticErrorException("The required " + requiredMethodReturnType + " and the actual " + actualMethodReturnType + " return types are not the same.");
     }
 
@@ -213,7 +282,7 @@ public class SemanticAnalysisVisitor implements Visitor {
             throw new SemanticErrorException("While statement expr isn't of boolean type");
 
         isInWhile = true;
-        System.out.println("while in");//todo delete
+        //System.out.println("while in");//todo delete
         // save state
         HashSet<String> tmpInitializedLocalVars = initializedLocalVars;
         HashSet<String> tmpNewInitializedLocalVars = newInitializedLocalVars;
@@ -224,7 +293,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         whileInitializedLocalVars = new HashSet<>();
         whileStatement.body().accept(this);
         isInWhile = false;
-        System.out.println("while out"); //todo delete
+        //System.out.println("while out"); //todo delete
 
         // load state
         initializedLocalVars = tmpInitializedLocalVars;
@@ -259,7 +328,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
         assignStatement.rv().accept(this);
         String rvType = exprType;
-        if (!IsClassSubtypeOf(rvType, lvType)) {
+        if (!isClassSubtypeOf(rvType, lvType)) {
             throw new SemanticErrorException("Assign of " + rvType + " to " + lvType + " (AssignStatement,#16)");
         }
 
@@ -275,6 +344,19 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
         if (!idType.equals("int-array"))
             throw new SemanticErrorException("The array assign statement isn't of type int-array.");
+        // must be initialized before
+        if (isInWhile) {
+            if (!(initializedLocalVars.contains(assignArrayStatement.lv()) ||
+                    newInitializedLocalVars.contains(assignArrayStatement.lv()) ||
+                    whileInitializedLocalVars.contains(assignArrayStatement.lv()))) {
+                throw new SemanticErrorException("var " + assignArrayStatement.lv() + " is not initialized before it is used, (IdentifierExpr, #15)");
+            }
+        } else {
+            if (!(initializedLocalVars.contains(assignArrayStatement.lv()) ||
+                    newInitializedLocalVars.contains(assignArrayStatement.lv()))) {
+                throw new SemanticErrorException("var " + assignArrayStatement.lv() + " is not initialized before it is used, (IdentifierExpr, #15)");
+            }
+        }
         assignArrayStatement.index().accept(this);
         if (!exprType.equals("int"))
             throw new SemanticErrorException("The array assign statement index isn't of type int.");
@@ -302,6 +384,8 @@ public class SemanticAnalysisVisitor implements Visitor {
         isBinaryExprBooleanType = true;
         visitBinaryExpr(e, "&&");
         exprType = "boolean";
+        isBinaryExprIntType = false;
+        isBinaryExprBooleanType = true;
     }
 
     @Override
@@ -310,6 +394,8 @@ public class SemanticAnalysisVisitor implements Visitor {
         isBinaryExprBooleanType = false;
         visitBinaryExpr(e, "<");
         exprType = "boolean";
+        isBinaryExprIntType = false;
+        isBinaryExprBooleanType = true;
     }
 
     @Override
@@ -317,8 +403,9 @@ public class SemanticAnalysisVisitor implements Visitor {
         isBinaryExprIntType = true;
         isBinaryExprBooleanType = false;
         visitBinaryExpr(e, "+");
-        ;
         exprType = "int";
+        isBinaryExprIntType = true;
+        isBinaryExprBooleanType = false;
     }
 
     @Override
@@ -327,6 +414,8 @@ public class SemanticAnalysisVisitor implements Visitor {
         isBinaryExprBooleanType = false;
         visitBinaryExpr(e, "-");
         exprType = "int";
+        isBinaryExprIntType = true;
+        isBinaryExprBooleanType = false;
     }
 
     @Override
@@ -335,6 +424,8 @@ public class SemanticAnalysisVisitor implements Visitor {
         isBinaryExprBooleanType = false;
         visitBinaryExpr(e, "*");
         exprType = "int";
+        isBinaryExprIntType = true;
+        isBinaryExprBooleanType = false;
     }
 
     @Override
@@ -375,7 +466,7 @@ public class SemanticAnalysisVisitor implements Visitor {
                     + " and not " + exprType + " (not int, bool, or int[]).  (MethodCallExpr #10)");
         }
 
-        System.out.println("methodOwnerRefName:" + methodOwnerRefName);
+        //System.out.println("methodOwnerRefName:" + methodOwnerRefName);
 
         if (!classNameToData.containsKey(methodOwnerRefName)) {
             throw new SemanticErrorException("method " + methodName + " has owner of type " + methodOwnerRefName
@@ -383,7 +474,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
 
         ClassData ownerClassData = classNameToData.get(methodOwnerRefName);
-        System.out.println("ownerClassData:" + ownerClassData);
+        //System.out.println("ownerClassData:" + ownerClassData);
 
         if (!ownerClassData.methodDataMap.containsKey(methodName)) {
             throw new SemanticErrorException("method " + methodName + " is not defined in the owner's class "
@@ -400,7 +491,7 @@ public class SemanticAnalysisVisitor implements Visitor {
             e.actuals().get(i).accept(this);
             String actualType = exprType;
             String formalType = methodData.formalVarsList.get(i).type;
-            if (!(actualType.equals(formalType) || IsClassSubtypeOf(actualType, formalType))) {
+            if (!(actualType.equals(formalType) || isClassSubtypeOf(actualType, formalType))) {
                 throw new SemanticErrorException("in method " + methodName + " actual type " + actualType
                         + " and formal type " + formalType + " don't match (MethodCallExpr #11)");
             }
@@ -411,7 +502,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
 
         exprType = methodData.returnType;
-        System.out.println("In Method call:" + exprType);
+        //System.out.println("In Method call:" + exprType);
     }
 
     @Override
@@ -450,7 +541,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         }
 
         exprType = varType;
-        System.out.println("exprType:" + exprType);
+        //System.out.println("exprType:" + exprType);
     }
 
     public void visit(ThisExpr e) {
