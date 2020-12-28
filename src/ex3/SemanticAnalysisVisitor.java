@@ -248,6 +248,7 @@ public class SemanticAnalysisVisitor implements Visitor {
         HashSet<String> tmpInitializedLocalVars = initializedLocalVars;
         HashSet<String> tmpNewInitializedLocalVars = newInitializedLocalVars;
         HashSet<String> tmpWhileInitializedLocalVars = whileInitializedLocalVars;
+        boolean tmpIsInIf = isInIf;
 
         // run if
         newInitializedLocalVars = new HashSet<>();
@@ -264,10 +265,17 @@ public class SemanticAnalysisVisitor implements Visitor {
         join(thenInitializedResult, elseInitialized);
 
         // load & update
+        isInIf = tmpIsInIf;
         if (isInWhile) {
             tmpWhileInitializedLocalVars.addAll(thenInitializedResult);
-        } else {
-            tmpInitializedLocalVars.addAll(thenInitializedResult);
+        }
+        else {
+            if (isInIf){
+                tmpNewInitializedLocalVars.addAll(thenInitializedResult);
+            }
+            else{
+                tmpInitializedLocalVars.addAll(thenInitializedResult);
+            }
         }
         whileInitializedLocalVars = tmpWhileInitializedLocalVars;
         initializedLocalVars = tmpInitializedLocalVars;
