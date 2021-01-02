@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="52a48db8-b9bd-4e48-b0c0-b5f92dcc37af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mjavac.jar" beforeDir="false" afterPath="$PROJECT_DIR$/mjavac.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/AstPrintVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/AstPrintVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cup/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/cup/Parser.cup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jflex/Scanner.jflex" beforeDir="false" afterPath="$PROJECT_DIR$/src/jflex/Scanner.jflex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +168,7 @@
       <workItem from="1608652692909" duration="4259000" />
       <workItem from="1608895363744" duration="5599000" />
       <workItem from="1609316838816" duration="10000" />
+      <workItem from="1609612620493" duration="235000" />
     </task>
     <task id="LOCAL-00007" summary="--">
       <created>1607005181605</created>
@@ -293,11 +296,18 @@
       <option name="project" value="LOCAL" />
       <updated>1609181107206</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="jar update">
+      <created>1609612669292</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1609612669292</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -328,7 +338,8 @@
     <MESSAGE value="null checks for if blocks and return type" />
     <MESSAGE value="--" />
     <MESSAGE value="last changes ex3" />
-    <option name="LAST_COMMIT_MESSAGE" value="last changes ex3" />
+    <MESSAGE value="jar update" />
+    <option name="LAST_COMMIT_MESSAGE" value="jar update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="538" y="240" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608574742922">
@@ -411,10 +422,10 @@
     </state>
     <state x="351" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607532194553" />
     <state x="351" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1608540000865" />
-    <state x="362" y="149" key="Vcs.Push.Dialog.v2" timestamp="1609181108761">
+    <state x="362" y="149" key="Vcs.Push.Dialog.v2" timestamp="1609612672374">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609181108761" />
+    <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609612672374" />
     <state x="453" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533369301" />
     <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608538055128" />
     <state x="484" y="149" width="686" height="664" key="find.popup" timestamp="1607190221445">
