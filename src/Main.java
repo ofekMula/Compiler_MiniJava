@@ -52,7 +52,7 @@ public class Main {
                         outFile.print("OK"+"\n");
                     }
                     catch (SemanticErrorException e){
-                        outFile.print(e.getMessage()+"\n");
+//                        outFile.print(e.getMessage()+"\n");
                         outFile.print("ERROR"+"\n");
                     }
 
