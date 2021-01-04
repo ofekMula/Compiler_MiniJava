@@ -64,16 +64,51 @@ scan with
 /* TERMINALS */
 /*************/
 terminal PUBLIC;
+terminal CLASS;
+terminal MAIN_CLASS;
+terminal EXTENDS;
+
+terminal PLUS, MINUS, MULT, DIV, LT;
+terminal LPAREN, RPAREN, L_CUR_PAREN, R_CUR_PAREN;
+terminal int NUMBER;
+terminal String ID;
+terminal FALSE;
+terminal COMMA, END_SENT, EQUALS, DOT;
+terminal INT, ARRAY, BOOL;
+terminal NEW, L_ARRAY, R_ARRAY;
 
 /*****************/
 /* NON TERMINALS */
 /*****************/
-non terminal prog;
+non terminal Prog prog;
+non terminal ClassDecl classDecl;
+non terminal VarDecl varDecl;
+non terminal MethodDecl methodDecl;
+non terminal FormalArg formalArg;
+non terminal LinkedList<ClassDecl> classDeclsList;
+non terminal LinkedList<VarDecl> varDeclsList;
+non terminal LinkedList<MethodDecl> methodDeclsList;
+non terminal LinkedList<FormalArg> formalsList;
+
+non terminal AstType type;
+non terminal Statement statement;
+
+non terminal Expr expr;
+non terminal Expr term;
+non terminal Expr factor;
+non terminal Expr operand;
+non terminal LinkedList<Expr> commaExprList;
 
 /***********************/
 /* OPERATOR PRECEDENCE */
 /***********************/
+precedence left MAIN_CLASS;
+precedence left CLASS;
+precedence left PLUS, MINUS;
+precedence left MULT, DIV;
 
+// TODO: Int array only - check other type of array give exception
+// TODO: "new" precedence of array
 /************************/
 /* INITIAL NON TERMINAL */
 /************************/
@@ -82,5 +117,46 @@ start with prog;
 /********************/
 /* PRODUCTION RULES */
 /********************/
+type	::=	INT ARR         {: RESULT = new IntArrayAstType(); :}
+            |	BOOLEAN     {: RESULT = new BoolAstType(); :}
+            |	INT         {: RESULT = new IntAstType(); :}
+            |	ID:id       {: RESULT = new RefType(id); :}  ;
 
 prog            ::=     ;
+
+classDecl  ::= CLASS ID:className EXTENDS ID:superName R_CUR_PAREN VarDecls:varDecls MethodDecls:methodDecls
+            L_CUR_PAREN     {: RESULT = new ClassDecl(className, superName, varDecls, methodDecls); :}
+            | CLASS ID:className R_CUR_PAREN VarDecls:varDecls MethodDecls:methodDecls L_CUR_PAREN
+            {: RESULT = new ClassDecl(className, null, varDecls, methodDecls); :}  ;
+
+classDeclsList  ::= classDecl:classDecl1 classDeclsList:classList {: classList.addFirst(classDecl1);
+                                                                    RESULT = classList; :}
+               		 | /* empty */           	{: RESULT = new LinkedList<Expr>(); :}  ;
+
+formalArg ::= type:formalType ID:formalName     {: RESULT = new FormalArg(formalType, formalName, 0); :} ;
+
+formalsList  ::= formalArg:formalArg1 formalsList:formals {: formals.addFirst(formalArg1);
+                                                                    RESULT = formals; :}
+               		 | /* empty */           	{: RESULT = new LinkedList<Expr>(); :} ;
+
+
+statement	::= IF LPAREN expr:e1 RPAREN statement:if ELSE statement:else   {: RESULT = new IfStatement(e1, if, else); :}
+                | ID:id1 EQUALS expr:e1 END_SENT    {: RESULT = new AssignStatement(id, e1); :}
+                | \\TODO: more statements;
+
+
+expr ::= expr:e1 PLUS expr:e2 		{: RESULT = new AddExpr(e1, e2); :}
+         | expr:e1 MINUS expr:e2	{: RESULT = new SubtractExpr(e1, e2); :}
+         | expr:e1 MULT expr:e2		{: RESULT = new MultExpr(e1, e2); :}
+         | expr:e1 DIV expr:e2      {: RESULT = new DivExpr(e1, e2); :}
+         | expr:e1 LT expr:e2 		{: RESULT = new LtExpr(e1,e2); :}
+         | LPAREN expr:e RPAREN		{: RESULT = e; :}
+         | NUMBER:n				    {: RESULT = new IntegerLiteralExpr(n); :}
+         | FALSE:false              {: RESULT = new FalseExpr(); :}
+         | expr:ownerExpr DOT ID:methodId LPAREN commaExprList:actuals RPAREN   {: RESULT = new MethodCallExpr(ownerExpr, methodId, actuals); :}
+         | NEW INT L_ARRAY expr:lengthExpr R_ARRAY {: RESULT = new NewIntArrayExpr(lengthExpr); :}
+         | \\TODO: more expr;
+;
+
+commaExprList ::= COMMA expr: e commaExprList:el {: el.addFirst(e); RESULT = el; :}
+		 | /* empty */           	{: RESULT = new LinkedList<Expr>(); :}  ;
