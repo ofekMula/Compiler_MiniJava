@@ -68,22 +68,37 @@ terminal CLASS;
 terminal MAIN_CLASS;
 terminal EXTENDS;
 terminal STATIC;
-terminal PLUS, MINUS, MULT, DIV, LT;
-terminal LPAREN, RPAREN, L_CUR_PAREN, R_CUR_PAREN;
+terminal PLUS;
+terminal MINUS;
+terminal MULT;
+terminal DIV;
+terminal LT;
+terminal LPAREN;
+terminal RPAREN;
+terminal L_CUR_PAREN;
+terminal R_CUR_PAREN;
 terminal int NUMBER;
 terminal String ID;
 terminal FALSE, TRUE;
-terminal COMMA, END_SENT, ASSIGN, DOT ;
+terminal COMMA;
+terminal END_SENT;
+terminal ASSIGN;
+terminal DOT;
 terminal NOT,AND;
-terminal INT, ARRAY, BOOL;
-terminal NEW, L_ARRAY, R_ARRAY;
-terminal IF ,ELSE;oo
+terminal INT;
+terminal ARRAY;
+terminal BOOL;
+terminal NEW;
+terminal L_ARRAY;
+terminal R_ARRAY;
+terminal IF;
+terminal ELSE;
 terminal WHILE;
 terminal LENGTH;
 terminal RETURN,THIS;
 terminal PRINT;
-terminal INT_ARRAY_TYPE,STRING_ARGS;
-
+terminal INT_ARRAY_TYPE;
+terminal STRING_ARGS;
 
 /*****************/
 /* NON TERMINALS */
