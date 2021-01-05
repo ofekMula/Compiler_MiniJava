@@ -137,19 +137,6 @@ public class SemanticAnalysisVisitor implements Visitor {
                     return isClassSubtypeOf(subClassToCheck.superClassData.name, possibleSuperClass);
             } else
                 return false;
-            /*
-            ClassData secondClass = classNameToData.get(possibleSuperClass);
-            ArrayList<ClassData> secondSubClasses = secondClass.getSubClassesData();
-            for (ClassData subClassData : secondSubClasses) {
-                if (possibleSubClass.equals(subClassData.name)) {
-                    return true;
-                }
-            }
-            if (secondClass.superClassData != null) {
-                return IsClassSubtypeOf()
-            }
-            return false;
-            */
         }
     }
 
@@ -292,7 +279,6 @@ public class SemanticAnalysisVisitor implements Visitor {
             throw new SemanticErrorException("While statement expr isn't of boolean type");
 
         isInWhile = true;
-        //System.out.println("while in");//todo delete
         // save state
         HashSet<String> tmpInitializedLocalVars = initializedLocalVars;
         HashSet<String> tmpNewInitializedLocalVars = newInitializedLocalVars;
@@ -306,7 +292,6 @@ public class SemanticAnalysisVisitor implements Visitor {
         whileInitializedLocalVars = new HashSet<>();
         whileStatement.body().accept(this);
         isInWhile = false;
-        //System.out.println("while out"); //todo delete
 
         // load state
         isInWhile = tmpIsInWhile;
@@ -479,7 +464,6 @@ public class SemanticAnalysisVisitor implements Visitor {
         e.ownerExpr().accept(this);
         String methodOwnerRefName = exprType;
 
-        //todo: check this is indeed the meaning of #10
         if (methodOwnerRefName.equals("int") || methodOwnerRefName.equals("boolean") || methodOwnerRefName.equals("int-array")) {
             throw new SemanticErrorException("In method " + methodName + " invocation, the static type of the object should be a reference type"
                     + " and not " + exprType + " (not int, bool, or int[]).  (MethodCallExpr #10)");

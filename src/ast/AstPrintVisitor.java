@@ -78,7 +78,7 @@ public class AstPrintVisitor implements Visitor {
 
     @Override
     public void visit(MethodDecl methodDecl) {
-        appendWithIndent("");
+        appendWithIndent("public ");
         methodDecl.returnType().accept(this);
         builder.append(" ");
         builder.append(methodDecl.name());

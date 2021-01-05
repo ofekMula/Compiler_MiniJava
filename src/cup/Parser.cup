@@ -1,4 +1,9 @@
 /*************/
+/* Based on a template by Oren Ish-Shalom */
+/*************/
+
+
+/*************/
 /* IMPORTS */
 /*************/
 
@@ -16,15 +21,11 @@ parser code
 		super(lexer);
 		this.lexer = lexer;
 	}
+
+	// Override default error reporting in parser
 	public void report_error(String message, Object info)
 	{
-    System.out.print("Syntax error at line " + lexer.getLine() + " of input\n");
-		// System.out.print("ERROR >> ");
-		// System.out.print("[");
-		// System.out.print(lexer.getLine());
-		// System.out.print(":");
-		// System.out.print(lexer.getCharPos());
-		// System.out.print("] ");
+	    System.err.print("Syntax error at line " + lexer.getLine() + " of input. Parser\n");
 		System.exit(1);
 	}
 :}
@@ -35,6 +36,7 @@ parser code
 scan with
 {:
 	Symbol s;
+    try {
 	s = lexer.next_token();
 	// System.out.print(s.sym);
 	// System.out.print("[");
@@ -51,21 +53,59 @@ scan with
 	// }
 	// System.out.print("\n");
 	return s;
+     } catch (java.lang.Error e) {
+         System.err.print("Syntax error at line " + lexer.getLine() + " of input. Lexer\n");
+         System.exit(1);
+         return null;
+     }
 :};
 
 /*************/
 /* TERMINALS */
 /*************/
-terminal PUBLIC;
+terminal PUBLIC, CLASS, MAIN;
+terminal EXTENDS ,STATIC, VOID;
+terminal PLUS, MINUS, MULT, DIV, LT;
+terminal LPAREN, RPAREN, L_CUR_PAREN, R_CUR_PAREN;
+terminal int NUMBER;
+terminal String ID;
+terminal FALSE, TRUE;
+terminal COMMA, END_SENT, ASSIGN, DOT;
+terminal NOT,AND;
+terminal INT, ARRAY, BOOLEAN;
+terminal NEW;
+terminal L_ARRAY, R_ARRAY;
+terminal IF, ELSE, WHILE;
+terminal LENGTH;
+terminal RETURN,THIS;
+terminal PRINT, STRING;
 
 /*****************/
 /* NON TERMINALS */
 /*****************/
-non terminal prog;
+non terminal Prog prog;
+non terminal MainClass mainClass;
+non terminal ClassDecl classDecl;
+non terminal VarDecl varDecl;
+non terminal MethodDecl methodDecl;
+non terminal FormalArg formalArg;
+non terminal LinkedList<ClassDecl> classDeclsList;
+non terminal LinkedList<VarDecl> varDeclsList;
+non terminal LinkedList<MethodDecl> methodDeclsList;
+non terminal LinkedList<FormalArg> formalsList;
 
+non terminal AstType type;
+non terminal Statement statement;
+
+non terminal Expr expr;
+non terminal LinkedList<Expr> commaExprList;
 /***********************/
 /* OPERATOR PRECEDENCE */
 /***********************/
+precedence left CLASS;
+precedence left PLUS, MINUS;
+precedence left MULT, DIV;
+
 
 /************************/
 /* INITIAL NON TERMINAL */
@@ -75,5 +115,59 @@ start with prog;
 /********************/
 /* PRODUCTION RULES */
 /********************/
+type		::=		INT L_ARRAY R_ARRAY {: RESULT = new IntArrayAstType(); :}
+            |	BOOLEAN     {: RESULT = new BoolAstType(); :}
+            |	INT         {: RESULT = new IntAstType(); :}
+            |	ID:id       {: RESULT = new RefType(id); :}  ;
 
-prog            ::=     ;
+prog        ::=     ;
+
+
+mainClass   ::=CLASS ID:main L_CUR_PAREN PUBLIC STATIC VOID MAIN LPAREN
+		STRING L_ARRAY R_ARRAY ID:args RPAREN L_CUR_PAREN statement:mainStatement R_CUR_PAREN R_CUR_PAREN
+		{:RESULT = new MainClass(main,args,mainStatement); :} ;
+
+
+classDecl  ::= CLASS ID:className EXTENDS ID:superName R_CUR_PAREN varDeclsList:varDecls methodDeclsList:methodDecls
+            L_CUR_PAREN     {: RESULT = new ClassDecl(className, superName, varDecls, methodDecls); :}
+            | CLASS ID:className R_CUR_PAREN varDeclsList:varDecls methodDeclsList:methodDecls L_CUR_PAREN
+            {: RESULT = new ClassDecl(className, null, varDecls, methodDecls); :}  ;
+
+classDeclsList  ::= classDecl:classDecl1 classDeclsList:classList {: classList.addFirst(classDecl1);
+                                                                    RESULT = classList; :}
+               		 | /* empty */           	{: RESULT = new LinkedList<Expr>(); :}  ;
+
+formalArg ::= type:formalType ID:formalName     {: RESULT = new FormalArg(formalType, formalName, 0); :} ;
+
+formalsList  ::= formalArg:formalArg1 formalsList:formals {: formals.addFirst(formalArg1);
+                                                                    RESULT = formals; :}
+               		 | /* empty */           	{: RESULT = new LinkedList<Expr>(); :} ;
+
+
+statement	::= IF LPAREN expr:e1 RPAREN statement:if ELSE statement:else   {: RESULT = new IfStatement(e1, if, else); :}
+                | ID:id1 ASSIGN expr:e1 END_SENT    {: RESULT = new AssignStatement(id, e1); :}
+                | WHILE LPAREN expr:cond RPAREN L_CUR_PAREN statement:blockStatement
+					R_CUR_PAREN {: RESULT = new WhileStatement(cond,blockStatement); :}
+				;
+
+
+expr ::= expr:e1 PLUS expr:e2 		{: RESULT = new AddExpr(e1, e2); :}
+         | expr:e1 MINUS expr:e2	{: RESULT = new SubtractExpr(e1, e2); :}
+         | expr:e1 MULT expr:e2		{: RESULT = new MultExpr(e1, e2); :}
+         | expr:e1 DIV expr:e2      {: RESULT = new DivExpr(e1, e2); :}
+         | expr:e1 LT expr:e2 		{: RESULT = new LtExpr(e1,e2); :}
+         | LPAREN expr:e RPAREN		{: RESULT = e; :}
+         | NUMBER:n				    {: RESULT = new IntegerLiteralExpr(n); :}
+         | FALSE:false              {: RESULT = new FalseExpr(); :}
+         | TRUE:true              {: RESULT = new TrueExpr(); :}
+         | expr:ownerExpr DOT ID:methodId LPAREN commaExprList:actuals RPAREN   {: RESULT = new MethodCallExpr(ownerExpr, methodId, actuals); :}
+         | NEW INT L_ARRAY expr:lengthExpr R_ARRAY {: RESULT = new NewIntArrayExpr(lengthExpr); :}
+         | NEW ID:e LPAREN RPAREN 		{:RESULT = new NewObjectExpr(e);:}
+         | ID:arr L_ARRAY expr:e R_ARRAY {: RESULT = new ArrayAccessExpr(arr,e);:}
+         | ID:lv L_ARRAY expr:index R_ARRAY ASSIGN expr:rv
+			{:RESULT = new AssignArrayStatement(lv,index,rv);:}
+;
+varDecl ::= type:varType ID:varName  {: RESULT = new VarDecl(varType,varName,10) ;:};
+
+commaExprList ::= COMMA expr: e commaExprList:el {: el.addFirst(e); RESULT = el; :}
+		 | /* empty */           	{: RESULT = new LinkedList<Expr>(); :}  ;

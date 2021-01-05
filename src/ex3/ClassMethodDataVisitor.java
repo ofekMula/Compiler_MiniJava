@@ -105,7 +105,6 @@ public class ClassMethodDataVisitor implements Visitor {
         superClassName=classDecl.superName();
         if (superClassName !=null){
             if (classNameToData.get(superClassName) ==null ){// super class not defined yet
-                //todo: is it necessary to check circular extends?
                 throw new SemanticErrorException("The superclass of a class precedes it in the file");
             }
             else if (superClassName.equals(mainClassName)){
@@ -183,7 +182,7 @@ public class ClassMethodDataVisitor implements Visitor {
         methodDecl.returnType().accept(this); // in accept the type will be decided in refName
         returnType = refName;
 
-        if (returnType == null){ //todo: check if needed
+        if (returnType == null){
             throw new SemanticErrorException("returnType of a method is null");
         }
 
@@ -239,7 +238,7 @@ public class ClassMethodDataVisitor implements Visitor {
 
     @Override
     public void visit(IfStatement ifStatement) {
-        if (ifStatement.cond() == null || ifStatement.thencase() == null ||  ifStatement.elsecase() == null){ //todo: check if needed
+        if (ifStatement.cond() == null || ifStatement.thencase() == null ||  ifStatement.elsecase() == null){
             throw new SemanticErrorException("one part of IfStatement is null");
         }
 

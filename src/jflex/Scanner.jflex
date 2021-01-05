@@ -1,5 +1,5 @@
 /***************************/
-/* FILE NAME: LEX_FILE.lex */
+/* Based on a template by Oren Ish-Shalom */
 /***************************/
 
 /*************/
@@ -63,7 +63,12 @@ import java_cup.runtime.*;
 /***********************/
 /* MACRO DECALARATIONS */
 /***********************/
-
+LineTerminator	= \r|\n|\r\n
+WhiteSpace		= [\t ] | {LineTerminator}
+INTEGER			= 0 | [1-9][0-9]*
+ID				= [a-zA-Z]
+MultiComment   = "/*" [^*] ~"*/" | "/*" "*"+ "/"
+SingleComment     = "//" [^\r\n]* {LineTerminator}?
 /******************************/
 /* DOLAR DOLAR - DON'T TOUCH! */
 /******************************/
@@ -82,5 +87,45 @@ import java_cup.runtime.*;
 
 <YYINITIAL> {
 "public"            { return symbol(sym.PUBLIC); }
+"class"             { return symbol(sym.CLASS); }
+"main"        { return symbol(sym.MAIN); }
+"extends"           { return symbol(sym.EXTENDS); }
+"static"            {return symbol(sym.STATIC);}
+"void"              {return symbol(sym.VOID);}
+","			        { return symbol(sym.COMMA); }
+"+"                 { return symbol(sym.PLUS); }
+"-"                 { return symbol(sym.MINUS); }
+"*"                 { return symbol(sym.MULT); }
+"/"                 { return symbol(sym.DIV); }
+"<"                 { return symbol(sym.LT); }
+"("                 { return symbol(sym.LPAREN); }
+")"                 { return symbol(sym.RPAREN); }
+"{"                 { return symbol(sym.L_CUR_PAREN); }
+"}"                 { return symbol(sym.R_CUR_PAREN); }
+";"                 { return symbol(sym.END_SENT); }
+"!"                  { return symbol(sym.NOT); }
+"&&"                { return symbol(sym.AND); }
+"int"               { return symbol(sym.INT); }
+"String"          {return symbol(sym.STRING);}
+"["                { return symbol(sym.L_ARRAY); }
+"]"                { return symbol(sym.R_ARRAY); }
+"boolean"           { return symbol(sym.BOOLEAN); }
+"false"             { return symbol(sym.FALSE); }
+"true"                 { return symbol(sym.TRUE); }
+"."                 { return symbol(sym.DOT); }
+"new"               { return symbol(sym.NEW); }
+"="                 { return symbol(sym.ASSIGN); }
+"if"             { return symbol(sym.IF); }
+"else"             { return symbol(sym.ELSE); }
+"while"             { return symbol(sym.WHILE); }
+"length"             { return symbol(sym.LENGTH); }
+"this"                 {return symbol(sym.THIS);}
+"return"                {return symbol(sym.RETURN);}
+"System.out.println"    { return symbol(sym.PRINT); }
+{ID}		        { return symbol(sym.ID, new String(yytext())); }
+{INTEGER}           { return symbol(sym.NUMBER, Integer.parseInt(yytext())); }
+{WhiteSpace}        { /* do nothing */ }
+{SingleComment}     { /* do nothing */ }
+{MultiComment}     { /* do nothing */ }
 <<EOF>>				{ return symbol(sym.EOF); }
 }
