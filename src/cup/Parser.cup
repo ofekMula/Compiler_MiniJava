@@ -132,8 +132,7 @@ precedence left CLASS;
 precedence left PLUS, MINUS;
 precedence left MULT, DIV;
 
-// TODO: Int array only - check other type of array give exception
-// TODO: "new" precedence of array
+
 /************************/
 /* INITIAL NON TERMINAL */
 /************************/
@@ -154,9 +153,9 @@ mainClass   ::=CLASS ID:main L_CUR_PAREN PUBLIC STATIC VOID MAIN LPAREN
 		{:RESULT = new MainClass(main,args,mainStatement); :} ;
 
 
-classDecl  ::= CLASS ID:className EXTENDS ID:superName R_CUR_PAREN VarDecls:varDecls MethodDecls:methodDecls
+classDecl  ::= CLASS ID:className EXTENDS ID:superName R_CUR_PAREN varDeclsList:varDecls methodDeclsList:methodDecls
             L_CUR_PAREN     {: RESULT = new ClassDecl(className, superName, varDecls, methodDecls); :}
-            | CLASS ID:className R_CUR_PAREN VarDecls:varDecls MethodDecls:methodDecls L_CUR_PAREN
+            | CLASS ID:className R_CUR_PAREN varDeclsList:varDecls methodDeclsList:methodDecls L_CUR_PAREN
             {: RESULT = new ClassDecl(className, null, varDecls, methodDecls); :}  ;
 
 classDeclsList  ::= classDecl:classDecl1 classDeclsList:classList {: classList.addFirst(classDecl1);
@@ -171,10 +170,10 @@ formalsList  ::= formalArg:formalArg1 formalsList:formals {: formals.addFirst(fo
 
 
 statement	::= IF LPAREN expr:e1 RPAREN statement:if ELSE statement:else   {: RESULT = new IfStatement(e1, if, else); :}
-                | ID:id1 EQUALS expr:e1 END_SENT    {: RESULT = new AssignStatement(id, e1); :}
+                | ID:id1 ASSIGN expr:e1 END_SENT    {: RESULT = new AssignStatement(id, e1); :}
                 | WHILE LPAREN expr:cond RPAREN L_CUR_PAREN statement:blockStatement
-					R_CUR_PAREN {: RESULT = new WhileStatement(cond,blockStatement); :};
-				|\\TODO: more statements;
+					R_CUR_PAREN {: RESULT = new WhileStatement(cond,blockStatement); :}
+				;
 
 
 expr ::= expr:e1 PLUS expr:e2 		{: RESULT = new AddExpr(e1, e2); :}
@@ -187,7 +186,7 @@ expr ::= expr:e1 PLUS expr:e2 		{: RESULT = new AddExpr(e1, e2); :}
          | FALSE:false              {: RESULT = new FalseExpr(); :}
          | expr:ownerExpr DOT ID:methodId LPAREN commaExprList:actuals RPAREN   {: RESULT = new MethodCallExpr(ownerExpr, methodId, actuals); :}
          | NEW INT L_ARRAY expr:lengthExpr R_ARRAY {: RESULT = new NewIntArrayExpr(lengthExpr); :}
-         | \\TODO: more expr;
+
 ;
 
 commaExprList ::= COMMA expr: e commaExprList:el {: el.addFirst(e); RESULT = el; :}
