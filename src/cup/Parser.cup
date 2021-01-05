@@ -100,7 +100,6 @@ terminal RETURN,THIS;
 terminal PRINT;
 terminal INT_ARRAY_TYPE;
 terminal STRING_ARGS;
-terminal ENS_SENT;
 
 /*****************/
 /* NON TERMINALS */

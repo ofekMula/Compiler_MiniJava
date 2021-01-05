@@ -101,7 +101,7 @@ ID				= [a-zA-Z]
 ")"                 { return symbol(sym.RPAREN); }
 "{"                 { return symbol(sym.L_CUR_PAREN); }
 "}"                 { return symbol(sym.R_CUR_PAREN); }
-";"                 { return symbol(sym.ENS_SENT); }
+";"                 { return symbol(sym.END_SENT); }
 "!"                  { return symbol(sym.NOT); }
 "&&"                { return symbol(sym.AND); }
 "int"               { return symbol(sym.INT); }
