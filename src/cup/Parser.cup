@@ -100,7 +100,7 @@ terminal RETURN,THIS;
 terminal PRINT;
 terminal INT_ARRAY_TYPE;
 terminal STRING_ARGS;
-
+terminal ENS_SENT;
 
 /*****************/
 /* NON TERMINALS */
@@ -124,7 +124,6 @@ non terminal Expr term;
 non terminal Expr factor;
 non terminal Expr operand;
 non terminal LinkedList<Expr> commaExprList;
-
 /***********************/
 /* OPERATOR PRECEDENCE */
 /***********************/
@@ -147,6 +146,7 @@ type		::=		INT_ARRAY_TYPE {: RESULT = new IntArrayAstType(); :}
             |	ID:id       {: RESULT = new RefType(id); :}  ;
 
 prog        ::=     ;
+
 
 mainClass   ::=CLASS ID:main L_CUR_PAREN PUBLIC STATIC VOID MAIN LPAREN
 		STRING_ARGS ID:args RPAREN L_CUR_PAREN statement:mainStatement R_CUR_PAREN R_CUR_PAREN
@@ -184,10 +184,15 @@ expr ::= expr:e1 PLUS expr:e2 		{: RESULT = new AddExpr(e1, e2); :}
          | LPAREN expr:e RPAREN		{: RESULT = e; :}
          | NUMBER:n				    {: RESULT = new IntegerLiteralExpr(n); :}
          | FALSE:false              {: RESULT = new FalseExpr(); :}
+         | TRUE:true              {: RESULT = new TrueExpr(); :}
          | expr:ownerExpr DOT ID:methodId LPAREN commaExprList:actuals RPAREN   {: RESULT = new MethodCallExpr(ownerExpr, methodId, actuals); :}
          | NEW INT L_ARRAY expr:lengthExpr R_ARRAY {: RESULT = new NewIntArrayExpr(lengthExpr); :}
-
+         | NEW ID:e LPAREN RPAREN 		{:RESULT = new NewObjectExpr(e);:}
+         | ID:arr L_ARRAY expr:e R_ARRAY {: RESULT = new ArrayAccessExpr(arr,e);:}
+         | ID:lv L_ARRAY expr:index R_ARRAY ASSIGN expr:rv
+			{:RESULT = new AssignArrayStatement(lv,index,rv);:}
 ;
+varDecleration ::= type:varType identifier:varName  {: RESULT = new VarDecl(varType,varName,10) ;:};
 
 commaExprList ::= COMMA expr: e commaExprList:el {: el.addFirst(e); RESULT = el; :}
 		 | /* empty */           	{: RESULT = new LinkedList<Expr>(); :}  ;
