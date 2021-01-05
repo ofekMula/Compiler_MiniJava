@@ -100,6 +100,7 @@ terminal PRINT;
 terminal INT_ARRAY_TYPE;
 terminal STRING_ARGS;
 
+
 /*****************/
 /* NON TERMINALS */
 /*****************/
@@ -140,7 +141,7 @@ start with prog;
 /********************/
 /* PRODUCTION RULES */
 /********************/
-type	::=	INT ARR         {: RESULT = new IntArrayAstType(); :}
+type	::=		INT_ARRAY_TYPE {: RESULT = new IntArrayAstType(); :}
             |	BOOLEAN     {: RESULT = new BoolAstType(); :}
             |	INT         {: RESULT = new IntAstType(); :}
             |	ID:id       {: RESULT = new RefType(id); :}  ;
