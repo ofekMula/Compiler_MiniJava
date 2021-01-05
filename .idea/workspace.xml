@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52a48db8-b9bd-4e48-b0c0-b5f92dcc37af" name="Default Changelist" comment="" />
+    <list default="true" id="52a48db8-b9bd-4e48-b0c0-b5f92dcc37af" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jflex/Scanner.jflex" beforeDir="false" afterPath="$PROJECT_DIR$/src/jflex/Scanner.jflex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sym.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sym.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -169,6 +174,7 @@
       <workItem from="1609693205670" duration="1694000" />
       <workItem from="1609777035780" duration="2475000" />
       <workItem from="1609780709305" duration="3309000" />
+      <workItem from="1609860866981" duration="1334000" />
     </task>
     <task id="LOCAL-00007" summary="--">
       <created>1607005181605</created>
@@ -317,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609783859020</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="--">
+      <created>1609860887677</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1609860887677</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,12 +363,12 @@
     <MESSAGE value="fix by yotam's examples" />
     <MESSAGE value="ownerExpr null check" />
     <MESSAGE value="null checks for if blocks and return type" />
-    <MESSAGE value="--" />
     <MESSAGE value="last changes ex3" />
     <MESSAGE value="jar update" />
     <MESSAGE value="updated files from Yotam's git" />
     <MESSAGE value="ricky's work" />
-    <option name="LAST_COMMIT_MESSAGE" value="ricky's work" />
+    <MESSAGE value="--" />
+    <option name="LAST_COMMIT_MESSAGE" value="--" />
   </component>
   <component name="WindowStateProjectService">
     <state x="538" y="240" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608574742922">
