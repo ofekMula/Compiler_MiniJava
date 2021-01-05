@@ -87,9 +87,11 @@ ID				= [a-zA-Z]
 <YYINITIAL> {
 "public"            { return symbol(sym.PUBLIC); }
 "class"             { return symbol(sym.CLASS); }
-"class Main"        { return symbol(sym.MAIN_CLASS); }
+"main"        { return symbol(sym.MAIN); }
 "extends"           { return symbol(sym.EXTENDS); }
 "static"            {return symbol(sym.STATIC);}
+"void"              {return symbol(sym.VOID);}
+
 ","			        { return symbol(sym.COMMA); }
 "+"                 { return symbol(sym.PLUS); }
 "-"                 { return symbol(sym.MINUS); }
@@ -108,7 +110,7 @@ ID				= [a-zA-Z]
 "String[]"          {return symbol(sym.STRING_ARGS);}
 "["                { return symbol(sym.L_ARRAY); }
 "["                { return symbol(sym.R_ARRAY); }
-"boolean"           { return symbol(sym.BOOL); }
+"boolean"           { return symbol(sym.BOOLEAN); }
 "false"             { return symbol(sym.FALSE); }
 "true"                 { return symbol(sym.TRUE); }
 "."                 { return symbol(sym.DOT); }

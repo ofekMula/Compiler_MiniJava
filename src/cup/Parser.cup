@@ -65,9 +65,10 @@ scan with
 /*************/
 terminal PUBLIC;
 terminal CLASS;
-terminal MAIN_CLASS;
+terminal MAIN;
 terminal EXTENDS;
 terminal STATIC;
+terminal VOID;
 terminal PLUS;
 terminal MINUS;
 terminal MULT;
@@ -87,7 +88,7 @@ terminal DOT;
 terminal NOT,AND;
 terminal INT;
 terminal ARRAY;
-terminal BOOL;
+terminal BOOLEAN;
 terminal NEW;
 terminal L_ARRAY;
 terminal R_ARRAY;
@@ -105,6 +106,7 @@ terminal STRING_ARGS;
 /* NON TERMINALS */
 /*****************/
 non terminal Prog prog;
+non terminal MainClass mainClass;
 non terminal ClassDecl classDecl;
 non terminal VarDecl varDecl;
 non terminal MethodDecl methodDecl;
@@ -126,7 +128,6 @@ non terminal LinkedList<Expr> commaExprList;
 /***********************/
 /* OPERATOR PRECEDENCE */
 /***********************/
-precedence left MAIN_CLASS;
 precedence left CLASS;
 precedence left PLUS, MINUS;
 precedence left MULT, DIV;
@@ -141,12 +142,17 @@ start with prog;
 /********************/
 /* PRODUCTION RULES */
 /********************/
-type	::=		INT_ARRAY_TYPE {: RESULT = new IntArrayAstType(); :}
+type		::=		INT_ARRAY_TYPE {: RESULT = new IntArrayAstType(); :}
             |	BOOLEAN     {: RESULT = new BoolAstType(); :}
             |	INT         {: RESULT = new IntAstType(); :}
             |	ID:id       {: RESULT = new RefType(id); :}  ;
 
-prog            ::=     ;
+prog        ::=     ;
+
+mainClass   ::=CLASS ID:main L_CUR_PAREN PUBLIC STATIC VOID MAIN LPAREN
+		STRING_ARGS ID:args RPAREN L_CUR_PAREN statement:mainStatement R_CUR_PAREN R_CUR_PAREN
+		{:RESULT = new MainClass(main,args,mainStatement); :} ;
+
 
 classDecl  ::= CLASS ID:className EXTENDS ID:superName R_CUR_PAREN VarDecls:varDecls MethodDecls:methodDecls
             L_CUR_PAREN     {: RESULT = new ClassDecl(className, superName, varDecls, methodDecls); :}
@@ -166,7 +172,9 @@ formalsList  ::= formalArg:formalArg1 formalsList:formals {: formals.addFirst(fo
 
 statement	::= IF LPAREN expr:e1 RPAREN statement:if ELSE statement:else   {: RESULT = new IfStatement(e1, if, else); :}
                 | ID:id1 EQUALS expr:e1 END_SENT    {: RESULT = new AssignStatement(id, e1); :}
-                | \\TODO: more statements;
+                | WHILE LPAREN expr:cond RPAREN L_CUR_PAREN statement:blockStatement
+					R_CUR_PAREN {: RESULT = new WhileStatement(cond,blockStatement); :};
+				|\\TODO: more statements;
 
 
 expr ::= expr:e1 PLUS expr:e2 		{: RESULT = new AddExpr(e1, e2); :}
