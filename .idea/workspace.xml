@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52a48db8-b9bd-4e48-b0c0-b5f92dcc37af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cup/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/cup/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jflex/Scanner.jflex" beforeDir="false" afterPath="$PROJECT_DIR$/src/jflex/Scanner.jflex" afterDir="false" />
-    </list>
+    <list default="true" id="52a48db8-b9bd-4e48-b0c0-b5f92dcc37af" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,7 +168,7 @@
       <workItem from="1609661328918" duration="551000" />
       <workItem from="1609693205670" duration="1694000" />
       <workItem from="1609777035780" duration="2475000" />
-      <workItem from="1609780709305" duration="3099000" />
+      <workItem from="1609780709305" duration="3309000" />
     </task>
     <task id="LOCAL-00007" summary="--">
       <created>1607005181605</created>
@@ -314,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609612895254</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="ricky's work">
+      <created>1609783859020</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1609783859020</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +354,8 @@
     <MESSAGE value="last changes ex3" />
     <MESSAGE value="jar update" />
     <MESSAGE value="updated files from Yotam's git" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated files from Yotam's git" />
+    <MESSAGE value="ricky's work" />
+    <option name="LAST_COMMIT_MESSAGE" value="ricky's work" />
   </component>
   <component name="WindowStateProjectService">
     <state x="538" y="240" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608574742922">
@@ -434,10 +438,10 @@
     </state>
     <state x="351" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607532194553" />
     <state x="351" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1608540000865" />
-    <state x="362" y="149" key="Vcs.Push.Dialog.v2" timestamp="1609612898655">
+    <state x="362" y="149" key="Vcs.Push.Dialog.v2" timestamp="1609783862017">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609612898655" />
+    <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609783862017" />
     <state x="453" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533369301" />
     <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608538055128" />
     <state x="484" y="149" width="686" height="664" key="find.popup" timestamp="1607190221445">
