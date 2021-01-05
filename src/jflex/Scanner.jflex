@@ -91,7 +91,6 @@ ID				= [a-zA-Z]
 "extends"           { return symbol(sym.EXTENDS); }
 "static"            {return symbol(sym.STATIC);}
 "void"              {return symbol(sym.VOID);}
-
 ","			        { return symbol(sym.COMMA); }
 "+"                 { return symbol(sym.PLUS); }
 "-"                 { return symbol(sym.MINUS); }
@@ -109,7 +108,7 @@ ID				= [a-zA-Z]
 "int[]"             {return symbol(sym.INT_ARRAY_TYPE);}
 "String[]"          {return symbol(sym.STRING_ARGS);}
 "["                { return symbol(sym.L_ARRAY); }
-"["                { return symbol(sym.R_ARRAY); }
+"]"                { return symbol(sym.R_ARRAY); }
 "boolean"           { return symbol(sym.BOOLEAN); }
 "false"             { return symbol(sym.FALSE); }
 "true"                 { return symbol(sym.TRUE); }
