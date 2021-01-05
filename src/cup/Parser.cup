@@ -72,10 +72,18 @@ terminal PLUS, MINUS, MULT, DIV, LT;
 terminal LPAREN, RPAREN, L_CUR_PAREN, R_CUR_PAREN;
 terminal int NUMBER;
 terminal String ID;
-terminal FALSE;
-terminal COMMA, END_SENT, EQUALS, DOT;
+terminal FALSE, TRUE;
+terminal COMMA, END_SENT, ASSIGN, DOT ;
+terminal NOT,AND;
 terminal INT, ARRAY, BOOL;
 terminal NEW, L_ARRAY, R_ARRAY;
+terminal IF ,ELSE;oo
+terminal WHILE;
+terminal LENGTH;
+terminal RETURN,THIS;
+terminal PRINT;
+terminal INT_ARRAY_TYPE,STRING_ARGS;
+terminal STATIC;
 
 /*****************/
 /* NON TERMINALS */

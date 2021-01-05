@@ -89,6 +89,7 @@ ID				= [a-zA-Z]
 "class"             { return symbol(sym.CLASS); }
 "class Main"        { return symbol(sym.MAIN_CLASS); }
 "extends"           { return symbol(sym.EXTENDS); }
+"static"            {return symbol(sym.STATIC);}
 ","			        { return symbol(sym.COMMA); }
 "+"                 { return symbol(sym.PLUS); }
 "-"                 { return symbol(sym.MINUS); }
@@ -100,14 +101,26 @@ ID				= [a-zA-Z]
 "{"                 { return symbol(sym.L_CUR_PAREN); }
 "}"                 { return symbol(sym.R_CUR_PAREN); }
 ";"                 { return symbol(sym.ENS_SENT); }
+"!"                  { return symbol(sym.NOT); }
+"&&"                { return symbol(sym.AND); }
 "int"               { return symbol(sym.INT); }
+"int[]"             {return symbol(sym.INT_ARRAY_TYPE);}
+"String[]"          {return symbol(sym.STRING_ARGS);}
 "["                { return symbol(sym.L_ARRAY); }
 "["                { return symbol(sym.R_ARRAY); }
 "boolean"           { return symbol(sym.BOOL); }
 "false"             { return symbol(sym.FALSE); }
+"true"                 { return symbol(sym.TRUE); }
 "."                 { return symbol(sym.DOT); }
 "new"               { return symbol(sym.NEW); }
-"="                 { return symbol(sym.EQUALS); }
+"="                 { return symbol(sym.ASSIGN); }
+"if"             { return symbol(sym.IF); }
+"else"             { return symbol(sym.ELSE); }
+"while"             { return symbol(sym.WHILE); }
+"length"             { return symbol(sym.LENGTH); }
+"this"                 {return symbol(sym.THIS);}
+"return"                {return symbol(sym.RETURN);}
+"System.out.println"    { return symbol(sym.PRINT); }
 {ID}		        { return symbol(sym.ID, new String(yytext())); }
 {INTEGER}           { return symbol(sym.NUMBER, Integer.parseInt(yytext())); }
 {WhiteSpace}        { /* do nothing */ }
