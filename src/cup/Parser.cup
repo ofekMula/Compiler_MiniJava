@@ -63,43 +63,22 @@ scan with
 /*************/
 /* TERMINALS */
 /*************/
-terminal PUBLIC;
-terminal CLASS;
-terminal MAIN;
-terminal EXTENDS;
-terminal STATIC;
-terminal VOID;
-terminal PLUS;
-terminal MINUS;
-terminal MULT;
-terminal DIV;
-terminal LT;
-terminal LPAREN;
-terminal RPAREN;
-terminal L_CUR_PAREN;
-terminal R_CUR_PAREN;
+terminal PUBLIC, CLASS, MAIN;
+terminal EXTENDS ,STATIC, VOID;
+terminal PLUS, MINUS, MULT, DIV, LT;
+terminal LPAREN, RPAREN, L_CUR_PAREN, R_CUR_PAREN;
 terminal int NUMBER;
 terminal String ID;
 terminal FALSE, TRUE;
-terminal COMMA;
-terminal END_SENT;
-terminal ASSIGN;
-terminal DOT;
+terminal COMMA, END_SENT, ASSIGN, DOT;
 terminal NOT,AND;
-terminal INT;
-terminal ARRAY;
-terminal BOOLEAN;
+terminal INT, ARRAY, BOOLEAN;
 terminal NEW;
-terminal L_ARRAY;
-terminal R_ARRAY;
-terminal IF;
-terminal ELSE;
-terminal WHILE;
+terminal L_ARRAY, R_ARRAY;
+terminal IF, ELSE, WHILE;
 terminal LENGTH;
 terminal RETURN,THIS;
-terminal PRINT;
-terminal INT_ARRAY_TYPE;
-terminal STRING_ARGS;
+terminal PRINT, STRING;
 
 /*****************/
 /* NON TERMINALS */
@@ -119,9 +98,6 @@ non terminal AstType type;
 non terminal Statement statement;
 
 non terminal Expr expr;
-non terminal Expr term;
-non terminal Expr factor;
-non terminal Expr operand;
 non terminal LinkedList<Expr> commaExprList;
 /***********************/
 /* OPERATOR PRECEDENCE */
@@ -139,7 +115,7 @@ start with prog;
 /********************/
 /* PRODUCTION RULES */
 /********************/
-type		::=		INT_ARRAY_TYPE {: RESULT = new IntArrayAstType(); :}
+type		::=		INT L_ARRAY R_ARRAY {: RESULT = new IntArrayAstType(); :}
             |	BOOLEAN     {: RESULT = new BoolAstType(); :}
             |	INT         {: RESULT = new IntAstType(); :}
             |	ID:id       {: RESULT = new RefType(id); :}  ;
@@ -148,7 +124,7 @@ prog        ::=     ;
 
 
 mainClass   ::=CLASS ID:main L_CUR_PAREN PUBLIC STATIC VOID MAIN LPAREN
-		STRING_ARGS ID:args RPAREN L_CUR_PAREN statement:mainStatement R_CUR_PAREN R_CUR_PAREN
+		STRING L_ARRAY R_ARRAY ID:args RPAREN L_CUR_PAREN statement:mainStatement R_CUR_PAREN R_CUR_PAREN
 		{:RESULT = new MainClass(main,args,mainStatement); :} ;
 
 
@@ -191,7 +167,7 @@ expr ::= expr:e1 PLUS expr:e2 		{: RESULT = new AddExpr(e1, e2); :}
          | ID:lv L_ARRAY expr:index R_ARRAY ASSIGN expr:rv
 			{:RESULT = new AssignArrayStatement(lv,index,rv);:}
 ;
-varDecleration ::= type:varType identifier:varName  {: RESULT = new VarDecl(varType,varName,10) ;:};
+varDecl ::= type:varType ID:varName  {: RESULT = new VarDecl(varType,varName,10) ;:};
 
 commaExprList ::= COMMA expr: e commaExprList:el {: el.addFirst(e); RESULT = el; :}
 		 | /* empty */           	{: RESULT = new LinkedList<Expr>(); :}  ;

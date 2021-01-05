@@ -17,7 +17,6 @@ public interface sym {
   public static final int NOT = 25;
   public static final int AND = 26;
   public static final int LT = 12;
-  public static final int STRING_ARGS = 41;
   public static final int COMMA = 21;
   public static final int CLASS = 3;
   public static final int DIV = 11;
@@ -43,9 +42,9 @@ public interface sym {
   public static final int WHILE = 35;
   public static final int PUBLIC = 2;
   public static final int EXTENDS = 5;
+  public static final int STRING = 40;
   public static final int FALSE = 19;
   public static final int R_CUR_PAREN = 16;
-  public static final int INT_ARRAY_TYPE = 40;
   public static final int PRINT = 39;
   public static final int LENGTH = 36;
   public static final String[] terminalNames = new String[] {
@@ -89,8 +88,7 @@ public interface sym {
   "RETURN",
   "THIS",
   "PRINT",
-  "INT_ARRAY_TYPE",
-  "STRING_ARGS"
+  "STRING"
   };
 }
 

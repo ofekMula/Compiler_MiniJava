@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52a48db8-b9bd-4e48-b0c0-b5f92dcc37af" name="Default Changelist" comment="" />
+    <list default="true" id="52a48db8-b9bd-4e48-b0c0-b5f92dcc37af" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cup/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/cup/Parser.cup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jflex/Scanner.jflex" beforeDir="false" afterPath="$PROJECT_DIR$/src/jflex/Scanner.jflex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sym.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sym.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

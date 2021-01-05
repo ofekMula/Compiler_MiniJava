@@ -67,7 +67,8 @@ LineTerminator	= \r|\n|\r\n
 WhiteSpace		= [\t ] | {LineTerminator}
 INTEGER			= 0 | [1-9][0-9]*
 ID				= [a-zA-Z]
-
+MultiComment   = "/*" [^*] ~"*/" | "/*" "*"+ "/"
+SingleComment     = "//" [^\r\n]* {LineTerminator}?
 /******************************/
 /* DOLAR DOLAR - DON'T TOUCH! */
 /******************************/
@@ -105,8 +106,7 @@ ID				= [a-zA-Z]
 "!"                  { return symbol(sym.NOT); }
 "&&"                { return symbol(sym.AND); }
 "int"               { return symbol(sym.INT); }
-"int[]"             {return symbol(sym.INT_ARRAY_TYPE);}
-"String[]"          {return symbol(sym.STRING_ARGS);}
+"String"          {return symbol(sym.STRING);}
 "["                { return symbol(sym.L_ARRAY); }
 "]"                { return symbol(sym.R_ARRAY); }
 "boolean"           { return symbol(sym.BOOLEAN); }
@@ -125,5 +125,7 @@ ID				= [a-zA-Z]
 {ID}		        { return symbol(sym.ID, new String(yytext())); }
 {INTEGER}           { return symbol(sym.NUMBER, Integer.parseInt(yytext())); }
 {WhiteSpace}        { /* do nothing */ }
+{SingleComment}     { /* do nothing */ }
+{MultiComment}     { /* do nothing */ }
 <<EOF>>				{ return symbol(sym.EOF); }
 }
