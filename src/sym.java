@@ -9,7 +9,6 @@ public interface sym {
   public static final int MULT = 10;
   public static final int LPAREN = 13;
   public static final int INT = 27;
-  public static final int ARRAY = 28;
   public static final int MINUS = 9;
   public static final int STATIC = 6;
   public static final int RPAREN = 14;
@@ -24,29 +23,29 @@ public interface sym {
   public static final int END_SENT = 22;
   public static final int ASSIGN = 23;
   public static final int MAIN = 4;
-  public static final int IF = 33;
-  public static final int L_ARRAY = 31;
-  public static final int THIS = 38;
+  public static final int IF = 32;
+  public static final int L_ARRAY = 30;
+  public static final int THIS = 37;
   public static final int DOT = 24;
   public static final int ID = 18;
-  public static final int R_ARRAY = 32;
+  public static final int R_ARRAY = 31;
   public static final int EOF = 0;
-  public static final int BOOLEAN = 29;
-  public static final int RETURN = 37;
+  public static final int BOOLEAN = 28;
+  public static final int RETURN = 36;
   public static final int TRUE = 20;
-  public static final int NEW = 30;
+  public static final int NEW = 29;
   public static final int error = 1;
   public static final int NUMBER = 17;
   public static final int VOID = 7;
-  public static final int ELSE = 34;
-  public static final int WHILE = 35;
+  public static final int ELSE = 33;
+  public static final int WHILE = 34;
   public static final int PUBLIC = 2;
   public static final int EXTENDS = 5;
-  public static final int STRING = 40;
+  public static final int STRING = 39;
   public static final int FALSE = 19;
   public static final int R_CUR_PAREN = 16;
-  public static final int PRINT = 39;
-  public static final int LENGTH = 36;
+  public static final int PRINT = 38;
+  public static final int LENGTH = 35;
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
@@ -76,7 +75,6 @@ public interface sym {
   "NOT",
   "AND",
   "INT",
-  "ARRAY",
   "BOOLEAN",
   "NEW",
   "L_ARRAY",

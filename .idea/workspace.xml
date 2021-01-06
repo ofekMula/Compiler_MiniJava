@@ -20,10 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52a48db8-b9bd-4e48-b0c0-b5f92dcc37af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lexer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cup/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/cup/Parser.cup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sym.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sym.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +175,7 @@
       <workItem from="1609780709305" duration="3309000" />
       <workItem from="1609860866981" duration="3376000" />
       <workItem from="1609916226142" duration="8000" />
-      <workItem from="1609951159898" duration="393000" />
+      <workItem from="1609951159898" duration="3678000" />
     </task>
     <task id="LOCAL-00007" summary="--">
       <created>1607005181605</created>
@@ -367,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609871999510</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="fixed Prog to Program">
+      <created>1609951582733</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1609951582733</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +413,9 @@
     <MESSAGE value="--" />
     <MESSAGE value="ricky fixed one error in scanner" />
     <MESSAGE value="more fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="more fixes" />
+    <MESSAGE value="fixed Prog to Program" />
+    <MESSAGE value="fixed id" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed id" />
   </component>
   <component name="WindowStateProjectService">
     <state x="538" y="240" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608574742922">
@@ -493,10 +501,10 @@
     <state x="244" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1609951235840" />
     <state x="351" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607532194553" />
     <state x="351" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1608540000865" />
-    <state x="362" y="149" key="Vcs.Push.Dialog.v2" timestamp="1609872002362">
+    <state x="362" y="149" key="Vcs.Push.Dialog.v2" timestamp="1609951584820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609872002362" />
+    <state x="362" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609951584820" />
     <state x="453" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1607533369301" />
     <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608538055128" />
     <state x="484" y="149" width="686" height="664" key="find.popup" timestamp="1607190221445">
