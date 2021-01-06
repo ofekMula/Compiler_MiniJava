@@ -72,7 +72,7 @@ terminal String ID;
 terminal FALSE, TRUE;
 terminal COMMA, END_SENT, ASSIGN, DOT;
 terminal NOT,AND;
-terminal INT, ARRAY, BOOLEAN;
+terminal INT, BOOLEAN;
 terminal NEW;
 terminal L_ARRAY, R_ARRAY;
 terminal IF, ELSE, WHILE;
@@ -83,7 +83,7 @@ terminal PRINT, STRING;
 /*****************/
 /* NON TERMINALS */
 /*****************/
-non terminal Prog prog;
+non terminal Program prog;
 non terminal MainClass mainClass;
 non terminal ClassDecl classDecl;
 non terminal VarDecl varDecl;
@@ -96,6 +96,7 @@ non terminal LinkedList<FormalArg> formalsList;
 
 non terminal AstType type;
 non terminal Statement statement;
+non terminal LinkedList<Statement> statementList;
 
 non terminal Expr expr;
 non terminal LinkedList<Expr> commaExprList;
