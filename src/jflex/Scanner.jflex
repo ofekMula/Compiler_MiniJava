@@ -66,7 +66,7 @@ import java_cup.runtime.*;
 LineTerminator	= \r|\n|\r\n
 WhiteSpace		= [\t ] | {LineTerminator}
 INTEGER			= 0 | [1-9][0-9]*
-ID				= [a-zA-Z]
+ID				= [a-zA-Z]+
 MultiComment   = "/*" [^*] ~"*/" | "/*" "*"+ "/"
 SingleComment     = "//" [^\r\n]* {LineTerminator}?
 /******************************/
@@ -96,7 +96,7 @@ SingleComment     = "//" [^\r\n]* {LineTerminator}?
 "+"                 { return symbol(sym.PLUS); }
 "-"                 { return symbol(sym.MINUS); }
 "*"                 { return symbol(sym.MULT); }
-"/"                 { return symbol(sym.DIV); }
+/*"/"                 { return symbol(sym.DIV); }*/
 "<"                 { return symbol(sym.LT); }
 "("                 { return symbol(sym.LPAREN); }
 ")"                 { return symbol(sym.RPAREN); }
