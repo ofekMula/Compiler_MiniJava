@@ -25,13 +25,13 @@ parser code
 	// Override default error reporting in parser
 	public void report_error(String message, Object info)
 	{
-	    System.out.print("ERROR >> ");
-        System.out.print("[");
-        System.out.print(lexer.getLine());
-        System.out.print(":");
-        System.out.print(lexer.getCharPos());
-        System.out.print("] ");
-	    System.err.print("Syntax error at line " + lexer.getLine() + " of input. Parser\n");
+//	    System.out.print("ERROR >> ");
+//        System.out.print("[");
+//        System.out.print(lexer.getLine());
+//        System.out.print(":");
+//        System.out.print(lexer.getCharPos());
+//        System.out.print("] ");
+	    System.err.print("Syntax error at line " + lexer.getLine() + " of input.\n");
 		System.exit(1);
 	}
 :}
@@ -44,23 +44,23 @@ scan with
 	Symbol s;
     try {
 	s = lexer.next_token();
-	System.out.print(s.sym);
-	System.out.print("[");
-	System.out.print(lexer.getLine());
-	System.out.print(":");
-	System.out.print(lexer.getCharPos());
-	System.out.print("] ");
-	System.out.print(sym.terminalNames[s.sym]);
-	if (s.value != null)
-	 {
-		System.out.print("( ");
-		System.out.print(s.value);
-		System.out.print(" )");
-	 }
-	System.out.print("\n");
+//	System.out.print(s.sym);
+//	System.out.print("[");
+//	System.out.print(lexer.getLine());
+//	System.out.print(":");
+//	System.out.print(lexer.getCharPos());
+//	System.out.print("] ");
+//	System.out.print(sym.terminalNames[s.sym]);
+//	if (s.value != null)
+//	 {
+//		System.out.print("( ");
+//		System.out.print(s.value);
+//		System.out.print(" )");
+//	 }
+//	System.out.print("\n");
 	return s;
      } catch (java.lang.Error e) {
-         System.err.print("Syntax error at line " + lexer.getLine() + " of input. Lexer\n");
+         System.err.print("Syntax error at line " + lexer.getLine() + " of input.\n");
          System.exit(1);
          return null;
      }
