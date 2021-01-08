@@ -66,7 +66,7 @@ import java_cup.runtime.*;
 LineTerminator	= \r|\n|\r\n
 WhiteSpace		= [\t ] | {LineTerminator}
 INTEGER			= 0 | [1-9][0-9]*
-ID				= [a-zA-Z]
+IDENTIFIER				= [a-zA-Z][a-zA-Z0-9_]*
 MultiComment   = "/*" [^*] ~"*/" | "/*" "*"+ "/"
 SingleComment     = "//" [^\r\n]* {LineTerminator}?
 /******************************/
@@ -96,7 +96,7 @@ SingleComment     = "//" [^\r\n]* {LineTerminator}?
 "+"                 { return symbol(sym.PLUS); }
 "-"                 { return symbol(sym.MINUS); }
 "*"                 { return symbol(sym.MULT); }
-"/"                 { return symbol(sym.DIV); }
+/*"/"                 { return symbol(sym.DIV); }*/
 "<"                 { return symbol(sym.LT); }
 "("                 { return symbol(sym.LPAREN); }
 ")"                 { return symbol(sym.RPAREN); }
@@ -122,8 +122,8 @@ SingleComment     = "//" [^\r\n]* {LineTerminator}?
 "this"                 {return symbol(sym.THIS);}
 "return"                {return symbol(sym.RETURN);}
 "System.out.println"    { return symbol(sym.PRINT); }
-{ID}		        { return symbol(sym.ID, new String(yytext())); }
-{INTEGER}           { return symbol(sym.NUMBER, Integer.parseInt(yytext())); }
+{IDENTIFIER}		        { return symbol(sym.IDENTIFIER, new String(yytext())); }
+{INTEGER}           { return symbol(sym.INTEGER, Integer.parseInt(yytext())); }
 {WhiteSpace}        { /* do nothing */ }
 {SingleComment}     { /* do nothing */ }
 {MultiComment}     { /* do nothing */ }
