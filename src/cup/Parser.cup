@@ -73,8 +73,8 @@ terminal PUBLIC, CLASS, MAIN;
 terminal EXTENDS ,STATIC, VOID;
 terminal PLUS, MINUS, MULT, LT; // DIV ;
 terminal LPAREN, RPAREN, L_CUR_PAREN, R_CUR_PAREN;
-terminal int NUMBER;
-terminal String ID;
+terminal int INTEGER;
+terminal String IDENTIFIER;
 terminal FALSE, TRUE;
 terminal COMMA, END_SENT, ASSIGN, DOT;
 terminal NOT,AND;
@@ -100,7 +100,7 @@ non terminal LinkedList<VarDecl> varDeclsList;
 non terminal LinkedList<MethodDecl> methodDeclsList;
 non terminal LinkedList<FormalArg> formalsList;
 
-non terminal String ID_str;
+non terminal String Identifier;
 non terminal AstType type;
 non terminal Statement statement;
 non terminal LinkedList<Statement> statementList;
@@ -118,15 +118,7 @@ precedence left MULT;
 precedence right NOT, NEW;
 precedence left DOT;
 
-//
-//precedence left ASSIGN;
-//precedence left AND;
-//precedence left LT;
-//precedence left PLUS, MINUS;
-//precedence left MULT, DIV;
-//precedence left NOT;
-//precedence left L_ARRAY;
-//precedence left DOT;
+
 
 /************************/
 /* INITIAL NON TERMINAL */
@@ -139,32 +131,32 @@ start with prog;
 type		::=		INT L_ARRAY R_ARRAY {: RESULT = new IntArrayAstType(); :}
             |	BOOLEAN     {: RESULT = new BoolAstType(); :}
             |	INT         {: RESULT = new IntAstType(); :}
-            |	ID:id       {: RESULT = new RefType(id); :}  ;
+            |	Identifier:id       {: RESULT = new RefType(id); :}  ;
 
 prog        ::=  mainClass:main classDeclsList:classList   {:RESULT = new Program(main,classList); :};
 
-ID_str  ::= ID:identifier  {:RESULT = identifier; :};
 
-mainClass   ::=CLASS ID:main L_CUR_PAREN PUBLIC STATIC VOID MAIN LPAREN
-		STRING L_ARRAY R_ARRAY ID:args RPAREN L_CUR_PAREN statement:mainStatement R_CUR_PAREN R_CUR_PAREN
+mainClass   ::= CLASS Identifier:main L_CUR_PAREN PUBLIC STATIC VOID MAIN LPAREN
+		STRING L_ARRAY R_ARRAY Identifier:args RPAREN L_CUR_PAREN statement:mainStatement R_CUR_PAREN R_CUR_PAREN
 		{:RESULT = new MainClass(main,args,mainStatement); :} ;
 
-classDecl  ::= CLASS ID:className EXTENDS ID:superName L_CUR_PAREN varDeclsList:varDecls methodDeclsList:methodDecls
+classDecl  ::= CLASS Identifier:className EXTENDS Identifier:superName L_CUR_PAREN varDeclsList:varDecls methodDeclsList:methodDecls
             R_CUR_PAREN     {: RESULT = new ClassDecl(className, superName, varDecls, methodDecls); :}
-            | CLASS ID:className L_CUR_PAREN varDeclsList:varDecls methodDeclsList:methodDecls R_CUR_PAREN
+            | CLASS Identifier:className L_CUR_PAREN varDeclsList:varDecls methodDeclsList:methodDecls R_CUR_PAREN
             {: RESULT = new ClassDecl(className, null, varDecls, methodDecls); :}  ;
 
 classDeclsList  ::= classDecl:classDecl1 classDeclsList:classList {: classList.addFirst(classDecl1);
                                                                     RESULT = classList; :}
                		 | /* empty */           	{: RESULT = new LinkedList<ClassDecl>(); :}  ;
 
-methodDecl  ::= PUBLIC type:returnType ID_str:name LPAREN formalsList:formals RPAREN L_CUR_PAREN varDeclsList:vardecls statementList:body RETURN expr:retExpr END_SENT R_CUR_PAREN  {: RESULT = new MethodDecl(returnType, name, formals, vardecls, body, retExpr, 0); :} ;
+methodDecl  ::= PUBLIC type:returnType Identifier:name LPAREN formalsList:formals RPAREN L_CUR_PAREN varDeclsList:vardecls statementList:body RETURN expr:retExpr END_SENT R_CUR_PAREN
+            {: RESULT = new MethodDecl(returnType, name, formals, vardecls, body, retExpr, 0); :} ;
 
 methodDeclsList ::=  methodDecl:methodDecl1 methodDeclsList:methodList {: methodList.addFirst(methodDecl1);
                                                                                         RESULT = methodList; :}
                                    		 | /* empty */           	{: RESULT = new LinkedList<MethodDecl>(); :}  ;
 
-formalArg ::= type:formalType ID_str:formalName     {: RESULT = new FormalArg(formalType, formalName, 0); :} ;
+formalArg ::= type:formalType Identifier:formalName     {: RESULT = new FormalArg(formalType, formalName, 0); :} ;
 
 formalsList  ::= formalArg:formalArg1 formalsList:formals {: formals.addFirst(formalArg1);
                                                                     RESULT = formals; :}
@@ -172,12 +164,12 @@ formalsList  ::= formalArg:formalArg1 formalsList:formals {: formals.addFirst(fo
 
 
 statement	::= IF LPAREN expr:e1 RPAREN statement:ifStatement ELSE statement:elseStatement   {: RESULT = new IfStatement(e1, ifStatement, elseStatement); :}
-                | ID_str:id1 ASSIGN expr:e1 END_SENT    {: RESULT = new AssignStatement(id1, e1); :}
+                | Identifier:id1 ASSIGN expr:e1 END_SENT    {: RESULT = new AssignStatement(id1, e1); :}
                 | WHILE LPAREN expr:cond RPAREN L_CUR_PAREN statement:blockStatement
 					R_CUR_PAREN {: RESULT = new WhileStatement(cond,blockStatement); :}
 				| L_CUR_PAREN statementList:statements R_CUR_PAREN {: RESULT = new BlockStatement(statements); :}
 				| PRINT LPAREN expr:e1 RPAREN END_SENT  {: RESULT = new SysoutStatement(e1); :}
-				| ID_str:lv L_ARRAY expr:index R_ARRAY ASSIGN expr:rv END_SENT	{:RESULT = new AssignArrayStatement(lv,index,rv); :}
+				| Identifier:lv L_ARRAY expr:index R_ARRAY ASSIGN expr:rv END_SENT	{:RESULT = new AssignArrayStatement(lv,index,rv); :}
 				;
 
 
@@ -193,18 +185,18 @@ expr ::= expr:e1 PLUS expr:e2 		{: RESULT = new AddExpr(e1, e2); :}
          | expr:e1 AND expr:e2 		{: RESULT = new AndExpr(e1,e2); :}
          | NOT expr:e1        		{: RESULT = new NotExpr(e1); :}
          | LPAREN expr:e RPAREN		{: RESULT = e; :}
-         | NUMBER:n				    {: RESULT = new IntegerLiteralExpr(n); :}
+         | INTEGER:n				    {: RESULT = new IntegerLiteralExpr(n); :}
          | FALSE              {: RESULT = new FalseExpr(); :}
          | TRUE               {: RESULT = new TrueExpr(); :}
-         | expr:ownerExpr DOT ID_str:methodId LPAREN commaExprList:actuals RPAREN   {: RESULT = new MethodCallExpr(ownerExpr, methodId, actuals); :}
+         | expr:ownerExpr DOT Identifier:methodId LPAREN commaExprList:actuals RPAREN   {: RESULT = new MethodCallExpr(ownerExpr, methodId, actuals); :}
          | NEW INT L_ARRAY expr:lengthExpr R_ARRAY {: RESULT = new NewIntArrayExpr(lengthExpr); :}
-         | NEW ID_str:e LPAREN RPAREN 		{:RESULT = new NewObjectExpr(e); :}
+         | NEW Identifier:e LPAREN RPAREN 		{:RESULT = new NewObjectExpr(e); :}
          | expr:arr L_ARRAY expr:e R_ARRAY {: RESULT = new ArrayAccessExpr(arr,e); :}
 		 | expr:e DOT LENGTH {: RESULT = new ArrayLengthExpr(e); :}
 		 | THIS {: RESULT = new ThisExpr(); :}
-		 | ID:identifier  {: RESULT = new IdentifierExpr(identifier); :};
+		 | Identifier:identifier  {: RESULT = new IdentifierExpr(identifier); :};
 
-varDecl ::= type:varType ID_str:varName END_SENT {: RESULT = new VarDecl(varType,varName,10); :};
+varDecl ::= type:varType Identifier:varName END_SENT {: RESULT = new VarDecl(varType,varName,10); :};
 
 varDeclsList ::=  varDeclsList:vars varDecl:varDecl1 {: vars.addFirst(varDecl1); RESULT = vars; :}
                                 		 | /* empty */ 	{: RESULT = new LinkedList<VarDecl>(); :} ;
@@ -212,3 +204,5 @@ varDeclsList ::=  varDeclsList:vars varDecl:varDecl1 {: vars.addFirst(varDecl1);
 commaExprList ::= COMMA expr: e commaExprList:el {: el.addFirst(e); RESULT = el; :}
 		 | /* empty */           	{: RESULT = new LinkedList<Expr>(); :}  ;
 
+Identifier      ::= IDENTIFIER:id
+                {: RESULT = id; :};
