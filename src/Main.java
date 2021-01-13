@@ -28,8 +28,6 @@ public class Main {
                 FileReader fileReader = new FileReader(new File(filename));
                 Parser p = new Parser(new Lexer(fileReader));
                 prog = (Program) p.parse().value;
-
-//                throw new UnsupportedOperationException("TODO - Ex. 4");
             } else if (inputMethod.equals("unmarshal")) {
                 AstXMLSerializer xmlSerializer = new AstXMLSerializer();
                 prog = xmlSerializer.deserialize(new File(filename));

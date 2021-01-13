@@ -115,11 +115,12 @@ non terminal LinkedList<Expr> exprList;
 /* OPERATOR PRECEDENCE */
 /***********************/
 precedence nonassoc ASSIGN;
-precedence nonassoc AND;
+precedence left AND;
 precedence left LT;
 precedence left PLUS, MINUS;
 precedence left MULT;
 precedence right NOT, NEW;
+precedence left L_ARRAY;
 precedence left DOT;
 
 

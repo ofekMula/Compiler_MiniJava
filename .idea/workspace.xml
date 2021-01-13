@@ -1,10 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e18d6a9b-0f5a-46b6-9138-38daa3623b8a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/build/Lexer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/Parser$CUP$Parser$actions.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/Parser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/AddExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/AndExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/ArrayAccessExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/ArrayLengthExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/AssignArrayStatement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/AssignStatement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/AstNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/AstPrintVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/AstType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/AstTypeWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/AstXMLSerializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/BinaryExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/BlockStatement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/BoolAstType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/ClassDecl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/Expr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/ExprWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/FalseExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/FormalArg.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/IdentifierExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/IfStatement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/IntArrayAstType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/IntAstType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/IntegerLiteralExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/LtExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/MainClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/MethodCallExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/MethodDecl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/MultExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/NewIntArrayExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/NewObjectExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/NotExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/Program.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/RefType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/Statement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/StatementWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/SubtractExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/SysoutStatement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/ThisExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/TrueExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/VarDecl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/VariableIntroduction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/Visitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ast/WhileStatement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex1_final/InheritanceBuildMapMethods.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex1_final/InheritanceUpdate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex1_final/MethodHierarchyKey.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex1_final/Scopes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex1_final/Symbol.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex1_final/SymbolKey.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex1_final/SymbolTable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex1_final/SymbolType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex1_final/VisitorCreateTable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex1_final/VisitorMethodFinderByDecl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex1_final/VisitorRenameMethod.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex1_final/VisitorRenameVar.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/AddExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/AndExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/ArrayAccessExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/ArrayLengthExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/AssignArrayStatement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/AssignStatement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/AstNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/AstPrintVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/AstType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/AstTypeWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/AstXMLSerializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/BinaryExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/BlockStatement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/BoolAstType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/ClassDecl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/Expr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/ExprWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/FalseExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/FormalArg.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/IdentifierExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/IfStatement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/IntArrayAstType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/IntAstType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/IntegerLiteralExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/LtExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/MainClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/MethodCallExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/MethodDecl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/MultExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/NewIntArrayExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/NewObjectExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/NotExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/Program.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/RefType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/Statement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/StatementWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/SubtractExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/SysoutStatement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/ThisExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/TrueExpr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/VarDecl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/VariableIntroduction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/Visitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/ast/WhileStatement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/proj/ClassData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/proj/ClassMethodDataVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/proj/CompileVisitor$methodDataOrderByOffset.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/proj/CompileVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/proj/FormalVars.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/proj/MethodContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/proj/MethodData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/proj/Utils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex2/proj/VarData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex3/ClassData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex3/ClassMethodDataVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex3/FormalVars.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex3/MethodData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex3/SemanticAnalysisVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex3/SemanticErrorException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ex3/Utils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/sym.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final_ex4.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ids.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lexer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Parser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sym.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mjavac.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cup/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/cup/Parser.cup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex2/proj/CompileVisitor.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,31 +167,39 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1miMn0tF9Z2ZAvWK5yX21esp5WM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler" />
-      <option name="PROGRAM_PARAMETERS" value=" parse marshal &quot;compilers-project-2020-public-master\examples\ex4\Valid.java&quot; out.xml" />
+      <option name="PROGRAM_PARAMETERS" value="unmarshal print result.xml out.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -54,6 +210,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -66,6 +223,10 @@
       <updated>1609972120847</updated>
       <workItem from="1609972121956" duration="15735000" />
       <workItem from="1610126750196" duration="776000" />
+      <workItem from="1610466777688" duration="1355000" />
+      <workItem from="1610522826541" duration="30000" />
+      <workItem from="1610556269812" duration="115000" />
+      <workItem from="1610556632352" duration="879000" />
     </task>
     <task id="LOCAL-00001" summary="ex4">
       <created>1609995505104</created>
@@ -85,28 +246,58 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="ex4" />
     <MESSAGE value="-" />
     <option name="LAST_COMMIT_MESSAGE" value="-" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610453431983">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1610453431983" />
+    <state width="1481" height="160" key="GridCell.Tab.0.bottom" timestamp="1610557119034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="160" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610557119034" />
+    <state width="1865" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610473250364" />
+    <state width="1481" height="160" key="GridCell.Tab.0.center" timestamp="1610557119033">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="160" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610557119033" />
+    <state width="1865" height="220" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610473250364" />
+    <state width="1481" height="160" key="GridCell.Tab.0.left" timestamp="1610557119032">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="160" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610557119032" />
+    <state width="1865" height="220" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610473250364" />
+    <state width="1481" height="160" key="GridCell.Tab.0.right" timestamp="1610557119033">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="160" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610557119033" />
+    <state width="1865" height="220" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610473250364" />
+    <state x="351" y="0" key="SettingsEditor" timestamp="1610453513696">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="351" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1610453513696" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Compiler$Main.ic" NAME="Main Coverage Results" MODIFIED="1605375052546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/CompilerMiniJava$Main.ic" NAME="Main Coverage Results" MODIFIED="1605391749804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
