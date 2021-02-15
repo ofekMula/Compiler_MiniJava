@@ -1,11 +1,11 @@
 import ast.AstPrintVisitor;
 import ast.AstXMLSerializer;
 import ast.Program;
-import ex1_final.*;
-import ex2.proj.ClassData;
-import ex2.proj.ClassMethodDataVisitor;
-import ex2.proj.CompileVisitor;
-import ex3.SemanticErrorException;
+import variable_method_renaming.*;
+import code_generation.proj.ClassData;
+import code_generation.proj.ClassMethodDataVisitor;
+import code_generation.proj.CompileVisitor;
+import semantic_checking.SemanticErrorException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -47,9 +47,9 @@ public class Main {
 
                 } else if (action.equals("semantic")) {
                     try{
-                        ex3.ClassMethodDataVisitor firstVisitor = new ex3.ClassMethodDataVisitor();
+                        semantic_checking.ClassMethodDataVisitor firstVisitor = new semantic_checking.ClassMethodDataVisitor();
                         firstVisitor.visit(prog);
-                        ex3.SemanticAnalysisVisitor semanticVisitor = new ex3.SemanticAnalysisVisitor(firstVisitor.classNameToData,
+                        semantic_checking.SemanticAnalysisVisitor semanticVisitor = new semantic_checking.SemanticAnalysisVisitor(firstVisitor.classNameToData,
                                 firstVisitor.mainClassData);
                         semanticVisitor.visit(prog);
                         outFile.print("OK"+"\n");

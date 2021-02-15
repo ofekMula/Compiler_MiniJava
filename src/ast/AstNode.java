@@ -1,6 +1,6 @@
 package ast;
 
-import ex1_final.SymbolTable;
+import variable_method_renaming.SymbolTable;
 
 import javax.xml.bind.annotation.XmlElement;
 
