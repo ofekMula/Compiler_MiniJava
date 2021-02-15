@@ -1,6 +1,4 @@
 # Compiler-MiniJava
-
-## Description
 An Implementation of a compiler for an object-oriented language called MiniJava into LLVM assembly/IR.
 The project is adapted from materials kindly provided by the staff of the compiler classes at the University of Athens and the University of Washington.
 
