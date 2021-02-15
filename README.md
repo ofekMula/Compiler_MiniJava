@@ -13,7 +13,7 @@ The LLVM language is documented in the LLVM Language Reference Manual, although 
 
 
 ## Project Structure
-Our project Consists of four stages of the compilation process :
+Our project Consists of 3 stages of the compilation process :
 
 ### 1. Lexing & Parsing.
 Generates ASTs from textual representations of MiniJava programs.
