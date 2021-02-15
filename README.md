@@ -1,8 +1,8 @@
 # Compiler-MiniJava
 An Implementation of a compiler for an object-oriented language called MiniJava into LLVM assembly/IR.
 The project is adapted from materials kindly provided by the staff of the compiler classes at the University of Athens and the University of Washington.
-![alt text](https://github.com/rickben/CompilerMiniJava/blob/master/%E2%80%8Fcompiler.JPG)
 
+ <img src="https://github.com/rickben/CompilerMiniJava/blob/master/%E2%80%8Fcompiler.JPG" width="600" /> 
 ## MiniJava Programming language
 MiniJava is (almost exactly) a subset of Java, defined in the Appendix of Appel and Palsberg's Modern Compiler Implementation in Java, 2nd edition and described on the MiniJava web site http://www.cambridge.org/resources/052182060X/ .
 
